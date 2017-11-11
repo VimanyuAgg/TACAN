@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+ inet1:
+  build: .
+  ports:
+   - 9011:50051
+  networks:
+   - iNetwork1
+
+ inet2:
+  build: .
+  ports:
+   - 9012:50051
+  networks:
+   - iNetwork1
+
+networks:
+ iNetwork1:
+  driver: bridge
