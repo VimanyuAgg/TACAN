@@ -21,13 +21,17 @@ import grpc
 import helloworld_pb2
 import helloworld_pb2_grpc
 
+# 169.254.172.23 - bhushan
 
+#169.254.179.83 - seema
+#169.254.28.146 - gurnoor
 def run():
   channel = grpc.insecure_channel('localhost:50051')
   stub = helloworld_pb2_grpc.GreeterStub(channel)
-  response = stub.SayHello(helloworld_pb2.HelloRequest(name='Vimanyu'))
+ # response = stub.SayHello(helloworld_pb2.HelloRequest(name='Vimanyu'))
+  response = stub.Handshake(helloworld_pb2.HelloRequest(name='Seema'))
   print("Greeter client received: " + response.message)
-
+  
 
 if __name__ == '__main__':
   run()
