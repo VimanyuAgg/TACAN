@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='helloworld.proto',
   package='helloworld',
   syntax='proto3',
-  serialized_pb=_b('\n\x10helloworld.proto\x12\nhelloworld\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t2\x8a\x01\n\x07Greeter\x12>\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00\x12?\n\tHandshake\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00\x42\x36\n\x1bio.grpc.examples.helloworldB\x0fHelloWorldProtoP\x01\xa2\x02\x03HLWb\x06proto3')
+  serialized_pb=_b('\n\x10helloworld.proto\x12\nhelloworld\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t\"H\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t2\xda\x01\n\x07Greeter\x12>\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00\x12\x46\n\tHandshake\x12\x1a.helloworld.RequestMessage\x1a\x1b.helloworld.ResponseMessage\"\x00\x12G\n\nSendPacket\x12\x1a.helloworld.RequestMessage\x1a\x1b.helloworld.ResponseMessage\"\x00\x42\x36\n\x1bio.grpc.examples.helloworldB\x0fHelloWorldProtoP\x01\xa2\x02\x03HLWb\x06proto3')
 )
 
 
@@ -86,8 +86,100 @@ _HELLOREPLY = _descriptor.Descriptor(
   serialized_end=91,
 )
 
+
+_REQUESTMESSAGE = _descriptor.Descriptor(
+  name='RequestMessage',
+  full_name='helloworld.RequestMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nodeId', full_name='helloworld.RequestMessage.nodeId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='destinationId', full_name='helloworld.RequestMessage.destinationId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='helloworld.RequestMessage.message', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=93,
+  serialized_end=165,
+)
+
+
+_RESPONSEMESSAGE = _descriptor.Descriptor(
+  name='ResponseMessage',
+  full_name='helloworld.ResponseMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nodeId', full_name='helloworld.ResponseMessage.nodeId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='destinationId', full_name='helloworld.ResponseMessage.destinationId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ackMessage', full_name='helloworld.ResponseMessage.ackMessage', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=167,
+  serialized_end=243,
+)
+
 DESCRIPTOR.message_types_by_name['HelloRequest'] = _HELLOREQUEST
 DESCRIPTOR.message_types_by_name['HelloReply'] = _HELLOREPLY
+DESCRIPTOR.message_types_by_name['RequestMessage'] = _REQUESTMESSAGE
+DESCRIPTOR.message_types_by_name['ResponseMessage'] = _RESPONSEMESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 HelloRequest = _reflection.GeneratedProtocolMessageType('HelloRequest', (_message.Message,), dict(
@@ -104,6 +196,20 @@ HelloReply = _reflection.GeneratedProtocolMessageType('HelloReply', (_message.Me
   ))
 _sym_db.RegisterMessage(HelloReply)
 
+RequestMessage = _reflection.GeneratedProtocolMessageType('RequestMessage', (_message.Message,), dict(
+  DESCRIPTOR = _REQUESTMESSAGE,
+  __module__ = 'helloworld_pb2'
+  # @@protoc_insertion_point(class_scope:helloworld.RequestMessage)
+  ))
+_sym_db.RegisterMessage(RequestMessage)
+
+ResponseMessage = _reflection.GeneratedProtocolMessageType('ResponseMessage', (_message.Message,), dict(
+  DESCRIPTOR = _RESPONSEMESSAGE,
+  __module__ = 'helloworld_pb2'
+  # @@protoc_insertion_point(class_scope:helloworld.ResponseMessage)
+  ))
+_sym_db.RegisterMessage(ResponseMessage)
+
 
 DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\033io.grpc.examples.helloworldB\017HelloWorldProtoP\001\242\002\003HLW'))
@@ -114,8 +220,8 @@ _GREETER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=94,
-  serialized_end=232,
+  serialized_start=246,
+  serialized_end=464,
   methods=[
   _descriptor.MethodDescriptor(
     name='SayHello',
@@ -131,8 +237,17 @@ _GREETER = _descriptor.ServiceDescriptor(
     full_name='helloworld.Greeter.Handshake',
     index=1,
     containing_service=None,
-    input_type=_HELLOREQUEST,
-    output_type=_HELLOREPLY,
+    input_type=_REQUESTMESSAGE,
+    output_type=_RESPONSEMESSAGE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SendPacket',
+    full_name='helloworld.Greeter.SendPacket',
+    index=2,
+    containing_service=None,
+    input_type=_REQUESTMESSAGE,
+    output_type=_RESPONSEMESSAGE,
     options=None,
   ),
 ])

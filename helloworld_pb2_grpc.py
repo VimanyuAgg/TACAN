@@ -21,8 +21,13 @@ class GreeterStub(object):
         )
     self.Handshake = channel.unary_unary(
         '/helloworld.Greeter/Handshake',
-        request_serializer=helloworld__pb2.HelloRequest.SerializeToString,
-        response_deserializer=helloworld__pb2.HelloReply.FromString,
+        request_serializer=helloworld__pb2.RequestMessage.SerializeToString,
+        response_deserializer=helloworld__pb2.ResponseMessage.FromString,
+        )
+    self.SendPacket = channel.unary_unary(
+        '/helloworld.Greeter/SendPacket',
+        request_serializer=helloworld__pb2.RequestMessage.SerializeToString,
+        response_deserializer=helloworld__pb2.ResponseMessage.FromString,
         )
 
 
@@ -44,6 +49,13 @@ class GreeterServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def SendPacket(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_GreeterServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -54,8 +66,13 @@ def add_GreeterServicer_to_server(servicer, server):
       ),
       'Handshake': grpc.unary_unary_rpc_method_handler(
           servicer.Handshake,
-          request_deserializer=helloworld__pb2.HelloRequest.FromString,
-          response_serializer=helloworld__pb2.HelloReply.SerializeToString,
+          request_deserializer=helloworld__pb2.RequestMessage.FromString,
+          response_serializer=helloworld__pb2.ResponseMessage.SerializeToString,
+      ),
+      'SendPacket': grpc.unary_unary_rpc_method_handler(
+          servicer.SendPacket,
+          request_deserializer=helloworld__pb2.RequestMessage.FromString,
+          response_serializer=helloworld__pb2.ResponseMessage.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
