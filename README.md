@@ -7,4 +7,4 @@ Deployment Diagram:
 
 UML Sequence Diagram: Phase 1 Clustering
 
-![Phase 1 Clustering] (https://github.com/VimanyuAgg/TACAN/blob/master/Phase1-sequence_diagram.png)
+![Alt text](https://github.com/VimanyuAgg/TACAN/blob/master/Phase1-sequence_diagram.png "Ph1 Sequence Diagram")
