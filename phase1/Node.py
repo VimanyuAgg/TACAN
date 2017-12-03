@@ -1,3 +1,5 @@
+import weightMatrix
+
 class Node:
 	'''
 	Node class representing each node in the network
