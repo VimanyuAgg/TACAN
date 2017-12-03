@@ -1,9 +1,25 @@
 
 syntax = "proto3";
 
-option java_multiple_files = true;
-option java_package = "io.grpc.examples.helloworld";
-option java_outer_classname = "HelloWorldProto";
-option objc_class_prefix = "HLW";
+package phase1;
 
-package helloworld;
+
+// The Main service definition.
+service MainService {
+  // Sends a greeting
+  rpc Handshake (RequestMessage) returns (ResponseMessage) {}
+  rpc SendPacket (RequestMessage) returns (ResponseMessage) {}
+}
+
+message RequestMessage {
+  string nodeId = 1;
+  string destinationId = 2;
+  string message = 3;
+
+}
+
+message ResponseMessage {
+  string nodeId = 1;
+  string destinationId = 2;
+  string ackMessage = 3;
+}
