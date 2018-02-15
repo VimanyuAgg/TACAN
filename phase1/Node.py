@@ -1,5 +1,4 @@
-import weightMatrix
-
+import weightMatrix, raspberryPi_id_list
 class Node:
 	'''
 	Node class representing each node in the network
@@ -22,6 +21,37 @@ class Node:
 		for c in self.childListId:
 			childWeight += weightMatrix.getWeight(c)
 		return childWeight
+
+	def startPhaseOneClustering():
+		self.size = weight
+		if len(childListId) == 0:
+			sendSize()
+
+	# Connects to Raspberry Pi and registers its IP address on the central lookup
+	# Can merge getIP and registerOnPi
+	def registerOnPi():
+		pass
+
+	# Connects to Raspberry Pi (Central Service) and gets its IP address
+	# Can merge getIP and registerOnPi
+	def getIP():
+		pass
+
+	def getIPfromId(Id):
+		return raspberryPi_id_list.ID_IP_MAPPING[Id]
+
+	def sendSize():
+		## get IP address of parentId
+		# getIP(parentId)
+		parentIP = getIP(parentId)
+		
+
+	def 	
+
+
+
+
+
 
 def testNode():
 	n0 = Node
