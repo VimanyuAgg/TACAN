@@ -6,3 +6,5 @@ ID_IP_MAPPING = {{0: 'XXXXX0'},
 				 {5: 'XXXXX5'},
 				 {6: 'XXXXX6'}
 				}
+
+THRESHOLD_S = 5

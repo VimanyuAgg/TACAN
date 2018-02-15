@@ -7,6 +7,7 @@ import grpc
 import phase1_pb2
 import phase1_pb2_grpc
 from Node import Node
+import raspberryPi_id_list
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
@@ -40,6 +41,13 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     #check if current node is the destination node 
     #else forward it to the destination node
     return phase1_pb2.ResponseMessage(nodeId="21",destinationId="12",ackMessage="Hello Dear Client")
+
+  def Size(self, request, context):
+    childSize = request.size
+    if node.size + childSize > raspberryPi_id_list.THRESHOLD_S:
+      return phase1_pb2.AccomodateChild(message="Prune")
+    else:
+      return phase1_pb2.AccomodateChild(message="Accepted")
 
 def serve():
   server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
