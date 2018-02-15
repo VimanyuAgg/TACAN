@@ -44,9 +44,7 @@ class Node:
 		## get IP address of parentId
 		# getIP(parentId)
 		parentIP = getIP(parentId)
-		
-
-	def 	
+ 	
 
 
 
