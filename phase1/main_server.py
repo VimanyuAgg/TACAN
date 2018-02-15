@@ -30,6 +30,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       #default state 
       state="active"
       self.node = Node(myId,parentid, childList,dist, clusterheadid,subtreeList,neighbourList,isClusterhead,state)
+      
   
   def Handshake(self, request , context):
 
