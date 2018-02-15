@@ -20,16 +20,16 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   def __init__(self):
       #different for each node
       myId=1
-      parentid=0
-      childList=[2,3]
-      dist=1
-      clusterheadid=0
-      subtreeList=[2,3]
-      neighbourList=[]
-      isClusterhead=False
+      # parentid=0
+      # childList=[2,3]
+      # dist=1
+      # clusterheadid=0
+      # subtreeList=[2,3]
+      # neighbourList=[]
+      # isClusterhead=False
       #default state 
       state="active"
-      self.node = Node(myId,parentid, childList,dist, clusterheadid,subtreeList,neighbourList,isClusterhead,state)
+      self.node = Node(myId)
       
   
   def Handshake(self, request , context):
