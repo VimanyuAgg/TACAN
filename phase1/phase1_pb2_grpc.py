@@ -24,6 +24,16 @@ class MainServiceStub(object):
         request_serializer=phase1__pb2.RequestMessage.SerializeToString,
         response_deserializer=phase1__pb2.ResponseMessage.FromString,
         )
+    self.Size = channel.unary_unary(
+        '/phase1.MainService/Size',
+        request_serializer=phase1__pb2.MySize.SerializeToString,
+        response_deserializer=phase1__pb2.AccomodateChild.FromString,
+        )
+    self.Cluster = channel.unary_unary(
+        '/phase1.MainService/Cluster',
+        request_serializer=phase1__pb2.ClusterName.SerializeToString,
+        response_deserializer=phase1__pb2.ClusterAck.FromString,
+        )
 
 
 class MainServiceServicer(object):
@@ -44,6 +54,20 @@ class MainServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Size(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Cluster(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_MainServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -56,6 +80,16 @@ def add_MainServiceServicer_to_server(servicer, server):
           servicer.SendPacket,
           request_deserializer=phase1__pb2.RequestMessage.FromString,
           response_serializer=phase1__pb2.ResponseMessage.SerializeToString,
+      ),
+      'Size': grpc.unary_unary_rpc_method_handler(
+          servicer.Size,
+          request_deserializer=phase1__pb2.MySize.FromString,
+          response_serializer=phase1__pb2.AccomodateChild.SerializeToString,
+      ),
+      'Cluster': grpc.unary_unary_rpc_method_handler(
+          servicer.Cluster,
+          request_deserializer=phase1__pb2.ClusterName.FromString,
+          response_serializer=phase1__pb2.ClusterAck.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

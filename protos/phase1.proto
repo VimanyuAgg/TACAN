@@ -9,8 +9,25 @@ service MainService {
   // Sends a greeting
   rpc Handshake (RequestMessage) returns (ResponseMessage) {}
   rpc SendPacket (RequestMessage) returns (ResponseMessage) {}
+  rpc Size (MySize) returns (AccomodateChild){}
+  rpc Cluster (ClusterName) returns (ClusterAck){}
 }
 
+message ClusterName {
+	string clusterName = 1;
+}
+
+message ClusterAck {
+	string clusterAck = 1;
+}
+
+message MySize{
+	int32 size = 1;
+}
+
+message AccomodateChild{
+	string message = 1;
+}
 message RequestMessage {
   string nodeId = 1;
   string destinationId = 2;
