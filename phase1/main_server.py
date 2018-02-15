@@ -29,7 +29,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       # neighbourList=[]
       # isClusterhead=False
       #default state 
-      state="active"
+      # state="active"
       self.node = Node(myId)
       
   

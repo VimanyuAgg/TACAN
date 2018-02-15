@@ -1,11 +1,12 @@
 import weightMatrix
-from spanning_tree import SPANNING_INFO, raspberryPi_id_list
+from spanning_tree import SPANNING_INFO
+import raspberryPi_id_list
 
 class Node:
 	'''
 	Node class representing each node in the network
 	'''
-	def __init__(self,myId,state):
+	def __init__(self,myId):
 		
 		self.id = myId
 		#self.parentId = parentId
@@ -20,8 +21,8 @@ class Node:
 		self.weight = weightMatrix.getWeight(self.id)
 		self.childWeightList = self.getChildWeight()
 		self.isClusterhead = my_info['isClusterhead']
-		#self.state = my_info['state']
-		self.state = state
+		self.state = my_info['state']
+		
 
 	def getChildWeight(self):
 		childWeight = 0
@@ -55,7 +56,7 @@ class Node:
 
 def testNode():
 	n0 = Node
-	n1 = Node(1,"active")
+	n1 = Node(1)
 	# print n1.parentId
 	assert n1.parentId == 0
 	print "Test 1 Passed"
