@@ -47,11 +47,6 @@ class Node:
 	def getIPfromId(Id):
 		return raspberryPi_id_list.ID_IP_MAPPING[Id]
 
-	def sendSize():
-		## get IP address of parentId
-		# getIP(parentId)
-		parentIP = getIP(parentId)
- 	
 
 
 
