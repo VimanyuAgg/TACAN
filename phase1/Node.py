@@ -22,6 +22,7 @@ class Node:
 		self.childWeightList = self.getChildWeight()
 		self.isClusterhead = my_info['isClusterhead']
 		self.state = my_info['state']
+		self.startPhaseOneClustering()
 		
 
 	def getChildWeight(self):
@@ -30,10 +31,9 @@ class Node:
 			childWeight += weightMatrix.getWeight(c)
 		return childWeight
 
-	def startPhaseOneClustering():
-		self.size = weight
-		if len(childListId) == 0:
-			sendSize()
+	def startPhaseOneClustering(self):
+		self.size = self.weight
+		
 
 	# Connects to Raspberry Pi and registers its IP address on the central lookup
 	# Can merge getIP and registerOnPi
@@ -45,7 +45,7 @@ class Node:
 	def getIP():
 		pass
 
-	def getIPfromId(Id):
+	def getIPfromId(self,Id):
 		return raspberryPi_id_list.ID_IP_MAPPING[Id]
 
 

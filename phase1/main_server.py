@@ -44,7 +44,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
   def Size(self, request, context):
     childSize = request.size
-    if node.size + childSize > raspberryPi_id_list.THRESHOLD_S:
+    if self.node.size + childSize > raspberryPi_id_list.THRESHOLD_S:
       return phase1_pb2.AccomodateChild(message="Prune")
     else:
       return phase1_pb2.AccomodateChild(message="Accepted")
