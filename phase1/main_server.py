@@ -7,6 +7,7 @@ import grpc
 import phase1_pb2
 import phase1_pb2_grpc
 from Node import Node
+import reqForward
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
@@ -27,19 +28,47 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       subtreeList=[2,3]
       neighbourList=[]
       isClusterhead=False
-      #default state 
+      #default state
       state="active"
       self.node = Node(myId,parentid, childList,dist, clusterheadid,subtreeList,neighbourList,isClusterhead,state)
-      
-  
-  def Handshake(self, request , context):
 
+
+  def Handshake(self, request , context):
     return phase1_pb2.ResponseMessage(nodeId="21",destinationId="12",ackMessage="Hello Dear Client")
-  
+
   def SendPacket(self, request , context):
-    #check if current node is the destination node 
+    #check if current node is the destination node
     #else forward it to the destination node
-    return phase1_pb2.ResponseMessage(nodeId="21",destinationId="12",ackMessage="Hello Dear Client")
+    if self.myId == request.destinationId:
+        return phase1_pb2.ResponseMessage(nodeId="21",
+        destinationId="12",
+        ackMessage="Hello Dear Client")
+    else:
+        return self.Forward(request)
+  # end SendPacket
+
+  def Forward(self, request, context):
+      request.hopIds += [self.myId]
+
+      # same clusterhead
+      if request.destination[0] == self.myID[0]:
+          dest_ip = self.getIp(request.destination)
+      else:
+          dest_id = request.destination[0] + '0' # clusterhead Id
+          dest_ip = self.getIp(request.destination)
+
+      channel = grpc.insecure_channel(dest_ip)
+      stub = phase1_pb2_grpc.MainServiceStub(channel)
+      response1 = stub.SendPacket(request)
+      return response1
+
+
+
+  def getIp(self, nodeId):
+      # TODO
+      return 'localhost:50051'
+
+
 
 def serve():
   server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))

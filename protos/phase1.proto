@@ -15,7 +15,7 @@ message RequestMessage {
   string nodeId = 1;
   string destinationId = 2;
   string message = 3;
-
+  repeated int32 hopIds = 4;
 }
 
 message ResponseMessage {
