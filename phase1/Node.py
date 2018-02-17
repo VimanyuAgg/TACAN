@@ -45,6 +45,9 @@ class Node:
 	def getIP():
 		pass
 
+	def getIpFromId(Id):
+		return raspberryPi_id_list[Id]
+
 	def getIPfromId(self,Id):
 		return raspberryPi_id_list.ID_IP_MAPPING[Id]
 
