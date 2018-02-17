@@ -14,25 +14,28 @@ import Node
 #169.254.28.146 - gurnoor
 INITIALIZE_FLAG = False
 def run():
-	## sys.argv[1] is IP of server e.g. localhost:50051
-	print(sys.argv[1])
-	channel = grpc.insecure_channel(sys.argv[1])
-	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	thisNode = Node.Node(1)
-	print("successfully created thisNode")
-	print(thisNode)
-	print(thisNode.size)
+    ## sys.argv[1] is IP of server e.g. localhost:50051
+    print(sys.argv[1])
+    channel = grpc.insecure_channel(sys.argv[1])
+    stub = phase1_pb2_grpc.MainServiceStub(channel)
+    thisNode = Node.Node(1)
+    print("successfully created thisNode")
+    print(thisNode)
+    print(thisNode.size)
 
-	# if (not INITIALIZE_FLAG) and len(thisNode.childListId) == 0:
-	INITIALIZE_FLAG = True
-	sendSize(thisNode, stub)
+    # if (not INITIALIZE_FLAG) and len(thisNode.childListId) == 0:
+    INITIALIZE_FLAG = True
+    # sendSize(thisNode, stub)
 
-	# response = stub.SayHello(helloworld_pb2.HelloRequest(name='Vimanyu'))
-	response = stub.Handshake(phase1_pb2.RequestMessage(nodeId="12",destinationId="21",message="Hello Dear Server !"))
-	response1 = stub.SendPacket(phase1_pb2.RequestMessage(nodeId="12",destinationId="21",message="Hello Dear Server Please forward my request!"))
+    # response = stub.SayHello(helloworld_pb2.HelloRequest(name='Vimanyu'))
+    # response = stub.Handshake(phase1_pb2.RequestMessage(nodeId="12",destinationId="21",message="Hello Dear Server !"))
+    # response1 = stub.SendPacket(phase1_pb2.RequestMessage(nodeId="12",destinationId="21",message="Hello Dear Server Please forward my request!"))
 
-	print("client received: " + response.ackMessage+" from Node ID :"+response.nodeId)
-	print("client received from sendPacket: " + response1.ackMessage+" from Node ID :"+response1.nodeId)
+    response1 = stub.SendPacket(phase1_pb2.RequestMessage(nodeId="2",destinationId="3",message="Hello Dear Server Please forward my request!"))
+
+    # print("client received: " + response.ackMessage+" from Node ID :"+response.nodeId)
+    print("client received from sendPacket: " + response1.ackMessage+" from Node ID :"+response1.nodeId)
+
 
 def sendSize(node,stub):
 	print(node.size)

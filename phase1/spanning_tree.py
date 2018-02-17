@@ -6,7 +6,7 @@ SPANNING_INFO = {0:{'parentId':None,
 					'neighbourList':None,
 					'weight':None,
 					'childWeightList':None,
-					'isClusterhead':None,
+					'isClusterhead':None,  # 1 or 0
 					'state':"active"
 				},
 				 1:{'parentId':0,
