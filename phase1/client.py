@@ -14,11 +14,13 @@ import Node
 #169.254.28.146 - gurnoor
 INITIALIZE_FLAG = False
 def run():
+	global INITIALIZE_FLAG
 	## sys.argv[1] is IP of server e.g. localhost:50051
 	print(sys.argv[1])
+	print("Client runs")
 	channel = grpc.insecure_channel(sys.argv[1])
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	thisNode = Node.Node(1)
+	thisNode = Node.Node(int(sys.argv[2]))
 	print("successfully created thisNode")
 	print(thisNode)
 	print(thisNode.size)
@@ -44,7 +46,7 @@ def sendSize(node,stub):
 		pass
 		# fix below
 
-		# sendCluster(node)
+		sendCluster(node)
 	else:
 		# Do nothing if the child is accepted into the current cluster
 		## Might need to add cluster ID to the central lookup #Later
@@ -52,6 +54,11 @@ def sendSize(node,stub):
 
 def sendCluster(node):
 	newClusterId = "C"+str(node.id)
+	if node.childListId is None:
+		#set I am the cluster
+		node.isClusterhead = 1
+		print("I am the clusterhead")
+		return
 	for child in node.childListId:
 		childIP = node.getIPfromId(child)
 		channel = grpc.insecure_channel(childIP)

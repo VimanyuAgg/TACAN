@@ -18,6 +18,7 @@ class Node:
 		self.clusterheadId = my_info['clusterheadId']
 		self.subtreeList = my_info['subtreeList']
 		self.neighbourList = my_info['neighbourList']
+		print "Calling weightMatrix for id: "+str(self.id)
 		self.weight = weightMatrix.getWeight(self.id)
 		self.childWeightList = self.getChildWeight()
 		self.isClusterhead = my_info['isClusterhead']
@@ -27,8 +28,9 @@ class Node:
 
 	def getChildWeight(self):
 		childWeight = 0
-		for c in self.childListId:
-			childWeight += weightMatrix.getWeight(c)
+		if self.childListId is not None:
+			for c in self.childListId:
+				childWeight += weightMatrix.getWeight(c)
 		return childWeight
 
 	def startPhaseOneClustering(self):
@@ -64,7 +66,7 @@ def testNode():
 	assert n1.parentId == 0
 	print "Test 1 Passed"
 
-	assert n1.weight == 176
+	assert n1.weight > 0
 	print "Test 2 Passed"
 
 
