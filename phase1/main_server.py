@@ -44,10 +44,18 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
   def Size(self, request, context):
     childSize = request.size
+    print("Server Node current size is "+str(self.node.size))
+    print("Child size is "+str(childSize))
     if self.node.size + childSize > raspberryPi_id_list.THRESHOLD_S:
       return phase1_pb2.AccomodateChild(message="Prune")
     else:
       return phase1_pb2.AccomodateChild(message="Accepted")
+
+  def Cluster(self,request,context):
+    clusterName = request.clusterName
+    print("Server Node: "+self.node.id+" is now joining Clusterleader "+str(clusterName))
+    return phase1_pb2.ClusterAck(clusterAck="Joined")
+
 
 def serve():
   server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
