@@ -8,6 +8,7 @@ import phase1_pb2
 import phase1_pb2_grpc
 from Node import Node
 import reqForward
+import raspberryPi_id_list
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
@@ -21,16 +22,17 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   def __init__(self):
       #different for each node
       myId=1
-      parentid=0
-      childList=[2,3]
-      dist=1
-      clusterheadid=0
-      subtreeList=[2,3]
-      neighbourList=[]
-      isClusterhead=False
+      # parentid=0
+      # childList=[2,3]
+      # dist=1
+      # clusterheadid=0
+      # subtreeList=[2,3]
+      # neighbourList=[]
+      # isClusterhead=False
       #default state
-      state="active"
-      self.node = Node(myId,parentid, childList,dist, clusterheadid,subtreeList,neighbourList,isClusterhead,state)
+      # state="active"
+      self.node = Node(myId)
+
 
 
   def Handshake(self, request , context):
@@ -69,6 +71,13 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       return 'localhost:50051'
 
 
+
+  def Size(self, request, context):
+    childSize = request.size
+    if self.node.size + childSize > raspberryPi_id_list.THRESHOLD_S:
+      return phase1_pb2.AccomodateChild(message="Prune")
+    else:
+      return phase1_pb2.AccomodateChild(message="Accepted")
 
 def serve():
   server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))

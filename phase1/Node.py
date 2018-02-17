@@ -1,21 +1,29 @@
 import weightMatrix
+from spanning_tree import SPANNING_INFO
+import raspberryPi_id_list
 
 class Node:
 	'''
 	Node class representing each node in the network
 	'''
-	def __init__(self,myId,parentId, childListId,dist, clusterheadId,subtreeList,neighbourList,isClusterhead,state):
+	def __init__(self,myId):
+		
 		self.id = myId
-		self.parentId = parentId
-		self.childListId = childListId
-		self.dist = dist
-		self.clusterheadId = clusterheadId
-		self.subtreeList = subtreeList
-		self.neighbourList = neighbourList
+		#self.parentId = parentId
+		#self.childListId = childListId
+		my_info = SPANNING_INFO[myId]
+		self.parentId = my_info['parentId']
+		self.childListId = my_info['childListId']
+		self.dist = my_info['dist']
+		self.clusterheadId = my_info['clusterheadId']
+		self.subtreeList = my_info['subtreeList']
+		self.neighbourList = my_info['neighbourList']
 		self.weight = weightMatrix.getWeight(self.id)
 		self.childWeightList = self.getChildWeight()
-		self.isClusterhead = isClusterhead
-		self.state = state
+		self.isClusterhead = my_info['isClusterhead']
+		self.state = my_info['state']
+		self.startPhaseOneClustering()
+		
 
 	def getChildWeight(self):
 		childWeight = 0
@@ -23,18 +31,38 @@ class Node:
 			childWeight += weightMatrix.getWeight(c)
 		return childWeight
 
+	def startPhaseOneClustering(self):
+		self.size = self.weight
+		
+
+	# Connects to Raspberry Pi and registers its IP address on the central lookup
+	# Can merge getIP and registerOnPi
+	def registerOnPi():
+		pass
+
+	# Connects to Raspberry Pi (Central Service) and gets its IP address
+	# Can merge getIP and registerOnPi
+	def getIP():
+		pass
+
+	def getIPfromId(self,Id):
+		return raspberryPi_id_list.ID_IP_MAPPING[Id]
+
+
+
+
+
+
+
 def testNode():
 	n0 = Node
-	n1 = Node(1,0,[4],1,0,[4],[2,3],False,"active")
+	n1 = Node(1)
 	# print n1.parentId
 	assert n1.parentId == 0
 	print "Test 1 Passed"
 
 	assert n1.weight == 176
 	print "Test 2 Passed"
-
-	assert n1.neighbourList == [2,3]
-	print "Test 3 Passed - Integration with weightMatrix achieved"
 
 
 testNode()
