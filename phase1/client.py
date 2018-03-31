@@ -31,7 +31,7 @@ def run():
     # response = stub.Handshake(phase1_pb2.RequestMessage(nodeId="12",destinationId="21",message="Hello Dear Server !"))
     # response1 = stub.SendPacket(phase1_pb2.RequestMessage(nodeId="12",destinationId="21",message="Hello Dear Server Please forward my request!"))
 
-    response1 = stub.SendPacket(phase1_pb2.RequestMessage(nodeId="2",destinationId="3",message="Hello Dear Server Please forward my request!"))
+    response1 = stub.SendPacket(phase1_pb2.RequestMessage(nodeId="2",destinationId="0",message="Hello Dear Server Please forward my request!"))
 
     # print("client received: " + response.ackMessage+" from Node ID :"+response.nodeId)
     print("client received from sendPacket: " + response1.ackMessage+" from Node ID :"+response1.nodeId)
