@@ -1,6 +1,7 @@
 import weightMatrix
 from spanning_tree import SPANNING_INFO
 import raspberryPi_id_list
+import main_server
 
 class Node:
 	'''
@@ -12,6 +13,8 @@ class Node:
 		#self.parentId = parentId
 		#self.childListId = childListId
 		my_info = SPANNING_INFO[myId]
+		self.ipAddress='localhost:'+str(6000+int(myId))
+		print self.ipAddress
 		self.parentId = my_info['parentId']
 		self.childListId = my_info['childListId']
 		self.dist = my_info['dist']
@@ -35,6 +38,8 @@ class Node:
 
 	def startPhaseOneClustering(self):
 		self.size = self.weight
+		main_server.serve(self.ipAddress)
+
 		
 
 	# Connects to Raspberry Pi and registers its IP address on the central lookup

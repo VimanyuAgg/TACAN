@@ -6,7 +6,6 @@ import grpc
 
 import phase1_pb2
 import phase1_pb2_grpc
-from Node import Node
 import raspberryPi_id_list
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
@@ -18,20 +17,20 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   # Initialize the node
   # Will be done by a script in future
   #
-  def __init__(self):
-      #different for each node
-      myId=int(sys.argv[2])
-      # parentid=0
-      # childList=[2,3]
-      # dist=1
-      # clusterheadid=0
-      # subtreeList=[2,3]
-      # neighbourList=[]
-      # isClusterhead=False
-      #default state 
-      # state="active"
-      print("i run i initialize")
-      self.node = Node(myId)
+  # def __init__(self):
+  #     #different for each node
+  #     myId=int(sys.argv[2])
+  #     # parentid=0
+  #     # childList=[2,3]
+  #     # dist=1
+  #     # clusterheadid=0
+  #     # subtreeList=[2,3]
+  #     # neighbourList=[]
+  #     # isClusterhead=False
+  #     #default state 
+  #     # state="active"
+  #     print("i run i initialize")
+  #     self.node = Node(myId)
       
   
   def Handshake(self, request , context):
@@ -58,10 +57,11 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     return phase1_pb2.ClusterAck(clusterAck="Joined")
 
 
-def serve():
+def serve(ipAddress):
   server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
   phase1_pb2_grpc.add_MainServiceServicer_to_server(MainServer(), server)
-  server.add_insecure_port('[::]:'+sys.argv[1])
+ # server.add_insecure_port('[::]:'+)
+  server.add_insecure_port(ipAddress)
   server.start()
   try:
     while True:
