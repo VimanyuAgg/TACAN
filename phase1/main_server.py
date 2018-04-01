@@ -1,7 +1,7 @@
 
 from concurrent import futures
 import time
-
+import sys
 import grpc
 
 import phase1_pb2
@@ -20,7 +20,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   #
   def __init__(self):
       #different for each node
-      myId=1
+      myId=int(sys.argv[2])
       # parentid=0
       # childList=[2,3]
       # dist=1
@@ -30,6 +30,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       # isClusterhead=False
       #default state 
       # state="active"
+      print("i run i initialize")
       self.node = Node(myId)
       
   
@@ -60,7 +61,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 def serve():
   server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
   phase1_pb2_grpc.add_MainServiceServicer_to_server(MainServer(), server)
-  server.add_insecure_port('[::]:50051')
+  server.add_insecure_port('[::]:'+sys.argv[1])
   server.start()
   try:
     while True:
