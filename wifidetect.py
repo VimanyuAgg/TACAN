@@ -2,6 +2,28 @@
 import os
 
 
+def connectSim():
+	#os.system("sudo networksetup -setairportnetwork en0 seemz")
+	os.system('echo {}|sudo -S {}'.format('iBhushan1@', 'networksetup -setairportnetwork en0 seemz'))
+	print " successfully connected to Seema's network"
+
+def connectVim():
+	os.system('echo {}|sudo -S {}'.format('iBhushan1@', 'networksetup -setairportnetwork en0 Vim'))
+	print " successfully connected to Vim"
+
+def connectInternet():
+	os.system("sudo networksetup -setairportnetwork en0 SJSU_premier ")
+	print " successfully connected to internet"
+
+
+
+# if __name__ == '__main__':
+#     # Search WiFi and return WiFi list
+#     connectInternet()
+
+# def internetConnect():
+# 	os.system("sudo networksetup -setairportnetwork en0 SJSU_premier")
+
 # def Search():
 #     wifilist = []
 
@@ -109,5 +131,3 @@ import os
     # print Delete('DeleteWiFi')
 
 
-
-os.system("sudo networksetup -setairportnetwork en0 seemz")
