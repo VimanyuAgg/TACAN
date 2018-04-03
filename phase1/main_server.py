@@ -108,7 +108,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     clusterName = request.clusterName
     hopCount = request.hop
     # assign clusterhead id
-    node.clusterheadid= clusterName
+    self.node.clusterheadid= clusterName
     # assign isClusterhead as false
     self.node.hop= hopCount
 
@@ -118,6 +118,14 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.propogateClusterheadInfo(clusterName, hopCount)
     #call custer
     return phase1_pb2.ClusterAck(clusterAck="Joined")
+
+  def ShiftNodeRequest(self,request,context):
+    if self.node.isClusterhead and self.node.state == "free":
+      #saving the info about this node
+      self.node.shiftNodeId = request.nodeId
+      self.node.shiftNodeSum = request.sumOfweight
+      self.node.shiftNodeCluster = request.clusterHeadId
+      
 
 
 

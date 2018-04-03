@@ -59,6 +59,12 @@ class Node:
 		self.weight = weightMatrix.getWeight(self.id)
 		self.size = self.weight
 		self.childRequestCounter = 0
+
+		#info to be saved for shiftNodeRequest
+		self.shiftNodeId = None
+		self.shiftNodeSum = None
+		self.shiftNodeCluster = None
+
 		# self.childWeight = self.getChildWeight()
 		self.isClusterhead = my_info['isClusterhead']
 		self.state = my_info['state']
@@ -100,7 +106,7 @@ class Node:
 
     def propogateClusterheadInfo(self,clusterName,hopCount):
     	if (self.childListId== None or len(self.childListId) == 0):
-    		client.propagateClusterheadInfo(self,clusterName,hopCount+1)
+    		client.propogateClusterheadInfo(self,clusterName,hopCount+1)
     	else:
     		logger.info("I don't have any children : Node: %s"%(self.id))	
 		

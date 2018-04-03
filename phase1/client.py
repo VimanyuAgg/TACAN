@@ -87,6 +87,7 @@ def sendSize(node,stub):
 		node.parentId = None
 		#set I am the cluster
 		node.isClusterhead = 1
+		node.state = "free"
 		# fix below
 
 		sendCluster(node)
@@ -95,8 +96,6 @@ def sendSize(node,stub):
 		# Do nothing if the child is accepted into the current cluster
 		## Might need to add cluster ID to the central lookup #Later
 		pass
-
-
 
 
 def sendCluster(node):
