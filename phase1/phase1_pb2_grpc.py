@@ -49,6 +49,11 @@ class MainServiceStub(object):
         request_serializer=phase1__pb2.sendHello.SerializeToString,
         response_deserializer=phase1__pb2.HelloResponse.FromString,
         )
+    self.WakeUp = channel.unary_unary(
+        '/phase1.MainService/WakeUp',
+        request_serializer=phase1__pb2.wakeUpRequest.SerializeToString,
+        response_deserializer=phase1__pb2.wakeUpResponse.FromString,
+        )
 
 
 class MainServiceServicer(object):
@@ -104,6 +109,13 @@ class MainServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def WakeUp(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_MainServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -141,6 +153,11 @@ def add_MainServiceServicer_to_server(servicer, server):
           servicer.Hello,
           request_deserializer=phase1__pb2.sendHello.FromString,
           response_serializer=phase1__pb2.HelloResponse.SerializeToString,
+      ),
+      'WakeUp': grpc.unary_unary_rpc_method_handler(
+          servicer.WakeUp,
+          request_deserializer=phase1__pb2.wakeUpRequest.FromString,
+          response_serializer=phase1__pb2.wakeUpResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

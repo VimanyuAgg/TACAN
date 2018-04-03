@@ -117,6 +117,7 @@ def sendShiftNodeRequest(node,bestNodeClusterHeadId,clusterHeadIp):
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
 	clusterRPC = stub.ShiftNodeRequest(phase1_pb2.ShiftRequest(node.id, node.size,bestNodeClusterHeadId))
 	## Add result after sending ShiftNodeRequest
+	logger.info("Node: %s sent sendShiftNodeRequest about C:%s to clusterhead:%s"%(node.id,bestNodeClusterHeadId,clusterHeadIp))
 
 def propogateClusterheadInfo(node,clusterName,hopCount):
 	for child in node.childListId:
@@ -133,6 +134,14 @@ def propagateJamToChildren(childIpList,jamId, nodeId):
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
 		clusterRPC = stub.Jam(phase1_pb2.JamRequest(jamId))
 		logger.info("Node: %s sent JAM to child ip: %s"%(nodeId,cip))
+		logger.info(clusterRPC)
+
+def propagateWakeUp(childIpList, nodeId):
+	for cip in childIpList:
+		channel = grpc.insecure_channel(cip)
+		stub = phase1_pb2_grpc.MainServiceStub(channel)
+		clusterRPC = stub.WakeUp(phase1_pb2.wakeUpRequest("wakeup"))
+		logger.info("Node: %s sent wake to child ip: %s" % (nodeId, cip))
 		logger.info(clusterRPC)
 
 

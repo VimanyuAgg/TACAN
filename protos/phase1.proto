@@ -14,6 +14,15 @@ service MainService {
   rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse){}
   rpc Jam (JamRequest) returns (JamResponse){}
   rpc Hello(sendHello) returns (HelloResponse){}
+  rpc WakeUp (wakeUpRequest) returns (wakeUpResponse){}
+}
+
+message wakeUpRequest {
+    string wakeywakey = 1;
+}
+
+message wakeUpResponse{
+    string wokenUp = 1;
 }
 
 message sendHello{

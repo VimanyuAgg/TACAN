@@ -118,6 +118,9 @@ class Node:
 		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
 		client.propagateJamToChildren(childIPs,jamId,self.id)
 
+	def propagateWakeUp(self):
+		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
+		client.propagateWakeUp(childIPs, self.id)
 
 	# Connects to Raspberry Pi and registers its IP address on the central lookup
 	# Can merge getIP and registerOnPi

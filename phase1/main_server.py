@@ -157,6 +157,18 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       # send interested -1
       phase1_pb2.HelloResponse(interested=-1)
 
+  def wakeUp(self,request,context):
+      if (self.node.state == "sleep"):
+          self.node.state = "active"
+          self.node.propagateWakeUp()
+          return phase1_pb2.wakeUpResponse(wokenUp = "WokeUp")
+      else:
+          self.node.propagateWakeUp()
+          return phase1_pb2.wakeUpResponse(wokenUp = "Already")
+
+
+
+
 
 
 
