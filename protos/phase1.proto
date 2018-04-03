@@ -14,6 +14,62 @@ service MainService {
   rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse){}
   rpc Jam (JamRequest) returns (JamResponse){}
   rpc Hello(sendHello) returns (HelloResponse){}
+  rpc WakeUp (wakeUpRequest) returns (wakeUpResponse){}
+  rpc ShiftStart (ShiftStartRequest) returns (ShiftStartResponse){}
+  rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
+  rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
+  rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse){}
+  rpc SendShiftComplete(SendShiftCompleteAck) returns (ClusterheadAckSendShift){}
+}
+
+message SendShiftCompleteAck{
+    string sendShiftCompleteAck = 1;
+}
+
+message ClusterheadAckSendShift{
+    string clusterheadAckSendShift = 1;
+}
+
+message UpdateClusterheadRequest{
+    int32 newClusterheadId = 1;
+}
+
+message UpdateClusterheadResponse{
+    string updateClusterheadResponse = 1;
+
+}
+
+message UpdateSizeRequest{
+    int32 sizeIncrement = 1;
+}
+
+message UpdateSizeResponse{
+    string updateSizeResponse = 1;
+}
+
+message JoinNewParentRequest{
+    int32 childSize = 1;
+    int32 nodeId = 2;
+}
+
+message JoinNewParentResponse{
+    string joinResponse = 1;
+}
+
+message ShiftStartRequest{
+    string targetNodeId = 1;
+}
+
+message ShiftStartResponse{
+    string shiftStartResponse = 1;
+}
+
+message wakeUpRequest {
+    string wakeywakey = 1;
+}
+
+message wakeUpResponse{
+    string wokenUp = 1;
 }
 
 message sendHello{

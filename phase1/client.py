@@ -115,7 +115,9 @@ def sendCluster(node):
 def sendShiftNodeRequest(node,bestNodeClusterHeadId,clusterHeadIp):
 	channel = grpc.insecure_channel(clusterHeadIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	# clusterRPC = stub.Cluster(phase1_pb2.ClusterName(clusterName, hopCount))
+	clusterRPC = stub.ShiftNodeRequest(phase1_pb2.ShiftRequest(node.id, node.size,bestNodeClusterHeadId))
+	## Add result after sending ShiftNodeRequest
+	logger.info("Node: %s sent sendShiftNodeRequest about C:%s to clusterhead:%s"%(node.id,bestNodeClusterHeadId,clusterHeadIp))
 
 def propogateClusterheadInfo(node,clusterName,hopCount):
 	for child in node.childListId:
@@ -125,6 +127,62 @@ def propogateClusterheadInfo(node,clusterName,hopCount):
 		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(clusterName,hopCount))
 		print("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
 		print("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
-	
+
+def propagateJamToChildren(childIpList,jamId, nodeId):
+	for cip in childIpList:
+		channel = grpc.insecure_channel(cip)
+		stub = phase1_pb2_grpc.MainServiceStub(channel)
+		clusterRPC = stub.Jam(phase1_pb2.JamRequest(jamId))
+		logger.info("Node: %s sent JAM to child ip: %s"%(nodeId,cip))
+		logger.info(clusterRPC)
+
+def propagateWakeUp(childIpList, nodeId):
+	for cip in childIpList:
+		channel = grpc.insecure_channel(cip)
+		stub = phase1_pb2_grpc.MainServiceStub(channel)
+		clusterRPC = stub.WakeUp(phase1_pb2.wakeUpRequest("wakeup"))
+		logger.info("Node: %s sent wake to child ip: %s" % (nodeId, cip))
+		logger.info(clusterRPC)
+
+def joinNewParent(nodeId,nodeSize,newParentIp):
+	channel = grpc.insecure_channel(newParentIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	clusterRPC = stub.JoinNewParent(phase1_pb2.JoinNewParentRequest(nodeSize, nodeId))
+	logger.info("Node: %s sent join request to new parent ip: %s" % (nodeId, newParentIp))
+	logger.info(clusterRPC)
+
+def informParentAboutNewSize(sizeIncrement,nodeId,parentIp):
+	channel = grpc.insecure_channel(parentIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	clusterRPC = stub.UpdateSize(phase1_pb2.UpdateSizeRequest(sizeIncrement))
+	logger.info("Node: %s sent updateSize request to existing parent ip: %s" % (nodeId, parentIp))
+	logger.info(clusterRPC)
+
+def propagateNewClusterHeadToChildren(childIpList, nodeId,clusterheadId):
+	for cip in childIpList:
+		channel = grpc.insecure_channel(cip)
+		stub = phase1_pb2_grpc.MainServiceStub(channel)
+		clusterRPC = stub.UpdateClusterhead(phase1_pb2.UpdateClusterheadRequest(clusterheadId))
+		logger.info("Node: %s sent change to newClusterhead to child ip: %s" % (nodeId, cip))
+		logger.info(clusterRPC)
+
+def sendShiftCompleteToBothClusterHeads(oldClusterheadIp,newClusterheadIp):
+	channel = grpc.insecure_channel(oldClusterheadIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	clusterRPC = stub.SendShiftComplete(phase1_pb2.SendShiftCompleteAck("Departed"))
+	logger.info("Node: %s sent shiftComplete to old clusterhead ip: %s" % (oldClusterheadIp))
+	logger.info(clusterRPC)
+
+	channel = grpc.insecure_channel(newClusterheadIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	clusterRPC = stub.SendShiftComplete(phase1_pb2.SendShiftCompleteAck("Added"))
+	logger.info("Node: %s sent shiftComplete to new clusterhead ip: %s" % (newClusterheadIp))
+	logger.info(clusterRPC)
+
+
+
+
+
+
 if __name__ == '__main__':
 	run()
