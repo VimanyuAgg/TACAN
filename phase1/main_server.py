@@ -7,6 +7,7 @@ import client
 import phase1_pb2
 import phase1_pb2_grpc
 import raspberryPi_id_list
+import thread
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 import datetime
@@ -131,7 +132,8 @@ def serve(node):
     server.add_insecure_port(raspberryPi_id_list.ID_IP_MAPPING[node.id])
     logger.info("Run port assigned")
     #  server.add_insecure_port('localhost:')
-    server.start()
+    thread.start_new_thread(server.start(),())
+
     logger.info("Server started successfully. Entering forever while below")
   except Exception as e:
     logger.error(e)
