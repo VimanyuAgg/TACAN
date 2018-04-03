@@ -173,6 +173,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
           self.node.updateInternalVariablesAndSendJoin(self.bestNodeId,self.bestNodeClusterHeadId,\
                                                        self.bestNodeHopCount + 1)
           self.node.propagateNewClusterHeadToChildren()
+          # is sendShiftCompleteToBothClusterHeads it necessary - can remove if not needed
           self.node.sendShiftCompleteToBothClusterHeads(oldClusterheadId,self.node.clusterheadId)
           return phase1_pb2.ShiftStartResponse(shifStartResponse="byebye")
       else:
@@ -197,6 +198,10 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.clusterheadId = request.newClusterheadId
       self.node.propagateNewClusterHeadToChildren()
       return phase1_pb2.UpdateClusterheadResponse(updateClusterheadResponse = "clusterhead Updated")
+
+  def SendShiftComplete(self,request,context):
+      logger.info("ClusterheadId: %s got SendShiftComplete rpc with message:%s"%(self.node.id,request.sendShiftCompleteAck))
+      return phase1_pb2.ClusterheadAckSendShift(clusterheadAckSendShift = "ClusterheadId: %s acknowledged shift.."%(self.node.id))
 
 
 

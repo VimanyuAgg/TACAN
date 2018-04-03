@@ -163,8 +163,23 @@ def propagateNewClusterHeadToChildren(childIpList, nodeId,clusterheadId):
 		channel = grpc.insecure_channel(cip)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
 		clusterRPC = stub.UpdateClusterhead(phase1_pb2.UpdateClusterheadRequest(clusterheadId))
-		logger.info("Node: %s sent JAM to child ip: %s" % (nodeId, cip))
+		logger.info("Node: %s sent change to newClusterhead to child ip: %s" % (nodeId, cip))
 		logger.info(clusterRPC)
+
+def sendShiftCompleteToBothClusterHeads(oldClusterheadIp,newClusterheadIp):
+	channel = grpc.insecure_channel(oldClusterheadIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	clusterRPC = stub.SendShiftComplete(phase1_pb2.SendShiftCompleteAck("Departed"))
+	logger.info("Node: %s sent shiftComplete to old clusterhead ip: %s" % (oldClusterheadIp))
+	logger.info(clusterRPC)
+
+	channel = grpc.insecure_channel(newClusterheadIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	clusterRPC = stub.SendShiftComplete(phase1_pb2.SendShiftCompleteAck("Added"))
+	logger.info("Node: %s sent shiftComplete to new clusterhead ip: %s" % (newClusterheadIp))
+	logger.info(clusterRPC)
+
+
 
 
 

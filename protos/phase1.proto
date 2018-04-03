@@ -19,6 +19,15 @@ service MainService {
   rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
   rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
   rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse){}
+  rpc SendShiftComplete(SendShiftCompleteAck) returns (ClusterheadAckSendShift){}
+}
+
+message SendShiftCompleteAck{
+    string sendShiftCompleteAck = 1;
+}
+
+message ClusterheadAckSendShift{
+    string clusterheadAckSendShift = 1;
 }
 
 message UpdateClusterheadRequest{
