@@ -20,6 +20,15 @@ service MainService {
   rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
   rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse){}
   rpc SendShiftComplete(SendShiftCompleteAck) returns (ClusterheadAckSendShift){}
+  rpc RemoveChildIdFromParent(RemoveChildIdFromParentRequest) returns (RemoveChildIdFromParentResponse){}
+}
+
+message RemoveChildIdFromParentRequest{
+    int32 departingChildId = 1;
+}
+
+message RemoveChildIdFromParentResponse{
+    string removeChildIdFromParentResponse = 1;
 }
 
 message SendShiftCompleteAck{
