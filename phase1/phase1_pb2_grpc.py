@@ -34,6 +34,21 @@ class MainServiceStub(object):
         request_serializer=phase1__pb2.ClusterName.SerializeToString,
         response_deserializer=phase1__pb2.ClusterAck.FromString,
         )
+    self.ShiftNodeRequest = channel.unary_unary(
+        '/phase1.MainService/ShiftNodeRequest',
+        request_serializer=phase1__pb2.ShiftRequest.SerializeToString,
+        response_deserializer=phase1__pb2.ShiftResponse.FromString,
+        )
+    self.Jam = channel.unary_unary(
+        '/phase1.MainService/Jam',
+        request_serializer=phase1__pb2.JamRequest.SerializeToString,
+        response_deserializer=phase1__pb2.JamResponse.FromString,
+        )
+    self.Hello = channel.unary_unary(
+        '/phase1.MainService/Hello',
+        request_serializer=phase1__pb2.sendHello.SerializeToString,
+        response_deserializer=phase1__pb2.HelloResponse.FromString,
+        )
 
 
 class MainServiceServicer(object):
@@ -68,6 +83,27 @@ class MainServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ShiftNodeRequest(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Jam(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Hello(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_MainServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -90,6 +126,21 @@ def add_MainServiceServicer_to_server(servicer, server):
           servicer.Cluster,
           request_deserializer=phase1__pb2.ClusterName.FromString,
           response_serializer=phase1__pb2.ClusterAck.SerializeToString,
+      ),
+      'ShiftNodeRequest': grpc.unary_unary_rpc_method_handler(
+          servicer.ShiftNodeRequest,
+          request_deserializer=phase1__pb2.ShiftRequest.FromString,
+          response_serializer=phase1__pb2.ShiftResponse.SerializeToString,
+      ),
+      'Jam': grpc.unary_unary_rpc_method_handler(
+          servicer.Jam,
+          request_deserializer=phase1__pb2.JamRequest.FromString,
+          response_serializer=phase1__pb2.JamResponse.SerializeToString,
+      ),
+      'Hello': grpc.unary_unary_rpc_method_handler(
+          servicer.Hello,
+          request_deserializer=phase1__pb2.sendHello.FromString,
+          response_serializer=phase1__pb2.HelloResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
