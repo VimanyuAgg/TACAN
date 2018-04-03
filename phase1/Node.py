@@ -112,8 +112,12 @@ class Node:
 
 	def sendShiftNodeRequest(self, bestNodeClusterHeadId):
 		if self.isClusterhead != 1:
-			client.sendShiftNodeRequest(self,bestNodeClusterHeadId,raspberryPi_id_list.SPANNING_INFO[self.clusterheadId])
-		
+			client.sendShiftNodeRequest(self,bestNodeClusterHeadId,raspberryPi_id_list.ID_IP_MAPPING[self.clusterheadId])
+
+	def propagateJamToChildren(self,jamId):
+		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
+		client.propagateJamToChildren(childIPs,jamId,self.id)
+
 
 	# Connects to Raspberry Pi and registers its IP address on the central lookup
 	# Can merge getIP and registerOnPi

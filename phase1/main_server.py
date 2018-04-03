@@ -136,6 +136,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     jamId = request.nodeId
     if (self.node.isClusterhead != 1):
       self.node.state = "sleep"
+      self.node.propagateJamToChildren(jamId)
     return phase1_pb2.JamResponse(jamResponse="jammed")
 
   def sendHello(self,request,context):

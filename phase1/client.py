@@ -115,7 +115,8 @@ def sendCluster(node):
 def sendShiftNodeRequest(node,bestNodeClusterHeadId,clusterHeadIp):
 	channel = grpc.insecure_channel(clusterHeadIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	# clusterRPC = stub.Cluster(phase1_pb2.ClusterName(clusterName, hopCount))
+	clusterRPC = stub.ShiftNodeRequest(phase1_pb2.ShiftRequest(node.id, node.size,bestNodeClusterHeadId))
+	## Add result after sending ShiftNodeRequest
 
 def propogateClusterheadInfo(node,clusterName,hopCount):
 	for child in node.childListId:
@@ -125,6 +126,16 @@ def propogateClusterheadInfo(node,clusterName,hopCount):
 		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(clusterName,hopCount))
 		print("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
 		print("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
-	
+
+def propagateJamToChildren(childIpList,jamId, nodeId):
+	for cip in childIpList:
+		channel = grpc.insecure_channel(cip)
+		stub = phase1_pb2_grpc.MainServiceStub(channel)
+		clusterRPC = stub.Jam(phase1_pb2.JamRequest(jamId))
+		logger.info("Node: %s sent JAM to child ip: %s"%(nodeId,cip))
+		logger.info(clusterRPC)
+
+
+
 if __name__ == '__main__':
 	run()
