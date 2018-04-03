@@ -15,6 +15,7 @@ service MainService {
 
 message ClusterName {
 	string clusterName = 1;
+  int32 hop = 2;
 }
 
 message ClusterAck {

@@ -85,6 +85,8 @@ def sendSize(node,stub):
 		# Become a clusterhead and send Cluster RPC to children
 		node.clusterheadId = node.id
 		node.parentId = None
+		#set I am the cluster
+		node.isClusterhead = 1
 		# fix below
 
 		sendCluster(node)
@@ -94,23 +96,32 @@ def sendSize(node,stub):
 		## Might need to add cluster ID to the central lookup #Later
 		pass
 
+
+
+
 def sendCluster(node):
 	newClusterId = "C"+str(node.id)
+	hopCount=1
 	if node.childListId is None:
-		#set I am the cluster
-		node.isClusterhead = 1
 		print("I am the clusterhead")
 		return
 	for child in node.childListId:
 		childIP = node.getIPfromId(child)
 		channel = grpc.insecure_channel(childIP)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
-		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(newClusterId))
+		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(newClusterId,hopCount)
 		print("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
 		print("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
 
 
-
-
+def propogateClusterheadInfo(node,clusterName,hopCount):
+	for child in node.childListId:
+		childIP = node.getIPfromId(child)
+		channel = grpc.insecure_channel(childIP)
+		stub = phase1_pb2_grpc.MainServiceStub(channel)
+		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(newClusterId,hopCount)
+		print("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
+		print("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
+	
 if __name__ == '__main__':
 	run()
