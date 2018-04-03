@@ -110,6 +110,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     hopCount = request.hop
     # assign clusterhead id
     self.node.clusterheadid= clusterName
+    self.node.state = "active"
     # assign isClusterhead as false
     self.node.hop= hopCount
 
@@ -127,6 +128,11 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.shiftNodeSum = request.sumOfweight
       self.node.shiftNodeCluster = request.clusterHeadId
       
+  def Jam(self,request,context):
+    jamId = request.nodeId
+    if (self.node.isClusterhead != 1):
+      self.node.state = "sleep"
+    return phase1_pb2.JamResponse(jamResponse="jammed")
 
 
 
