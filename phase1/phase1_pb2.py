@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='phase1.proto',
   package='phase1',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cphase1.proto\x12\x06phase1\"\x1c\n\nJamRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\x05\"\"\n\x0bJamResponse\x12\x13\n\x0bjamResponse\x18\x01 \x01(\t\"/\n\x0b\x43lusterName\x12\x13\n\x0b\x63lusterName\x18\x01 \x01(\t\x12\x0b\n\x03hop\x18\x02 \x01(\x05\" \n\nClusterAck\x12\x12\n\nclusterAck\x18\x01 \x01(\t\"\x16\n\x06MySize\x12\x0c\n\x04size\x18\x01 \x01(\x05\"\"\n\x0f\x41\x63\x63omodateChild\x12\x0f\n\x07message\x18\x01 \x01(\t\"H\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t2\xa9\x02\n\x0bMainService\x12>\n\tHandshake\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12?\n\nSendPacket\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12\x31\n\x04Size\x12\x0e.phase1.MySize\x1a\x17.phase1.AccomodateChild\"\x00\x12\x34\n\x07\x43luster\x12\x13.phase1.ClusterName\x1a\x12.phase1.ClusterAck\"\x00\x12\x30\n\x03Jam\x12\x12.phase1.JamRequest\x1a\x13.phase1.JamResponse\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x0cphase1.proto\x12\x06phase1\"\x1c\n\nJamRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\x05\"\"\n\x0bJamResponse\x12\x13\n\x0bjamResponse\x18\x01 \x01(\t\"/\n\x0b\x43lusterName\x12\x13\n\x0b\x63lusterName\x18\x01 \x01(\t\x12\x0b\n\x03hop\x18\x02 \x01(\x05\" \n\nClusterAck\x12\x12\n\nclusterAck\x18\x01 \x01(\t\"\x16\n\x06MySize\x12\x0c\n\x04size\x18\x01 \x01(\x05\"\"\n\x0f\x41\x63\x63omodateChild\x12\x0f\n\x07message\x18\x01 \x01(\t\"H\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t\"J\n\x0cShiftRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x13\n\x0bsumOfweight\x18\x02 \x01(\x05\x12\x15\n\rclusterHeadId\x18\x03 \x01(\t\" \n\rShiftResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2\xec\x02\n\x0bMainService\x12>\n\tHandshake\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12?\n\nSendPacket\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12\x31\n\x04Size\x12\x0e.phase1.MySize\x1a\x17.phase1.AccomodateChild\"\x00\x12\x34\n\x07\x43luster\x12\x13.phase1.ClusterName\x1a\x12.phase1.ClusterAck\"\x00\x12\x41\n\x10ShiftNodeRequest\x12\x14.phase1.ShiftRequest\x1a\x15.phase1.ShiftResponse\"\x00\x12\x30\n\x03Jam\x12\x12.phase1.JamRequest\x1a\x13.phase1.JamResponse\"\x00\x62\x06proto3')
 )
 
 
@@ -38,7 +38,7 @@ _JAMREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -69,7 +69,7 @@ _JAMRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -100,14 +100,14 @@ _CLUSTERNAME = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='hop', full_name='phase1.ClusterName.hop', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -138,7 +138,7 @@ _CLUSTERACK = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -169,7 +169,7 @@ _MYSIZE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -200,7 +200,7 @@ _ACCOMODATECHILD = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -231,21 +231,21 @@ _REQUESTMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='destinationId', full_name='phase1.RequestMessage.destinationId', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='phase1.RequestMessage.message', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -276,21 +276,21 @@ _RESPONSEMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='destinationId', full_name='phase1.ResponseMessage.destinationId', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ackMessage', full_name='phase1.ResponseMessage.ackMessage', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -307,6 +307,82 @@ _RESPONSEMESSAGE = _descriptor.Descriptor(
   serialized_end=383,
 )
 
+
+_SHIFTREQUEST = _descriptor.Descriptor(
+  name='ShiftRequest',
+  full_name='phase1.ShiftRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nodeId', full_name='phase1.ShiftRequest.nodeId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sumOfweight', full_name='phase1.ShiftRequest.sumOfweight', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='clusterHeadId', full_name='phase1.ShiftRequest.clusterHeadId', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=385,
+  serialized_end=459,
+)
+
+
+_SHIFTRESPONSE = _descriptor.Descriptor(
+  name='ShiftResponse',
+  full_name='phase1.ShiftResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='message', full_name='phase1.ShiftResponse.message', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=461,
+  serialized_end=493,
+)
+
 DESCRIPTOR.message_types_by_name['JamRequest'] = _JAMREQUEST
 DESCRIPTOR.message_types_by_name['JamResponse'] = _JAMRESPONSE
 DESCRIPTOR.message_types_by_name['ClusterName'] = _CLUSTERNAME
@@ -315,6 +391,8 @@ DESCRIPTOR.message_types_by_name['MySize'] = _MYSIZE
 DESCRIPTOR.message_types_by_name['AccomodateChild'] = _ACCOMODATECHILD
 DESCRIPTOR.message_types_by_name['RequestMessage'] = _REQUESTMESSAGE
 DESCRIPTOR.message_types_by_name['ResponseMessage'] = _RESPONSEMESSAGE
+DESCRIPTOR.message_types_by_name['ShiftRequest'] = _SHIFTREQUEST
+DESCRIPTOR.message_types_by_name['ShiftResponse'] = _SHIFTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 JamRequest = _reflection.GeneratedProtocolMessageType('JamRequest', (_message.Message,), dict(
@@ -373,6 +451,20 @@ ResponseMessage = _reflection.GeneratedProtocolMessageType('ResponseMessage', (_
   ))
 _sym_db.RegisterMessage(ResponseMessage)
 
+ShiftRequest = _reflection.GeneratedProtocolMessageType('ShiftRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTREQUEST,
+  __module__ = 'phase1_pb2'
+  # @@protoc_insertion_point(class_scope:phase1.ShiftRequest)
+  ))
+_sym_db.RegisterMessage(ShiftRequest)
+
+ShiftResponse = _reflection.GeneratedProtocolMessageType('ShiftResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTRESPONSE,
+  __module__ = 'phase1_pb2'
+  # @@protoc_insertion_point(class_scope:phase1.ShiftResponse)
+  ))
+_sym_db.RegisterMessage(ShiftResponse)
+
 
 
 _MAINSERVICE = _descriptor.ServiceDescriptor(
@@ -381,8 +473,8 @@ _MAINSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=386,
-  serialized_end=683,
+  serialized_start=496,
+  serialized_end=860,
   methods=[
   _descriptor.MethodDescriptor(
     name='Handshake',
@@ -421,9 +513,18 @@ _MAINSERVICE = _descriptor.ServiceDescriptor(
     options=None,
   ),
   _descriptor.MethodDescriptor(
+    name='ShiftNodeRequest',
+    full_name='phase1.MainService.ShiftNodeRequest',
+    index=4,
+    containing_service=None,
+    input_type=_SHIFTREQUEST,
+    output_type=_SHIFTRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
     name='Jam',
     full_name='phase1.MainService.Jam',
-    index=4,
+    index=5,
     containing_service=None,
     input_type=_JAMREQUEST,
     output_type=_JAMRESPONSE,

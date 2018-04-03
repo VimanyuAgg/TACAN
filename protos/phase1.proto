@@ -11,6 +11,7 @@ service MainService {
   rpc SendPacket (RequestMessage) returns (ResponseMessage) {}
   rpc Size (MySize) returns (AccomodateChild){}
   rpc Cluster (ClusterName) returns (ClusterAck){}
+  rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse){}
   rpc Jam (JamRequest) returns (JamResponse){}
 }
 
@@ -50,4 +51,15 @@ message ResponseMessage {
   string nodeId = 1;
   string destinationId = 2;
   string ackMessage = 3;
+}
+
+
+message ShiftRequest{
+  string nodeId = 1;
+  int32 sumOfweight = 2;
+  string clusterHeadId = 3;
+}
+
+message ShiftResponse{
+  string message = 1;
 }

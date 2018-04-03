@@ -121,6 +121,13 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     #call custer
     return phase1_pb2.ClusterAck(clusterAck="Joined")
 
+  def ShiftNodeRequest(self,request,context):
+    if self.node.isClusterhead and self.node.state == "free":
+      #saving the info about this node
+      self.node.shiftNodeId = request.nodeId
+      self.node.shiftNodeSum = request.sumOfweight
+      self.node.shiftNodeCluster = request.clusterHeadId
+      
   def Jam(self,request,context):
     jamId = request.nodeId
     if (self.node.isClusterhead != 1):
