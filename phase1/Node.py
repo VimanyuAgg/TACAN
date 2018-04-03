@@ -137,11 +137,12 @@ class Node:
 			client.informParentAboutNewSize(sizeIncrement,self.id,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
 
 	def sayByeToParent(self):
-		client.informParentAboutNewSize(-self.size,self.id,self.parentId)
+		client.removeChildIdFromParent(self.id,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
+		client.informParentAboutNewSize(-self.size,self.id,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
 
-	def sendShiftCompleteToBothClusterHeads(oldClusterheadId, newClusterheadId):
+	def sendShiftCompleteToBothClusterHeads(self,oldClusterheadId, newClusterheadId):
 		client.sendShiftCompleteToBothClusterHeads(raspberryPi_id_list.ID_IP_MAPPING[oldClusterheadId],\
-												   raspberryPi_id_list.ID_IP_MAPPING[newClusterheadId])
+												   raspberryPi_id_list.ID_IP_MAPPING[newClusterheadId],self.id)
 
 
 

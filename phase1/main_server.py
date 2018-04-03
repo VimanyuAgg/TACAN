@@ -203,6 +203,15 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       logger.info("ClusterheadId: %s got SendShiftComplete rpc with message:%s"%(self.node.id,request.sendShiftCompleteAck))
       return phase1_pb2.ClusterheadAckSendShift(clusterheadAckSendShift = "ClusterheadId: %s acknowledged shift.."%(self.node.id))
 
+  def RemoveChildIdFromParent(self,request,context):
+      logger.info("Parent: %s got RemoveChildIdFromParent rpc from Node:%s" % (self.node.id, request.departingChildId))
+      logger.info("Parent: %s has below children before removal" % (self.node.id))
+      logger.info(self.node.childListId)
+      self.node.childListId.remove(request.departingChildId)
+      logger.info("Parent: %s has below children after removal"%(self.node.id))
+      logger.info(self.node.childListId)
+      return phase1_pb2.RemoveChildIdFromParentResponse(removeChildIdFromParentResponse= "Removed")
+
 
 
 
