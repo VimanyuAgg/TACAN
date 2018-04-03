@@ -98,12 +98,11 @@ class Node:
 		else:
 			client.sendCluster(self)
 
-    def propogateClusterheadInfo(clusterName,hopCount):
+    def propogateClusterheadInfo(self,clusterName,hopCount):
     	if (self.childListId== None or len(self.childListId) == 0):
-    		client.propa
-
-
-
+    		client.propagateClusterheadInfo(self,clusterName,hopCount+1)
+    	else:
+    		logger.info("I don't have any children : Node: %s"%(self.id))	
 		
 
 	# Connects to Raspberry Pi and registers its IP address on the central lookup

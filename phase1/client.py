@@ -109,7 +109,7 @@ def sendCluster(node):
 		childIP = node.getIPfromId(child)
 		channel = grpc.insecure_channel(childIP)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
-		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(newClusterId,hopCount)
+		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(newClusterId,hopCount))
 		print("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
 		print("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
 
@@ -119,7 +119,7 @@ def propogateClusterheadInfo(node,clusterName,hopCount):
 		childIP = node.getIPfromId(child)
 		channel = grpc.insecure_channel(childIP)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
-		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(newClusterId,hopCount)
+		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(clusterName,hopCount))
 		print("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
 		print("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
 	
