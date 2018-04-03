@@ -59,6 +59,12 @@ class Node:
 		self.weight = weightMatrix.getWeight(self.id)
 		self.size = self.weight
 		self.childRequestCounter = 0
+
+		#info to be saved for shiftNodeRequest
+		self.shiftNodeId = None
+		self.shiftNodeSum = None
+		self.shiftNodeCluster = None
+
 		# self.childWeight = self.getChildWeight()
 		self.isClusterhead = my_info['isClusterhead']
 		self.state = my_info['state']
