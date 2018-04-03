@@ -59,6 +59,12 @@ class Node:
 		self.weight = weightMatrix.getWeight(self.id)
 		self.size = self.weight
 		self.childRequestCounter = 0
+
+		#info to be saved for shiftNodeRequest
+		self.shiftNodeId = None
+		self.shiftNodeSum = None
+		self.shiftNodeCluster = None
+
 		# self.childWeight = self.getChildWeight()
 		self.isClusterhead = my_info['isClusterhead']
 		self.state = my_info['state']
@@ -103,6 +109,10 @@ class Node:
 			client.propogateClusterheadInfo(self,clusterName,hopCount+1)
 		else:
 			logger.info("I don't have any children : Node: %s"%(self.id))
+
+	def sendShiftNodeRequest(self, bestNodeClusterHeadId):
+		if self.isClusterhead != 1:
+			client.sendShiftNodeRequest(self,bestNodeClusterHeadId,raspberryPi_id_list.SPANNING_INFO[self.clusterheadId])
 		
 
 	# Connects to Raspberry Pi and registers its IP address on the central lookup

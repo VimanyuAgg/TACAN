@@ -62,6 +62,10 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       print "Inside Mainserver __init__:"
       logger.info("Inside Mainserver __init__:")
       self.node = node
+      self.bestNodeId = self.node.id
+      self.bestNodeHopCount = self.node.hopcount
+      self.bestNodeClusterHeadId = self.node.clusterheadId
+      self.neighbourHelloArray = set()
       print("Node created inside __init__ Mainserver...")
       logger.info("Node created inside __init__ Mainserver...")
 
@@ -109,7 +113,8 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     clusterName = request.clusterName
     hopCount = request.hop
     # assign clusterhead id
-    node.clusterheadid= clusterName
+    self.node.clusterheadid= clusterName
+    self.node.state = "active"
     # assign isClusterhead as false
     self.node.hop= hopCount
 
@@ -119,6 +124,41 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.propogateClusterheadInfo(clusterName, hopCount)
     #call custer
     return phase1_pb2.ClusterAck(clusterAck="Joined")
+
+  def ShiftNodeRequest(self,request,context):
+    if self.node.isClusterhead and self.node.state == "free":
+      #saving the info about this node
+      self.node.shiftNodeId = request.nodeId
+      self.node.shiftNodeSum = request.sumOfweight
+      self.node.shiftNodeCluster = request.clusterHeadId
+      
+  def Jam(self,request,context):
+    jamId = request.nodeId
+    if (self.node.isClusterhead != 1):
+      self.node.state = "sleep"
+    return phase1_pb2.JamResponse(jamResponse="jammed")
+
+  def sendHello(self,request,context):
+    if (self.node.state == "active"):
+      self.neighbourHelloArray.add(request.senderId)
+      if (self.bestNodeClusterHeadId != request.senderClusterheadId and self.bestNodeHopCount < request.hopToSenderClusterhead):
+        self.bestNodeId = request.senderId
+        self.bestNodeHopCount = request.hopToSenderClusterhead
+        self.bestNodeClusterHeadId = request.senderClusterheadId
+
+      if (len(self.neighbourHelloArray) == 8 and self.bestNodeId != self.node.id):
+        ## May need to add self.bestNodeHopCount in the sendShiftRPC to update self.node.hopcount if request is accepted
+        self.node.sendShiftNodeRequest(self.bestNodeClusterHeadId)
+
+      # send interested +1
+      return phase1_pb2.HelloResponse(interested=1)
+    else:
+      # send interested -1
+      phase1_pb2.HelloResponse(interested=-1)
+
+
+
+
 
 
 

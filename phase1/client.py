@@ -87,6 +87,7 @@ def sendSize(node,stub):
 		node.parentId = None
 		#set I am the cluster
 		node.isClusterhead = 1
+		node.state = "free"
 		# fix below
 
 		sendCluster(node)
@@ -95,8 +96,6 @@ def sendSize(node,stub):
 		# Do nothing if the child is accepted into the current cluster
 		## Might need to add cluster ID to the central lookup #Later
 		pass
-
-
 
 
 def sendCluster(node):
@@ -113,6 +112,10 @@ def sendCluster(node):
 		print("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
 		print("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
 
+def sendShiftNodeRequest(node,bestNodeClusterHeadId,clusterHeadIp):
+	channel = grpc.insecure_channel(clusterHeadIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	# clusterRPC = stub.Cluster(phase1_pb2.ClusterName(clusterName, hopCount))
 
 def propogateClusterheadInfo(node,clusterName,hopCount):
 	for child in node.childListId:
