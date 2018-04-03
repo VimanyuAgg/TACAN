@@ -109,6 +109,10 @@ class Node:
 			client.propogateClusterheadInfo(self,clusterName,hopCount+1)
 		else:
 			logger.info("I don't have any children : Node: %s"%(self.id))
+
+	def sendShiftNodeRequest(self, bestNodeClusterHeadId):
+		if self.isClusterhead != 1:
+			client.sendShiftNodeRequest(self,bestNodeClusterHeadId,raspberryPi_id_list.SPANNING_INFO[self.clusterheadId])
 		
 
 	# Connects to Raspberry Pi and registers its IP address on the central lookup
