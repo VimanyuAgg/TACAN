@@ -12,6 +12,18 @@ service MainService {
   rpc Size (MySize) returns (AccomodateChild){}
   rpc Cluster (ClusterName) returns (ClusterAck){}
   rpc Jam (JamRequest) returns (JamResponse){}
+  rpc Hello(sendHello) returns (HelloResponse){}
+}
+
+message sendHello{
+    string senderId = 1;
+    int32 hopToSenderClusterhead = 2;
+    string senderState = 3;
+    string senderClusterheadId = 4;
+}
+
+message HelloResponse{
+    int32 interested =1;
 }
 
 message JamRequest{
