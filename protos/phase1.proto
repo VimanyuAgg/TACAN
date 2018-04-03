@@ -11,6 +11,16 @@ service MainService {
   rpc SendPacket (RequestMessage) returns (ResponseMessage) {}
   rpc Size (MySize) returns (AccomodateChild){}
   rpc Cluster (ClusterName) returns (ClusterAck){}
+  rpc Jam (JamRequest) returns (JamResponse){}
+}
+
+message JamRequest{
+    int32 nodeId = 1;
+
+}
+
+message JamResponse{
+    string jamResponse = 1;
 }
 
 message ClusterName {
