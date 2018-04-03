@@ -158,6 +158,15 @@ def informParentAboutNewSize(sizeIncrement,nodeId,parentIp):
 	logger.info("Node: %s sent updateSize request to existing parent ip: %s" % (nodeId, parentIp))
 	logger.info(clusterRPC)
 
+def propagateNewClusterHeadToChildren(childIpList, nodeId,clusterheadId):
+	for cip in childIpList:
+		channel = grpc.insecure_channel(cip)
+		stub = phase1_pb2_grpc.MainServiceStub(channel)
+		clusterRPC = stub.UpdateClusterhead(phase1_pb2.UpdateClusterheadRequest(clusterheadId))
+		logger.info("Node: %s sent JAM to child ip: %s" % (nodeId, cip))
+		logger.info(clusterRPC)
+
+
 
 
 if __name__ == '__main__':

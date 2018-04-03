@@ -175,6 +175,9 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
           self.node.propagateNewClusterHeadToChildren()
           self.node.sendShiftCompleteToBothClusterHeads(oldClusterheadId,self.node.clusterheadId)
           return phase1_pb2.ShiftStartResponse(shifStartResponse="byebye")
+      else:
+          return phase1_pb2.ShiftStartResponse(shifStartResponse="ShiftStart Sent to Wrong Node")
+
 
   # As a parent, add new child to myChild and update size
   # Also inform parents about size addition
@@ -190,7 +193,10 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.informParentAboutNewSize(request.sizeIncrement)
       return phase1_pb2.UpdateSizeResponse(updateSizeResponse = "updated size")
 
-
+  def UpdateClusterhead(self,request,context):
+      self.node.clusterheadId = request.newClusterheadId
+      self.node.propagateNewClusterHeadToChildren()
+      return phase1_pb2.UpdateClusterheadResponse(updateClusterheadResponse = "clusterhead Updated")
 
 
 

@@ -31,8 +31,8 @@
       <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phase1/client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="149" column="85" lean-forward="false" selection-start-line="149" selection-start-column="85" selection-end-line="149" selection-end-column="85" />
+            <state relative-caret-position="197">
+              <caret line="164" column="43" lean-forward="false" selection-start-line="164" selection-start-column="26" selection-end-line="164" selection-end-column="43" />
               <folding>
                 <element signature="e#2#39#0" expanded="true" />
               </folding>
@@ -40,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Node.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Node.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phase1/Node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="134" column="32" lean-forward="false" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="32" />
+            <state relative-caret-position="167">
+              <caret line="132" column="30" lean-forward="false" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="30" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -55,21 +55,11 @@
       <file leaf-file-name="main_server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phase1/main_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="176" column="0" lean-forward="true" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+            <state relative-caret-position="176">
+              <caret line="174" column="29" lean-forward="false" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
               <folding>
                 <element signature="e#1#31#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phase1_pb2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phase1/phase1_pb2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1890">
-              <caret line="495" column="10" lean-forward="true" selection-start-line="495" selection-start-column="10" selection-end-line="495" selection-end-column="10" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -84,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="phase1.proto" pinned="false" current-in-tab="false">
+      <file leaf-file-name="phase1.proto" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protos/phase1.proto">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="19" />
+            <state relative-caret-position="221">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -140,8 +130,8 @@
       <find>jam</find>
       <find>propogateClusterheadInfo</find>
       <find>isCluster</find>
-      <find>raspberryPi_id_list</find>
       <find>isClust</find>
+      <find>raspberryPi_id_list</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,10 +149,10 @@
         <option value="$PROJECT_DIR$/phase1/raspberryPi_id_list.py" />
         <option value="$PROJECT_DIR$/phase1/initScript.py" />
         <option value="$PROJECT_DIR$/phase1/spanning-tree.py" />
-        <option value="$PROJECT_DIR$/phase1/client.py" />
-        <option value="$PROJECT_DIR$/protos/phase1.proto" />
         <option value="$PROJECT_DIR$/phase1/main_server.py" />
         <option value="$PROJECT_DIR$/phase1/Node.py" />
+        <option value="$PROJECT_DIR$/phase1/client.py" />
+        <option value="$PROJECT_DIR$/protos/phase1.proto" />
       </list>
     </option>
   </component>
@@ -591,14 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/greeter_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-159">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protos/helloworld.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
@@ -617,37 +599,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phase1/phase1_pb2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1890">
-          <caret line="495" column="10" lean-forward="true" selection-start-line="495" selection-start-column="10" selection-end-line="495" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="621" column="1" lean-forward="true" selection-start-line="621" selection-start-column="1" selection-end-line="621" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phase1/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="149" column="85" lean-forward="false" selection-start-line="149" selection-start-column="85" selection-end-line="149" selection-end-column="85" />
-          <folding>
-            <element signature="e#2#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protos/phase1.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phase1/main_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="176" column="0" lean-forward="true" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,13 +613,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/greeter_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-159">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phase1/main_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="174" column="29" lean-forward="false" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
+          <folding>
+            <element signature="e#1#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/phase1/Node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="134" column="32" lean-forward="false" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="32" />
+        <state relative-caret-position="167">
+          <caret line="132" column="30" lean-forward="false" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="30" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phase1/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="164" column="43" lean-forward="false" selection-start-line="164" selection-start-column="26" selection-end-line="164" selection-end-column="43" />
+          <folding>
+            <element signature="e#2#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protos/phase1.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

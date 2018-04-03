@@ -18,6 +18,16 @@ service MainService {
   rpc ShiftStart (ShiftStartRequest) returns (ShiftStartResponse){}
   rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
   rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
+  rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse){}
+}
+
+message UpdateClusterheadRequest{
+    int32 newClusterheadId = 1;
+}
+
+message UpdateClusterheadResponse{
+    string updateClusterheadResponse = 1;
+
 }
 
 message UpdateSizeRequest{

@@ -64,6 +64,16 @@ class MainServiceStub(object):
         request_serializer=phase1__pb2.JoinNewParentRequest.SerializeToString,
         response_deserializer=phase1__pb2.JoinNewParentResponse.FromString,
         )
+    self.UpdateSize = channel.unary_unary(
+        '/phase1.MainService/UpdateSize',
+        request_serializer=phase1__pb2.UpdateSizeRequest.SerializeToString,
+        response_deserializer=phase1__pb2.UpdateSizeResponse.FromString,
+        )
+    self.UpdateClusterhead = channel.unary_unary(
+        '/phase1.MainService/UpdateClusterhead',
+        request_serializer=phase1__pb2.UpdateClusterheadRequest.SerializeToString,
+        response_deserializer=phase1__pb2.UpdateClusterheadResponse.FromString,
+        )
 
 
 class MainServiceServicer(object):
@@ -140,6 +150,20 @@ class MainServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def UpdateSize(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateClusterhead(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_MainServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -192,6 +216,16 @@ def add_MainServiceServicer_to_server(servicer, server):
           servicer.JoinNewParent,
           request_deserializer=phase1__pb2.JoinNewParentRequest.FromString,
           response_serializer=phase1__pb2.JoinNewParentResponse.SerializeToString,
+      ),
+      'UpdateSize': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateSize,
+          request_deserializer=phase1__pb2.UpdateSizeRequest.FromString,
+          response_serializer=phase1__pb2.UpdateSizeResponse.SerializeToString,
+      ),
+      'UpdateClusterhead': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateClusterhead,
+          request_deserializer=phase1__pb2.UpdateClusterheadRequest.FromString,
+          response_serializer=phase1__pb2.UpdateClusterheadResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

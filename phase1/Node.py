@@ -130,11 +130,14 @@ class Node:
 
 	def propagateNewClusterHeadToChildren(self):
 		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
-		client.propagateNewClusterHeadToChildren(childIPs, self.id)
+		client.propagateNewClusterHeadToChildren(childIPs, self.id,self.clusterheadId)
 
 	def informParentAboutNewSize(self,sizeIncrement):
 		if self.parentId != None:
 			client.informParentAboutNewSize(sizeIncrement,self.id,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
+
+	def sayByeToParent(self):
+		client.informParentAboutNewSize(-self.size,self.id,self.parentId)
 
 
 
