@@ -106,7 +106,17 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
   def Cluster(self,request,context):
     clusterName = request.clusterName
+    hopCount = request.hop
+    # assign clusterhead id
+    node.clusterheadid= clusterName
+    # assign isClusterhead as false
+    self.node.hop= hopCount
+
     print("Server Node: "+self.node.id+" is now joining Clusterleader "+str(clusterName))
+    #call the cluster message on all its children
+    if(self.node.childListId != None):
+      self.node.propogateClusterheadInfo(clusterName, hopCount)
+    #call custer
     return phase1_pb2.ClusterAck(clusterAck="Joined")
 
 

@@ -51,6 +51,7 @@ class Node:
 		self.childListId = my_info['childListId']
 		self.dist = my_info['dist']
 		self.clusterheadId = my_info['clusterheadId']
+		self.hopcount = 0
 		self.subtreeList = my_info['subtreeList']
 		self.neighbourList = my_info['neighbourList']
 		print "Calling weightMatrix for id: "+str(self.id)
@@ -97,6 +98,9 @@ class Node:
 		else:
 			client.sendCluster(self)
 
+    def propogateClusterheadInfo(clusterName,hopCount):
+    	if (self.childListId== None or len(self.childListId) == 0):
+    		client.propa
 
 
 
