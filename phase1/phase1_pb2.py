@@ -19,10 +19,134 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='phase1.proto',
   package='phase1',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cphase1.proto\x12\x06phase1\"#\n\rwakeUpRequest\x12\x12\n\nwakeywakey\x18\x01 \x01(\t\"!\n\x0ewakeUpResponse\x12\x0f\n\x07wokenUp\x18\x01 \x01(\t\"o\n\tsendHello\x12\x10\n\x08senderId\x18\x01 \x01(\t\x12\x1e\n\x16hopToSenderClusterhead\x18\x02 \x01(\x05\x12\x13\n\x0bsenderState\x18\x03 \x01(\t\x12\x1b\n\x13senderClusterheadId\x18\x04 \x01(\t\"#\n\rHelloResponse\x12\x12\n\ninterested\x18\x01 \x01(\x05\"\x1c\n\nJamRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\x05\"\"\n\x0bJamResponse\x12\x13\n\x0bjamResponse\x18\x01 \x01(\t\"/\n\x0b\x43lusterName\x12\x13\n\x0b\x63lusterName\x18\x01 \x01(\t\x12\x0b\n\x03hop\x18\x02 \x01(\x05\" \n\nClusterAck\x12\x12\n\nclusterAck\x18\x01 \x01(\t\"\x16\n\x06MySize\x12\x0c\n\x04size\x18\x01 \x01(\x05\"\"\n\x0f\x41\x63\x63omodateChild\x12\x0f\n\x07message\x18\x01 \x01(\t\"H\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t\"J\n\x0cShiftRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x13\n\x0bsumOfweight\x18\x02 \x01(\x05\x12\x15\n\rclusterHeadId\x18\x03 \x01(\t\" \n\rShiftResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2\xdc\x03\n\x0bMainService\x12>\n\tHandshake\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12?\n\nSendPacket\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12\x31\n\x04Size\x12\x0e.phase1.MySize\x1a\x17.phase1.AccomodateChild\"\x00\x12\x34\n\x07\x43luster\x12\x13.phase1.ClusterName\x1a\x12.phase1.ClusterAck\"\x00\x12\x41\n\x10ShiftNodeRequest\x12\x14.phase1.ShiftRequest\x1a\x15.phase1.ShiftResponse\"\x00\x12\x30\n\x03Jam\x12\x12.phase1.JamRequest\x1a\x13.phase1.JamResponse\"\x00\x12\x33\n\x05Hello\x12\x11.phase1.sendHello\x1a\x15.phase1.HelloResponse\"\x00\x12\x39\n\x06WakeUp\x12\x15.phase1.wakeUpRequest\x1a\x16.phase1.wakeUpResponse\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x0cphase1.proto\x12\x06phase1\"+\n\x14JoinNewParentRequest\x12\x13\n\x0bjoinRequest\x18\x01 \x01(\t\"-\n\x15JoinNewParentResponse\x12\x14\n\x0cjoinResponse\x18\x01 \x01(\t\")\n\x11ShiftStartRequest\x12\x14\n\x0ctargetNodeId\x18\x01 \x01(\t\"0\n\x12ShiftStartResponse\x12\x1a\n\x12shiftStartResponse\x18\x01 \x01(\t\"#\n\rwakeUpRequest\x12\x12\n\nwakeywakey\x18\x01 \x01(\t\"!\n\x0ewakeUpResponse\x12\x0f\n\x07wokenUp\x18\x01 \x01(\t\"o\n\tsendHello\x12\x10\n\x08senderId\x18\x01 \x01(\t\x12\x1e\n\x16hopToSenderClusterhead\x18\x02 \x01(\x05\x12\x13\n\x0bsenderState\x18\x03 \x01(\t\x12\x1b\n\x13senderClusterheadId\x18\x04 \x01(\t\"#\n\rHelloResponse\x12\x12\n\ninterested\x18\x01 \x01(\x05\"\x1c\n\nJamRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\x05\"\"\n\x0bJamResponse\x12\x13\n\x0bjamResponse\x18\x01 \x01(\t\"/\n\x0b\x43lusterName\x12\x13\n\x0b\x63lusterName\x18\x01 \x01(\t\x12\x0b\n\x03hop\x18\x02 \x01(\x05\" \n\nClusterAck\x12\x12\n\nclusterAck\x18\x01 \x01(\t\"\x16\n\x06MySize\x12\x0c\n\x04size\x18\x01 \x01(\x05\"\"\n\x0f\x41\x63\x63omodateChild\x12\x0f\n\x07message\x18\x01 \x01(\t\"H\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t\"J\n\x0cShiftRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x13\n\x0bsumOfweight\x18\x02 \x01(\x05\x12\x15\n\rclusterHeadId\x18\x03 \x01(\t\" \n\rShiftResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2\xf3\x04\n\x0bMainService\x12>\n\tHandshake\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12?\n\nSendPacket\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12\x31\n\x04Size\x12\x0e.phase1.MySize\x1a\x17.phase1.AccomodateChild\"\x00\x12\x34\n\x07\x43luster\x12\x13.phase1.ClusterName\x1a\x12.phase1.ClusterAck\"\x00\x12\x41\n\x10ShiftNodeRequest\x12\x14.phase1.ShiftRequest\x1a\x15.phase1.ShiftResponse\"\x00\x12\x30\n\x03Jam\x12\x12.phase1.JamRequest\x1a\x13.phase1.JamResponse\"\x00\x12\x33\n\x05Hello\x12\x11.phase1.sendHello\x1a\x15.phase1.HelloResponse\"\x00\x12\x39\n\x06WakeUp\x12\x15.phase1.wakeUpRequest\x1a\x16.phase1.wakeUpResponse\"\x00\x12\x45\n\nShiftStart\x12\x19.phase1.ShiftStartRequest\x1a\x1a.phase1.ShiftStartResponse\"\x00\x12N\n\rJoinNewParent\x12\x1c.phase1.JoinNewParentRequest\x1a\x1d.phase1.JoinNewParentResponse\"\x00\x62\x06proto3')
 )
 
 
+
+
+_JOINNEWPARENTREQUEST = _descriptor.Descriptor(
+  name='JoinNewParentRequest',
+  full_name='phase1.JoinNewParentRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='joinRequest', full_name='phase1.JoinNewParentRequest.joinRequest', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=24,
+  serialized_end=67,
+)
+
+
+_JOINNEWPARENTRESPONSE = _descriptor.Descriptor(
+  name='JoinNewParentResponse',
+  full_name='phase1.JoinNewParentResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='joinResponse', full_name='phase1.JoinNewParentResponse.joinResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=69,
+  serialized_end=114,
+)
+
+
+_SHIFTSTARTREQUEST = _descriptor.Descriptor(
+  name='ShiftStartRequest',
+  full_name='phase1.ShiftStartRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='targetNodeId', full_name='phase1.ShiftStartRequest.targetNodeId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=116,
+  serialized_end=157,
+)
+
+
+_SHIFTSTARTRESPONSE = _descriptor.Descriptor(
+  name='ShiftStartResponse',
+  full_name='phase1.ShiftStartResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='shiftStartResponse', full_name='phase1.ShiftStartResponse.shiftStartResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=159,
+  serialized_end=207,
+)
 
 
 _WAKEUPREQUEST = _descriptor.Descriptor(
@@ -51,8 +175,8 @@ _WAKEUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24,
-  serialized_end=59,
+  serialized_start=209,
+  serialized_end=244,
 )
 
 
@@ -82,8 +206,8 @@ _WAKEUPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=61,
-  serialized_end=94,
+  serialized_start=246,
+  serialized_end=279,
 )
 
 
@@ -134,8 +258,8 @@ _SENDHELLO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=96,
-  serialized_end=207,
+  serialized_start=281,
+  serialized_end=392,
 )
 
 
@@ -165,8 +289,8 @@ _HELLORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=209,
-  serialized_end=244,
+  serialized_start=394,
+  serialized_end=429,
 )
 
 
@@ -196,8 +320,8 @@ _JAMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=246,
-  serialized_end=274,
+  serialized_start=431,
+  serialized_end=459,
 )
 
 
@@ -227,8 +351,8 @@ _JAMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=276,
-  serialized_end=310,
+  serialized_start=461,
+  serialized_end=495,
 )
 
 
@@ -265,8 +389,8 @@ _CLUSTERNAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=312,
-  serialized_end=359,
+  serialized_start=497,
+  serialized_end=544,
 )
 
 
@@ -296,8 +420,8 @@ _CLUSTERACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=361,
-  serialized_end=393,
+  serialized_start=546,
+  serialized_end=578,
 )
 
 
@@ -327,8 +451,8 @@ _MYSIZE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=395,
-  serialized_end=417,
+  serialized_start=580,
+  serialized_end=602,
 )
 
 
@@ -358,8 +482,8 @@ _ACCOMODATECHILD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=419,
-  serialized_end=453,
+  serialized_start=604,
+  serialized_end=638,
 )
 
 
@@ -403,8 +527,8 @@ _REQUESTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=455,
-  serialized_end=527,
+  serialized_start=640,
+  serialized_end=712,
 )
 
 
@@ -448,8 +572,8 @@ _RESPONSEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=529,
-  serialized_end=605,
+  serialized_start=714,
+  serialized_end=790,
 )
 
 
@@ -493,8 +617,8 @@ _SHIFTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=607,
-  serialized_end=681,
+  serialized_start=792,
+  serialized_end=866,
 )
 
 
@@ -524,10 +648,14 @@ _SHIFTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=683,
-  serialized_end=715,
+  serialized_start=868,
+  serialized_end=900,
 )
 
+DESCRIPTOR.message_types_by_name['JoinNewParentRequest'] = _JOINNEWPARENTREQUEST
+DESCRIPTOR.message_types_by_name['JoinNewParentResponse'] = _JOINNEWPARENTRESPONSE
+DESCRIPTOR.message_types_by_name['ShiftStartRequest'] = _SHIFTSTARTREQUEST
+DESCRIPTOR.message_types_by_name['ShiftStartResponse'] = _SHIFTSTARTRESPONSE
 DESCRIPTOR.message_types_by_name['wakeUpRequest'] = _WAKEUPREQUEST
 DESCRIPTOR.message_types_by_name['wakeUpResponse'] = _WAKEUPRESPONSE
 DESCRIPTOR.message_types_by_name['sendHello'] = _SENDHELLO
@@ -543,6 +671,34 @@ DESCRIPTOR.message_types_by_name['ResponseMessage'] = _RESPONSEMESSAGE
 DESCRIPTOR.message_types_by_name['ShiftRequest'] = _SHIFTREQUEST
 DESCRIPTOR.message_types_by_name['ShiftResponse'] = _SHIFTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+JoinNewParentRequest = _reflection.GeneratedProtocolMessageType('JoinNewParentRequest', (_message.Message,), dict(
+  DESCRIPTOR = _JOINNEWPARENTREQUEST,
+  __module__ = 'phase1_pb2'
+  # @@protoc_insertion_point(class_scope:phase1.JoinNewParentRequest)
+  ))
+_sym_db.RegisterMessage(JoinNewParentRequest)
+
+JoinNewParentResponse = _reflection.GeneratedProtocolMessageType('JoinNewParentResponse', (_message.Message,), dict(
+  DESCRIPTOR = _JOINNEWPARENTRESPONSE,
+  __module__ = 'phase1_pb2'
+  # @@protoc_insertion_point(class_scope:phase1.JoinNewParentResponse)
+  ))
+_sym_db.RegisterMessage(JoinNewParentResponse)
+
+ShiftStartRequest = _reflection.GeneratedProtocolMessageType('ShiftStartRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTSTARTREQUEST,
+  __module__ = 'phase1_pb2'
+  # @@protoc_insertion_point(class_scope:phase1.ShiftStartRequest)
+  ))
+_sym_db.RegisterMessage(ShiftStartRequest)
+
+ShiftStartResponse = _reflection.GeneratedProtocolMessageType('ShiftStartResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTSTARTRESPONSE,
+  __module__ = 'phase1_pb2'
+  # @@protoc_insertion_point(class_scope:phase1.ShiftStartResponse)
+  ))
+_sym_db.RegisterMessage(ShiftStartResponse)
 
 wakeUpRequest = _reflection.GeneratedProtocolMessageType('wakeUpRequest', (_message.Message,), dict(
   DESCRIPTOR = _WAKEUPREQUEST,
@@ -650,8 +806,8 @@ _MAINSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=718,
-  serialized_end=1194,
+  serialized_start=903,
+  serialized_end=1530,
   methods=[
   _descriptor.MethodDescriptor(
     name='Handshake',
@@ -723,6 +879,24 @@ _MAINSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_WAKEUPREQUEST,
     output_type=_WAKEUPRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ShiftStart',
+    full_name='phase1.MainService.ShiftStart',
+    index=8,
+    containing_service=None,
+    input_type=_SHIFTSTARTREQUEST,
+    output_type=_SHIFTSTARTRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='JoinNewParent',
+    full_name='phase1.MainService.JoinNewParent',
+    index=9,
+    containing_service=None,
+    input_type=_JOINNEWPARENTREQUEST,
+    output_type=_JOINNEWPARENTRESPONSE,
     options=None,
   ),
 ])

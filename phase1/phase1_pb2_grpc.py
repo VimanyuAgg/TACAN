@@ -54,6 +54,16 @@ class MainServiceStub(object):
         request_serializer=phase1__pb2.wakeUpRequest.SerializeToString,
         response_deserializer=phase1__pb2.wakeUpResponse.FromString,
         )
+    self.ShiftStart = channel.unary_unary(
+        '/phase1.MainService/ShiftStart',
+        request_serializer=phase1__pb2.ShiftStartRequest.SerializeToString,
+        response_deserializer=phase1__pb2.ShiftStartResponse.FromString,
+        )
+    self.JoinNewParent = channel.unary_unary(
+        '/phase1.MainService/JoinNewParent',
+        request_serializer=phase1__pb2.JoinNewParentRequest.SerializeToString,
+        response_deserializer=phase1__pb2.JoinNewParentResponse.FromString,
+        )
 
 
 class MainServiceServicer(object):
@@ -116,6 +126,20 @@ class MainServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ShiftStart(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def JoinNewParent(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_MainServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -158,6 +182,16 @@ def add_MainServiceServicer_to_server(servicer, server):
           servicer.WakeUp,
           request_deserializer=phase1__pb2.wakeUpRequest.FromString,
           response_serializer=phase1__pb2.wakeUpResponse.SerializeToString,
+      ),
+      'ShiftStart': grpc.unary_unary_rpc_method_handler(
+          servicer.ShiftStart,
+          request_deserializer=phase1__pb2.ShiftStartRequest.FromString,
+          response_serializer=phase1__pb2.ShiftStartResponse.SerializeToString,
+      ),
+      'JoinNewParent': grpc.unary_unary_rpc_method_handler(
+          servicer.JoinNewParent,
+          request_deserializer=phase1__pb2.JoinNewParentRequest.FromString,
+          response_serializer=phase1__pb2.JoinNewParentResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

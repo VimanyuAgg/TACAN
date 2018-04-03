@@ -144,6 +144,20 @@ def propagateWakeUp(childIpList, nodeId):
 		logger.info("Node: %s sent wake to child ip: %s" % (nodeId, cip))
 		logger.info(clusterRPC)
 
+def joinNewParent(nodeId,nodeSize,newParentIp):
+	channel = grpc.insecure_channel(newParentIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	clusterRPC = stub.JoinNewParent(phase1_pb2.JoinNewParentRequest(nodeSize, nodeId))
+	logger.info("Node: %s sent join request to new parent ip: %s" % (nodeId, newParentIp))
+	logger.info(clusterRPC)
+
+def informParentAboutNewSize(sizeIncrement,nodeId,parentIp):
+	channel = grpc.insecure_channel(parentIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	clusterRPC = stub.UpdateSize(phase1_pb2.UpdateSizeRequest(sizeIncrement))
+	logger.info("Node: %s sent updateSize request to existing parent ip: %s" % (nodeId, parentIp))
+	logger.info(clusterRPC)
+
 
 
 if __name__ == '__main__':

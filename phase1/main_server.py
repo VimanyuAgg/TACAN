@@ -161,12 +161,34 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       if (self.node.state == "sleep"):
           self.node.state = "active"
           self.node.propagateWakeUp()
-          return phase1_pb2.wakeUpResponse(wokenUp = "WokeUp")
+          return phase1_pb2.wakeUpResponse(wokenUp = "wokeup")
       else:
           self.node.propagateWakeUp()
-          return phase1_pb2.wakeUpResponse(wokenUp = "Already")
+          return phase1_pb2.wakeUpResponse(wokenUp = "already")
 
+  def ShiftStart(self,request,context):
+      if (self.node.id == request.targetNodeId and self.node.state == "sleep"):
+          oldClusterheadId = self.node.clusterheadId
+          self.node.sayByeToParent()
+          self.node.updateInternalVariablesAndSendJoin(self.bestNodeId,self.bestNodeClusterHeadId,\
+                                                       self.bestNodeHopCount + 1)
+          self.node.propagateNewClusterHeadToChildren()
+          self.node.sendShiftCompleteToBothClusterHeads(oldClusterheadId,self.node.clusterheadId)
+          return phase1_pb2.ShiftStartResponse(shifStartResponse="byebye")
 
+  # As a parent, add new child to myChild and update size
+  # Also inform parents about size addition
+  def JoinNewParent(self,request,context):
+      self.node.childListId.append(request.nodeId)
+      sizeIncrement = request.childSize
+      self.node.size += request.childSize
+      self.node.informParentAboutNewSize(sizeIncrement)
+      return phase1_pb2.JoinNewParentResponse(joinResponse="welcome my new child")
+
+  def UpdateSize(self,request,context):
+      self.node.size += request.sizeIncrement
+      self.node.informParentAboutNewSize(request.sizeIncrement)
+      return phase1_pb2.UpdateSizeResponse(updateSizeResponse = "updated size")
 
 
 

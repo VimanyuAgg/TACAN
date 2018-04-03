@@ -122,6 +122,23 @@ class Node:
 		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
 		client.propagateWakeUp(childIPs, self.id)
 
+	def updateInternalVariablesAndSendJoin(self,bestNodeId,bestNodeClusterHeadId,newHopCount):
+		self.parentId = bestNodeId
+		self.clusterheadId = bestNodeClusterHeadId
+		self.hopcount = newHopCount
+		client.joinNewParent(self.id,self.size,raspberryPi_id_list.ID_IP_MAPPING[bestNodeId])
+
+	def propagateNewClusterHeadToChildren(self):
+		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
+		client.propagateNewClusterHeadToChildren(childIPs, self.id)
+
+	def informParentAboutNewSize(self,sizeIncrement):
+		if self.parentId != None:
+			client.informParentAboutNewSize(sizeIncrement,self.id,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
+
+
+
+
 	# Connects to Raspberry Pi and registers its IP address on the central lookup
 	# Can merge getIP and registerOnPi
 	def registerOnPi():
