@@ -97,6 +97,12 @@ def sendSize(node,stub):
 		## Might need to add cluster ID to the central lookup #Later
 		pass
 
+def sendJamSignal(childIpList,clusterHeadId):
+	for ip in childIpList:
+		channel = grpc.insecure_channel(ip)
+		stub = phase1_pb2_grpc.MainServiceStub(channel)
+		clusterRPC = stub.Cluster(phase1_pb2.JamRequest(clusterHeadId))
+
 
 def sendCluster(node):
 	newClusterId = "C"+str(node.id)
@@ -125,6 +131,17 @@ def propogateClusterheadInfo(node,clusterName,hopCount):
 		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(clusterName,hopCount))
 		print("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
 		print("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
-	
+
+def sendShiftClusterRequest(clusterheadId,shiftNodeId,shiftNodeSum,shiftNodeClusterIp):
+	# send shift clusterRequest to Cj clusterhead
+	channel = grpc.insecure_channel(shiftNodeClusterIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	clusterRPC = stub.Cluster(phase1_pb2.ShiftClusterReq(clusterheadId,shiftNodeId,shiftNodeSum))
+
+def sendAccept(clusterHeadId,senderClusterHeadIp):
+	channel = grpc.insecure_channel(senderClusterHeadIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	clusterRPC = stub.Cluster(phase1_pb2.AcceptRequest(clusterHeadId))
+       		
 if __name__ == '__main__':
 	run()

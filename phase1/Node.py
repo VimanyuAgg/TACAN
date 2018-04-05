@@ -130,7 +130,27 @@ class Node:
 
 	def getIPfromId(self,Id):
 		return raspberryPi_id_list.ID_IP_MAPPING[Id]
+    
+    def sendJamSignal(self):
+    	childIpList=[]
+    	#send jam signal to children 
+    	if(self.childListId!= None and len(self.childListId)!=0):
+    		for childId in childListId:
+    			childIpList.append(node.getIPfromId(childId))
+    	else:
+    		return		
+    	#call client
+    	client.sendJamSignal(childIpList,self.clusterheadId)
 
+    def sendShiftClusterRequest(self):
+    	#calculate ip for the Cj cluster
+    	shiftNodeClusterIp = node.getIPfromId(self.shiftNodeCluster[1:])
+    	client.sendShiftClusterRequest(self.clusterheadId,self.shiftNodeId,self.shiftNodeSum,shiftNodeClusterIp)
+    	
+    def accept(self,senderClusterHeadId):
+    	#send shift accept
+    	senderClusterHeadIp = node.getIPfromId(senderClusterHeadId[1:])
+    	self.client.sendAccept(node.id,senderClusterHeadIp)
 
 #
 # def testNode():

@@ -14,6 +14,8 @@ service MainService {
   rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse){}
   rpc Jam (JamRequest) returns (JamResponse){}
   rpc Hello(sendHello) returns (HelloResponse){}
+  rpc ShiftClusterRequest(ShiftClusterReq) returns (ShiftClusterRes){}
+  rpc Accept(AcceptRequest) returns(AcceptResponse){}
 }
 
 message sendHello{
@@ -73,5 +75,24 @@ message ShiftRequest{
 }
 
 message ShiftResponse{
+  string message = 1;
+}
+
+message ShiftClusterReq{
+  string senderClusterHeadId = 1;
+  string senderNodeId = 2;
+  int32 sumOfweights = 3;
+}
+
+message ShiftClusterRes{
+  string message = 1;
+  
+}
+
+message AcceptRequest{
+  string clusterHeadId = 1;
+}
+
+message AcceptResponse{
   string message = 1;
 }

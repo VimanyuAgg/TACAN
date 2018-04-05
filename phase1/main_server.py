@@ -128,9 +128,18 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   def ShiftNodeRequest(self,request,context):
     if self.node.isClusterhead and self.node.state == "free":
       #saving the info about this node
+      self.node.state = "busy"
       self.node.shiftNodeId = request.nodeId
       self.node.shiftNodeSum = request.sumOfweight
       self.node.shiftNodeCluster = request.clusterHeadId
+      #send jam request
+      self.node.sendJamSignal()
+      #send shift_cluster_request to Cj
+      self.node.sendShiftClusterRequest()
+      return phase1_pb2.ShiftResponse(message="Recieved")
+    else:
+      pass
+
       
   def Jam(self,request,context):
     jamId = request.nodeId
@@ -156,11 +165,23 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       # send interested -1
       phase1_pb2.HelloResponse(interested=-1)
 
-
-
-
-
-
+  def ShiftClusterRequest(self,request,context):
+    if self.node.isClusterhead and self.node.state == "free":
+      #check size bound condition
+      if self.node.size + request.sumOfweights > raspberryPi_id_list.THRESHOLD_S:
+        # send reject to Ci
+        self.node.reject(request.senderClusterHeadId)
+      else:
+        # set state to busy
+        self.node.state = "busy"
+        #send jam to all nodes in cluster
+        self.node.sendJamSignal()
+        #accept to Ci
+        self.node.accept(request.senderClusterHeadId)
+    else:
+      #send reject as shifting is already on
+      self.node.reject(request.senderClusterHeadId)
+       
 
 def serve(node):
   logger.info("Server starting for Node: %s"%(node.id))
