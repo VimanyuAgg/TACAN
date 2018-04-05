@@ -112,8 +112,39 @@ class Node:
 
 	def sendShiftNodeRequest(self, bestNodeClusterHeadId):
 		if self.isClusterhead != 1:
-			client.sendShiftNodeRequest(self,bestNodeClusterHeadId,raspberryPi_id_list.SPANNING_INFO[self.clusterheadId])
-		
+			client.sendShiftNodeRequest(self,bestNodeClusterHeadId,raspberryPi_id_list.ID_IP_MAPPING[self.clusterheadId])
+
+	def propagateJamToChildren(self,jamId):
+		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
+		client.propagateJamToChildren(childIPs,jamId,self.id)
+
+	def propagateWakeUp(self):
+		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
+		client.propagateWakeUp(childIPs, self.id)
+
+	def updateInternalVariablesAndSendJoin(self,bestNodeId,bestNodeClusterHeadId,newHopCount):
+		self.parentId = bestNodeId
+		self.clusterheadId = bestNodeClusterHeadId
+		self.hopcount = newHopCount
+		client.joinNewParent(self.id,self.size,raspberryPi_id_list.ID_IP_MAPPING[bestNodeId])
+
+	def propagateNewClusterHeadToChildren(self):
+		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
+		client.propagateNewClusterHeadToChildren(childIPs, self.id,self.clusterheadId)
+
+	def informParentAboutNewSize(self,sizeIncrement):
+		if self.parentId != None:
+			client.informParentAboutNewSize(sizeIncrement,self.id,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
+
+	def sayByeToParent(self):
+		client.removeChildIdFromParent(self.id,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
+		client.informParentAboutNewSize(-self.size,self.id,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
+
+	def sendShiftCompleteToBothClusterHeads(self,oldClusterheadId, newClusterheadId):
+		client.sendShiftCompleteToBothClusterHeads(raspberryPi_id_list.ID_IP_MAPPING[oldClusterheadId],\
+												   raspberryPi_id_list.ID_IP_MAPPING[newClusterheadId],self.id)
+
+
 
 	# Connects to Raspberry Pi and registers its IP address on the central lookup
 	# Can merge getIP and registerOnPi
