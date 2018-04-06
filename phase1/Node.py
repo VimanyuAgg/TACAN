@@ -182,6 +182,29 @@ class Node:
     	#send shift accept
     	senderClusterHeadIp = node.getIPfromId(senderClusterHeadId[1:])
     	self.client.sendAccept(node.id,senderClusterHeadIp)
+    
+    def reject(self,senderClusterHeadId):
+    	senderClusterHeadIp = node.getIPfromId(senderClusterHeadId[1:])
+    	self.client.sendReject(node.id,senderClusterHeadIp)
+
+    def sendShiftStart(self):
+    	self.client.sendShiftStart(self.shiftNodeId,node.getIPfromId(self.shiftNodeId))
+
+    def sendShiftFinished(self):
+    	self.client.sendShiftFinished(node.id,node.getIPfromId(self.shiftNodeCluster))
+
+    def sendWakeup(self):
+    	childIpList=[]
+    	#send jam signal to children 
+    	if(self.childListId!= None and len(self.childListId)!=0):
+    		for childId in childListId:
+    			childIpList.append(node.getIPfromId(childId))
+    	else:
+    		return		
+    	#call client
+    	client.sendWakeup(childIpList,self.id)
+
+
 
 #
 # def testNode():

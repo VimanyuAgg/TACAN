@@ -94,6 +94,16 @@ class MainServiceStub(object):
         request_serializer=phase1__pb2.RemoveChildIdFromParentRequest.SerializeToString,
         response_deserializer=phase1__pb2.RemoveChildIdFromParentResponse.FromString,
         )
+    self.Reject = channel.unary_unary(
+        '/phase1.MainService/Reject',
+        request_serializer=phase1__pb2.RejectRequest.SerializeToString,
+        response_deserializer=phase1__pb2.RejectResponse.FromString,
+        )
+    self.ShiftFinished = channel.unary_unary(
+        '/phase1.MainService/ShiftFinished',
+        request_serializer=phase1__pb2.ShiftFinishedRequest.SerializeToString,
+        response_deserializer=phase1__pb2.ShiftFinishedResponse.FromString,
+        )
 
 
 class MainServiceServicer(object):
@@ -212,6 +222,20 @@ class MainServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Reject(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ShiftFinished(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_MainServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -294,6 +318,16 @@ def add_MainServiceServicer_to_server(servicer, server):
           servicer.RemoveChildIdFromParent,
           request_deserializer=phase1__pb2.RemoveChildIdFromParentRequest.FromString,
           response_serializer=phase1__pb2.RemoveChildIdFromParentResponse.SerializeToString,
+      ),
+      'Reject': grpc.unary_unary_rpc_method_handler(
+          servicer.Reject,
+          request_deserializer=phase1__pb2.RejectRequest.FromString,
+          response_serializer=phase1__pb2.RejectResponse.SerializeToString,
+      ),
+      'ShiftFinished': grpc.unary_unary_rpc_method_handler(
+          servicer.ShiftFinished,
+          request_deserializer=phase1__pb2.ShiftFinishedRequest.FromString,
+          response_serializer=phase1__pb2.ShiftFinishedResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
