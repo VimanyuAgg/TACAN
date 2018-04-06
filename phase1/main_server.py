@@ -46,7 +46,6 @@ logger.addHandler(debug_handler)
 
 class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
-
   #
   # Initialize the node
   # Will be done by a script in future
@@ -61,7 +60,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   #     # subtreeList=[2,3]
   #     # neighbourList=[]
   #     # isClusterhead=False
-  #     #default state
+  #     #default state 
   #     # state="active"
       print "Inside Mainserver __init__:"
       logger.info("Inside Mainserver __init__:")
@@ -73,10 +72,12 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       print("Node created inside __init__ Mainserver...")
       logger.info("Node created inside __init__ Mainserver...")
 
-
+      
+  
   def Handshake(self, request , context):
-    return phase1_pb2.ResponseMessage(nodeId="21",destinationId="12",ackMessage="Hello Dear Client")
 
+    return phase1_pb2.ResponseMessage(nodeId="21",destinationId="12",ackMessage="Hello Dear Client")
+  
   def SendPacket(self, request , context):
     #check if current node is the destination node
     #else forward it to the destination node
@@ -195,14 +196,25 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   def ShiftNodeRequest(self,request,context):
     if self.node.isClusterhead and self.node.state == "free":
       #saving the info about this node
+      self.node.state = "busy"
       self.node.shiftNodeId = request.nodeId
       self.node.shiftNodeSum = request.sumOfweight
       self.node.shiftNodeCluster = request.clusterHeadId
+      #send jam request
+      self.node.sendJamSignal()
+      #send shift_cluster_request to Cj
+      self.node.sendShiftClusterRequest()
+      return phase1_pb2.ShiftResponse(message="Recieved")
+    else:
+      pass
+
+
 
   def Jam(self,request,context):
     jamId = request.nodeId
     if (self.node.isClusterhead != 1):
       self.node.state = "sleep"
+      self.node.propagateJamToChildren(jamId)
     return phase1_pb2.JamResponse(jamResponse="jammed")
 
   def sendHello(self,request,context):
@@ -223,9 +235,77 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       # send interested -1
       phase1_pb2.HelloResponse(interested=-1)
 
+  def ShiftClusterRequest(self,request,context):
+    if self.node.isClusterhead and self.node.state == "free":
+      #check size bound condition
+      if self.node.size + request.sumOfweights > raspberryPi_id_list.THRESHOLD_S:
+        # send reject to Ci
+        self.node.reject(request.senderClusterHeadId)
+      else:
+        # set state to busy
+        self.node.state = "busy"
+        #send jam to all nodes in cluster
+        self.node.sendJamSignal()
+        #accept to Ci
+        self.node.accept(request.senderClusterHeadId)
+    else:
+      #send reject as shifting is already on
+      self.node.reject(request.senderClusterHeadId)
+
+  def wakeUp(self,request,context):
+      if (self.node.state == "sleep"):
+          self.node.state = "active"
+          self.node.propagateWakeUp()
+          return phase1_pb2.wakeUpResponse(wokenUp = "wokeup")
+      else:
+          self.node.propagateWakeUp()
+          return phase1_pb2.wakeUpResponse(wokenUp = "already")
+
+  def ShiftStart(self,request,context):
+      if (self.node.id == request.targetNodeId and self.node.state == "sleep"):
+          oldClusterheadId = self.node.clusterheadId
+          self.node.sayByeToParent()
+          self.node.updateInternalVariablesAndSendJoin(self.bestNodeId,self.bestNodeClusterHeadId,\
+                                                       self.bestNodeHopCount + 1)
+          self.node.propagateNewClusterHeadToChildren()
+          # is sendShiftCompleteToBothClusterHeads it necessary - can remove if not needed
+          self.node.sendShiftCompleteToBothClusterHeads(oldClusterheadId,self.node.clusterheadId)
+          return phase1_pb2.ShiftStartResponse(shifStartResponse="byebye")
+      else:
+          return phase1_pb2.ShiftStartResponse(shifStartResponse="ShiftStart Sent to Wrong Node")
 
 
+  # As a parent, add new child to myChild and update size
+  # Also inform parents about size addition
+  def JoinNewParent(self,request,context):
+      self.node.childListId.append(request.nodeId)
+      sizeIncrement = request.childSize
+      self.node.size += request.childSize
+      self.node.informParentAboutNewSize(sizeIncrement)
+      return phase1_pb2.JoinNewParentResponse(joinResponse="welcome my new child")
 
+  def UpdateSize(self,request,context):
+      self.node.size += request.sizeIncrement
+      self.node.informParentAboutNewSize(request.sizeIncrement)
+      return phase1_pb2.UpdateSizeResponse(updateSizeResponse = "updated size")
+
+  def UpdateClusterhead(self,request,context):
+      self.node.clusterheadId = request.newClusterheadId
+      self.node.propagateNewClusterHeadToChildren()
+      return phase1_pb2.UpdateClusterheadResponse(updateClusterheadResponse = "clusterhead Updated")
+
+  def SendShiftComplete(self,request,context):
+      logger.info("ClusterheadId: %s got SendShiftComplete rpc with message:%s"%(self.node.id,request.sendShiftCompleteAck))
+      return phase1_pb2.ClusterheadAckSendShift(clusterheadAckSendShift = "ClusterheadId: %s acknowledged shift.."%(self.node.id))
+
+  def RemoveChildIdFromParent(self,request,context):
+      logger.info("Parent: %s got RemoveChildIdFromParent rpc from Node:%s" % (self.node.id, request.departingChildId))
+      logger.info("Parent: %s has below children before removal" % (self.node.id))
+      logger.info(self.node.childListId)
+      self.node.childListId.remove(request.departingChildId)
+      logger.info("Parent: %s has below children after removal"%(self.node.id))
+      logger.info(self.node.childListId)
+      return phase1_pb2.RemoveChildIdFromParentResponse(removeChildIdFromParentResponse= "Removed")
 
 
 def serve(node):
