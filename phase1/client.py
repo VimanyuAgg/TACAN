@@ -47,8 +47,9 @@ INITIALIZE_FLAG = False
 
 def run():
     ## sys.argv[1] is IP of server e.g. localhost:50051
-    print(sys.argv[1])
-    channel = grpc.insecure_channel(sys.argv[1])
+    # print(sys.argv[1])
+    # channel = grpc.insecure_channel(sys.argv[1])
+    channel = grpc.insecure_channel('localhost:50052')
     stub = phase1_pb2_grpc.MainServiceStub(channel)
     # thisNode = Node.Node(1)
     # print("successfully created thisNode")
@@ -63,7 +64,7 @@ def run():
     # response = stub.Handshake(phase1_pb2.RequestMessage(nodeId="12",destinationId="21",message="Hello Dear Server !"))
     # response1 = stub.SendPacket(phase1_pb2.RequestMessage(nodeId="12",destinationId="21",message="Hello Dear Server Please forward my request!"))
 
-    response1 = stub.SendPacket(phase1_pb2.RequestMessage(nodeId="2",destinationId="0",message="Hello Dear Server Please forward my request!"))
+    response1 = stub.SendPacket(phase1_pb2.RequestMessage(nodeId="2",destinationId="3",message="Hello Dear Server Please forward my request!"))
 
     # print("client received: " + response.ackMessage+" from Node ID :"+response.nodeId)
     print("client received from sendPacket: " + response1.ackMessage+" from Node ID :"+response1.nodeId)

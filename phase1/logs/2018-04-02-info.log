@@ -1,0 +1,145 @@
+2018-04-02 20:37:12,458 - Node - INFO - Initializing Node: 0
+2018-04-02 20:37:12,459 - Node - INFO - Calling weightMatrix for id: 0
+2018-04-02 20:37:12,459 - Node - INFO - Calling phaseOneClustering
+2018-04-02 20:37:12,459 - Node - INFO - Starting Phase One Clustering on Node: 0
+2018-04-02 20:37:12,459 - Node - INFO - I don't have any parent: Node: 0
+2018-04-02 20:37:12,459 - Node - INFO - Starting Server on Node: 0
+2018-04-02 20:37:12,460 - main_server - INFO - Server starting for Node: 0
+2018-04-02 20:37:12,489 - main_server - INFO - Server Created
+2018-04-02 20:37:12,489 - main_server - INFO - Inside Mainserver __init__:
+2018-04-02 20:37:12,490 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-02 20:37:12,492 - main_server - INFO - Main Server init called successfully
+2018-04-02 20:37:12,509 - main_server - INFO - Run port assigned
+2018-04-02 20:37:12,517 - main_server - ERROR - first arg must be callable
+2018-04-02 20:37:12,520 - main_server - INFO - Inside forever while....
+2018-04-02 20:37:31,961 - Node - INFO - Server successfully started on node: 0
+2018-04-02 20:37:31,962 - Node - INFO - Initializing Node: 1
+2018-04-02 20:37:31,962 - Node - INFO - Calling weightMatrix for id: 1
+2018-04-02 20:37:31,962 - Node - INFO - Calling phaseOneClustering
+2018-04-02 20:37:31,963 - Node - INFO - Starting Phase One Clustering on Node: 1
+2018-04-02 20:37:31,963 - Node - INFO - I don't have any parent: Node: 1
+2018-04-02 20:37:31,963 - Node - INFO - Starting Server on Node: 1
+2018-04-02 20:37:31,963 - main_server - INFO - Server starting for Node: 1
+2018-04-02 20:37:31,964 - main_server - INFO - Server Created
+2018-04-02 20:37:31,964 - main_server - INFO - Inside Mainserver __init__:
+2018-04-02 20:37:31,964 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-02 20:37:31,965 - main_server - INFO - Main Server init called successfully
+2018-04-02 20:37:31,966 - main_server - INFO - Run port assigned
+2018-04-02 20:37:31,969 - main_server - ERROR - first arg must be callable
+2018-04-02 20:37:31,969 - main_server - INFO - Inside forever while....
+2018-04-02 20:37:34,996 - Node - INFO - Server successfully started on node: 1
+2018-04-02 20:37:34,996 - Node - INFO - Initializing Node: 2
+2018-04-02 20:37:34,996 - Node - INFO - Calling weightMatrix for id: 2
+2018-04-02 20:37:34,997 - Node - INFO - Calling phaseOneClustering
+2018-04-02 20:37:34,997 - Node - INFO - Starting Phase One Clustering on Node: 2
+2018-04-02 20:37:34,997 - Node - INFO - I don't have any parent: Node: 2
+2018-04-02 20:37:34,997 - Node - INFO - Starting Server on Node: 2
+2018-04-02 20:37:34,998 - main_server - INFO - Server starting for Node: 2
+2018-04-02 20:37:34,998 - main_server - INFO - Server Created
+2018-04-02 20:37:34,999 - main_server - INFO - Inside Mainserver __init__:
+2018-04-02 20:37:34,999 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-02 20:37:34,999 - main_server - INFO - Main Server init called successfully
+2018-04-02 20:37:35,003 - main_server - INFO - Run port assigned
+2018-04-02 20:37:35,005 - main_server - ERROR - first arg must be callable
+2018-04-02 20:37:35,006 - main_server - INFO - Inside forever while....
+2018-04-02 20:37:35,720 - Node - INFO - Server successfully started on node: 2
+2018-04-02 20:49:21,828 - Node - INFO - Initializing Node: 0
+2018-04-02 20:49:21,830 - Node - INFO - Calling weightMatrix for id: 0
+2018-04-02 20:49:21,830 - Node - INFO - Calling phaseOneClustering
+2018-04-02 20:49:21,830 - Node - INFO - Starting Phase One Clustering on Node: 0
+2018-04-02 20:49:21,830 - Node - INFO - I don't have any parent: Node: 0
+2018-04-02 20:49:21,831 - Node - INFO - Starting Server on Node: 0
+2018-04-02 20:49:21,831 - main_server - INFO - Server starting for Node: 0
+2018-04-02 20:49:21,845 - main_server - INFO - Server Created
+2018-04-02 20:49:21,846 - main_server - INFO - Inside Mainserver __init__:
+2018-04-02 20:49:21,846 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-02 20:49:21,849 - main_server - INFO - Main Server init called successfully
+2018-04-02 20:49:21,854 - main_server - INFO - Run port assigned
+2018-04-02 20:49:21,856 - main_server - ERROR - first arg must be callable
+2018-04-02 20:49:21,858 - main_server - INFO - Inside forever while....
+2018-04-02 20:49:58,998 - Node - INFO - Initializing Node: 1
+2018-04-02 20:49:58,998 - Node - INFO - Calling weightMatrix for id: 1
+2018-04-02 20:49:58,998 - Node - INFO - Calling phaseOneClustering
+2018-04-02 20:49:58,998 - Node - INFO - Starting Phase One Clustering on Node: 1
+2018-04-02 20:49:58,999 - Node - INFO - I don't have any parent: Node: 1
+2018-04-02 20:49:58,999 - Node - INFO - Starting Server on Node: 1
+2018-04-02 20:49:58,999 - main_server - INFO - Server starting for Node: 1
+2018-04-02 20:49:59,014 - main_server - INFO - Server Created
+2018-04-02 20:49:59,014 - main_server - INFO - Inside Mainserver __init__:
+2018-04-02 20:49:59,015 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-02 20:49:59,017 - main_server - INFO - Main Server init called successfully
+2018-04-02 20:49:59,022 - main_server - INFO - Run port assigned
+2018-04-02 20:49:59,024 - main_server - ERROR - first arg must be callable
+2018-04-02 20:49:59,025 - main_server - INFO - Inside forever while....
+2018-04-02 20:50:07,374 - Node - INFO - Initializing Node: 2
+2018-04-02 20:50:07,375 - Node - INFO - Calling weightMatrix for id: 2
+2018-04-02 20:50:07,376 - Node - INFO - Calling phaseOneClustering
+2018-04-02 20:50:07,376 - Node - INFO - Starting Phase One Clustering on Node: 2
+2018-04-02 20:50:07,376 - Node - INFO - I don't have any parent: Node: 2
+2018-04-02 20:50:07,376 - Node - INFO - Starting Server on Node: 2
+2018-04-02 20:50:07,376 - main_server - INFO - Server starting for Node: 2
+2018-04-02 20:50:07,389 - main_server - INFO - Server Created
+2018-04-02 20:50:07,389 - main_server - INFO - Inside Mainserver __init__:
+2018-04-02 20:50:07,390 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-02 20:50:07,392 - main_server - INFO - Main Server init called successfully
+2018-04-02 20:50:07,395 - main_server - INFO - Run port assigned
+2018-04-02 20:50:07,397 - main_server - ERROR - first arg must be callable
+2018-04-02 20:50:07,399 - main_server - INFO - Inside forever while....
+2018-04-02 20:50:11,160 - Node - INFO - Initializing Node: 3
+2018-04-02 20:50:11,160 - Node - INFO - Calling weightMatrix for id: 3
+2018-04-02 20:50:11,160 - Node - INFO - Calling phaseOneClustering
+2018-04-02 20:50:11,160 - Node - INFO - Starting Phase One Clustering on Node: 3
+2018-04-02 20:50:11,161 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 1
+2018-04-02 20:50:11,170 - client - INFO - sendSize starting on client.py for node: 3
+2018-04-02 20:50:11,184 - main_server - INFO - Server Node:1 current size is 47
+2018-04-02 20:50:11,185 - main_server - INFO - Server Node:1 Child size is 42
+2018-04-02 20:50:11,185 - main_server - INFO - Sending Accept
+2018-04-02 20:50:11,187 - client - INFO - Node 3 sent the size message of size 42 to 1
+2018-04-02 20:50:11,187 - client - INFO - Node 1: responded to Size RPC with reply: Accepted
+2018-04-02 20:50:11,188 - client - INFO - Didn't get Prune Node: 3
+2018-04-02 20:50:11,189 - Node - INFO - Node: 3 sent size() message to parent: 1
+2018-04-02 20:50:11,189 - Node - INFO - Starting Server on Node: 3
+2018-04-02 20:50:11,189 - main_server - INFO - Server starting for Node: 3
+2018-04-02 20:50:11,193 - main_server - INFO - Server Created
+2018-04-02 20:50:11,194 - main_server - INFO - Inside Mainserver __init__:
+2018-04-02 20:50:11,194 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-02 20:50:11,195 - main_server - INFO - Main Server init called successfully
+2018-04-02 20:50:11,196 - main_server - INFO - Run port assigned
+2018-04-02 20:50:11,198 - main_server - ERROR - first arg must be callable
+2018-04-02 20:50:11,199 - main_server - INFO - Inside forever while....
+2018-04-03 13:20:29,576 - Node - INFO - Server successfully started on node: 0
+2018-04-03 13:20:29,581 - __main__ - INFO - Server starting for Node: 0
+2018-04-03 13:20:29,588 - __main__ - INFO - Server Created
+2018-04-03 13:20:29,589 - __main__ - INFO - Inside Mainserver __init__:
+2018-04-03 13:20:29,589 - __main__ - INFO - Node created inside __init__ Mainserver...
+2018-04-03 13:20:29,594 - __main__ - INFO - Main Server init called successfully
+2018-04-03 13:20:29,600 - __main__ - INFO - Run port assigned
+2018-04-03 13:20:29,603 - __main__ - ERROR - first arg must be callable
+2018-04-03 13:20:29,604 - __main__ - INFO - Inside forever while....
+2018-04-03 13:20:34,334 - Node - INFO - Server successfully started on node: 1
+2018-04-03 13:20:34,343 - __main__ - INFO - Server starting for Node: 1
+2018-04-03 13:20:34,348 - __main__ - INFO - Server Created
+2018-04-03 13:20:34,349 - __main__ - INFO - Inside Mainserver __init__:
+2018-04-03 13:20:34,349 - __main__ - INFO - Node created inside __init__ Mainserver...
+2018-04-03 13:20:34,352 - __main__ - INFO - Main Server init called successfully
+2018-04-03 13:20:34,353 - __main__ - INFO - Run port assigned
+2018-04-03 13:20:34,355 - __main__ - ERROR - first arg must be callable
+2018-04-03 13:20:34,356 - __main__ - INFO - Inside forever while....
+2018-04-03 13:20:36,739 - Node - INFO - Server successfully started on node: 2
+2018-04-03 13:20:36,762 - __main__ - INFO - Server starting for Node: 2
+2018-04-03 13:20:36,766 - __main__ - INFO - Server Created
+2018-04-03 13:20:36,767 - __main__ - INFO - Inside Mainserver __init__:
+2018-04-03 13:20:36,767 - __main__ - INFO - Node created inside __init__ Mainserver...
+2018-04-03 13:20:36,771 - __main__ - INFO - Main Server init called successfully
+2018-04-03 13:20:36,774 - __main__ - INFO - Run port assigned
+2018-04-03 13:20:36,777 - __main__ - ERROR - first arg must be callable
+2018-04-03 13:20:36,777 - __main__ - INFO - Inside forever while....
+2018-04-03 13:20:38,755 - Node - INFO - Server successfully started on node: 3
+2018-04-03 13:20:38,757 - __main__ - INFO - Server starting for Node: 3
+2018-04-03 13:20:38,764 - __main__ - INFO - Server Created
+2018-04-03 13:20:38,764 - __main__ - INFO - Inside Mainserver __init__:
+2018-04-03 13:20:38,765 - __main__ - INFO - Node created inside __init__ Mainserver...
+2018-04-03 13:20:38,766 - __main__ - INFO - Main Server init called successfully
+2018-04-03 13:20:38,770 - __main__ - INFO - Run port assigned
+2018-04-03 13:20:38,772 - __main__ - ERROR - first arg must be callable
+2018-04-03 13:20:38,773 - __main__ - INFO - Inside forever while....

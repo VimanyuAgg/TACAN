@@ -8,7 +8,9 @@ import phase1_pb2
 import phase1_pb2_grpc
 import raspberryPi_id_list
 import spanning_tree_gurnoor as spanning_tree  # TODO: must
+# import spanning_tree
 import thread
+import Node
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 import datetime
@@ -44,13 +46,13 @@ logger.addHandler(debug_handler)
 
 class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
+
   #
   # Initialize the node
   # Will be done by a script in future
   #
   def __init__(self,node):
   #     #different for each node
-        self.myId = myId  # TODO: Node.py
   #     myId=int(sys.argv[2])
   #     # parentid=0
   #     # childList=[2,3]
@@ -72,7 +74,6 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       logger.info("Node created inside __init__ Mainserver...")
 
 
-
   def Handshake(self, request , context):
     return phase1_pb2.ResponseMessage(nodeId="21",destinationId="12",ackMessage="Hello Dear Client")
 
@@ -80,10 +81,10 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     #check if current node is the destination node
     #else forward it to the destination node
     print('Inside SendPacket', request)
-    print(self.myId, request.destinationId)
+    print(self.node.id, request.destinationId)
 
-    if self.myId == int(request.destinationId):
-        return phase1_pb2.ResponseMessage(nodeId=str(self.myId),
+    if self.node.id == int(request.destinationId):
+        return phase1_pb2.ResponseMessage(nodeId=str(self.node.id),
         destinationId="12",
         ackMessage="Hello Dear Client")
     else:
@@ -91,24 +92,24 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   # end SendPacket
 
   def Forward(self, request, context):
-      # request.hopIds += [self.myId]
+      # request.hopIds += [self.node.id]
 
       dest_clusterhead = self.getParentId(int(request.destinationId))
       if dest_clusterhead is None:
           # destination node is a clusterheadid
           dest_clusterhead = request.destinationId
-      print('self.myId', self.myId)
-      my_clusterhead = self.getParentId(self.myId)
+      print('self.node.id', self.node.id)
+      my_clusterhead = self.getParentId(self.node.id)
       print('my_clusterhead', my_clusterhead)
       if my_clusterhead is None:
-          my_clusterhead = self.myId
+          my_clusterhead = self.node.id
       print('dest_clusterhead', dest_clusterhead)
       print('my_clusterhead', my_clusterhead)
       if dest_clusterhead == my_clusterhead:
           # destination in same cluster
           dest_node_ip = self.getIp(request.destinationId)
       else:
-          if self.myId == my_clusterhead:
+          if self.node.id == my_clusterhead:
               dest_node_ip = self.getIp(dest_clusterhead)
           else:
               dest_node_ip = self.getIp(my_clusterhead)
@@ -263,4 +264,5 @@ def getopts(argv):
 if __name__ == '__main__':
     opts = getopts(sys.argv)
     nodeId = int(opts['-p'])
-    serve(nodeId)
+    node = Node.Node(myId=nodeId)
+    serve(node)
