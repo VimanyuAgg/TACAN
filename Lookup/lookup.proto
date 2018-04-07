@@ -2,15 +2,186 @@ syntax = "proto3";
 
 package lookup;
 
+// The Main service definition.
 service MainService {
+  // Sends a greeting
+  rpc Handshake (RequestMessage) returns (ResponseMessage) {}
+  rpc SendPacket (RequestMessage) returns (ResponseMessage) {}
+  rpc Size (MySize) returns (AccomodateChild){}
+  rpc Cluster (ClusterName) returns (ClusterAck){}
+  rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse){}
+  rpc Jam (JamRequest) returns (JamResponse){}
+  rpc Hello(sendHello) returns (HelloResponse){}
+  rpc ShiftClusterRequest(ShiftClusterReq) returns (ShiftClusterRes){}
+  rpc Accept(AcceptRequest) returns(AcceptResponse){}
+  rpc WakeUp (wakeUpRequest) returns (wakeUpResponse){}
+  rpc ShiftStart (ShiftStartRequest) returns (ShiftStartResponse){}
+  rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
+  rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
+  rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse){}
+  rpc ShiftComplete(SendShiftCompleteAck) returns (ClusterheadAckSendShift){}
+  rpc RemoveChildIdFromParent(RemoveChildIdFromParentRequest) returns (RemoveChildIdFromParentResponse){}
+  rpc Reject(RejectRequest) returns(RejectResponse){}
+  rpc ShiftFinished(ShiftFinishedRequest) returns (ShiftFinishedResponse){}
+  rpc Retrieve (RedisRequest) returns (ValAck) {}
+  rpc Register (Params) returns (RedisResponse) {}
+}
 
-  rpc Retrieve (RequestMessage) returns (ValAck) {}
-  rpc Register (Params) returns (ResponseMessage) {}
+message RemoveChildIdFromParentRequest{
+    int32 departingChildId = 1;
+}
+
+message RemoveChildIdFromParentResponse{
+    string removeChildIdFromParentResponse = 1;
+}
+
+message SendShiftCompleteAck{
+    string id = 1;
+    string sendShiftCompleteAck = 2;
+}
+
+message ClusterheadAckSendShift{
+    string clusterheadAckSendShift = 1;
+}
+
+message UpdateClusterheadRequest{
+    int32 newClusterheadId = 1;
+}
+
+message UpdateClusterheadResponse{
+    string updateClusterheadResponse = 1;
 
 }
 
+message UpdateSizeRequest{
+    int32 sizeIncrement = 1;
+}
 
+message UpdateSizeResponse{
+    string updateSizeResponse = 1;
+}
+
+message JoinNewParentRequest{
+    int32 childSize = 1;
+    int32 nodeId = 2;
+}
+
+message JoinNewParentResponse{
+    string joinResponse = 1;
+}
+
+message ShiftStartRequest{
+    string targetNodeId = 1;
+}
+
+message ShiftStartResponse{
+    string shiftStartResponse = 1;
+}
+
+message wakeUpRequest {
+    string wakeywakey = 1;
+}
+
+message wakeUpResponse{
+    string wokenUp = 1;
+}
+
+message sendHello{
+    string senderId = 1;
+    int32 hopToSenderClusterhead = 2;
+    string senderState = 3;
+    string senderClusterheadId = 4;
+}
+
+message HelloResponse{
+    int32 interested =1;
+}
+
+message JamRequest{
+    int32 nodeId = 1;
+
+}
+
+message JamResponse{
+    string jamResponse = 1;
+}
+
+message ClusterName {
+	string clusterName = 1;
+  int32 hop = 2;
+}
+
+message ClusterAck {
+	string clusterAck = 1;
+}
+
+message MySize{
+	int32 size = 1;
+}
+
+message AccomodateChild{
+	string message = 1;
+}
 message RequestMessage {
+  string nodeId = 1;
+  string destinationId = 2;
+  string message = 3;
+
+}
+
+message ResponseMessage {
+  string nodeId = 1;
+  string destinationId = 2;
+  string ackMessage = 3;
+}
+
+
+message ShiftRequest{
+  string nodeId = 1;
+  int32 sumOfweight = 2;
+  string clusterHeadId = 3;
+}
+
+message ShiftResponse{
+  string message = 1;
+}
+
+message ShiftClusterReq{
+  string senderClusterHeadId = 1;
+  string senderNodeId = 2;
+  int32 sumOfweights = 3;
+}
+
+message ShiftClusterRes{
+  string message = 1;
+  
+}
+
+message AcceptRequest{
+  string clusterHeadId = 1;
+}
+
+message AcceptResponse{
+  string message = 1;
+}
+
+message RejectRequest{
+  string clusterHeadId = 1;
+}
+
+message RejectResponse{
+  string message = 1;
+}
+
+message ShiftFinishedRequest{
+  string clusterHeadId = 1;
+}
+
+message ShiftFinishedResponse{
+  string message = 1;
+}
+
+message RedisRequest {
   string key = 1;
 
 }
@@ -25,6 +196,6 @@ message Params {
   
 }
 
-message ResponseMessage {
+message RedisResponse {
   string msg = 1;
 }
