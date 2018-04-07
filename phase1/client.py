@@ -240,6 +240,13 @@ def sendWakeUp(ipList,nodeId):
 		logger.info("Node: %s sent wakeup to child ip: %s" % (nodeId,cip))
 		logger.info(clusterRPC)
 
+def sendHello(nodeId,i,neighbourIp,nodeClusterheadId,nodeHopcount,nodeState):
+	channel = grpc.insecure_channel(neighbourIp)
+	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	clusterRPC = stub.Hello(phase1_pb2.SendHello(nodeId,nodeHopcount,nodeState,nodeClusterheadId))
+	logger.info("Node: %s got following response after sending Hello to child id: %s" % (nodeId, i))
+	logger.info(clusterRPC)
+
 
 if __name__ == '__main__':
 	run()

@@ -46,7 +46,7 @@ class MainServiceStub(object):
         )
     self.Hello = channel.unary_unary(
         '/phase1.MainService/Hello',
-        request_serializer=phase1__pb2.sendHello.SerializeToString,
+        request_serializer=phase1__pb2.SendHello.SerializeToString,
         response_deserializer=phase1__pb2.HelloResponse.FromString,
         )
     self.ShiftClusterRequest = channel.unary_unary(
@@ -113,6 +113,11 @@ class MainServiceStub(object):
         '/phase1.MainService/Register',
         request_serializer=phase1__pb2.Params.SerializeToString,
         response_deserializer=phase1__pb2.RedisResponse.FromString,
+        )
+    self.StartPhase2Clustering = channel.unary_unary(
+        '/phase1.MainService/StartPhase2Clustering',
+        request_serializer=phase1__pb2.StartPhase2ClusteringRequest.SerializeToString,
+        response_deserializer=phase1__pb2.StartedPhase2ClusteringResponse.FromString,
         )
 
 
@@ -260,6 +265,13 @@ class MainServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def StartPhase2Clustering(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_MainServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -295,7 +307,7 @@ def add_MainServiceServicer_to_server(servicer, server):
       ),
       'Hello': grpc.unary_unary_rpc_method_handler(
           servicer.Hello,
-          request_deserializer=phase1__pb2.sendHello.FromString,
+          request_deserializer=phase1__pb2.SendHello.FromString,
           response_serializer=phase1__pb2.HelloResponse.SerializeToString,
       ),
       'ShiftClusterRequest': grpc.unary_unary_rpc_method_handler(
@@ -362,6 +374,11 @@ def add_MainServiceServicer_to_server(servicer, server):
           servicer.Register,
           request_deserializer=phase1__pb2.Params.FromString,
           response_serializer=phase1__pb2.RedisResponse.SerializeToString,
+      ),
+      'StartPhase2Clustering': grpc.unary_unary_rpc_method_handler(
+          servicer.StartPhase2Clustering,
+          request_deserializer=phase1__pb2.StartPhase2ClusteringRequest.FromString,
+          response_serializer=phase1__pb2.StartedPhase2ClusteringResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

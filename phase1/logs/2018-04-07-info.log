@@ -48,3 +48,6 @@
 2018-04-07 11:48:08,996 - main_server - INFO - Run port assigned
 2018-04-07 11:48:08,998 - main_server - INFO - Server started successfully. Entering forever while below
 2018-04-07 11:48:08,998 - main_server - INFO - Inside forever while....
+2018-04-07 12:15:52,762 - Node - INFO - Server successfully started on node: 2
+2018-04-07 12:15:54,493 - Node - INFO - Server successfully started on node: 0
+2018-04-07 12:15:56,051 - Node - INFO - Server successfully started on node: 4

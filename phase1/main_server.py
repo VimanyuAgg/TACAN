@@ -282,7 +282,11 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     if self.node.state=="busy":
       self.node.sendWakeup()
       self.node.state ="free"
-    return phase1_pb2.ShiftFinishedResponse(message= "Finished")    
+    return phase1_pb2.ShiftFinishedResponse(message= "Finished")
+
+  def StartPhase2Clustering(self,request,context):
+      logger.info("Node: %s got StartPhase2Clustering"%(self.node.id))
+      self.node.startPhase2Clustering()
 
 def serve(node):
   logger.info("Server starting for Node: %s"%(node.id))

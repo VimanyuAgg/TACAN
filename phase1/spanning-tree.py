@@ -8,7 +8,7 @@ SPANNING_INFO = {0:{'parentId':None,
 					'childWeightList':None,
 					'isClusterhead':None,
 					'state':"active",
-					'rackLocation':'00'
+					'rackLocation':'0,0'
 				},
 				 1:{'parentId':0,
 					'childListId':[3,5],
@@ -20,7 +20,7 @@ SPANNING_INFO = {0:{'parentId':None,
 					'childWeightList':None,
 					'isClusterhead':None,
 					'state':"active",
-					'rackLocation':'01'
+					'rackLocation':'0,1'
 				},
 				 2:{'parentId':0,
 					'childListId':[4,6],
@@ -32,7 +32,7 @@ SPANNING_INFO = {0:{'parentId':None,
 					'childWeightList':None,
 					'isClusterhead':None,
 					'state':"active",
-					'rackLocation':'02'
+					'rackLocation':'0,2'
 				},
 				 3:{'parentId':1,
 					'childListId':None,
@@ -44,7 +44,7 @@ SPANNING_INFO = {0:{'parentId':None,
 					'childWeightList':None,
 					'isClusterhead':None,
 					'state':"active",
-					'rackLocation':'10'
+					'rackLocation':'1,0'
 				},
 				 4:{'parentId':2,
 					'childListId':None,
@@ -56,7 +56,7 @@ SPANNING_INFO = {0:{'parentId':None,
 					'childWeightList':None,
 					'isClusterhead':None,
 					'state':"active",
-					'rackLocation':'11'
+					'rackLocation':'1,1'
 				},
 				 5:{'parentId':1,
 					'childListId':None,
@@ -68,7 +68,7 @@ SPANNING_INFO = {0:{'parentId':None,
 					'childWeightList':None,
 					'isClusterhead':None,
 					'state':"active",
-					'rackLocation':'12'
+					'rackLocation':'1,2'
 				},
 				6:{'parentId':2,
 					'childListId':None,
@@ -80,7 +80,7 @@ SPANNING_INFO = {0:{'parentId':None,
 					'childWeightList':None,
 					'isClusterhead':None,
 					'state':"active",
-					'rackLocation':'20'
+					'rackLocation':'2,0'
 				},
 				7:{'parentId':2,
 					'childListId':None,
@@ -92,7 +92,7 @@ SPANNING_INFO = {0:{'parentId':None,
 					'childWeightList':None,
 					'isClusterhead':None,
 					'state':"active",
-					'rackLocation':'21'
+					'rackLocation':'2,1'
 				},
 				 8: {'parentId': 2,
 					 'childListId': None,
@@ -104,6 +104,6 @@ SPANNING_INFO = {0:{'parentId':None,
 					 'childWeightList': None,
 					 'isClusterhead': None,
 					 'state': "active",
-					 'rackLocation': '22'
+					 'rackLocation': '2,2'
 					 }
 				 }

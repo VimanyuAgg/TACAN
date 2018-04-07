@@ -52,6 +52,7 @@ class Node:
 		self.dist = my_info['dist']
 		self.clusterheadId = my_info['clusterheadId']
 		self.hopcount = 0
+		self.rackLocation = my_info['rackLocation']
 		self.subtreeList = my_info['subtreeList']
 		self.neighbourList = my_info['neighbourList']
 		print "Calling weightMatrix for id: "+str(self.id)
@@ -143,6 +144,25 @@ class Node:
 	def sendShiftCompleteToBothClusterHeads(self,oldClusterheadId, newClusterheadId):
 		client.sendShiftCompleteToBothClusterHeads(raspberryPi_id_list.ID_IP_MAPPING[oldClusterheadId],\
 												   raspberryPi_id_list.ID_IP_MAPPING[newClusterheadId],self.id)
+
+	def startPhase2Clustering(self):
+		rackIdRow = self.rackLocation.split(",")[0]
+		rackIdCol = self.rackLocation.split(",")[1]
+
+		myNeighborsRack = []
+		myNeighborsRack.append("{},{}".format(int(rackIdRow)+1,rackIdCol))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow) - 1, rackIdCol))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow), int(rackIdCol)+1))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow), int(rackIdCol) - 1))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow)+1, int(rackIdCol) + 1))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) - 1))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow)+1, int(rackIdCol) - 1))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) + 1))
+		HARDCODEDNEIGHBOURS_ID  = [0,1,2,3,5,6,7,8]
+		for i in HARDCODEDNEIGHBOURS_ID:
+			resp = client.sendHello(self.id,i,raspberryPi_id_list[i],self.clusterheadId,self.hopcount,self.state)
+			logger.info("Node :%s got reply %s from Node: %s after sendHello"%(self.id,resp,i,))
+
 
 
 
