@@ -87,19 +87,24 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     logger.info ("Server Node:%s Child size is %s"%(self.node.id,childSize))
     try:
       if self.node.size + childSize > raspberryPi_id_list.THRESHOLD_S:
-        logger.info("Sending Prune")
-        return phase1_pb2.AccomodateChild(message="Prune")
-      elif self.node.childListId != None and self.node.childRequestCounter == len(self.node.childListId):
-        logger.info("All children responded. Sending size to parent")
-        self.node.size += childSize
-        self.node.childRequestCounter += 1
-        self.node.sendSizeToParent()
-        logger.info("Sending Accept")
-        return phase1_pb2.AccomodateChild(message="Accepted")
+          self.node.childRequestCounter += 1
+          logger.info("Sending Prune after checking if all children responded or not")
+          if self.node.childListId != None and self.node.childRequestCounter == len(self.node.childListId):
+              logger.info("All children responded. Sending size to parent")
+              thread = threading.Thread(target=self.node.sendSizeToParent, args=())
+              thread.start()
+          logger.info("Node: %s Sending Prune"%(self.node.id))
+          return phase1_pb2.AccomodateChild(message="Prune")
       else:
-        logger.info("Sending Accept")
+        logger.info("Sending Accept after checking if all children responded or not")
         self.node.size += childSize
+        logger.info("Node %s: new size is %s"%(self.node.id,self.node.size))
         self.node.childRequestCounter += 1
+        if self.node.childListId != None and self.node.childRequestCounter == len(self.node.childListId):
+            logger.info("All children responded. Sending size to parent")
+            thread = threading.Thread(target=self.node.sendSizeToParent,args=())
+            thread.start()
+        logger.info("Node: %s Sending accept to child" % (self.node.id))
         return phase1_pb2.AccomodateChild(message="Accepted")
 
     except Exception as e:
@@ -107,21 +112,18 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
 
 
-  def Cluster(self,request,context):
-    clusterName = request.clusterName
-    hopCount = request.hop
-    # assign clusterhead id
-    self.node.clusterheadid= clusterName
-    self.node.state = "active"
-    # assign isClusterhead as false
-    self.node.hop= hopCount
-
-    print("Server Node: "+self.node.id+" is now joining Clusterleader "+str(clusterName))
-    #call the cluster message on all its children
-    if(self.node.childListId != None):
-      self.node.propogateClusterheadInfo(clusterName, hopCount)
-    #call custer
-    return phase1_pb2.ClusterAck(clusterAck="Joined")
+  def JoinCluster(self, request, context):
+      logger.debug("Got Cluster message as server Node:%s"%(self.node.id))
+      clusterName = request.clusterHeadName
+      hopCount = request.hopcount
+      self.node.clusterheadId= clusterName
+      self.node.state = "active"
+      self.node.hopcount= hopCount
+      print("Server Node: "+str(self.node.id)+" is now joining Clusterleader "+str(clusterName))
+      logger.info("Server Node: "+str(self.node.id)+" is now joining Clusterleader "+str(clusterName))
+      if(self.node.childListId != None):
+          self.node.propogateClusterheadInfo(clusterName, hopCount)
+      return phase1_pb2.JoinClusterResponse(joinClusterResponse="Joined")
 
   def ShiftNodeRequest(self,request,context):
     if self.node.isClusterhead and self.node.state == "free":

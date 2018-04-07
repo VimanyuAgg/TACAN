@@ -87,6 +87,7 @@ def sendSize(node,stub):
 		node.parentId = None
 		#set I am the cluster
 		node.isClusterhead = 1
+
 		node.state = "free"
 		# fix below
 
@@ -101,7 +102,7 @@ def sendJamSignal(childIpList,clusterHeadId):
 	for ip in childIpList:
 		channel = grpc.insecure_channel(ip)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
-		clusterRPC = stub.Jam(phase1_pb2.JamRequest(clusterHeadId))
+		clusterRPC = stub.Jam(phase1_pb2.JamRequest(nodeId=clusterHeadId))
 		logger.info("Node: %s sent jam to child ip: %s" % (clusterHeadId,ip))
 		logger.info(clusterRPC)
 
@@ -111,20 +112,25 @@ def sendCluster(node):
 	newClusterId = "C"+str(node.id)
 	hopCount=1
 	if node.childListId is None:
-		print("I am the clusterhead")
+		print("I am the clusterhead with no children")
+		logger.info("I am clusterhead with no children")
 		return
 	for child in node.childListId:
 		childIP = node.getIPfromId(child)
 		channel = grpc.insecure_channel(childIP)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
-		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(newClusterId,hopCount))
+		logger.info("Node " + str(node.id) + ": sending cluster message to child id: " + str(child))
+		logger.info("Child IP: %s"%(childIP))
+		clusterRPC = stub.JoinCluster(phase1_pb2.JoinClusterRequest(clusterHeadName=newClusterId,hopcount=hopCount))
 		print("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
+		logger.info("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
 		print("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
+		logger.info("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
 
 def sendShiftNodeRequest(node,bestNodeClusterHeadId,clusterHeadIp):
 	channel = grpc.insecure_channel(clusterHeadIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.ShiftNodeRequest(phase1_pb2.ShiftRequest(node.id, node.size,bestNodeClusterHeadId))
+	clusterRPC = stub.ShiftNodeRequest(phase1_pb2.ShiftRequest(nodeId=node.id,sumOfweight=node.size,clusterHeadId=bestNodeClusterHeadId))
 	## Add result after sending ShiftNodeRequest
 	logger.info("Node: %s sent sendShiftNodeRequest about C:%s to clusterhead:%s"%(node.id,bestNodeClusterHeadId,clusterHeadIp))
 
@@ -133,37 +139,40 @@ def propogateClusterheadInfo(node,clusterName,hopCount):
 		childIP = node.getIPfromId(child)
 		channel = grpc.insecure_channel(childIP)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
-		clusterRPC = stub.Cluster(phase1_pb2.ClusterName(clusterName,hopCount))
+		logger.info("Node " + str(node.id) + ": is sending propagate cluster message to child id: " + str(child))
+		clusterRPC = stub.JoinCluster(phase1_pb2.JoinClusterRequest(clusterHeadName=clusterName,hopcount=hopCount))
 		print("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
+		logger.info("Node " + str(node.id) + ": sent cluster message to child id: " + str(child))
 		print("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
+		logger.info("Node " + str(node.id) + ": got the reply: " + clusterRPC.ClusterAck + "from child id: " + str(child))
 
 def sendShiftClusterRequest(clusterheadId,shiftNodeId,shiftNodeSum,shiftNodeClusterIp):
 	# send shift clusterRequest to Cj clusterhead
 	channel = grpc.insecure_channel(shiftNodeClusterIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.ShiftClusterRequest(phase1_pb2.ShiftClusterReq(clusterheadId,shiftNodeId,shiftNodeSum))
-	logger.info("Node: %s sent shift cluster request to Node ip: %s" % (node.id,shiftNodeClusterIp))
+	clusterRPC = stub.ShiftClusterRequest(phase1_pb2.ShiftClusterReq(senderClusterHeadId=clusterheadId,senderNodeId=shiftNodeId,sumOfweights=shiftNodeSum))
+	logger.info("Node sent shift cluster request to Node ip: %s" % (shiftNodeClusterIp))
 	logger.info(clusterRPC)
 
 def sendAccept(clusterHeadId,senderClusterHeadIp):
 	channel = grpc.insecure_channel(senderClusterHeadIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.Accept(phase1_pb2.AcceptRequest(clusterHeadId))
-	logger.info("Node: %s sent shift Accept to Node ip: %s" % (node.id,senderClusterHeadIp))
+	clusterRPC = stub.Accept(phase1_pb2.AcceptRequest(clusterHeadId=clusterHeadId))
+	logger.info("Node sent shift Accept to Node ip: %s" % (senderClusterHeadIp))
 	logger.info(clusterRPC)
 
 def sendReject(clusterHeadId,senderClusterHeadIp):
 	channel = grpc.insecure_channel(senderClusterHeadIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.Reject(phase1_pb2.RejectRequest(clusterHeadId))
-	logger.info("Node: %s sent shift reject to Node ip: %s" % (node.id,senderClusterHeadIp))
+	clusterRPC = stub.Reject(phase1_pb2.RejectRequest(clusterHeadId=clusterHeadId))
+	logger.info("Node sent shift reject to Node ip: %s" % (senderClusterHeadIp))
 	logger.info(clusterRPC)
        		
 def propagateJamToChildren(childIpList,jamId, nodeId):
 	for cip in childIpList:
 		channel = grpc.insecure_channel(cip)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
-		clusterRPC = stub.Jam(phase1_pb2.JamRequest(jamId))
+		clusterRPC = stub.Jam(phase1_pb2.JamRequest(nodeId=jamId))
 		logger.info("Node: %s sent JAM to child ip: %s"%(nodeId,cip))
 		logger.info(clusterRPC)
 
@@ -171,21 +180,21 @@ def propagateWakeUp(childIpList, nodeId):
 	for cip in childIpList:
 		channel = grpc.insecure_channel(cip)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
-		clusterRPC = stub.WakeUp(phase1_pb2.wakeUpRequest("wakeup"))
+		clusterRPC = stub.WakeUp(phase1_pb2.wakeUpRequest(wakeywakey="wakeup"))
 		logger.info("Node: %s sent wake to child ip: %s" % (nodeId, cip))
 		logger.info(clusterRPC)
 
 def joinNewParent(nodeId,nodeSize,newParentIp):
 	channel = grpc.insecure_channel(newParentIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.JoinNewParent(phase1_pb2.JoinNewParentRequest(nodeSize, nodeId))
+	clusterRPC = stub.JoinNewParent(phase1_pb2.JoinNewParentRequest(childSize=nodeSize, nodeId=nodeId))
 	logger.info("Node: %s sent join request to new parent ip: %s" % (nodeId, newParentIp))
 	logger.info(clusterRPC)
 
 def informParentAboutNewSize(sizeIncrement,nodeId,parentIp):
 	channel = grpc.insecure_channel(parentIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.UpdateSize(phase1_pb2.UpdateSizeRequest(sizeIncrement))
+	clusterRPC = stub.UpdateSize(phase1_pb2.UpdateSizeRequest(sizeIncrement=sizeIncrement))
 	logger.info("Node: %s sent updateSize request to existing parent ip: %s" % (nodeId, parentIp))
 	logger.info(clusterRPC)
 
@@ -193,20 +202,20 @@ def propagateNewClusterHeadToChildren(childIpList, nodeId,clusterheadId):
 	for cip in childIpList:
 		channel = grpc.insecure_channel(cip)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
-		clusterRPC = stub.UpdateClusterhead(phase1_pb2.UpdateClusterheadRequest(clusterheadId))
+		clusterRPC = stub.UpdateClusterhead(phase1_pb2.UpdateClusterheadRequest(newClusterheadId=clusterheadId))
 		logger.info("Node: %s sent change to newClusterhead to child ip: %s" % (nodeId, cip))
 		logger.info(clusterRPC)
 
 def sendShiftCompleteToBothClusterHeads(oldClusterheadIp,newClusterheadIp,nodeId):
 	channel = grpc.insecure_channel(oldClusterheadIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.ShiftComplete(phase1_pb2.SendShiftCompleteAck(nodeId,"Departed"))
+	clusterRPC = stub.ShiftComplete(phase1_pb2.SendShiftCompleteAck(id=nodeId,sendShiftCompleteAck="Departed"))
 	logger.info("Node: %s sent shiftComplete to old clusterhead ip: %s" % (nodeId,oldClusterheadIp))
 	logger.info(clusterRPC)
 
 	channel = grpc.insecure_channel(newClusterheadIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.ShiftComplete(phase1_pb2.SendShiftCompleteAck(nodeId,"Added"))
+	clusterRPC = stub.ShiftComplete(phase1_pb2.SendShiftCompleteAck(id=nodeId,sendShiftCompleteAck="Added"))
 	logger.info("Node: %s sent shiftComplete to new clusterhead ip: %s" % (nodeId, newClusterheadIp))
 	logger.info(clusterRPC)
 
@@ -214,21 +223,21 @@ def sendShiftCompleteToBothClusterHeads(oldClusterheadIp,newClusterheadIp,nodeId
 def removeChildIdFromParent(nodeId,parentIp):
 	channel = grpc.insecure_channel(parentIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.RemoveChildIdFromParent(phase1_pb2.RemoveChildIdFromParentRequest(nodeId))
+	clusterRPC = stub.RemoveChildIdFromParent(phase1_pb2.RemoveChildIdFromParentRequest(departingChidId=nodeId))
 	logger.info("Node: %s sent removeChildIdFromParent to (old) parent ip: %s" % (nodeId,parentIp))
 	logger.info(clusterRPC)
 
 def sendShiftStart(targetNodeId,targetNodeIp):
 	channel = grpc.insecure_channel(targetNodeIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.ShiftStart(phase1_pb2.ShiftStartRequest(targetNodeId))
-	logger.info("Node: %s sent shift start to Node id: %s" % (node.id,targetNodeId))
+	clusterRPC = stub.ShiftStart(phase1_pb2.ShiftStartRequest(targetNodeId=targetNodeId))
+	logger.info("Node sent shift start to Node id: %s" % (targetNodeId))
 	logger.info(clusterRPC)
 
 def sendShiftFinished(nodeId,targetNodeIp):
 	channel = grpc.insecure_channel(targetNodeIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.ShiftFinished(phase1_pb2.ShiftFinishedRequest(nodeId))
+	clusterRPC = stub.ShiftFinished(phase1_pb2.ShiftFinishedRequest(clusterHeadId=nodeId))
 	logger.info("Node: %s sent ShiftFinished to Node ip: %s" % (nodeId,targetNodeIp))
 	logger.info(clusterRPC)
 
@@ -236,14 +245,15 @@ def sendWakeUp(ipList,nodeId):
 	for cip in ipList:
 		channel = grpc.insecure_channel(cip)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
-		clusterRPC = stub.WakeUp(phase1_pb2.wakeUpRequest(nodeId))
+		clusterRPC = stub.WakeUp(phase1_pb2.wakeUpRequest(wakeywakey=nodeId))
 		logger.info("Node: %s sent wakeup to child ip: %s" % (nodeId,cip))
 		logger.info(clusterRPC)
 
 def sendHello(nodeId,i,neighbourIp,nodeClusterheadId,nodeHopcount,nodeState):
 	channel = grpc.insecure_channel(neighbourIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.Hello(phase1_pb2.SendHello(nodeId,nodeHopcount,nodeState,nodeClusterheadId))
+	clusterRPC = stub.Hello(phase1_pb2.SendHello(senderId=nodeId,hopToSenderClusterhead=nodeHopcount,\
+												 senderState=nodeState,senderClusterheadId=nodeClusterheadId))
 	logger.info("Node: %s got following response after sending Hello to child id: %s" % (nodeId, i))
 	logger.info(clusterRPC)
 
