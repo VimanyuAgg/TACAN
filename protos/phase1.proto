@@ -10,10 +10,10 @@ service MainService {
   rpc Handshake (RequestMessage) returns (ResponseMessage) {}
   rpc SendPacket (RequestMessage) returns (ResponseMessage) {}
   rpc Size (MySize) returns (AccomodateChild){}
-  rpc Cluster (ClusterName) returns (ClusterAck){}
+  //rpc Cluster (ClusterName) returns (ClusterAck){}
   rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse){}
   rpc Jam (JamRequest) returns (JamResponse){}
-  rpc Hello(sendHello) returns (HelloResponse){}
+  rpc Hello(SendHello) returns (HelloResponse){}
   rpc ShiftClusterRequest(ShiftClusterReq) returns (ShiftClusterRes){}
   rpc Accept(AcceptRequest) returns(AcceptResponse){}
   rpc WakeUp (wakeUpRequest) returns (wakeUpResponse){}
@@ -27,8 +27,24 @@ service MainService {
   rpc ShiftFinished(ShiftFinishedRequest) returns (ShiftFinishedResponse){}
   rpc Retrieve (RedisRequest) returns (ValAck) {}
   rpc Register (Params) returns (RedisResponse) {}
+  rpc StartPhase2Clustering(StartPhase2ClusteringRequest) returns (StartedPhase2ClusteringResponse){}
+  rpc JoinCluster(JoinClusterRequest) returns (JoinClusterResponse) {}
 }
 
+message JoinClusterResponse{
+    string joinClusterResponse = 1;
+}
+message JoinClusterRequest{
+    string clusterHeadName = 1;
+    int32 hopcount = 2;
+
+}
+message StartPhase2ClusteringRequest{
+    string startPhase2 = 1;
+}
+message StartedPhase2ClusteringResponse{
+    string startedPhase2ClusteringResponse =1;
+}
 message RemoveChildIdFromParentRequest{
     int32 departingChildId = 1;
 }
@@ -88,7 +104,7 @@ message wakeUpResponse{
     string wokenUp = 1;
 }
 
-message sendHello{
+message SendHello{
     string senderId = 1;
     int32 hopToSenderClusterhead = 2;
     string senderState = 3;
@@ -108,14 +124,14 @@ message JamResponse{
     string jamResponse = 1;
 }
 
-message ClusterName {
-	string clusterName = 1;
-  int32 hop = 2;
-}
+//message ClusterName {
+//    string clusterName = 1;
+//    int32 hop = 2;
+//}
 
-message ClusterAck {
-	string clusterAck = 1;
-}
+//message ClusterAck {
+//	string clusterAck = 1;
+//}
 
 message MySize{
 	int32 size = 1;
