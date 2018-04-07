@@ -102,8 +102,6 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         self.node.childRequestCounter += 1
         return phase1_pb2.AccomodateChild(message="Accepted")
 
-
-
     except Exception as e:
       logger.error(e)
 
@@ -218,11 +216,16 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   # As a parent, add new child to myChild and update size
   # Also inform parents about size addition
   def JoinNewParent(self,request,context):
+    if self.node.state = "sleep":
       self.node.childListId.append(request.nodeId)
       sizeIncrement = request.childSize
       self.node.size += request.childSize
       self.node.informParentAboutNewSize(sizeIncrement)
-      return phase1_pb2.JoinNewParentResponse(joinResponse="welcome my new child")
+    else if self.node.isClusterhead and self.node.state = "busy":
+      self.node.childListId.append(request.nodeId)
+      sizeIncrement = request.childSize
+      self.node.size += request.childSize
+    return phase1_pb2.JoinNewParentResponse(joinResponse="welcome my new child")
 
   def UpdateSize(self,request,context):
       self.node.size += request.sizeIncrement
@@ -234,9 +237,11 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.propagateNewClusterHeadToChildren()
       return phase1_pb2.UpdateClusterheadResponse(updateClusterheadResponse = "clusterhead Updated")
 
-  def SendShiftComplete(self,request,context):
-      logger.info("ClusterheadId: %s got SendShiftComplete rpc with message:%s"%(self.node.id,request.sendShiftCompleteAck))
-      return phase1_pb2.ClusterheadAckSendShift(clusterheadAckSendShift = "ClusterheadId: %s acknowledged shift.."%(self.node.id))
+  def ShiftComplete(self,request,context):
+    logger.info("ClusterheadId: %s got SendShiftComplete rpc with message:%s"%(self.node.id,request.sendShiftCompleteAck))
+    self.node.sendWakeup()
+    self.node ="free"
+    return phase1_pb2.ClusterheadAckSendShift(clusterheadAckSendShift = "ClusterheadId: %s acknowledged shift.."%(self.node.id))
 
   def RemoveChildIdFromParent(self,request,context):
       logger.info("Parent: %s got RemoveChildIdFromParent rpc from Node:%s" % (self.node.id, request.departingChildId))
@@ -250,7 +255,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   def Accept(self,request,context):
     if self.node.state=="busy":
       logger.info("Accept Request recieved from clusterhead " % (request.clusterHeadId))
-      # send shift start to the i node if energy matric
+      # send shift start to the i node if energy matric reduces
       if energyvalue < currentValue:
         self.node.sendShiftStart()
         return phase1_pb2.AcceptResponse(message= "Starting Shift Start")
@@ -272,19 +277,11 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     else:
       return phase1_pb2.RejectResponse(message= "Not in busy state for now !")
 
-      
-  
   def ShiftFinished(self,request,context):
     if self.node.state=="busy":
-      if self.node.shiftNodeId == request.clusterHeadId:
-        self.node.sendShiftFinished()
-
-      #send wakeup
       self.node.sendWakeup()
       self.node.state="free"
-
     return phase1_pb2.ShiftFinishedResponse(message= "Finished")    
-
 
 def serve(node):
   logger.info("Server starting for Node: %s"%(node.id))
