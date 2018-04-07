@@ -49,6 +49,16 @@ class MainServiceStub(object):
         request_serializer=phase1__pb2.sendHello.SerializeToString,
         response_deserializer=phase1__pb2.HelloResponse.FromString,
         )
+    self.ShiftClusterRequest = channel.unary_unary(
+        '/phase1.MainService/ShiftClusterRequest',
+        request_serializer=phase1__pb2.ShiftClusterReq.SerializeToString,
+        response_deserializer=phase1__pb2.ShiftClusterRes.FromString,
+        )
+    self.Accept = channel.unary_unary(
+        '/phase1.MainService/Accept',
+        request_serializer=phase1__pb2.AcceptRequest.SerializeToString,
+        response_deserializer=phase1__pb2.AcceptResponse.FromString,
+        )
     self.WakeUp = channel.unary_unary(
         '/phase1.MainService/WakeUp',
         request_serializer=phase1__pb2.wakeUpRequest.SerializeToString,
@@ -133,6 +143,20 @@ class MainServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def Hello(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ShiftClusterRequest(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Accept(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -225,6 +249,16 @@ def add_MainServiceServicer_to_server(servicer, server):
           servicer.Hello,
           request_deserializer=phase1__pb2.sendHello.FromString,
           response_serializer=phase1__pb2.HelloResponse.SerializeToString,
+      ),
+      'ShiftClusterRequest': grpc.unary_unary_rpc_method_handler(
+          servicer.ShiftClusterRequest,
+          request_deserializer=phase1__pb2.ShiftClusterReq.FromString,
+          response_serializer=phase1__pb2.ShiftClusterRes.SerializeToString,
+      ),
+      'Accept': grpc.unary_unary_rpc_method_handler(
+          servicer.Accept,
+          request_deserializer=phase1__pb2.AcceptRequest.FromString,
+          response_serializer=phase1__pb2.AcceptResponse.SerializeToString,
       ),
       'WakeUp': grpc.unary_unary_rpc_method_handler(
           servicer.WakeUp,
