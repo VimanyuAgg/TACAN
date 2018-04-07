@@ -124,8 +124,8 @@ def sendCluster(node):
 		clusterRPC = stub.JoinCluster(phase1_pb2.JoinClusterRequest(clusterHeadName=newClusterId,hopcount=hopCount))
 		print("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
 		logger.info("Node "+str(node.id)+": sent cluster message to child id: "+str(child))
-		print("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
-		logger.info("Node "+str(node.id)+": got the reply: "+clusterRPC.ClusterAck+"from child id: "+str(child))
+		print("Node "+str(node.id)+": got the reply: "+clusterRPC.joinClusterResponse+"from child id: "+str(child))
+		logger.info("Node "+str(node.id)+": got the reply: "+clusterRPC.joinClusterResponse+"from child id: "+str(child))
 
 def sendShiftNodeRequest(node,bestNodeClusterHeadId,clusterHeadIp):
 	channel = grpc.insecure_channel(clusterHeadIp)

@@ -100,7 +100,7 @@ class Node:
 	# As a parent, send size to YOUR parent
 	# Must be called ONLY after childRequestCounter == len(childListId)
 	def sendSizeToParent(self):
-		if (raspberryPi_id_list.ID_IP_MAPPING[self.parentId] != None):
+		if (self.parentId != None):
 			client.phaseOneClusterStart(self,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
 		else:
 			client.sendCluster(self)
