@@ -56,18 +56,18 @@ class LookUpServer(lookup_pb2_grpc.MainServiceServicer):
     return lookup_pb2.ResponseMessage(msg=resp)
 
 def serve(lookup):
-  print "inside serve"
+  
   server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-  print "thread created"
+  
   try:
     lookup_pb2_grpc.add_MainServiceServicer_to_server(LookUpServer(lookup), server)
     print "MainServiceServicer_to_server"
-    # update with ip of lookup
+    
     server.add_insecure_port('[::]:50051')
-    print "after insecure port"
+    
     #  server.add_insecure_port('localhost:')
     #thread.start_new_thread(server.start(),())
-    print "started"
+    
     server.start()
 
       

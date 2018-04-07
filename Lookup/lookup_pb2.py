@@ -19,21 +19,52 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='lookup.proto',
   package='lookup',
   syntax='proto3',
-  serialized_pb=_b('\n\x0clookup.proto\x12\x06lookup\"\x1d\n\x0eRequestMessage\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x17\n\x06ValAck\x12\r\n\x05value\x18\x01 \x01(\t\" \n\x06Params\x12\n\n\x02id\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\"\x1e\n\x0fResponseMessage\x12\x0b\n\x03msg\x18\x01 \x01(\t2z\n\x0bMainService\x12\x34\n\x08Retrieve\x12\x16.lookup.RequestMessage\x1a\x0e.lookup.ValAck\"\x00\x12\x35\n\x08Register\x12\x0e.lookup.Params\x1a\x17.lookup.ResponseMessage\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x0clookup.proto\x12\x06lookup\":\n\x1eRemoveChildIdFromParentRequest\x12\x18\n\x10\x64\x65partingChildId\x18\x01 \x01(\x05\"J\n\x1fRemoveChildIdFromParentResponse\x12\'\n\x1fremoveChildIdFromParentResponse\x18\x01 \x01(\t\"@\n\x14SendShiftCompleteAck\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1c\n\x14sendShiftCompleteAck\x18\x02 \x01(\t\":\n\x17\x43lusterheadAckSendShift\x12\x1f\n\x17\x63lusterheadAckSendShift\x18\x01 \x01(\t\"4\n\x18UpdateClusterheadRequest\x12\x18\n\x10newClusterheadId\x18\x01 \x01(\x05\">\n\x19UpdateClusterheadResponse\x12!\n\x19updateClusterheadResponse\x18\x01 \x01(\t\"*\n\x11UpdateSizeRequest\x12\x15\n\rsizeIncrement\x18\x01 \x01(\x05\"0\n\x12UpdateSizeResponse\x12\x1a\n\x12updateSizeResponse\x18\x01 \x01(\t\"9\n\x14JoinNewParentRequest\x12\x11\n\tchildSize\x18\x01 \x01(\x05\x12\x0e\n\x06nodeId\x18\x02 \x01(\x05\"-\n\x15JoinNewParentResponse\x12\x14\n\x0cjoinResponse\x18\x01 \x01(\t\")\n\x11ShiftStartRequest\x12\x14\n\x0ctargetNodeId\x18\x01 \x01(\t\"0\n\x12ShiftStartResponse\x12\x1a\n\x12shiftStartResponse\x18\x01 \x01(\t\"#\n\rwakeUpRequest\x12\x12\n\nwakeywakey\x18\x01 \x01(\t\"!\n\x0ewakeUpResponse\x12\x0f\n\x07wokenUp\x18\x01 \x01(\t\"o\n\tsendHello\x12\x10\n\x08senderId\x18\x01 \x01(\t\x12\x1e\n\x16hopToSenderClusterhead\x18\x02 \x01(\x05\x12\x13\n\x0bsenderState\x18\x03 \x01(\t\x12\x1b\n\x13senderClusterheadId\x18\x04 \x01(\t\"#\n\rHelloResponse\x12\x12\n\ninterested\x18\x01 \x01(\x05\"\x1c\n\nJamRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\x05\"\"\n\x0bJamResponse\x12\x13\n\x0bjamResponse\x18\x01 \x01(\t\"/\n\x0b\x43lusterName\x12\x13\n\x0b\x63lusterName\x18\x01 \x01(\t\x12\x0b\n\x03hop\x18\x02 \x01(\x05\" \n\nClusterAck\x12\x12\n\nclusterAck\x18\x01 \x01(\t\"\x16\n\x06MySize\x12\x0c\n\x04size\x18\x01 \x01(\x05\"\"\n\x0f\x41\x63\x63omodateChild\x12\x0f\n\x07message\x18\x01 \x01(\t\"H\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t\"J\n\x0cShiftRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x13\n\x0bsumOfweight\x18\x02 \x01(\x05\x12\x15\n\rclusterHeadId\x18\x03 \x01(\t\" \n\rShiftResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"Z\n\x0fShiftClusterReq\x12\x1b\n\x13senderClusterHeadId\x18\x01 \x01(\t\x12\x14\n\x0csenderNodeId\x18\x02 \x01(\t\x12\x14\n\x0csumOfweights\x18\x03 \x01(\x05\"\"\n\x0fShiftClusterRes\x12\x0f\n\x07message\x18\x01 \x01(\t\"&\n\rAcceptRequest\x12\x15\n\rclusterHeadId\x18\x01 \x01(\t\"!\n\x0e\x41\x63\x63\x65ptResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"&\n\rRejectRequest\x12\x15\n\rclusterHeadId\x18\x01 \x01(\t\"!\n\x0eRejectResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"-\n\x14ShiftFinishedRequest\x12\x15\n\rclusterHeadId\x18\x01 \x01(\t\"(\n\x15ShiftFinishedResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1b\n\x0cRedisRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x17\n\x06ValAck\x12\r\n\x05value\x18\x01 \x01(\t\" \n\x06Params\x12\n\n\x02id\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\"\x1c\n\rRedisResponse\x12\x0b\n\x03msg\x18\x01 \x01(\t2\xd0\n\n\x0bMainService\x12>\n\tHandshake\x12\x16.lookup.RequestMessage\x1a\x17.lookup.ResponseMessage\"\x00\x12?\n\nSendPacket\x12\x16.lookup.RequestMessage\x1a\x17.lookup.ResponseMessage\"\x00\x12\x31\n\x04Size\x12\x0e.lookup.MySize\x1a\x17.lookup.AccomodateChild\"\x00\x12\x34\n\x07\x43luster\x12\x13.lookup.ClusterName\x1a\x12.lookup.ClusterAck\"\x00\x12\x41\n\x10ShiftNodeRequest\x12\x14.lookup.ShiftRequest\x1a\x15.lookup.ShiftResponse\"\x00\x12\x30\n\x03Jam\x12\x12.lookup.JamRequest\x1a\x13.lookup.JamResponse\"\x00\x12\x33\n\x05Hello\x12\x11.lookup.sendHello\x1a\x15.lookup.HelloResponse\"\x00\x12I\n\x13ShiftClusterRequest\x12\x17.lookup.ShiftClusterReq\x1a\x17.lookup.ShiftClusterRes\"\x00\x12\x39\n\x06\x41\x63\x63\x65pt\x12\x15.lookup.AcceptRequest\x1a\x16.lookup.AcceptResponse\"\x00\x12\x39\n\x06WakeUp\x12\x15.lookup.wakeUpRequest\x1a\x16.lookup.wakeUpResponse\"\x00\x12\x45\n\nShiftStart\x12\x19.lookup.ShiftStartRequest\x1a\x1a.lookup.ShiftStartResponse\"\x00\x12N\n\rJoinNewParent\x12\x1c.lookup.JoinNewParentRequest\x1a\x1d.lookup.JoinNewParentResponse\"\x00\x12\x45\n\nUpdateSize\x12\x19.lookup.UpdateSizeRequest\x1a\x1a.lookup.UpdateSizeResponse\"\x00\x12Z\n\x11UpdateClusterhead\x12 .lookup.UpdateClusterheadRequest\x1a!.lookup.UpdateClusterheadResponse\"\x00\x12P\n\rShiftComplete\x12\x1c.lookup.SendShiftCompleteAck\x1a\x1f.lookup.ClusterheadAckSendShift\"\x00\x12l\n\x17RemoveChildIdFromParent\x12&.lookup.RemoveChildIdFromParentRequest\x1a\'.lookup.RemoveChildIdFromParentResponse\"\x00\x12\x39\n\x06Reject\x12\x15.lookup.RejectRequest\x1a\x16.lookup.RejectResponse\"\x00\x12N\n\rShiftFinished\x12\x1c.lookup.ShiftFinishedRequest\x1a\x1d.lookup.ShiftFinishedResponse\"\x00\x12\x32\n\x08Retrieve\x12\x14.lookup.RedisRequest\x1a\x0e.lookup.ValAck\"\x00\x12\x33\n\x08Register\x12\x0e.lookup.Params\x1a\x15.lookup.RedisResponse\"\x00\x62\x06proto3')
 )
 
 
 
 
-_REQUESTMESSAGE = _descriptor.Descriptor(
-  name='RequestMessage',
-  full_name='lookup.RequestMessage',
+_REMOVECHILDIDFROMPARENTREQUEST = _descriptor.Descriptor(
+  name='RemoveChildIdFromParentRequest',
+  full_name='lookup.RemoveChildIdFromParentRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='lookup.RequestMessage.key', index=0,
+      name='departingChildId', full_name='lookup.RemoveChildIdFromParentRequest.departingChildId', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=24,
+  serialized_end=82,
+)
+
+
+_REMOVECHILDIDFROMPARENTRESPONSE = _descriptor.Descriptor(
+  name='RemoveChildIdFromParentResponse',
+  full_name='lookup.RemoveChildIdFromParentResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='removeChildIdFromParentResponse', full_name='lookup.RemoveChildIdFromParentResponse.removeChildIdFromParentResponse', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -51,8 +82,1129 @@ _REQUESTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24,
-  serialized_end=53,
+  serialized_start=84,
+  serialized_end=158,
+)
+
+
+_SENDSHIFTCOMPLETEACK = _descriptor.Descriptor(
+  name='SendShiftCompleteAck',
+  full_name='lookup.SendShiftCompleteAck',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='lookup.SendShiftCompleteAck.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sendShiftCompleteAck', full_name='lookup.SendShiftCompleteAck.sendShiftCompleteAck', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=160,
+  serialized_end=224,
+)
+
+
+_CLUSTERHEADACKSENDSHIFT = _descriptor.Descriptor(
+  name='ClusterheadAckSendShift',
+  full_name='lookup.ClusterheadAckSendShift',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='clusterheadAckSendShift', full_name='lookup.ClusterheadAckSendShift.clusterheadAckSendShift', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=226,
+  serialized_end=284,
+)
+
+
+_UPDATECLUSTERHEADREQUEST = _descriptor.Descriptor(
+  name='UpdateClusterheadRequest',
+  full_name='lookup.UpdateClusterheadRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='newClusterheadId', full_name='lookup.UpdateClusterheadRequest.newClusterheadId', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=286,
+  serialized_end=338,
+)
+
+
+_UPDATECLUSTERHEADRESPONSE = _descriptor.Descriptor(
+  name='UpdateClusterheadResponse',
+  full_name='lookup.UpdateClusterheadResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='updateClusterheadResponse', full_name='lookup.UpdateClusterheadResponse.updateClusterheadResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=340,
+  serialized_end=402,
+)
+
+
+_UPDATESIZEREQUEST = _descriptor.Descriptor(
+  name='UpdateSizeRequest',
+  full_name='lookup.UpdateSizeRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='sizeIncrement', full_name='lookup.UpdateSizeRequest.sizeIncrement', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=404,
+  serialized_end=446,
+)
+
+
+_UPDATESIZERESPONSE = _descriptor.Descriptor(
+  name='UpdateSizeResponse',
+  full_name='lookup.UpdateSizeResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='updateSizeResponse', full_name='lookup.UpdateSizeResponse.updateSizeResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=448,
+  serialized_end=496,
+)
+
+
+_JOINNEWPARENTREQUEST = _descriptor.Descriptor(
+  name='JoinNewParentRequest',
+  full_name='lookup.JoinNewParentRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='childSize', full_name='lookup.JoinNewParentRequest.childSize', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='nodeId', full_name='lookup.JoinNewParentRequest.nodeId', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=498,
+  serialized_end=555,
+)
+
+
+_JOINNEWPARENTRESPONSE = _descriptor.Descriptor(
+  name='JoinNewParentResponse',
+  full_name='lookup.JoinNewParentResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='joinResponse', full_name='lookup.JoinNewParentResponse.joinResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=557,
+  serialized_end=602,
+)
+
+
+_SHIFTSTARTREQUEST = _descriptor.Descriptor(
+  name='ShiftStartRequest',
+  full_name='lookup.ShiftStartRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='targetNodeId', full_name='lookup.ShiftStartRequest.targetNodeId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=604,
+  serialized_end=645,
+)
+
+
+_SHIFTSTARTRESPONSE = _descriptor.Descriptor(
+  name='ShiftStartResponse',
+  full_name='lookup.ShiftStartResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='shiftStartResponse', full_name='lookup.ShiftStartResponse.shiftStartResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=647,
+  serialized_end=695,
+)
+
+
+_WAKEUPREQUEST = _descriptor.Descriptor(
+  name='wakeUpRequest',
+  full_name='lookup.wakeUpRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='wakeywakey', full_name='lookup.wakeUpRequest.wakeywakey', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=697,
+  serialized_end=732,
+)
+
+
+_WAKEUPRESPONSE = _descriptor.Descriptor(
+  name='wakeUpResponse',
+  full_name='lookup.wakeUpResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='wokenUp', full_name='lookup.wakeUpResponse.wokenUp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=734,
+  serialized_end=767,
+)
+
+
+_SENDHELLO = _descriptor.Descriptor(
+  name='sendHello',
+  full_name='lookup.sendHello',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='senderId', full_name='lookup.sendHello.senderId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='hopToSenderClusterhead', full_name='lookup.sendHello.hopToSenderClusterhead', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='senderState', full_name='lookup.sendHello.senderState', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='senderClusterheadId', full_name='lookup.sendHello.senderClusterheadId', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=769,
+  serialized_end=880,
+)
+
+
+_HELLORESPONSE = _descriptor.Descriptor(
+  name='HelloResponse',
+  full_name='lookup.HelloResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='interested', full_name='lookup.HelloResponse.interested', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=882,
+  serialized_end=917,
+)
+
+
+_JAMREQUEST = _descriptor.Descriptor(
+  name='JamRequest',
+  full_name='lookup.JamRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nodeId', full_name='lookup.JamRequest.nodeId', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=919,
+  serialized_end=947,
+)
+
+
+_JAMRESPONSE = _descriptor.Descriptor(
+  name='JamResponse',
+  full_name='lookup.JamResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jamResponse', full_name='lookup.JamResponse.jamResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=949,
+  serialized_end=983,
+)
+
+
+_CLUSTERNAME = _descriptor.Descriptor(
+  name='ClusterName',
+  full_name='lookup.ClusterName',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='clusterName', full_name='lookup.ClusterName.clusterName', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='hop', full_name='lookup.ClusterName.hop', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=985,
+  serialized_end=1032,
+)
+
+
+_CLUSTERACK = _descriptor.Descriptor(
+  name='ClusterAck',
+  full_name='lookup.ClusterAck',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='clusterAck', full_name='lookup.ClusterAck.clusterAck', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1034,
+  serialized_end=1066,
+)
+
+
+_MYSIZE = _descriptor.Descriptor(
+  name='MySize',
+  full_name='lookup.MySize',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='size', full_name='lookup.MySize.size', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1068,
+  serialized_end=1090,
+)
+
+
+_ACCOMODATECHILD = _descriptor.Descriptor(
+  name='AccomodateChild',
+  full_name='lookup.AccomodateChild',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='message', full_name='lookup.AccomodateChild.message', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1092,
+  serialized_end=1126,
+)
+
+
+_REQUESTMESSAGE = _descriptor.Descriptor(
+  name='RequestMessage',
+  full_name='lookup.RequestMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nodeId', full_name='lookup.RequestMessage.nodeId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='destinationId', full_name='lookup.RequestMessage.destinationId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='lookup.RequestMessage.message', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1128,
+  serialized_end=1200,
+)
+
+
+_RESPONSEMESSAGE = _descriptor.Descriptor(
+  name='ResponseMessage',
+  full_name='lookup.ResponseMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nodeId', full_name='lookup.ResponseMessage.nodeId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='destinationId', full_name='lookup.ResponseMessage.destinationId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ackMessage', full_name='lookup.ResponseMessage.ackMessage', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1202,
+  serialized_end=1278,
+)
+
+
+_SHIFTREQUEST = _descriptor.Descriptor(
+  name='ShiftRequest',
+  full_name='lookup.ShiftRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nodeId', full_name='lookup.ShiftRequest.nodeId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sumOfweight', full_name='lookup.ShiftRequest.sumOfweight', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='clusterHeadId', full_name='lookup.ShiftRequest.clusterHeadId', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1280,
+  serialized_end=1354,
+)
+
+
+_SHIFTRESPONSE = _descriptor.Descriptor(
+  name='ShiftResponse',
+  full_name='lookup.ShiftResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='message', full_name='lookup.ShiftResponse.message', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1356,
+  serialized_end=1388,
+)
+
+
+_SHIFTCLUSTERREQ = _descriptor.Descriptor(
+  name='ShiftClusterReq',
+  full_name='lookup.ShiftClusterReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='senderClusterHeadId', full_name='lookup.ShiftClusterReq.senderClusterHeadId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='senderNodeId', full_name='lookup.ShiftClusterReq.senderNodeId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sumOfweights', full_name='lookup.ShiftClusterReq.sumOfweights', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1390,
+  serialized_end=1480,
+)
+
+
+_SHIFTCLUSTERRES = _descriptor.Descriptor(
+  name='ShiftClusterRes',
+  full_name='lookup.ShiftClusterRes',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='message', full_name='lookup.ShiftClusterRes.message', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1482,
+  serialized_end=1516,
+)
+
+
+_ACCEPTREQUEST = _descriptor.Descriptor(
+  name='AcceptRequest',
+  full_name='lookup.AcceptRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='clusterHeadId', full_name='lookup.AcceptRequest.clusterHeadId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1518,
+  serialized_end=1556,
+)
+
+
+_ACCEPTRESPONSE = _descriptor.Descriptor(
+  name='AcceptResponse',
+  full_name='lookup.AcceptResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='message', full_name='lookup.AcceptResponse.message', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1558,
+  serialized_end=1591,
+)
+
+
+_REJECTREQUEST = _descriptor.Descriptor(
+  name='RejectRequest',
+  full_name='lookup.RejectRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='clusterHeadId', full_name='lookup.RejectRequest.clusterHeadId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1593,
+  serialized_end=1631,
+)
+
+
+_REJECTRESPONSE = _descriptor.Descriptor(
+  name='RejectResponse',
+  full_name='lookup.RejectResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='message', full_name='lookup.RejectResponse.message', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1633,
+  serialized_end=1666,
+)
+
+
+_SHIFTFINISHEDREQUEST = _descriptor.Descriptor(
+  name='ShiftFinishedRequest',
+  full_name='lookup.ShiftFinishedRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='clusterHeadId', full_name='lookup.ShiftFinishedRequest.clusterHeadId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1668,
+  serialized_end=1713,
+)
+
+
+_SHIFTFINISHEDRESPONSE = _descriptor.Descriptor(
+  name='ShiftFinishedResponse',
+  full_name='lookup.ShiftFinishedResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='message', full_name='lookup.ShiftFinishedResponse.message', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1715,
+  serialized_end=1755,
+)
+
+
+_REDISREQUEST = _descriptor.Descriptor(
+  name='RedisRequest',
+  full_name='lookup.RedisRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='lookup.RedisRequest.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1757,
+  serialized_end=1784,
 )
 
 
@@ -82,8 +1234,8 @@ _VALACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=55,
-  serialized_end=78,
+  serialized_start=1786,
+  serialized_end=1809,
 )
 
 
@@ -120,20 +1272,20 @@ _PARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=80,
-  serialized_end=112,
+  serialized_start=1811,
+  serialized_end=1843,
 )
 
 
-_RESPONSEMESSAGE = _descriptor.Descriptor(
-  name='ResponseMessage',
-  full_name='lookup.ResponseMessage',
+_REDISRESPONSE = _descriptor.Descriptor(
+  name='RedisResponse',
+  full_name='lookup.RedisResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msg', full_name='lookup.ResponseMessage.msg', index=0,
+      name='msg', full_name='lookup.RedisResponse.msg', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -151,15 +1303,203 @@ _RESPONSEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=114,
-  serialized_end=144,
+  serialized_start=1845,
+  serialized_end=1873,
 )
 
+DESCRIPTOR.message_types_by_name['RemoveChildIdFromParentRequest'] = _REMOVECHILDIDFROMPARENTREQUEST
+DESCRIPTOR.message_types_by_name['RemoveChildIdFromParentResponse'] = _REMOVECHILDIDFROMPARENTRESPONSE
+DESCRIPTOR.message_types_by_name['SendShiftCompleteAck'] = _SENDSHIFTCOMPLETEACK
+DESCRIPTOR.message_types_by_name['ClusterheadAckSendShift'] = _CLUSTERHEADACKSENDSHIFT
+DESCRIPTOR.message_types_by_name['UpdateClusterheadRequest'] = _UPDATECLUSTERHEADREQUEST
+DESCRIPTOR.message_types_by_name['UpdateClusterheadResponse'] = _UPDATECLUSTERHEADRESPONSE
+DESCRIPTOR.message_types_by_name['UpdateSizeRequest'] = _UPDATESIZEREQUEST
+DESCRIPTOR.message_types_by_name['UpdateSizeResponse'] = _UPDATESIZERESPONSE
+DESCRIPTOR.message_types_by_name['JoinNewParentRequest'] = _JOINNEWPARENTREQUEST
+DESCRIPTOR.message_types_by_name['JoinNewParentResponse'] = _JOINNEWPARENTRESPONSE
+DESCRIPTOR.message_types_by_name['ShiftStartRequest'] = _SHIFTSTARTREQUEST
+DESCRIPTOR.message_types_by_name['ShiftStartResponse'] = _SHIFTSTARTRESPONSE
+DESCRIPTOR.message_types_by_name['wakeUpRequest'] = _WAKEUPREQUEST
+DESCRIPTOR.message_types_by_name['wakeUpResponse'] = _WAKEUPRESPONSE
+DESCRIPTOR.message_types_by_name['sendHello'] = _SENDHELLO
+DESCRIPTOR.message_types_by_name['HelloResponse'] = _HELLORESPONSE
+DESCRIPTOR.message_types_by_name['JamRequest'] = _JAMREQUEST
+DESCRIPTOR.message_types_by_name['JamResponse'] = _JAMRESPONSE
+DESCRIPTOR.message_types_by_name['ClusterName'] = _CLUSTERNAME
+DESCRIPTOR.message_types_by_name['ClusterAck'] = _CLUSTERACK
+DESCRIPTOR.message_types_by_name['MySize'] = _MYSIZE
+DESCRIPTOR.message_types_by_name['AccomodateChild'] = _ACCOMODATECHILD
 DESCRIPTOR.message_types_by_name['RequestMessage'] = _REQUESTMESSAGE
+DESCRIPTOR.message_types_by_name['ResponseMessage'] = _RESPONSEMESSAGE
+DESCRIPTOR.message_types_by_name['ShiftRequest'] = _SHIFTREQUEST
+DESCRIPTOR.message_types_by_name['ShiftResponse'] = _SHIFTRESPONSE
+DESCRIPTOR.message_types_by_name['ShiftClusterReq'] = _SHIFTCLUSTERREQ
+DESCRIPTOR.message_types_by_name['ShiftClusterRes'] = _SHIFTCLUSTERRES
+DESCRIPTOR.message_types_by_name['AcceptRequest'] = _ACCEPTREQUEST
+DESCRIPTOR.message_types_by_name['AcceptResponse'] = _ACCEPTRESPONSE
+DESCRIPTOR.message_types_by_name['RejectRequest'] = _REJECTREQUEST
+DESCRIPTOR.message_types_by_name['RejectResponse'] = _REJECTRESPONSE
+DESCRIPTOR.message_types_by_name['ShiftFinishedRequest'] = _SHIFTFINISHEDREQUEST
+DESCRIPTOR.message_types_by_name['ShiftFinishedResponse'] = _SHIFTFINISHEDRESPONSE
+DESCRIPTOR.message_types_by_name['RedisRequest'] = _REDISREQUEST
 DESCRIPTOR.message_types_by_name['ValAck'] = _VALACK
 DESCRIPTOR.message_types_by_name['Params'] = _PARAMS
-DESCRIPTOR.message_types_by_name['ResponseMessage'] = _RESPONSEMESSAGE
+DESCRIPTOR.message_types_by_name['RedisResponse'] = _REDISRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+RemoveChildIdFromParentRequest = _reflection.GeneratedProtocolMessageType('RemoveChildIdFromParentRequest', (_message.Message,), dict(
+  DESCRIPTOR = _REMOVECHILDIDFROMPARENTREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.RemoveChildIdFromParentRequest)
+  ))
+_sym_db.RegisterMessage(RemoveChildIdFromParentRequest)
+
+RemoveChildIdFromParentResponse = _reflection.GeneratedProtocolMessageType('RemoveChildIdFromParentResponse', (_message.Message,), dict(
+  DESCRIPTOR = _REMOVECHILDIDFROMPARENTRESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.RemoveChildIdFromParentResponse)
+  ))
+_sym_db.RegisterMessage(RemoveChildIdFromParentResponse)
+
+SendShiftCompleteAck = _reflection.GeneratedProtocolMessageType('SendShiftCompleteAck', (_message.Message,), dict(
+  DESCRIPTOR = _SENDSHIFTCOMPLETEACK,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.SendShiftCompleteAck)
+  ))
+_sym_db.RegisterMessage(SendShiftCompleteAck)
+
+ClusterheadAckSendShift = _reflection.GeneratedProtocolMessageType('ClusterheadAckSendShift', (_message.Message,), dict(
+  DESCRIPTOR = _CLUSTERHEADACKSENDSHIFT,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ClusterheadAckSendShift)
+  ))
+_sym_db.RegisterMessage(ClusterheadAckSendShift)
+
+UpdateClusterheadRequest = _reflection.GeneratedProtocolMessageType('UpdateClusterheadRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATECLUSTERHEADREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.UpdateClusterheadRequest)
+  ))
+_sym_db.RegisterMessage(UpdateClusterheadRequest)
+
+UpdateClusterheadResponse = _reflection.GeneratedProtocolMessageType('UpdateClusterheadResponse', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATECLUSTERHEADRESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.UpdateClusterheadResponse)
+  ))
+_sym_db.RegisterMessage(UpdateClusterheadResponse)
+
+UpdateSizeRequest = _reflection.GeneratedProtocolMessageType('UpdateSizeRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATESIZEREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.UpdateSizeRequest)
+  ))
+_sym_db.RegisterMessage(UpdateSizeRequest)
+
+UpdateSizeResponse = _reflection.GeneratedProtocolMessageType('UpdateSizeResponse', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATESIZERESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.UpdateSizeResponse)
+  ))
+_sym_db.RegisterMessage(UpdateSizeResponse)
+
+JoinNewParentRequest = _reflection.GeneratedProtocolMessageType('JoinNewParentRequest', (_message.Message,), dict(
+  DESCRIPTOR = _JOINNEWPARENTREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.JoinNewParentRequest)
+  ))
+_sym_db.RegisterMessage(JoinNewParentRequest)
+
+JoinNewParentResponse = _reflection.GeneratedProtocolMessageType('JoinNewParentResponse', (_message.Message,), dict(
+  DESCRIPTOR = _JOINNEWPARENTRESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.JoinNewParentResponse)
+  ))
+_sym_db.RegisterMessage(JoinNewParentResponse)
+
+ShiftStartRequest = _reflection.GeneratedProtocolMessageType('ShiftStartRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTSTARTREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ShiftStartRequest)
+  ))
+_sym_db.RegisterMessage(ShiftStartRequest)
+
+ShiftStartResponse = _reflection.GeneratedProtocolMessageType('ShiftStartResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTSTARTRESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ShiftStartResponse)
+  ))
+_sym_db.RegisterMessage(ShiftStartResponse)
+
+wakeUpRequest = _reflection.GeneratedProtocolMessageType('wakeUpRequest', (_message.Message,), dict(
+  DESCRIPTOR = _WAKEUPREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.wakeUpRequest)
+  ))
+_sym_db.RegisterMessage(wakeUpRequest)
+
+wakeUpResponse = _reflection.GeneratedProtocolMessageType('wakeUpResponse', (_message.Message,), dict(
+  DESCRIPTOR = _WAKEUPRESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.wakeUpResponse)
+  ))
+_sym_db.RegisterMessage(wakeUpResponse)
+
+sendHello = _reflection.GeneratedProtocolMessageType('sendHello', (_message.Message,), dict(
+  DESCRIPTOR = _SENDHELLO,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.sendHello)
+  ))
+_sym_db.RegisterMessage(sendHello)
+
+HelloResponse = _reflection.GeneratedProtocolMessageType('HelloResponse', (_message.Message,), dict(
+  DESCRIPTOR = _HELLORESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.HelloResponse)
+  ))
+_sym_db.RegisterMessage(HelloResponse)
+
+JamRequest = _reflection.GeneratedProtocolMessageType('JamRequest', (_message.Message,), dict(
+  DESCRIPTOR = _JAMREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.JamRequest)
+  ))
+_sym_db.RegisterMessage(JamRequest)
+
+JamResponse = _reflection.GeneratedProtocolMessageType('JamResponse', (_message.Message,), dict(
+  DESCRIPTOR = _JAMRESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.JamResponse)
+  ))
+_sym_db.RegisterMessage(JamResponse)
+
+ClusterName = _reflection.GeneratedProtocolMessageType('ClusterName', (_message.Message,), dict(
+  DESCRIPTOR = _CLUSTERNAME,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ClusterName)
+  ))
+_sym_db.RegisterMessage(ClusterName)
+
+ClusterAck = _reflection.GeneratedProtocolMessageType('ClusterAck', (_message.Message,), dict(
+  DESCRIPTOR = _CLUSTERACK,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ClusterAck)
+  ))
+_sym_db.RegisterMessage(ClusterAck)
+
+MySize = _reflection.GeneratedProtocolMessageType('MySize', (_message.Message,), dict(
+  DESCRIPTOR = _MYSIZE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.MySize)
+  ))
+_sym_db.RegisterMessage(MySize)
+
+AccomodateChild = _reflection.GeneratedProtocolMessageType('AccomodateChild', (_message.Message,), dict(
+  DESCRIPTOR = _ACCOMODATECHILD,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.AccomodateChild)
+  ))
+_sym_db.RegisterMessage(AccomodateChild)
 
 RequestMessage = _reflection.GeneratedProtocolMessageType('RequestMessage', (_message.Message,), dict(
   DESCRIPTOR = _REQUESTMESSAGE,
@@ -167,6 +1507,90 @@ RequestMessage = _reflection.GeneratedProtocolMessageType('RequestMessage', (_me
   # @@protoc_insertion_point(class_scope:lookup.RequestMessage)
   ))
 _sym_db.RegisterMessage(RequestMessage)
+
+ResponseMessage = _reflection.GeneratedProtocolMessageType('ResponseMessage', (_message.Message,), dict(
+  DESCRIPTOR = _RESPONSEMESSAGE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ResponseMessage)
+  ))
+_sym_db.RegisterMessage(ResponseMessage)
+
+ShiftRequest = _reflection.GeneratedProtocolMessageType('ShiftRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ShiftRequest)
+  ))
+_sym_db.RegisterMessage(ShiftRequest)
+
+ShiftResponse = _reflection.GeneratedProtocolMessageType('ShiftResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTRESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ShiftResponse)
+  ))
+_sym_db.RegisterMessage(ShiftResponse)
+
+ShiftClusterReq = _reflection.GeneratedProtocolMessageType('ShiftClusterReq', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTCLUSTERREQ,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ShiftClusterReq)
+  ))
+_sym_db.RegisterMessage(ShiftClusterReq)
+
+ShiftClusterRes = _reflection.GeneratedProtocolMessageType('ShiftClusterRes', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTCLUSTERRES,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ShiftClusterRes)
+  ))
+_sym_db.RegisterMessage(ShiftClusterRes)
+
+AcceptRequest = _reflection.GeneratedProtocolMessageType('AcceptRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ACCEPTREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.AcceptRequest)
+  ))
+_sym_db.RegisterMessage(AcceptRequest)
+
+AcceptResponse = _reflection.GeneratedProtocolMessageType('AcceptResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ACCEPTRESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.AcceptResponse)
+  ))
+_sym_db.RegisterMessage(AcceptResponse)
+
+RejectRequest = _reflection.GeneratedProtocolMessageType('RejectRequest', (_message.Message,), dict(
+  DESCRIPTOR = _REJECTREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.RejectRequest)
+  ))
+_sym_db.RegisterMessage(RejectRequest)
+
+RejectResponse = _reflection.GeneratedProtocolMessageType('RejectResponse', (_message.Message,), dict(
+  DESCRIPTOR = _REJECTRESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.RejectResponse)
+  ))
+_sym_db.RegisterMessage(RejectResponse)
+
+ShiftFinishedRequest = _reflection.GeneratedProtocolMessageType('ShiftFinishedRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTFINISHEDREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ShiftFinishedRequest)
+  ))
+_sym_db.RegisterMessage(ShiftFinishedRequest)
+
+ShiftFinishedResponse = _reflection.GeneratedProtocolMessageType('ShiftFinishedResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SHIFTFINISHEDRESPONSE,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.ShiftFinishedResponse)
+  ))
+_sym_db.RegisterMessage(ShiftFinishedResponse)
+
+RedisRequest = _reflection.GeneratedProtocolMessageType('RedisRequest', (_message.Message,), dict(
+  DESCRIPTOR = _REDISREQUEST,
+  __module__ = 'lookup_pb2'
+  # @@protoc_insertion_point(class_scope:lookup.RedisRequest)
+  ))
+_sym_db.RegisterMessage(RedisRequest)
 
 ValAck = _reflection.GeneratedProtocolMessageType('ValAck', (_message.Message,), dict(
   DESCRIPTOR = _VALACK,
@@ -182,12 +1606,12 @@ Params = _reflection.GeneratedProtocolMessageType('Params', (_message.Message,),
   ))
 _sym_db.RegisterMessage(Params)
 
-ResponseMessage = _reflection.GeneratedProtocolMessageType('ResponseMessage', (_message.Message,), dict(
-  DESCRIPTOR = _RESPONSEMESSAGE,
+RedisResponse = _reflection.GeneratedProtocolMessageType('RedisResponse', (_message.Message,), dict(
+  DESCRIPTOR = _REDISRESPONSE,
   __module__ = 'lookup_pb2'
-  # @@protoc_insertion_point(class_scope:lookup.ResponseMessage)
+  # @@protoc_insertion_point(class_scope:lookup.RedisResponse)
   ))
-_sym_db.RegisterMessage(ResponseMessage)
+_sym_db.RegisterMessage(RedisResponse)
 
 
 
@@ -197,25 +1621,187 @@ _MAINSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=146,
-  serialized_end=268,
+  serialized_start=1876,
+  serialized_end=3236,
   methods=[
   _descriptor.MethodDescriptor(
-    name='Retrieve',
-    full_name='lookup.MainService.Retrieve',
+    name='Handshake',
+    full_name='lookup.MainService.Handshake',
     index=0,
     containing_service=None,
     input_type=_REQUESTMESSAGE,
+    output_type=_RESPONSEMESSAGE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SendPacket',
+    full_name='lookup.MainService.SendPacket',
+    index=1,
+    containing_service=None,
+    input_type=_REQUESTMESSAGE,
+    output_type=_RESPONSEMESSAGE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Size',
+    full_name='lookup.MainService.Size',
+    index=2,
+    containing_service=None,
+    input_type=_MYSIZE,
+    output_type=_ACCOMODATECHILD,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Cluster',
+    full_name='lookup.MainService.Cluster',
+    index=3,
+    containing_service=None,
+    input_type=_CLUSTERNAME,
+    output_type=_CLUSTERACK,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ShiftNodeRequest',
+    full_name='lookup.MainService.ShiftNodeRequest',
+    index=4,
+    containing_service=None,
+    input_type=_SHIFTREQUEST,
+    output_type=_SHIFTRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Jam',
+    full_name='lookup.MainService.Jam',
+    index=5,
+    containing_service=None,
+    input_type=_JAMREQUEST,
+    output_type=_JAMRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Hello',
+    full_name='lookup.MainService.Hello',
+    index=6,
+    containing_service=None,
+    input_type=_SENDHELLO,
+    output_type=_HELLORESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ShiftClusterRequest',
+    full_name='lookup.MainService.ShiftClusterRequest',
+    index=7,
+    containing_service=None,
+    input_type=_SHIFTCLUSTERREQ,
+    output_type=_SHIFTCLUSTERRES,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Accept',
+    full_name='lookup.MainService.Accept',
+    index=8,
+    containing_service=None,
+    input_type=_ACCEPTREQUEST,
+    output_type=_ACCEPTRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='WakeUp',
+    full_name='lookup.MainService.WakeUp',
+    index=9,
+    containing_service=None,
+    input_type=_WAKEUPREQUEST,
+    output_type=_WAKEUPRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ShiftStart',
+    full_name='lookup.MainService.ShiftStart',
+    index=10,
+    containing_service=None,
+    input_type=_SHIFTSTARTREQUEST,
+    output_type=_SHIFTSTARTRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='JoinNewParent',
+    full_name='lookup.MainService.JoinNewParent',
+    index=11,
+    containing_service=None,
+    input_type=_JOINNEWPARENTREQUEST,
+    output_type=_JOINNEWPARENTRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateSize',
+    full_name='lookup.MainService.UpdateSize',
+    index=12,
+    containing_service=None,
+    input_type=_UPDATESIZEREQUEST,
+    output_type=_UPDATESIZERESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateClusterhead',
+    full_name='lookup.MainService.UpdateClusterhead',
+    index=13,
+    containing_service=None,
+    input_type=_UPDATECLUSTERHEADREQUEST,
+    output_type=_UPDATECLUSTERHEADRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ShiftComplete',
+    full_name='lookup.MainService.ShiftComplete',
+    index=14,
+    containing_service=None,
+    input_type=_SENDSHIFTCOMPLETEACK,
+    output_type=_CLUSTERHEADACKSENDSHIFT,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RemoveChildIdFromParent',
+    full_name='lookup.MainService.RemoveChildIdFromParent',
+    index=15,
+    containing_service=None,
+    input_type=_REMOVECHILDIDFROMPARENTREQUEST,
+    output_type=_REMOVECHILDIDFROMPARENTRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Reject',
+    full_name='lookup.MainService.Reject',
+    index=16,
+    containing_service=None,
+    input_type=_REJECTREQUEST,
+    output_type=_REJECTRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ShiftFinished',
+    full_name='lookup.MainService.ShiftFinished',
+    index=17,
+    containing_service=None,
+    input_type=_SHIFTFINISHEDREQUEST,
+    output_type=_SHIFTFINISHEDRESPONSE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Retrieve',
+    full_name='lookup.MainService.Retrieve',
+    index=18,
+    containing_service=None,
+    input_type=_REDISREQUEST,
     output_type=_VALACK,
     options=None,
   ),
   _descriptor.MethodDescriptor(
     name='Register',
     full_name='lookup.MainService.Register',
-    index=1,
+    index=19,
     containing_service=None,
     input_type=_PARAMS,
-    output_type=_RESPONSEMESSAGE,
+    output_type=_REDISRESPONSE,
     options=None,
   ),
 ])
