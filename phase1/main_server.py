@@ -136,7 +136,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.sendJamSignal()
       #send shift_cluster_request to Cj
       self.node.sendShiftClusterRequest()
-      return phase1_pb2.ShiftResponse(message="Recieved")
+      return phase1_pb2.ShiftResponse(message="Recieved ShiftNode Request")
     else:
       pass
 
@@ -148,7 +148,10 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.propagateJamToChildren(jamId)
     return phase1_pb2.JamResponse(jamResponse="jammed")
 
-  def sendHello(self,request,context):
+  def Hello(self,request,context):
+    if (self.isClusterhead == 1):
+      #do nothing
+      pass
     if (self.node.state == "active"):
       self.neighbourHelloArray.add(request.senderId)
       if (self.bestNodeClusterHeadId != request.senderClusterheadId and self.bestNodeHopCount < request.hopToSenderClusterhead):
@@ -172,16 +175,22 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       if self.node.size + request.sumOfweights > raspberryPi_id_list.THRESHOLD_S:
         # send reject to Ci
         self.node.reject(request.senderClusterHeadId)
+        return phase1_pb2.ShiftClusterRes(message= "Rejecting") 
       else:
+        self.node.shiftNodeId=request.senderNodeId
+        self.node.shiftNodeCluster=request.senderClusterHeadId
+        self.node.shiftNodeSum=request.sumOfweights
         # set state to busy
         self.node.state = "busy"
         #send jam to all nodes in cluster
         self.node.sendJamSignal()
         #accept to Ci
         self.node.accept(request.senderClusterHeadId)
+        return phase1_pb2.ShiftClusterRes(message= "Accepting") 
     else:
       #send reject as shifting is already on
       self.node.reject(request.senderClusterHeadId)
+      return phase1_pb2.ShiftClusterRes(message= "Rejecting")
        
   def wakeUp(self,request,context):
       if (self.node.state == "sleep"):
@@ -191,7 +200,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       else:
           self.node.propagateWakeUp()
           return phase1_pb2.wakeUpResponse(wokenUp = "already")
-
+  
   def ShiftStart(self,request,context):
       if (self.node.id == request.targetNodeId and self.node.state == "sleep"):
           oldClusterheadId = self.node.clusterheadId
@@ -238,6 +247,44 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       logger.info(self.node.childListId)
       return phase1_pb2.RemoveChildIdFromParentResponse(removeChildIdFromParentResponse= "Removed")
 
+  def Accept(self,request,context):
+    if self.node.state=="busy":
+      logger.info("Accept Request recieved from clusterhead " % (request.clusterHeadId))
+      # send shift start to the i node if energy matric
+      if energyvalue < currentValue:
+        self.node.sendShiftStart()
+        return phase1_pb2.AcceptResponse(message= "Starting Shift Start")
+      else:
+        self.node.sendWakeup()
+        self.node.sendShiftFinished()
+        self.node="free"
+        return phase1_pb2.AcceptResponse(message= "Starting Shift Finished")
+    else:
+      return phase1_pb2.AcceptResponse(message= "Not in busy state for now !") 
+
+
+  def Reject(self,request,context):
+    if self.node.state=="busy":
+      #send wakeup to all nodes in cluster
+      self.node.state="free"
+      self.node.sendWakeup()
+      return phase1_pb2.RejectResponse(message= "Thanks for Rejecting")
+    else:
+      return phase1_pb2.RejectResponse(message= "Not in busy state for now !")
+
+      
+  
+  def ShiftFinished(self,request,context):
+    if self.node.state=="busy":
+      if self.node.shiftNodeId == request.clusterHeadId:
+        self.node.sendShiftFinished()
+
+      #send wakeup
+      self.node.sendWakeup()
+      self.node.state="free"
+
+    return phase1_pb2.ShiftFinishedResponse(message= "Finished")    
+
 
 def serve(node):
   logger.info("Server starting for Node: %s"%(node.id))
@@ -249,8 +296,7 @@ def serve(node):
     server.add_insecure_port(raspberryPi_id_list.ID_IP_MAPPING[node.id])
     logger.info("Run port assigned")
     #  server.add_insecure_port('localhost:')
-    
-
+    server.start()
     logger.info("Server started successfully. Entering forever while below")
   except Exception as e:
     logger.error(e)
