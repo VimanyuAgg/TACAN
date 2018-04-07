@@ -93,7 +93,7 @@ class Node:
 			print "Node: %s sent size() message to parent: %s" % (self.id, self.parentId)
 			logger.info("Node: %s sent size() message to parent: %s" % (self.id, self.parentId))
 		else:
-			logger.info("I don't have any parent: Node: %s"%(self.id))
+			logger.info("I am a parent not leaf: Node: %s"%(self.id))
 
 
 	# As a parent, send size to YOUR parent
@@ -156,53 +156,52 @@ class Node:
 	def getIP():
 		pass
 
-	def getIpFromId(Id):
-		return raspberryPi_id_list[Id]
-
 	def getIPfromId(self,Id):
 		return raspberryPi_id_list.ID_IP_MAPPING[Id]
-    
-    def sendJamSignal(self):
-    	childIpList=[]
-    	#send jam signal to children 
-    	if(self.childListId!= None and len(self.childListId)!=0):
-    		for childId in childListId:
-    			childIpList.append(node.getIPfromId(childId))
-    	else:
-    		return		
-    	#call client
-    	client.sendJamSignal(childIpList,self.clusterheadId)
 
-    def sendShiftClusterRequest(self):
-    	#calculate ip for the Cj cluster
-    	shiftNodeClusterIp = node.getIPfromId(self.shiftNodeCluster[1:])
-    	client.sendShiftClusterRequest(self.clusterheadId,self.shiftNodeId,self.shiftNodeSum,shiftNodeClusterIp)
-    	
-    def accept(self,senderClusterHeadId):
-    	#send shift accept
-    	senderClusterHeadIp = node.getIPfromId(senderClusterHeadId[1:])
-    	self.client.sendAccept(node.id,senderClusterHeadIp)
-    
-    def reject(self,senderClusterHeadId):
-    	senderClusterHeadIp = node.getIPfromId(senderClusterHeadId[1:])
-    	self.client.sendReject(node.id,senderClusterHeadIp)
+	def sendJamSignal(self):
+		childIpList=[]
+		#send jam signal to children
+		if(self.childListId!= None and len(self.childListId)!=0):
+			for childId in self.childListId:
+				childIpList.append(self.getIPfromId(childId))
+			# call client
+			client.sendJamSignal(childIpList, self.clusterheadId)
+		else:
+			return
 
-    def sendShiftStart(self):
-    	self.client.sendShiftStart(self.shiftNodeId,node.getIPfromId(self.shiftNodeId))
 
-    def sendShiftFinished(self):
-    	self.client.sendShiftFinished(node.id,node.getIPfromId(self.shiftNodeCluster))
+	def sendShiftClusterRequest(self):
+		'''calculate ip for the Cj cluster'''
+		shiftNodeClusterIp = self.getIPfromId(self.shiftNodeCluster[1:])
+		client.sendShiftClusterRequest(self.clusterheadId,self.shiftNodeId,self.shiftNodeSum,shiftNodeClusterIp)
 
-    def sendWakeup(self):
-    	childIpList=[]
-    	#send jam signal to children 
-    	if(self.childListId!= None and len(self.childListId)!=0):
-    		for childId in childListId:
-    			childIpList.append(node.getIPfromId(childId))
-    	else:
-    		return		
-    	#call client
-    	client.sendWakeup(childIpList,self.id)
+	def accept(self,senderClusterHeadId):
+		'''send shift accept'''
+		senderClusterHeadIp = self.getIPfromId(senderClusterHeadId[1:])
+		client.sendAccept(self.id,senderClusterHeadIp)
+
+	def reject(self,senderClusterHeadId):
+		senderClusterHeadIp = self.getIPfromId(senderClusterHeadId[1:])
+		client.sendReject(self.id,senderClusterHeadIp)
+
+	def sendShiftStart(self):
+		client.sendShiftStart(self.shiftNodeId,self.getIPfromId(self.shiftNodeId))
+
+	def sendShiftFinished(self):
+		client.sendShiftFinished(self.id,self.getIPfromId(self.shiftNodeCluster))
+
+	def sendWakeup(self):
+		childIpList=[]
+		#send jam signal to children
+		if(self.childListId!= None and len(self.childListId)!=0):
+			for childId in self.childListId:
+				childIpList.append(self.getIPfromId(childId))
+			# call client
+			client.sendWakeUp(childIpList, self.id)
+		else:
+			return
+
 
 
 

@@ -7,7 +7,7 @@ import client
 import phase1_pb2
 import phase1_pb2_grpc
 import raspberryPi_id_list
-import thread
+import threading
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 import datetime
@@ -147,7 +147,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     return phase1_pb2.JamResponse(jamResponse="jammed")
 
   def Hello(self,request,context):
-    if (self.isClusterhead == 1):
+    if (self.node.isClusterhead == 1):
       #do nothing
       pass
     if (self.node.state == "active"):
@@ -216,12 +216,12 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   # As a parent, add new child to myChild and update size
   # Also inform parents about size addition
   def JoinNewParent(self,request,context):
-    if self.node.state = "sleep":
+    if self.node.state == "sleep":
       self.node.childListId.append(request.nodeId)
       sizeIncrement = request.childSize
       self.node.size += request.childSize
       self.node.informParentAboutNewSize(sizeIncrement)
-    else if self.node.isClusterhead and self.node.state = "busy":
+    elif self.node.isClusterhead and self.node.state == "busy":
       self.node.childListId.append(request.nodeId)
       sizeIncrement = request.childSize
       self.node.size += request.childSize
@@ -238,10 +238,10 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       return phase1_pb2.UpdateClusterheadResponse(updateClusterheadResponse = "clusterhead Updated")
 
   def ShiftComplete(self,request,context):
-    logger.info("ClusterheadId: %s got SendShiftComplete rpc with message:%s"%(self.node.id,request.sendShiftCompleteAck))
-    self.node.sendWakeup()
-    self.node ="free"
-    return phase1_pb2.ClusterheadAckSendShift(clusterheadAckSendShift = "ClusterheadId: %s acknowledged shift.."%(self.node.id))
+      logger.info("ClusterheadId: %s got SendShiftComplete rpc with message:%s"%(self.node.id,request.sendShiftCompleteAck))
+      self.node.sendWakeup()
+      self.node.state ="free"
+      return phase1_pb2.ClusterheadAckSendShift(clusterheadAckSendShift = "ClusterheadId: %s acknowledged shift.."%(self.node.id))
 
   def RemoveChildIdFromParent(self,request,context):
       logger.info("Parent: %s got RemoveChildIdFromParent rpc from Node:%s" % (self.node.id, request.departingChildId))
@@ -253,19 +253,20 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       return phase1_pb2.RemoveChildIdFromParentResponse(removeChildIdFromParentResponse= "Removed")
 
   def Accept(self,request,context):
-    if self.node.state=="busy":
-      logger.info("Accept Request recieved from clusterhead " % (request.clusterHeadId))
+      if self.node.state == "busy":
+        logger.info("Accept Request recieved from clusterhead " % (request.clusterHeadId))
       # send shift start to the i node if energy matric reduces
-      if energyvalue < currentValue:
-        self.node.sendShiftStart()
-        return phase1_pb2.AcceptResponse(message= "Starting Shift Start")
+      #   if energyvalue < currentValue:
+        if True:
+          self.node.sendShiftStart()
+          return phase1_pb2.AcceptResponse(message= "Starting Shift Start")
+        else:
+          self.node.sendWakeup()
+          self.node.sendShiftFinished()
+          self.node.state ="free"
+          return phase1_pb2.AcceptResponse(message= "Starting Shift Finished")
       else:
-        self.node.sendWakeup()
-        self.node.sendShiftFinished()
-        self.node="free"
-        return phase1_pb2.AcceptResponse(message= "Starting Shift Finished")
-    else:
-      return phase1_pb2.AcceptResponse(message= "Not in busy state for now !") 
+        return phase1_pb2.AcceptResponse(message= "Not in busy state for now !")
 
 
   def Reject(self,request,context):
@@ -280,7 +281,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   def ShiftFinished(self,request,context):
     if self.node.state=="busy":
       self.node.sendWakeup()
-      self.node.state="free"
+      self.node.state ="free"
     return phase1_pb2.ShiftFinishedResponse(message= "Finished")    
 
 def serve(node):
@@ -293,7 +294,7 @@ def serve(node):
     server.add_insecure_port(raspberryPi_id_list.ID_IP_MAPPING[node.id])
     logger.info("Run port assigned")
     #  server.add_insecure_port('localhost:')
-    thread.start_new_thread(server.start(),())
+    server.start()
     logger.info("Server started successfully. Entering forever while below")
   except Exception as e:
     logger.error(e)
