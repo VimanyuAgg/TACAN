@@ -1,0 +1,50 @@
+2018-04-07 11:43:24,392 - Node - INFO - Initializing Node: 0
+2018-04-07 11:43:24,393 - Node - INFO - Calling weightMatrix for id: 0
+2018-04-07 11:43:24,393 - Node - INFO - Calling phaseOneClustering
+2018-04-07 11:43:24,393 - Node - INFO - Starting Phase One Clustering on Node: 0
+2018-04-07 11:43:24,393 - Node - INFO - I don't have any parent: Node: 0
+2018-04-07 11:43:24,393 - Node - INFO - Starting Server on Node: 0
+2018-04-07 11:43:24,393 - main_server - INFO - Server starting for Node: 0
+2018-04-07 11:43:24,403 - main_server - INFO - Server Created
+2018-04-07 11:43:24,403 - main_server - INFO - Inside Mainserver __init__:
+2018-04-07 11:43:24,403 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-07 11:43:24,405 - main_server - INFO - Main Server init called successfully
+2018-04-07 11:43:24,407 - main_server - INFO - Run port assigned
+2018-04-07 11:43:24,409 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-07 11:43:24,409 - main_server - INFO - Inside forever while....
+2018-04-07 11:45:23,377 - Node - INFO - Initializing Node: 2
+2018-04-07 11:45:23,377 - Node - INFO - Calling weightMatrix for id: 2
+2018-04-07 11:45:23,377 - Node - INFO - Calling phaseOneClustering
+2018-04-07 11:45:23,377 - Node - INFO - Starting Phase One Clustering on Node: 2
+2018-04-07 11:45:23,377 - Node - INFO - I don't have any parent: Node: 2
+2018-04-07 11:45:23,378 - Node - INFO - Starting Server on Node: 2
+2018-04-07 11:45:23,378 - main_server - INFO - Server starting for Node: 2
+2018-04-07 11:45:23,380 - main_server - INFO - Server Created
+2018-04-07 11:45:23,381 - main_server - INFO - Inside Mainserver __init__:
+2018-04-07 11:45:23,381 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-07 11:45:23,382 - main_server - INFO - Main Server init called successfully
+2018-04-07 11:45:23,384 - main_server - INFO - Run port assigned
+2018-04-07 11:45:23,386 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-07 11:45:23,386 - main_server - INFO - Inside forever while....
+2018-04-07 11:48:08,980 - Node - INFO - Initializing Node: 4
+2018-04-07 11:48:08,981 - Node - INFO - Calling weightMatrix for id: 4
+2018-04-07 11:48:08,981 - Node - INFO - Calling phaseOneClustering
+2018-04-07 11:48:08,981 - Node - INFO - Starting Phase One Clustering on Node: 4
+2018-04-07 11:48:08,981 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 2
+2018-04-07 11:48:08,986 - client - INFO - sendSize starting on client.py for node: 4
+2018-04-07 11:48:08,991 - main_server - INFO - Server Node:2 current size is 37
+2018-04-07 11:48:08,991 - main_server - INFO - Server Node:2 Child size is 42
+2018-04-07 11:48:08,991 - main_server - INFO - Sending Accept
+2018-04-07 11:48:08,992 - client - INFO - Node 4 sent the size message of size 42 to 2
+2018-04-07 11:48:08,992 - client - INFO - Node 2: responded to Size RPC with reply: Accepted
+2018-04-07 11:48:08,992 - client - INFO - Didn't get Prune Node: 4
+2018-04-07 11:48:08,992 - Node - INFO - Node: 4 sent size() message to parent: 2
+2018-04-07 11:48:08,993 - Node - INFO - Starting Server on Node: 4
+2018-04-07 11:48:08,993 - main_server - INFO - Server starting for Node: 4
+2018-04-07 11:48:08,994 - main_server - INFO - Server Created
+2018-04-07 11:48:08,994 - main_server - INFO - Inside Mainserver __init__:
+2018-04-07 11:48:08,994 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-07 11:48:08,995 - main_server - INFO - Main Server init called successfully
+2018-04-07 11:48:08,996 - main_server - INFO - Run port assigned
+2018-04-07 11:48:08,998 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-07 11:48:08,998 - main_server - INFO - Inside forever while....

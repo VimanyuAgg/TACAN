@@ -102,7 +102,7 @@ def sendJamSignal(childIpList,clusterHeadId):
 		channel = grpc.insecure_channel(ip)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
 		clusterRPC = stub.Jam(phase1_pb2.JamRequest(clusterHeadId))
-	    logger.info("Node: %s sent jam to child ip: %s" % (clusterHeadId,ip))
+		logger.info("Node: %s sent jam to child ip: %s" % (clusterHeadId,ip))
 		logger.info(clusterRPC)
 
 
