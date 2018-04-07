@@ -253,3 +253,9 @@
 2018-04-06 17:13:12,596 - main_server - INFO - Inside forever while....
 2018-04-06 17:13:15,243 - Node - INFO - Initializing Node: 6
 2018-04-06 17:13:15,245 - Node - INFO - Calling weightMatrix for id: 6
+2018-04-07 15:51:44,319 - Node - INFO - Server successfully started on node: 0
+2018-04-07 15:51:45,866 - Node - INFO - Server successfully started on node: 1
+2018-04-07 15:51:47,546 - Node - INFO - Server successfully started on node: 2
+2018-04-07 15:51:49,072 - Node - INFO - Server successfully started on node: 3
+2018-04-07 15:51:51,468 - Node - INFO - Server successfully started on node: 4
+2018-04-07 15:51:53,204 - Node - INFO - Server successfully started on node: 5

@@ -1,21 +1,23 @@
 from concurrent import futures
 import time
 import sys
+import thread
+import datetime
+import logging
+import os
+import logging.handlers
+from collections import deque
+
 import grpc
 import client
 import phase1_pb2
 import phase1_pb2_grpc
 import raspberryPi_id_list
-import spanning_tree_gurnoor as spanning_tree  # TODO: must
-# import spanning_tree
-import thread
+# import spanning_tree_gurnoor as spanning_tree  # TODO: must
+import spanning_tree
 import Node
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
-import datetime
-import logging
-import os
-import logging.handlers
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -35,15 +37,19 @@ error_handler = logging.handlers.RotatingFileHandler(os.path.join(current_path +
                                                      maxBytes=300000, backupCount=40)
 error_handler.setLevel(logging.ERROR)
 
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setLevel(logging.DEBUG)
+
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 info_handler.setFormatter(formatter)
 error_handler.setFormatter(formatter)
 debug_handler.setFormatter(formatter)
+stdout_handler.setFormatter(formatter)
 
 logger.addHandler(info_handler)
 logger.addHandler(error_handler)
 logger.addHandler(debug_handler)
-
+logger.addHandler(stdout_handler)
 
 class MainServer(phase1_pb2_grpc.MainServiceServicer):
   #
@@ -77,49 +83,132 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     return phase1_pb2.ResponseMessage(nodeId="21", destinationId="12", ackMessage="Hello Dear Client")
 
   def SendPacket(self, request, context):
+
+    # TODO: validate request: valid source and destination
     # check if current node is the destination node
     # else forward it to the destination node
-    print('Inside SendPacket', request)
+    print('self.node.id', 'request.destinationId')
     print(self.node.id, request.destinationId)
-
+    logger.info(("SendPacket: Current node_id:"
+                 " {nodeId}, destinationId: {destinationId}").format(
+      nodeId=self.node.id, destinationId=request.destinationId
+    ))
     if self.node.id == int(request.destinationId):
       return phase1_pb2.ResponseMessage(nodeId=str(self.node.id),
                                         destinationId="12",
                                         ackMessage="Hello Dear Client")
     else:
       return self.Forward(request, context)
-
   # end SendPacket
 
+
   def Forward(self, request, context):
-    # request.hopIds += [self.node.id]
 
-    dest_clusterhead = self.getParentId(int(request.destinationId))
+    dest_clusterhead = self.getClusterheadId(request.destinationId)
     if dest_clusterhead is None:
-      # destination node is a clusterheadid
+      # dest node is a clusterhead
       dest_clusterhead = request.destinationId
-    print('self.node.id', self.node.id)
-    my_clusterhead = self.getParentId(self.node.id)
-    print('my_clusterhead', my_clusterhead)
-    if my_clusterhead is None:
-      my_clusterhead = self.node.id
-    print('dest_clusterhead', dest_clusterhead)
-    print('my_clusterhead', my_clusterhead)
+    my_clusterhead = self.node.clusterheadId
 
-    if dest_clusterhead == my_clusterhead:
-      # destination in same cluster
-      dest_node_ip = self.getIp(request.destinationId)
+    # if in different cluster, forward to parent until reaching clusterhead
+    if dest_clusterhead != my_clusterhead and my_clusterhead is not None:
+      next_node = self.getParentId(self.node.id)
+      logger.info('SendPacket: Forwarding to parent: {next_node}'.format(
+        next_node=next_node))
+    elif my_clusterhead is None and dest_clusterhead != self.node.id:
+      # forward to clusterhead of destination node
+      next_node = dest_clusterhead
+      logger.info('SendPacket: Forwarding to '
+                  'clusterhead of destination node: {next_node}'.format(
+        next_node=next_node))
     else:
-      if self.node.id == my_clusterhead:
-        dest_node_ip = self.getIp(dest_clusterhead)
-      else:
-        dest_node_ip = self.getIp(my_clusterhead)
+      # in destination cluster
+      if not request.hopIds:
+        path = self.determineHops(self.node.id, request.destinationId)
+        request.hopIds[:] = path
+      next_node = request.hopIds[0]
+      logger.info('SendPacket: Forwarding to '
+                  'next node (in same cluster): {next_node}'.format(
+        next_node=next_node))
+      li = list(request.hopIds)
+      li.remove(next_node)
+      request.hopIds[:] = li
+    #  end if
 
-    print('dest_node_ip', dest_node_ip)
+    dest_node_ip = self.getIp(next_node)
     channel = grpc.insecure_channel(dest_node_ip)
     stub = phase1_pb2_grpc.MainServiceStub(channel)
     response1 = stub.SendPacket(request)
     return response1
+
+
+    # -------------
+    # request.hopIds += [self.node.id]
+    # dest_clusterhead = self.getParentId(int(request.destinationId))
+    # if dest_clusterhead is None:
+    #   # destination node is a clusterheadid
+    #   dest_clusterhead = request.destinationId
+    # print('self.node.id', self.node.id)
+    # my_clusterhead = self.getParentId(self.node.id)
+    # print('my_clusterhead', my_clusterhead)
+    # if my_clusterhead is None:
+    #   my_clusterhead = self.node.id
+    # print('dest_clusterhead', dest_clusterhead)
+    # print('my_clusterhead', my_clusterhead)
+    #
+    # if dest_clusterhead == my_clusterhead:
+    #   # destination in same cluster
+    #   dest_node_ip = self.getIp(request.destinationId)
+    # else:
+    #   if self.node.id == my_clusterhead:
+    #     dest_node_ip = self.getIp(dest_clusterhead)
+    #   else:
+    #     dest_node_ip = self.getIp(my_clusterhead)
+    #
+    # print('dest_node_ip', dest_node_ip)
+    # channel = grpc.insecure_channel(dest_node_ip)
+    # stub = phase1_pb2_grpc.MainServiceStub(channel)
+    # response1 = stub.SendPacket(request)
+    # return response1
+
+
+  def determineHops(self, source_id, dest_id):
+    """
+    returns list of intermediate nodes (including destination).
+
+    Destination node should be in same cluster
+    :type source_id: int
+    :type dest_id: int
+    :param dest_id:
+    :return:
+    """
+    source_id = int(source_id)
+    dest_id = int(dest_id)
+    op = deque()
+    next_node = dest_id
+    while next_node != source_id and source_id not in self.getSubtree(next_node):
+      op.appendleft(next_node)
+      next_node = self.getParentId(next_node)
+    op.appendleft(next_node)  # last -> common_node
+
+    path = []
+    print op
+    common_node = op[0]
+    print ('common_node', common_node)
+    if common_node != source_id:
+      next_node = source_id
+      while next_node != common_node:
+        next_node = self.getParentId(next_node)
+        path.append(next_node)  # last -> common_node
+      if path:
+        path = path[:-1]
+
+    for next_node in op:
+      path.append(next_node)
+
+    return path
+
+
 
   def getIp(self, nodeId):
     # TODO
@@ -132,15 +221,46 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
   def getParentId(self, nodeId):
     """
-    returns: parentId if node and its parent exist
-             None if clusterhead
-             'Node does not exist' if nodeId not found
+    :returns: SPANNING_INFO[nodeId]['parentId'] if node and its parent exist
+             None if node is clusterhead
+    :raises: ValueError() if nodeId not found
     """
     nodeId = int(nodeId)
     if nodeId not in spanning_tree.SPANNING_INFO:
-      return 'Node %s does not exist in spanning_tree.py' % nodeId  # TODO custom Errors
+      raise ValueError('Node %s does not exist in spanning_tree.py' % nodeId)
     else:
       return spanning_tree.SPANNING_INFO[nodeId]['parentId']
+  #  end gerParentId
+
+
+  def getClusterheadId(self, nodeId):
+    """
+    :returns: SPANNING_INFO[nodeId]['clusterheadId'] if node and its parent exist
+             None if node is clusterhead
+    :raises: ValueError() if nodeId not found
+    """
+    nodeId = int(nodeId)
+    if nodeId not in spanning_tree.SPANNING_INFO:
+      raise ValueError('Node %s does not exist in spanning_tree.py' % nodeId)
+    else:
+      return spanning_tree.SPANNING_INFO[nodeId]['clusterheadId']
+    #  end getClusterheadId
+
+
+  def getSubtree(self, nodeId):
+    """
+    :returns: SPANNING_INFO[nodeId]['subtreeList'] if node and its parent exist.
+             Empty list if node is leaf node
+    :raises: ValueError() if nodeId not found
+    """
+    nodeId = int(nodeId)
+    if nodeId not in spanning_tree.SPANNING_INFO:
+      raise ValueError('Node %s does not exist in spanning_tree.py' % nodeId)
+    else:
+      op = spanning_tree.SPANNING_INFO[nodeId]['subtreeList']
+      return op[:] if op is not None else []
+    #  end getClusterheadId
+
 
   def Size(self, request, context):
     childSize = request.size
@@ -333,8 +453,9 @@ def GetOpts(argv):
   return opts
 
 
+
 if __name__ == '__main__':
   opts = GetOpts(sys.argv)
   nodeId = int(opts['-p'])
-  node = Node.Node(myId=nodeId)
+  node = Node.Node(myId=nodeId)  # blocking
   serve(node)
