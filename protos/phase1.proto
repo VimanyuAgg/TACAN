@@ -1,77 +1,91 @@
-
 syntax = "proto3";
 
 package phase1;
 
-
 // The Main service definition.
 service MainService {
-  // Sends a greeting
-  rpc Handshake (RequestMessage) returns (ResponseMessage) {}
-  rpc SendPacket (RequestMessage) returns (ResponseMessage) {}
-  rpc Size (MySize) returns (AccomodateChild){}
-  rpc Cluster (ClusterName) returns (ClusterAck){}
-  rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse){}
-  rpc Jam (JamRequest) returns (JamResponse){}
-  rpc Hello(sendHello) returns (HelloResponse){}
-  rpc ShiftClusterRequest(ShiftClusterReq) returns (ShiftClusterRes){}
-  rpc Accept(AcceptRequest) returns(AcceptResponse){}
-  rpc WakeUp (wakeUpRequest) returns (wakeUpResponse){}
-  rpc ShiftStart (ShiftStartRequest) returns (ShiftStartResponse){}
-  rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
-  rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
-  rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse){}
-  rpc SendShiftComplete(SendShiftCompleteAck) returns (ClusterheadAckSendShift){}
-  rpc RemoveChildIdFromParent(RemoveChildIdFromParentRequest) returns (RemoveChildIdFromParentResponse){}
+    // Sends a greeting
+    rpc Handshake (RequestMessage) returns (ResponseMessage) {
+    }
+    rpc SendPacket (RequestMessage) returns (ResponseMessage) {
+    }
+    rpc Size (MySize) returns (AccomodateChild) {
+    }
+    rpc Cluster (ClusterName) returns (ClusterAck) {
+    }
+    rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse) {
+    }
+    rpc Jam (JamRequest) returns (JamResponse) {
+    }
+    rpc Hello (sendHello) returns (HelloResponse) {
+    }
+    rpc ShiftClusterRequest (ShiftClusterReq) returns (ShiftClusterRes) {
+    }
+    rpc Accept (AcceptRequest) returns (AcceptResponse) {
+    }
+    rpc WakeUp (wakeUpRequest) returns (wakeUpResponse) {
+    }
+    rpc ShiftStart (ShiftStartRequest) returns (ShiftStartResponse) {
+    }
+    rpc JoinNewParent (JoinNewParentRequest) returns (JoinNewParentResponse) {
+    }
+    rpc UpdateSize (UpdateSizeRequest) returns (UpdateSizeResponse) {
+    }
+    rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse) {
+    }
+    rpc SendShiftComplete (SendShiftCompleteAck) returns (ClusterheadAckSendShift) {
+    }
+    rpc RemoveChildIdFromParent (RemoveChildIdFromParentRequest) returns (RemoveChildIdFromParentResponse) {
+    }
 }
 
-message RemoveChildIdFromParentRequest{
+message RemoveChildIdFromParentRequest {
     int32 departingChildId = 1;
 }
 
-message RemoveChildIdFromParentResponse{
+message RemoveChildIdFromParentResponse {
     string removeChildIdFromParentResponse = 1;
 }
 
-message SendShiftCompleteAck{
+message SendShiftCompleteAck {
     string sendShiftCompleteAck = 1;
 }
 
-message ClusterheadAckSendShift{
+message ClusterheadAckSendShift {
     string clusterheadAckSendShift = 1;
 }
 
-message UpdateClusterheadRequest{
+message UpdateClusterheadRequest {
     int32 newClusterheadId = 1;
 }
 
-message UpdateClusterheadResponse{
+message UpdateClusterheadResponse {
     string updateClusterheadResponse = 1;
 
 }
 
-message UpdateSizeRequest{
+message UpdateSizeRequest {
     int32 sizeIncrement = 1;
 }
 
-message UpdateSizeResponse{
+message UpdateSizeResponse {
     string updateSizeResponse = 1;
 }
 
-message JoinNewParentRequest{
+message JoinNewParentRequest {
     int32 childSize = 1;
     int32 nodeId = 2;
 }
 
-message JoinNewParentResponse{
+message JoinNewParentResponse {
     string joinResponse = 1;
 }
 
-message ShiftStartRequest{
+message ShiftStartRequest {
     string targetNodeId = 1;
 }
 
-message ShiftStartResponse{
+message ShiftStartResponse {
     string shiftStartResponse = 1;
 }
 
@@ -79,85 +93,85 @@ message wakeUpRequest {
     string wakeywakey = 1;
 }
 
-message wakeUpResponse{
+message wakeUpResponse {
     string wokenUp = 1;
 }
 
-message sendHello{
+message sendHello {
     string senderId = 1;
     int32 hopToSenderClusterhead = 2;
     string senderState = 3;
     string senderClusterheadId = 4;
 }
 
-message HelloResponse{
-    int32 interested =1;
+message HelloResponse {
+    int32 interested = 1;
 }
 
-message JamRequest{
+message JamRequest {
     int32 nodeId = 1;
 
 }
 
-message JamResponse{
+message JamResponse {
     string jamResponse = 1;
 }
 
 message ClusterName {
-	string clusterName = 1;
-  int32 hop = 2;
+    string clusterName = 1;
+    int32 hop = 2;
 }
 
 message ClusterAck {
-	string clusterAck = 1;
+    string clusterAck = 1;
 }
 
-message MySize{
-	int32 size = 1;
+message MySize {
+    int32 size = 1;
 }
 
-message AccomodateChild{
-	string message = 1;
+message AccomodateChild {
+    string message = 1;
 }
 message RequestMessage {
-  string nodeId = 1;
-  string destinationId = 2;
-  string message = 3;
-  repeated int32 hopIds = 4;
+    string nodeId = 1;
+    string destinationId = 2;
+    string message = 3;
+    repeated int32 hopIds = 4;
 }
 
 message ResponseMessage {
-  string nodeId = 1;
-  string destinationId = 2;
-  string ackMessage = 3;
+    string nodeId = 1;
+    string destinationId = 2;
+    string ackMessage = 3;
 }
 
 
-message ShiftRequest{
-  string nodeId = 1;
-  int32 sumOfweight = 2;
-  string clusterHeadId = 3;
+message ShiftRequest {
+    string nodeId = 1;
+    int32 sumOfweight = 2;
+    string clusterHeadId = 3;
 }
 
-message ShiftResponse{
-  string message = 1;
+message ShiftResponse {
+    string message = 1;
 }
 
-message ShiftClusterReq{
-  string senderClusterHeadId = 1;
-  string senderNodeId = 2;
-  int32 sumOfweights = 3;
+message ShiftClusterReq {
+    string senderClusterHeadId = 1;
+    string senderNodeId = 2;
+    int32 sumOfweights = 3;
 }
 
-message ShiftClusterRes{
-  string message = 1;
-  
+message ShiftClusterRes {
+    string message = 1;
+
 }
 
-message AcceptRequest{
-  string clusterHeadId = 1;
+message AcceptRequest {
+    string clusterHeadId = 1;
 }
 
-message AcceptResponse{
-  string message = 1;
+message AcceptResponse {
+    string message = 1;
 }

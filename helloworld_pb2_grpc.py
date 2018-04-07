@@ -15,20 +15,20 @@ class GreeterStub(object):
       channel: A grpc.Channel.
     """
     self.SayHello = channel.unary_unary(
-        '/helloworld.Greeter/SayHello',
-        request_serializer=helloworld__pb2.HelloRequest.SerializeToString,
-        response_deserializer=helloworld__pb2.HelloReply.FromString,
-        )
+      '/helloworld.Greeter/SayHello',
+      request_serializer=helloworld__pb2.HelloRequest.SerializeToString,
+      response_deserializer=helloworld__pb2.HelloReply.FromString,
+    )
     self.Handshake = channel.unary_unary(
-        '/helloworld.Greeter/Handshake',
-        request_serializer=helloworld__pb2.RequestMessage.SerializeToString,
-        response_deserializer=helloworld__pb2.ResponseMessage.FromString,
-        )
+      '/helloworld.Greeter/Handshake',
+      request_serializer=helloworld__pb2.RequestMessage.SerializeToString,
+      response_deserializer=helloworld__pb2.ResponseMessage.FromString,
+    )
     self.SendPacket = channel.unary_unary(
-        '/helloworld.Greeter/SendPacket',
-        request_serializer=helloworld__pb2.RequestMessage.SerializeToString,
-        response_deserializer=helloworld__pb2.ResponseMessage.FromString,
-        )
+      '/helloworld.Greeter/SendPacket',
+      request_serializer=helloworld__pb2.RequestMessage.SerializeToString,
+      response_deserializer=helloworld__pb2.ResponseMessage.FromString,
+    )
 
 
 class GreeterServicer(object):
@@ -59,22 +59,22 @@ class GreeterServicer(object):
 
 def add_GreeterServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'SayHello': grpc.unary_unary_rpc_method_handler(
-          servicer.SayHello,
-          request_deserializer=helloworld__pb2.HelloRequest.FromString,
-          response_serializer=helloworld__pb2.HelloReply.SerializeToString,
-      ),
-      'Handshake': grpc.unary_unary_rpc_method_handler(
-          servicer.Handshake,
-          request_deserializer=helloworld__pb2.RequestMessage.FromString,
-          response_serializer=helloworld__pb2.ResponseMessage.SerializeToString,
-      ),
-      'SendPacket': grpc.unary_unary_rpc_method_handler(
-          servicer.SendPacket,
-          request_deserializer=helloworld__pb2.RequestMessage.FromString,
-          response_serializer=helloworld__pb2.ResponseMessage.SerializeToString,
-      ),
+    'SayHello': grpc.unary_unary_rpc_method_handler(
+      servicer.SayHello,
+      request_deserializer=helloworld__pb2.HelloRequest.FromString,
+      response_serializer=helloworld__pb2.HelloReply.SerializeToString,
+    ),
+    'Handshake': grpc.unary_unary_rpc_method_handler(
+      servicer.Handshake,
+      request_deserializer=helloworld__pb2.RequestMessage.FromString,
+      response_serializer=helloworld__pb2.ResponseMessage.SerializeToString,
+    ),
+    'SendPacket': grpc.unary_unary_rpc_method_handler(
+      servicer.SendPacket,
+      request_deserializer=helloworld__pb2.RequestMessage.FromString,
+      response_serializer=helloworld__pb2.ResponseMessage.SerializeToString,
+    ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'helloworld.Greeter', rpc_method_handlers)
+    'helloworld.Greeter', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

@@ -1,4 +1,3 @@
-
 from concurrent import futures
 import time
 import sys
@@ -7,8 +6,9 @@ import lookup_pb2
 import lookup_pb2_grpc
 import thread
 
-
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
+
+
 # import datetime
 # import logging
 # import os
@@ -41,19 +41,17 @@ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 
 class LookUpServer(lookup_pb2_grpc.MainServiceServicer):
-
-
   def __init__(self, lookup):
     self.lookup = lookup
 
-  
   def Retrieve(self, request, context):
-    result= lookup.retrive(request.key)
+    result = lookup.retrive(request.key)
     return lookup_pb2.ValAck(value=result)
-  
-  def Register(self, request , context):
+
+  def Register(self, request, context):
     resp = lookup.register(request.id, request.ip)
     return lookup_pb2.ResponseMessage(msg=resp)
+
 
 def serve(lookup):
   print "inside serve"
@@ -66,11 +64,11 @@ def serve(lookup):
     server.add_insecure_port('[::]:50051')
     print "after insecure port"
     #  server.add_insecure_port('localhost:')
-    #thread.start_new_thread(server.start(),())
+    # thread.start_new_thread(server.start(),())
     print "started"
     server.start()
 
-      
+
   except Exception as e:
     print e
   try:
@@ -78,7 +76,6 @@ def serve(lookup):
       time.sleep(_ONE_DAY_IN_SECONDS)
   except KeyboardInterrupt:
     server.stop(0)
-
 
 
 if __name__ == '__main__':

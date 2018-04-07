@@ -26,19 +26,18 @@ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 
 class Greeter(helloworld_pb2_grpc.GreeterServicer):
-
   def SayHello(self, request, context):
-    
     return helloworld_pb2.HelloReply(message='Hello Vim, %s!' % request.name)
-  
-  def Handshake(self, request , context):
 
-    return helloworld_pb2.ResponseMessage(nodeId="21",destinationId="12",ackMessage="Hello Dear Client")
-  
-  def SendPacket(self, request , context):
-    #check if current node is the destination node 
-    #else forward it to the destination node
-    return helloworld_pb2.ResponseMessage(nodeId="21",destinationId="12",ackMessage="Hello Dear Client")
+  def Handshake(self, request, context):
+    return helloworld_pb2.ResponseMessage(nodeId="21", destinationId="12", ackMessage="Hello Dear Client")
+
+  def SendPacket(self, request, context):
+    # check if current node is the destination node
+    # else forward it to the destination node
+    return helloworld_pb2.ResponseMessage(nodeId="21", destinationId="12", ackMessage="Hello Dear Client")
+
+
 def serve():
   server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
   helloworld_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)
@@ -49,6 +48,7 @@ def serve():
       time.sleep(_ONE_DAY_IN_SECONDS)
   except KeyboardInterrupt:
     server.stop(0)
+
 
 if __name__ == '__main__':
   serve()

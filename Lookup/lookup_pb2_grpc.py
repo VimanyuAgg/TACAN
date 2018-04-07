@@ -15,15 +15,15 @@ class MainServiceStub(object):
       channel: A grpc.Channel.
     """
     self.Retrieve = channel.unary_unary(
-        '/lookup.MainService/Retrieve',
-        request_serializer=lookup__pb2.RequestMessage.SerializeToString,
-        response_deserializer=lookup__pb2.ValAck.FromString,
-        )
+      '/lookup.MainService/Retrieve',
+      request_serializer=lookup__pb2.RequestMessage.SerializeToString,
+      response_deserializer=lookup__pb2.ValAck.FromString,
+    )
     self.Register = channel.unary_unary(
-        '/lookup.MainService/Register',
-        request_serializer=lookup__pb2.Params.SerializeToString,
-        response_deserializer=lookup__pb2.ResponseMessage.FromString,
-        )
+      '/lookup.MainService/Register',
+      request_serializer=lookup__pb2.Params.SerializeToString,
+      response_deserializer=lookup__pb2.ResponseMessage.FromString,
+    )
 
 
 class MainServiceServicer(object):
@@ -47,17 +47,17 @@ class MainServiceServicer(object):
 
 def add_MainServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'Retrieve': grpc.unary_unary_rpc_method_handler(
-          servicer.Retrieve,
-          request_deserializer=lookup__pb2.RequestMessage.FromString,
-          response_serializer=lookup__pb2.ValAck.SerializeToString,
-      ),
-      'Register': grpc.unary_unary_rpc_method_handler(
-          servicer.Register,
-          request_deserializer=lookup__pb2.Params.FromString,
-          response_serializer=lookup__pb2.ResponseMessage.SerializeToString,
-      ),
+    'Retrieve': grpc.unary_unary_rpc_method_handler(
+      servicer.Retrieve,
+      request_deserializer=lookup__pb2.RequestMessage.FromString,
+      response_serializer=lookup__pb2.ValAck.SerializeToString,
+    ),
+    'Register': grpc.unary_unary_rpc_method_handler(
+      servicer.Register,
+      request_deserializer=lookup__pb2.Params.FromString,
+      response_serializer=lookup__pb2.ResponseMessage.SerializeToString,
+    ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'lookup.MainService', rpc_method_handlers)
+    'lookup.MainService', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

@@ -2,28 +2,25 @@
 # source: phase1.proto
 
 import sys
-_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+
+_b = sys.version_info[0] < 3 and (lambda x: x) or (lambda x: x.encode('latin1'))
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf import descriptor_pb2
+
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
-
-
-
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='phase1.proto',
   package='phase1',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cphase1.proto\x12\x06phase1\":\n\x1eRemoveChildIdFromParentRequest\x12\x18\n\x10\x64\x65partingChildId\x18\x01 \x01(\x05\"J\n\x1fRemoveChildIdFromParentResponse\x12\'\n\x1fremoveChildIdFromParentResponse\x18\x01 \x01(\t\"4\n\x14SendShiftCompleteAck\x12\x1c\n\x14sendShiftCompleteAck\x18\x01 \x01(\t\":\n\x17\x43lusterheadAckSendShift\x12\x1f\n\x17\x63lusterheadAckSendShift\x18\x01 \x01(\t\"4\n\x18UpdateClusterheadRequest\x12\x18\n\x10newClusterheadId\x18\x01 \x01(\x05\">\n\x19UpdateClusterheadResponse\x12!\n\x19updateClusterheadResponse\x18\x01 \x01(\t\"*\n\x11UpdateSizeRequest\x12\x15\n\rsizeIncrement\x18\x01 \x01(\x05\"0\n\x12UpdateSizeResponse\x12\x1a\n\x12updateSizeResponse\x18\x01 \x01(\t\"9\n\x14JoinNewParentRequest\x12\x11\n\tchildSize\x18\x01 \x01(\x05\x12\x0e\n\x06nodeId\x18\x02 \x01(\x05\"-\n\x15JoinNewParentResponse\x12\x14\n\x0cjoinResponse\x18\x01 \x01(\t\")\n\x11ShiftStartRequest\x12\x14\n\x0ctargetNodeId\x18\x01 \x01(\t\"0\n\x12ShiftStartResponse\x12\x1a\n\x12shiftStartResponse\x18\x01 \x01(\t\"#\n\rwakeUpRequest\x12\x12\n\nwakeywakey\x18\x01 \x01(\t\"!\n\x0ewakeUpResponse\x12\x0f\n\x07wokenUp\x18\x01 \x01(\t\"o\n\tsendHello\x12\x10\n\x08senderId\x18\x01 \x01(\t\x12\x1e\n\x16hopToSenderClusterhead\x18\x02 \x01(\x05\x12\x13\n\x0bsenderState\x18\x03 \x01(\t\x12\x1b\n\x13senderClusterheadId\x18\x04 \x01(\t\"#\n\rHelloResponse\x12\x12\n\ninterested\x18\x01 \x01(\x05\"\x1c\n\nJamRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\x05\"\"\n\x0bJamResponse\x12\x13\n\x0bjamResponse\x18\x01 \x01(\t\"/\n\x0b\x43lusterName\x12\x13\n\x0b\x63lusterName\x18\x01 \x01(\t\x12\x0b\n\x03hop\x18\x02 \x01(\x05\" \n\nClusterAck\x12\x12\n\nclusterAck\x18\x01 \x01(\t\"\x16\n\x06MySize\x12\x0c\n\x04size\x18\x01 \x01(\x05\"\"\n\x0f\x41\x63\x63omodateChild\x12\x0f\n\x07message\x18\x01 \x01(\t\"X\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x0e\n\x06hopIds\x18\x04 \x03(\x05\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t\"J\n\x0cShiftRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x13\n\x0bsumOfweight\x18\x02 \x01(\x05\x12\x15\n\rclusterHeadId\x18\x03 \x01(\t\" \n\rShiftResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"Z\n\x0fShiftClusterReq\x12\x1b\n\x13senderClusterHeadId\x18\x01 \x01(\t\x12\x14\n\x0csenderNodeId\x18\x02 \x01(\t\x12\x14\n\x0csumOfweights\x18\x03 \x01(\x05\"\"\n\x0fShiftClusterRes\x12\x0f\n\x07message\x18\x01 \x01(\t\"&\n\rAcceptRequest\x12\x15\n\rclusterHeadId\x18\x01 \x01(\t\"!\n\x0e\x41\x63\x63\x65ptResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2\xe0\x08\n\x0bMainService\x12>\n\tHandshake\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12?\n\nSendPacket\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12\x31\n\x04Size\x12\x0e.phase1.MySize\x1a\x17.phase1.AccomodateChild\"\x00\x12\x34\n\x07\x43luster\x12\x13.phase1.ClusterName\x1a\x12.phase1.ClusterAck\"\x00\x12\x41\n\x10ShiftNodeRequest\x12\x14.phase1.ShiftRequest\x1a\x15.phase1.ShiftResponse\"\x00\x12\x30\n\x03Jam\x12\x12.phase1.JamRequest\x1a\x13.phase1.JamResponse\"\x00\x12\x33\n\x05Hello\x12\x11.phase1.sendHello\x1a\x15.phase1.HelloResponse\"\x00\x12I\n\x13ShiftClusterRequest\x12\x17.phase1.ShiftClusterReq\x1a\x17.phase1.ShiftClusterRes\"\x00\x12\x39\n\x06\x41\x63\x63\x65pt\x12\x15.phase1.AcceptRequest\x1a\x16.phase1.AcceptResponse\"\x00\x12\x39\n\x06WakeUp\x12\x15.phase1.wakeUpRequest\x1a\x16.phase1.wakeUpResponse\"\x00\x12\x45\n\nShiftStart\x12\x19.phase1.ShiftStartRequest\x1a\x1a.phase1.ShiftStartResponse\"\x00\x12N\n\rJoinNewParent\x12\x1c.phase1.JoinNewParentRequest\x1a\x1d.phase1.JoinNewParentResponse\"\x00\x12\x45\n\nUpdateSize\x12\x19.phase1.UpdateSizeRequest\x1a\x1a.phase1.UpdateSizeResponse\"\x00\x12Z\n\x11UpdateClusterhead\x12 .phase1.UpdateClusterheadRequest\x1a!.phase1.UpdateClusterheadResponse\"\x00\x12T\n\x11SendShiftComplete\x12\x1c.phase1.SendShiftCompleteAck\x1a\x1f.phase1.ClusterheadAckSendShift\"\x00\x12l\n\x17RemoveChildIdFromParent\x12&.phase1.RemoveChildIdFromParentRequest\x1a\'.phase1.RemoveChildIdFromParentResponse\"\x00\x62\x06proto3')
+  serialized_pb=_b(
+    '\n\x0cphase1.proto\x12\x06phase1\":\n\x1eRemoveChildIdFromParentRequest\x12\x18\n\x10\x64\x65partingChildId\x18\x01 \x01(\x05\"J\n\x1fRemoveChildIdFromParentResponse\x12\'\n\x1fremoveChildIdFromParentResponse\x18\x01 \x01(\t\"4\n\x14SendShiftCompleteAck\x12\x1c\n\x14sendShiftCompleteAck\x18\x01 \x01(\t\":\n\x17\x43lusterheadAckSendShift\x12\x1f\n\x17\x63lusterheadAckSendShift\x18\x01 \x01(\t\"4\n\x18UpdateClusterheadRequest\x12\x18\n\x10newClusterheadId\x18\x01 \x01(\x05\">\n\x19UpdateClusterheadResponse\x12!\n\x19updateClusterheadResponse\x18\x01 \x01(\t\"*\n\x11UpdateSizeRequest\x12\x15\n\rsizeIncrement\x18\x01 \x01(\x05\"0\n\x12UpdateSizeResponse\x12\x1a\n\x12updateSizeResponse\x18\x01 \x01(\t\"9\n\x14JoinNewParentRequest\x12\x11\n\tchildSize\x18\x01 \x01(\x05\x12\x0e\n\x06nodeId\x18\x02 \x01(\x05\"-\n\x15JoinNewParentResponse\x12\x14\n\x0cjoinResponse\x18\x01 \x01(\t\")\n\x11ShiftStartRequest\x12\x14\n\x0ctargetNodeId\x18\x01 \x01(\t\"0\n\x12ShiftStartResponse\x12\x1a\n\x12shiftStartResponse\x18\x01 \x01(\t\"#\n\rwakeUpRequest\x12\x12\n\nwakeywakey\x18\x01 \x01(\t\"!\n\x0ewakeUpResponse\x12\x0f\n\x07wokenUp\x18\x01 \x01(\t\"o\n\tsendHello\x12\x10\n\x08senderId\x18\x01 \x01(\t\x12\x1e\n\x16hopToSenderClusterhead\x18\x02 \x01(\x05\x12\x13\n\x0bsenderState\x18\x03 \x01(\t\x12\x1b\n\x13senderClusterheadId\x18\x04 \x01(\t\"#\n\rHelloResponse\x12\x12\n\ninterested\x18\x01 \x01(\x05\"\x1c\n\nJamRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\x05\"\"\n\x0bJamResponse\x12\x13\n\x0bjamResponse\x18\x01 \x01(\t\"/\n\x0b\x43lusterName\x12\x13\n\x0b\x63lusterName\x18\x01 \x01(\t\x12\x0b\n\x03hop\x18\x02 \x01(\x05\" \n\nClusterAck\x12\x12\n\nclusterAck\x18\x01 \x01(\t\"\x16\n\x06MySize\x12\x0c\n\x04size\x18\x01 \x01(\x05\"\"\n\x0f\x41\x63\x63omodateChild\x12\x0f\n\x07message\x18\x01 \x01(\t\"X\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x0e\n\x06hopIds\x18\x04 \x03(\x05\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t\"J\n\x0cShiftRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x13\n\x0bsumOfweight\x18\x02 \x01(\x05\x12\x15\n\rclusterHeadId\x18\x03 \x01(\t\" \n\rShiftResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"Z\n\x0fShiftClusterReq\x12\x1b\n\x13senderClusterHeadId\x18\x01 \x01(\t\x12\x14\n\x0csenderNodeId\x18\x02 \x01(\t\x12\x14\n\x0csumOfweights\x18\x03 \x01(\x05\"\"\n\x0fShiftClusterRes\x12\x0f\n\x07message\x18\x01 \x01(\t\"&\n\rAcceptRequest\x12\x15\n\rclusterHeadId\x18\x01 \x01(\t\"!\n\x0e\x41\x63\x63\x65ptResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2\xe0\x08\n\x0bMainService\x12>\n\tHandshake\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12?\n\nSendPacket\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12\x31\n\x04Size\x12\x0e.phase1.MySize\x1a\x17.phase1.AccomodateChild\"\x00\x12\x34\n\x07\x43luster\x12\x13.phase1.ClusterName\x1a\x12.phase1.ClusterAck\"\x00\x12\x41\n\x10ShiftNodeRequest\x12\x14.phase1.ShiftRequest\x1a\x15.phase1.ShiftResponse\"\x00\x12\x30\n\x03Jam\x12\x12.phase1.JamRequest\x1a\x13.phase1.JamResponse\"\x00\x12\x33\n\x05Hello\x12\x11.phase1.sendHello\x1a\x15.phase1.HelloResponse\"\x00\x12I\n\x13ShiftClusterRequest\x12\x17.phase1.ShiftClusterReq\x1a\x17.phase1.ShiftClusterRes\"\x00\x12\x39\n\x06\x41\x63\x63\x65pt\x12\x15.phase1.AcceptRequest\x1a\x16.phase1.AcceptResponse\"\x00\x12\x39\n\x06WakeUp\x12\x15.phase1.wakeUpRequest\x1a\x16.phase1.wakeUpResponse\"\x00\x12\x45\n\nShiftStart\x12\x19.phase1.ShiftStartRequest\x1a\x1a.phase1.ShiftStartResponse\"\x00\x12N\n\rJoinNewParent\x12\x1c.phase1.JoinNewParentRequest\x1a\x1d.phase1.JoinNewParentResponse\"\x00\x12\x45\n\nUpdateSize\x12\x19.phase1.UpdateSizeRequest\x1a\x1a.phase1.UpdateSizeResponse\"\x00\x12Z\n\x11UpdateClusterhead\x12 .phase1.UpdateClusterheadRequest\x1a!.phase1.UpdateClusterheadResponse\"\x00\x12T\n\x11SendShiftComplete\x12\x1c.phase1.SendShiftCompleteAck\x1a\x1f.phase1.ClusterheadAckSendShift\"\x00\x12l\n\x17RemoveChildIdFromParent\x12&.phase1.RemoveChildIdFromParentRequest\x1a\'.phase1.RemoveChildIdFromParentResponse\"\x00\x62\x06proto3')
 )
-
-
-
 
 _REMOVECHILDIDFROMPARENTREQUEST = _descriptor.Descriptor(
   name='RemoveChildIdFromParentRequest',
@@ -55,7 +52,6 @@ _REMOVECHILDIDFROMPARENTREQUEST = _descriptor.Descriptor(
   serialized_end=82,
 )
 
-
 _REMOVECHILDIDFROMPARENTRESPONSE = _descriptor.Descriptor(
   name='RemoveChildIdFromParentResponse',
   full_name='phase1.RemoveChildIdFromParentResponse',
@@ -64,7 +60,8 @@ _REMOVECHILDIDFROMPARENTRESPONSE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='removeChildIdFromParentResponse', full_name='phase1.RemoveChildIdFromParentResponse.removeChildIdFromParentResponse', index=0,
+      name='removeChildIdFromParentResponse',
+      full_name='phase1.RemoveChildIdFromParentResponse.removeChildIdFromParentResponse', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -85,7 +82,6 @@ _REMOVECHILDIDFROMPARENTRESPONSE = _descriptor.Descriptor(
   serialized_start=84,
   serialized_end=158,
 )
-
 
 _SENDSHIFTCOMPLETEACK = _descriptor.Descriptor(
   name='SendShiftCompleteAck',
@@ -117,7 +113,6 @@ _SENDSHIFTCOMPLETEACK = _descriptor.Descriptor(
   serialized_end=212,
 )
 
-
 _CLUSTERHEADACKSENDSHIFT = _descriptor.Descriptor(
   name='ClusterheadAckSendShift',
   full_name='phase1.ClusterheadAckSendShift',
@@ -147,7 +142,6 @@ _CLUSTERHEADACKSENDSHIFT = _descriptor.Descriptor(
   serialized_start=214,
   serialized_end=272,
 )
-
 
 _UPDATECLUSTERHEADREQUEST = _descriptor.Descriptor(
   name='UpdateClusterheadRequest',
@@ -179,7 +173,6 @@ _UPDATECLUSTERHEADREQUEST = _descriptor.Descriptor(
   serialized_end=326,
 )
 
-
 _UPDATECLUSTERHEADRESPONSE = _descriptor.Descriptor(
   name='UpdateClusterheadResponse',
   full_name='phase1.UpdateClusterheadResponse',
@@ -209,7 +202,6 @@ _UPDATECLUSTERHEADRESPONSE = _descriptor.Descriptor(
   serialized_start=328,
   serialized_end=390,
 )
-
 
 _UPDATESIZEREQUEST = _descriptor.Descriptor(
   name='UpdateSizeRequest',
@@ -241,7 +233,6 @@ _UPDATESIZEREQUEST = _descriptor.Descriptor(
   serialized_end=434,
 )
 
-
 _UPDATESIZERESPONSE = _descriptor.Descriptor(
   name='UpdateSizeResponse',
   full_name='phase1.UpdateSizeResponse',
@@ -271,7 +262,6 @@ _UPDATESIZERESPONSE = _descriptor.Descriptor(
   serialized_start=436,
   serialized_end=484,
 )
-
 
 _JOINNEWPARENTREQUEST = _descriptor.Descriptor(
   name='JoinNewParentRequest',
@@ -310,7 +300,6 @@ _JOINNEWPARENTREQUEST = _descriptor.Descriptor(
   serialized_end=543,
 )
 
-
 _JOINNEWPARENTRESPONSE = _descriptor.Descriptor(
   name='JoinNewParentResponse',
   full_name='phase1.JoinNewParentResponse',
@@ -340,7 +329,6 @@ _JOINNEWPARENTRESPONSE = _descriptor.Descriptor(
   serialized_start=545,
   serialized_end=590,
 )
-
 
 _SHIFTSTARTREQUEST = _descriptor.Descriptor(
   name='ShiftStartRequest',
@@ -372,7 +360,6 @@ _SHIFTSTARTREQUEST = _descriptor.Descriptor(
   serialized_end=633,
 )
 
-
 _SHIFTSTARTRESPONSE = _descriptor.Descriptor(
   name='ShiftStartResponse',
   full_name='phase1.ShiftStartResponse',
@@ -402,7 +389,6 @@ _SHIFTSTARTRESPONSE = _descriptor.Descriptor(
   serialized_start=635,
   serialized_end=683,
 )
-
 
 _WAKEUPREQUEST = _descriptor.Descriptor(
   name='wakeUpRequest',
@@ -434,7 +420,6 @@ _WAKEUPREQUEST = _descriptor.Descriptor(
   serialized_end=720,
 )
 
-
 _WAKEUPRESPONSE = _descriptor.Descriptor(
   name='wakeUpResponse',
   full_name='phase1.wakeUpResponse',
@@ -464,7 +449,6 @@ _WAKEUPRESPONSE = _descriptor.Descriptor(
   serialized_start=722,
   serialized_end=755,
 )
-
 
 _SENDHELLO = _descriptor.Descriptor(
   name='sendHello',
@@ -517,7 +501,6 @@ _SENDHELLO = _descriptor.Descriptor(
   serialized_end=868,
 )
 
-
 _HELLORESPONSE = _descriptor.Descriptor(
   name='HelloResponse',
   full_name='phase1.HelloResponse',
@@ -547,7 +530,6 @@ _HELLORESPONSE = _descriptor.Descriptor(
   serialized_start=870,
   serialized_end=905,
 )
-
 
 _JAMREQUEST = _descriptor.Descriptor(
   name='JamRequest',
@@ -579,7 +561,6 @@ _JAMREQUEST = _descriptor.Descriptor(
   serialized_end=935,
 )
 
-
 _JAMRESPONSE = _descriptor.Descriptor(
   name='JamResponse',
   full_name='phase1.JamResponse',
@@ -609,7 +590,6 @@ _JAMRESPONSE = _descriptor.Descriptor(
   serialized_start=937,
   serialized_end=971,
 )
-
 
 _CLUSTERNAME = _descriptor.Descriptor(
   name='ClusterName',
@@ -648,7 +628,6 @@ _CLUSTERNAME = _descriptor.Descriptor(
   serialized_end=1020,
 )
 
-
 _CLUSTERACK = _descriptor.Descriptor(
   name='ClusterAck',
   full_name='phase1.ClusterAck',
@@ -678,7 +657,6 @@ _CLUSTERACK = _descriptor.Descriptor(
   serialized_start=1022,
   serialized_end=1054,
 )
-
 
 _MYSIZE = _descriptor.Descriptor(
   name='MySize',
@@ -710,7 +688,6 @@ _MYSIZE = _descriptor.Descriptor(
   serialized_end=1078,
 )
 
-
 _ACCOMODATECHILD = _descriptor.Descriptor(
   name='AccomodateChild',
   full_name='phase1.AccomodateChild',
@@ -740,7 +717,6 @@ _ACCOMODATECHILD = _descriptor.Descriptor(
   serialized_start=1080,
   serialized_end=1114,
 )
-
 
 _REQUESTMESSAGE = _descriptor.Descriptor(
   name='RequestMessage',
@@ -793,7 +769,6 @@ _REQUESTMESSAGE = _descriptor.Descriptor(
   serialized_end=1204,
 )
 
-
 _RESPONSEMESSAGE = _descriptor.Descriptor(
   name='ResponseMessage',
   full_name='phase1.ResponseMessage',
@@ -837,7 +812,6 @@ _RESPONSEMESSAGE = _descriptor.Descriptor(
   serialized_start=1206,
   serialized_end=1282,
 )
-
 
 _SHIFTREQUEST = _descriptor.Descriptor(
   name='ShiftRequest',
@@ -883,7 +857,6 @@ _SHIFTREQUEST = _descriptor.Descriptor(
   serialized_end=1358,
 )
 
-
 _SHIFTRESPONSE = _descriptor.Descriptor(
   name='ShiftResponse',
   full_name='phase1.ShiftResponse',
@@ -913,7 +886,6 @@ _SHIFTRESPONSE = _descriptor.Descriptor(
   serialized_start=1360,
   serialized_end=1392,
 )
-
 
 _SHIFTCLUSTERREQ = _descriptor.Descriptor(
   name='ShiftClusterReq',
@@ -959,7 +931,6 @@ _SHIFTCLUSTERREQ = _descriptor.Descriptor(
   serialized_end=1484,
 )
 
-
 _SHIFTCLUSTERRES = _descriptor.Descriptor(
   name='ShiftClusterRes',
   full_name='phase1.ShiftClusterRes',
@@ -990,7 +961,6 @@ _SHIFTCLUSTERRES = _descriptor.Descriptor(
   serialized_end=1520,
 )
 
-
 _ACCEPTREQUEST = _descriptor.Descriptor(
   name='AcceptRequest',
   full_name='phase1.AcceptRequest',
@@ -1020,7 +990,6 @@ _ACCEPTREQUEST = _descriptor.Descriptor(
   serialized_start=1522,
   serialized_end=1560,
 )
-
 
 _ACCEPTRESPONSE = _descriptor.Descriptor(
   name='AcceptResponse',
@@ -1084,217 +1053,219 @@ DESCRIPTOR.message_types_by_name['AcceptRequest'] = _ACCEPTREQUEST
 DESCRIPTOR.message_types_by_name['AcceptResponse'] = _ACCEPTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-RemoveChildIdFromParentRequest = _reflection.GeneratedProtocolMessageType('RemoveChildIdFromParentRequest', (_message.Message,), dict(
-  DESCRIPTOR = _REMOVECHILDIDFROMPARENTREQUEST,
-  __module__ = 'phase1_pb2'
-  # @@protoc_insertion_point(class_scope:phase1.RemoveChildIdFromParentRequest)
+RemoveChildIdFromParentRequest = _reflection.GeneratedProtocolMessageType('RemoveChildIdFromParentRequest',
+                                                                          (_message.Message,), dict(
+    DESCRIPTOR=_REMOVECHILDIDFROMPARENTREQUEST,
+    __module__='phase1_pb2'
+    # @@protoc_insertion_point(class_scope:phase1.RemoveChildIdFromParentRequest)
   ))
 _sym_db.RegisterMessage(RemoveChildIdFromParentRequest)
 
-RemoveChildIdFromParentResponse = _reflection.GeneratedProtocolMessageType('RemoveChildIdFromParentResponse', (_message.Message,), dict(
-  DESCRIPTOR = _REMOVECHILDIDFROMPARENTRESPONSE,
-  __module__ = 'phase1_pb2'
-  # @@protoc_insertion_point(class_scope:phase1.RemoveChildIdFromParentResponse)
+RemoveChildIdFromParentResponse = _reflection.GeneratedProtocolMessageType('RemoveChildIdFromParentResponse',
+                                                                           (_message.Message,), dict(
+    DESCRIPTOR=_REMOVECHILDIDFROMPARENTRESPONSE,
+    __module__='phase1_pb2'
+    # @@protoc_insertion_point(class_scope:phase1.RemoveChildIdFromParentResponse)
   ))
 _sym_db.RegisterMessage(RemoveChildIdFromParentResponse)
 
 SendShiftCompleteAck = _reflection.GeneratedProtocolMessageType('SendShiftCompleteAck', (_message.Message,), dict(
-  DESCRIPTOR = _SENDSHIFTCOMPLETEACK,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_SENDSHIFTCOMPLETEACK,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.SendShiftCompleteAck)
-  ))
+))
 _sym_db.RegisterMessage(SendShiftCompleteAck)
 
 ClusterheadAckSendShift = _reflection.GeneratedProtocolMessageType('ClusterheadAckSendShift', (_message.Message,), dict(
-  DESCRIPTOR = _CLUSTERHEADACKSENDSHIFT,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_CLUSTERHEADACKSENDSHIFT,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.ClusterheadAckSendShift)
-  ))
+))
 _sym_db.RegisterMessage(ClusterheadAckSendShift)
 
-UpdateClusterheadRequest = _reflection.GeneratedProtocolMessageType('UpdateClusterheadRequest', (_message.Message,), dict(
-  DESCRIPTOR = _UPDATECLUSTERHEADREQUEST,
-  __module__ = 'phase1_pb2'
-  # @@protoc_insertion_point(class_scope:phase1.UpdateClusterheadRequest)
-  ))
+UpdateClusterheadRequest = _reflection.GeneratedProtocolMessageType('UpdateClusterheadRequest', (_message.Message,),
+                                                                    dict(
+                                                                      DESCRIPTOR=_UPDATECLUSTERHEADREQUEST,
+                                                                      __module__='phase1_pb2'
+                                                                      # @@protoc_insertion_point(class_scope:phase1.UpdateClusterheadRequest)
+                                                                    ))
 _sym_db.RegisterMessage(UpdateClusterheadRequest)
 
-UpdateClusterheadResponse = _reflection.GeneratedProtocolMessageType('UpdateClusterheadResponse', (_message.Message,), dict(
-  DESCRIPTOR = _UPDATECLUSTERHEADRESPONSE,
-  __module__ = 'phase1_pb2'
-  # @@protoc_insertion_point(class_scope:phase1.UpdateClusterheadResponse)
-  ))
+UpdateClusterheadResponse = _reflection.GeneratedProtocolMessageType('UpdateClusterheadResponse', (_message.Message,),
+                                                                     dict(
+                                                                       DESCRIPTOR=_UPDATECLUSTERHEADRESPONSE,
+                                                                       __module__='phase1_pb2'
+                                                                       # @@protoc_insertion_point(class_scope:phase1.UpdateClusterheadResponse)
+                                                                     ))
 _sym_db.RegisterMessage(UpdateClusterheadResponse)
 
 UpdateSizeRequest = _reflection.GeneratedProtocolMessageType('UpdateSizeRequest', (_message.Message,), dict(
-  DESCRIPTOR = _UPDATESIZEREQUEST,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_UPDATESIZEREQUEST,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.UpdateSizeRequest)
-  ))
+))
 _sym_db.RegisterMessage(UpdateSizeRequest)
 
 UpdateSizeResponse = _reflection.GeneratedProtocolMessageType('UpdateSizeResponse', (_message.Message,), dict(
-  DESCRIPTOR = _UPDATESIZERESPONSE,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_UPDATESIZERESPONSE,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.UpdateSizeResponse)
-  ))
+))
 _sym_db.RegisterMessage(UpdateSizeResponse)
 
 JoinNewParentRequest = _reflection.GeneratedProtocolMessageType('JoinNewParentRequest', (_message.Message,), dict(
-  DESCRIPTOR = _JOINNEWPARENTREQUEST,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_JOINNEWPARENTREQUEST,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.JoinNewParentRequest)
-  ))
+))
 _sym_db.RegisterMessage(JoinNewParentRequest)
 
 JoinNewParentResponse = _reflection.GeneratedProtocolMessageType('JoinNewParentResponse', (_message.Message,), dict(
-  DESCRIPTOR = _JOINNEWPARENTRESPONSE,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_JOINNEWPARENTRESPONSE,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.JoinNewParentResponse)
-  ))
+))
 _sym_db.RegisterMessage(JoinNewParentResponse)
 
 ShiftStartRequest = _reflection.GeneratedProtocolMessageType('ShiftStartRequest', (_message.Message,), dict(
-  DESCRIPTOR = _SHIFTSTARTREQUEST,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_SHIFTSTARTREQUEST,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.ShiftStartRequest)
-  ))
+))
 _sym_db.RegisterMessage(ShiftStartRequest)
 
 ShiftStartResponse = _reflection.GeneratedProtocolMessageType('ShiftStartResponse', (_message.Message,), dict(
-  DESCRIPTOR = _SHIFTSTARTRESPONSE,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_SHIFTSTARTRESPONSE,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.ShiftStartResponse)
-  ))
+))
 _sym_db.RegisterMessage(ShiftStartResponse)
 
 wakeUpRequest = _reflection.GeneratedProtocolMessageType('wakeUpRequest', (_message.Message,), dict(
-  DESCRIPTOR = _WAKEUPREQUEST,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_WAKEUPREQUEST,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.wakeUpRequest)
-  ))
+))
 _sym_db.RegisterMessage(wakeUpRequest)
 
 wakeUpResponse = _reflection.GeneratedProtocolMessageType('wakeUpResponse', (_message.Message,), dict(
-  DESCRIPTOR = _WAKEUPRESPONSE,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_WAKEUPRESPONSE,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.wakeUpResponse)
-  ))
+))
 _sym_db.RegisterMessage(wakeUpResponse)
 
 sendHello = _reflection.GeneratedProtocolMessageType('sendHello', (_message.Message,), dict(
-  DESCRIPTOR = _SENDHELLO,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_SENDHELLO,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.sendHello)
-  ))
+))
 _sym_db.RegisterMessage(sendHello)
 
 HelloResponse = _reflection.GeneratedProtocolMessageType('HelloResponse', (_message.Message,), dict(
-  DESCRIPTOR = _HELLORESPONSE,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_HELLORESPONSE,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.HelloResponse)
-  ))
+))
 _sym_db.RegisterMessage(HelloResponse)
 
 JamRequest = _reflection.GeneratedProtocolMessageType('JamRequest', (_message.Message,), dict(
-  DESCRIPTOR = _JAMREQUEST,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_JAMREQUEST,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.JamRequest)
-  ))
+))
 _sym_db.RegisterMessage(JamRequest)
 
 JamResponse = _reflection.GeneratedProtocolMessageType('JamResponse', (_message.Message,), dict(
-  DESCRIPTOR = _JAMRESPONSE,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_JAMRESPONSE,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.JamResponse)
-  ))
+))
 _sym_db.RegisterMessage(JamResponse)
 
 ClusterName = _reflection.GeneratedProtocolMessageType('ClusterName', (_message.Message,), dict(
-  DESCRIPTOR = _CLUSTERNAME,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_CLUSTERNAME,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.ClusterName)
-  ))
+))
 _sym_db.RegisterMessage(ClusterName)
 
 ClusterAck = _reflection.GeneratedProtocolMessageType('ClusterAck', (_message.Message,), dict(
-  DESCRIPTOR = _CLUSTERACK,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_CLUSTERACK,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.ClusterAck)
-  ))
+))
 _sym_db.RegisterMessage(ClusterAck)
 
 MySize = _reflection.GeneratedProtocolMessageType('MySize', (_message.Message,), dict(
-  DESCRIPTOR = _MYSIZE,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_MYSIZE,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.MySize)
-  ))
+))
 _sym_db.RegisterMessage(MySize)
 
 AccomodateChild = _reflection.GeneratedProtocolMessageType('AccomodateChild', (_message.Message,), dict(
-  DESCRIPTOR = _ACCOMODATECHILD,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_ACCOMODATECHILD,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.AccomodateChild)
-  ))
+))
 _sym_db.RegisterMessage(AccomodateChild)
 
 RequestMessage = _reflection.GeneratedProtocolMessageType('RequestMessage', (_message.Message,), dict(
-  DESCRIPTOR = _REQUESTMESSAGE,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_REQUESTMESSAGE,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.RequestMessage)
-  ))
+))
 _sym_db.RegisterMessage(RequestMessage)
 
 ResponseMessage = _reflection.GeneratedProtocolMessageType('ResponseMessage', (_message.Message,), dict(
-  DESCRIPTOR = _RESPONSEMESSAGE,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_RESPONSEMESSAGE,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.ResponseMessage)
-  ))
+))
 _sym_db.RegisterMessage(ResponseMessage)
 
 ShiftRequest = _reflection.GeneratedProtocolMessageType('ShiftRequest', (_message.Message,), dict(
-  DESCRIPTOR = _SHIFTREQUEST,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_SHIFTREQUEST,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.ShiftRequest)
-  ))
+))
 _sym_db.RegisterMessage(ShiftRequest)
 
 ShiftResponse = _reflection.GeneratedProtocolMessageType('ShiftResponse', (_message.Message,), dict(
-  DESCRIPTOR = _SHIFTRESPONSE,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_SHIFTRESPONSE,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.ShiftResponse)
-  ))
+))
 _sym_db.RegisterMessage(ShiftResponse)
 
 ShiftClusterReq = _reflection.GeneratedProtocolMessageType('ShiftClusterReq', (_message.Message,), dict(
-  DESCRIPTOR = _SHIFTCLUSTERREQ,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_SHIFTCLUSTERREQ,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.ShiftClusterReq)
-  ))
+))
 _sym_db.RegisterMessage(ShiftClusterReq)
 
 ShiftClusterRes = _reflection.GeneratedProtocolMessageType('ShiftClusterRes', (_message.Message,), dict(
-  DESCRIPTOR = _SHIFTCLUSTERRES,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_SHIFTCLUSTERRES,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.ShiftClusterRes)
-  ))
+))
 _sym_db.RegisterMessage(ShiftClusterRes)
 
 AcceptRequest = _reflection.GeneratedProtocolMessageType('AcceptRequest', (_message.Message,), dict(
-  DESCRIPTOR = _ACCEPTREQUEST,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_ACCEPTREQUEST,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.AcceptRequest)
-  ))
+))
 _sym_db.RegisterMessage(AcceptRequest)
 
 AcceptResponse = _reflection.GeneratedProtocolMessageType('AcceptResponse', (_message.Message,), dict(
-  DESCRIPTOR = _ACCEPTRESPONSE,
-  __module__ = 'phase1_pb2'
+  DESCRIPTOR=_ACCEPTRESPONSE,
+  __module__='phase1_pb2'
   # @@protoc_insertion_point(class_scope:phase1.AcceptResponse)
-  ))
+))
 _sym_db.RegisterMessage(AcceptResponse)
-
-
 
 _MAINSERVICE = _descriptor.ServiceDescriptor(
   name='MainService',
@@ -1305,151 +1276,151 @@ _MAINSERVICE = _descriptor.ServiceDescriptor(
   serialized_start=1598,
   serialized_end=2718,
   methods=[
-  _descriptor.MethodDescriptor(
-    name='Handshake',
-    full_name='phase1.MainService.Handshake',
-    index=0,
-    containing_service=None,
-    input_type=_REQUESTMESSAGE,
-    output_type=_RESPONSEMESSAGE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SendPacket',
-    full_name='phase1.MainService.SendPacket',
-    index=1,
-    containing_service=None,
-    input_type=_REQUESTMESSAGE,
-    output_type=_RESPONSEMESSAGE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Size',
-    full_name='phase1.MainService.Size',
-    index=2,
-    containing_service=None,
-    input_type=_MYSIZE,
-    output_type=_ACCOMODATECHILD,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Cluster',
-    full_name='phase1.MainService.Cluster',
-    index=3,
-    containing_service=None,
-    input_type=_CLUSTERNAME,
-    output_type=_CLUSTERACK,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ShiftNodeRequest',
-    full_name='phase1.MainService.ShiftNodeRequest',
-    index=4,
-    containing_service=None,
-    input_type=_SHIFTREQUEST,
-    output_type=_SHIFTRESPONSE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Jam',
-    full_name='phase1.MainService.Jam',
-    index=5,
-    containing_service=None,
-    input_type=_JAMREQUEST,
-    output_type=_JAMRESPONSE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Hello',
-    full_name='phase1.MainService.Hello',
-    index=6,
-    containing_service=None,
-    input_type=_SENDHELLO,
-    output_type=_HELLORESPONSE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ShiftClusterRequest',
-    full_name='phase1.MainService.ShiftClusterRequest',
-    index=7,
-    containing_service=None,
-    input_type=_SHIFTCLUSTERREQ,
-    output_type=_SHIFTCLUSTERRES,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Accept',
-    full_name='phase1.MainService.Accept',
-    index=8,
-    containing_service=None,
-    input_type=_ACCEPTREQUEST,
-    output_type=_ACCEPTRESPONSE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='WakeUp',
-    full_name='phase1.MainService.WakeUp',
-    index=9,
-    containing_service=None,
-    input_type=_WAKEUPREQUEST,
-    output_type=_WAKEUPRESPONSE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ShiftStart',
-    full_name='phase1.MainService.ShiftStart',
-    index=10,
-    containing_service=None,
-    input_type=_SHIFTSTARTREQUEST,
-    output_type=_SHIFTSTARTRESPONSE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='JoinNewParent',
-    full_name='phase1.MainService.JoinNewParent',
-    index=11,
-    containing_service=None,
-    input_type=_JOINNEWPARENTREQUEST,
-    output_type=_JOINNEWPARENTRESPONSE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateSize',
-    full_name='phase1.MainService.UpdateSize',
-    index=12,
-    containing_service=None,
-    input_type=_UPDATESIZEREQUEST,
-    output_type=_UPDATESIZERESPONSE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateClusterhead',
-    full_name='phase1.MainService.UpdateClusterhead',
-    index=13,
-    containing_service=None,
-    input_type=_UPDATECLUSTERHEADREQUEST,
-    output_type=_UPDATECLUSTERHEADRESPONSE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SendShiftComplete',
-    full_name='phase1.MainService.SendShiftComplete',
-    index=14,
-    containing_service=None,
-    input_type=_SENDSHIFTCOMPLETEACK,
-    output_type=_CLUSTERHEADACKSENDSHIFT,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='RemoveChildIdFromParent',
-    full_name='phase1.MainService.RemoveChildIdFromParent',
-    index=15,
-    containing_service=None,
-    input_type=_REMOVECHILDIDFROMPARENTREQUEST,
-    output_type=_REMOVECHILDIDFROMPARENTRESPONSE,
-    options=None,
-  ),
-])
+    _descriptor.MethodDescriptor(
+      name='Handshake',
+      full_name='phase1.MainService.Handshake',
+      index=0,
+      containing_service=None,
+      input_type=_REQUESTMESSAGE,
+      output_type=_RESPONSEMESSAGE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='SendPacket',
+      full_name='phase1.MainService.SendPacket',
+      index=1,
+      containing_service=None,
+      input_type=_REQUESTMESSAGE,
+      output_type=_RESPONSEMESSAGE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='Size',
+      full_name='phase1.MainService.Size',
+      index=2,
+      containing_service=None,
+      input_type=_MYSIZE,
+      output_type=_ACCOMODATECHILD,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='Cluster',
+      full_name='phase1.MainService.Cluster',
+      index=3,
+      containing_service=None,
+      input_type=_CLUSTERNAME,
+      output_type=_CLUSTERACK,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='ShiftNodeRequest',
+      full_name='phase1.MainService.ShiftNodeRequest',
+      index=4,
+      containing_service=None,
+      input_type=_SHIFTREQUEST,
+      output_type=_SHIFTRESPONSE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='Jam',
+      full_name='phase1.MainService.Jam',
+      index=5,
+      containing_service=None,
+      input_type=_JAMREQUEST,
+      output_type=_JAMRESPONSE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='Hello',
+      full_name='phase1.MainService.Hello',
+      index=6,
+      containing_service=None,
+      input_type=_SENDHELLO,
+      output_type=_HELLORESPONSE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='ShiftClusterRequest',
+      full_name='phase1.MainService.ShiftClusterRequest',
+      index=7,
+      containing_service=None,
+      input_type=_SHIFTCLUSTERREQ,
+      output_type=_SHIFTCLUSTERRES,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='Accept',
+      full_name='phase1.MainService.Accept',
+      index=8,
+      containing_service=None,
+      input_type=_ACCEPTREQUEST,
+      output_type=_ACCEPTRESPONSE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='WakeUp',
+      full_name='phase1.MainService.WakeUp',
+      index=9,
+      containing_service=None,
+      input_type=_WAKEUPREQUEST,
+      output_type=_WAKEUPRESPONSE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='ShiftStart',
+      full_name='phase1.MainService.ShiftStart',
+      index=10,
+      containing_service=None,
+      input_type=_SHIFTSTARTREQUEST,
+      output_type=_SHIFTSTARTRESPONSE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='JoinNewParent',
+      full_name='phase1.MainService.JoinNewParent',
+      index=11,
+      containing_service=None,
+      input_type=_JOINNEWPARENTREQUEST,
+      output_type=_JOINNEWPARENTRESPONSE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='UpdateSize',
+      full_name='phase1.MainService.UpdateSize',
+      index=12,
+      containing_service=None,
+      input_type=_UPDATESIZEREQUEST,
+      output_type=_UPDATESIZERESPONSE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='UpdateClusterhead',
+      full_name='phase1.MainService.UpdateClusterhead',
+      index=13,
+      containing_service=None,
+      input_type=_UPDATECLUSTERHEADREQUEST,
+      output_type=_UPDATECLUSTERHEADRESPONSE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='SendShiftComplete',
+      full_name='phase1.MainService.SendShiftComplete',
+      index=14,
+      containing_service=None,
+      input_type=_SENDSHIFTCOMPLETEACK,
+      output_type=_CLUSTERHEADACKSENDSHIFT,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='RemoveChildIdFromParent',
+      full_name='phase1.MainService.RemoveChildIdFromParent',
+      index=15,
+      containing_service=None,
+      input_type=_REMOVECHILDIDFROMPARENTREQUEST,
+      output_type=_REMOVECHILDIDFROMPARENTRESPONSE,
+      options=None,
+    ),
+  ])
 _sym_db.RegisterServiceDescriptor(_MAINSERVICE)
 
 DESCRIPTOR.services_by_name['MainService'] = _MAINSERVICE

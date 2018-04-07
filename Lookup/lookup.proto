@@ -4,27 +4,29 @@ package lookup;
 
 service MainService {
 
-  rpc Retrieve (RequestMessage) returns (ValAck) {}
-  rpc Register (Params) returns (ResponseMessage) {}
+    rpc Retrieve (RequestMessage) returns (ValAck) {
+    }
+    rpc Register (Params) returns (ResponseMessage) {
+    }
 
 }
 
 
 message RequestMessage {
-  string key = 1;
+    string key = 1;
 
 }
 
-message ValAck{
-  string value = 1;
+message ValAck {
+    string value = 1;
 }
 
 message Params {
-  string id = 1;
-  string ip = 2;
-  
+    string id = 1;
+    string ip = 2;
+
 }
 
 message ResponseMessage {
-  string msg = 1;
+    string msg = 1;
 }

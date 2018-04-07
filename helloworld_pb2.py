@@ -2,28 +2,25 @@
 # source: helloworld.proto
 
 import sys
-_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+
+_b = sys.version_info[0] < 3 and (lambda x: x) or (lambda x: x.encode('latin1'))
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf import descriptor_pb2
+
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
-
-
-
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='helloworld.proto',
   package='helloworld',
   syntax='proto3',
-  serialized_pb=_b('\n\x10helloworld.proto\x12\nhelloworld\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t\"H\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t2\xda\x01\n\x07Greeter\x12>\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00\x12\x46\n\tHandshake\x12\x1a.helloworld.RequestMessage\x1a\x1b.helloworld.ResponseMessage\"\x00\x12G\n\nSendPacket\x12\x1a.helloworld.RequestMessage\x1a\x1b.helloworld.ResponseMessage\"\x00\x42\x36\n\x1bio.grpc.examples.helloworldB\x0fHelloWorldProtoP\x01\xa2\x02\x03HLWb\x06proto3')
+  serialized_pb=_b(
+    '\n\x10helloworld.proto\x12\nhelloworld\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t\"H\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t2\xda\x01\n\x07Greeter\x12>\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00\x12\x46\n\tHandshake\x12\x1a.helloworld.RequestMessage\x1a\x1b.helloworld.ResponseMessage\"\x00\x12G\n\nSendPacket\x12\x1a.helloworld.RequestMessage\x1a\x1b.helloworld.ResponseMessage\"\x00\x42\x36\n\x1bio.grpc.examples.helloworldB\x0fHelloWorldProtoP\x01\xa2\x02\x03HLWb\x06proto3')
 )
-
-
-
 
 _HELLOREQUEST = _descriptor.Descriptor(
   name='HelloRequest',
@@ -55,7 +52,6 @@ _HELLOREQUEST = _descriptor.Descriptor(
   serialized_end=60,
 )
 
-
 _HELLOREPLY = _descriptor.Descriptor(
   name='HelloReply',
   full_name='helloworld.HelloReply',
@@ -85,7 +81,6 @@ _HELLOREPLY = _descriptor.Descriptor(
   serialized_start=62,
   serialized_end=91,
 )
-
 
 _REQUESTMESSAGE = _descriptor.Descriptor(
   name='RequestMessage',
@@ -130,7 +125,6 @@ _REQUESTMESSAGE = _descriptor.Descriptor(
   serialized_start=93,
   serialized_end=165,
 )
-
 
 _RESPONSEMESSAGE = _descriptor.Descriptor(
   name='ResponseMessage',
@@ -183,36 +177,36 @@ DESCRIPTOR.message_types_by_name['ResponseMessage'] = _RESPONSEMESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 HelloRequest = _reflection.GeneratedProtocolMessageType('HelloRequest', (_message.Message,), dict(
-  DESCRIPTOR = _HELLOREQUEST,
-  __module__ = 'helloworld_pb2'
+  DESCRIPTOR=_HELLOREQUEST,
+  __module__='helloworld_pb2'
   # @@protoc_insertion_point(class_scope:helloworld.HelloRequest)
-  ))
+))
 _sym_db.RegisterMessage(HelloRequest)
 
 HelloReply = _reflection.GeneratedProtocolMessageType('HelloReply', (_message.Message,), dict(
-  DESCRIPTOR = _HELLOREPLY,
-  __module__ = 'helloworld_pb2'
+  DESCRIPTOR=_HELLOREPLY,
+  __module__='helloworld_pb2'
   # @@protoc_insertion_point(class_scope:helloworld.HelloReply)
-  ))
+))
 _sym_db.RegisterMessage(HelloReply)
 
 RequestMessage = _reflection.GeneratedProtocolMessageType('RequestMessage', (_message.Message,), dict(
-  DESCRIPTOR = _REQUESTMESSAGE,
-  __module__ = 'helloworld_pb2'
+  DESCRIPTOR=_REQUESTMESSAGE,
+  __module__='helloworld_pb2'
   # @@protoc_insertion_point(class_scope:helloworld.RequestMessage)
-  ))
+))
 _sym_db.RegisterMessage(RequestMessage)
 
 ResponseMessage = _reflection.GeneratedProtocolMessageType('ResponseMessage', (_message.Message,), dict(
-  DESCRIPTOR = _RESPONSEMESSAGE,
-  __module__ = 'helloworld_pb2'
+  DESCRIPTOR=_RESPONSEMESSAGE,
+  __module__='helloworld_pb2'
   # @@protoc_insertion_point(class_scope:helloworld.ResponseMessage)
-  ))
+))
 _sym_db.RegisterMessage(ResponseMessage)
 
-
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\033io.grpc.examples.helloworldB\017HelloWorldProtoP\001\242\002\003HLW'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b(
+  '\n\033io.grpc.examples.helloworldB\017HelloWorldProtoP\001\242\002\003HLW'))
 
 _GREETER = _descriptor.ServiceDescriptor(
   name='Greeter',
@@ -223,34 +217,34 @@ _GREETER = _descriptor.ServiceDescriptor(
   serialized_start=246,
   serialized_end=464,
   methods=[
-  _descriptor.MethodDescriptor(
-    name='SayHello',
-    full_name='helloworld.Greeter.SayHello',
-    index=0,
-    containing_service=None,
-    input_type=_HELLOREQUEST,
-    output_type=_HELLOREPLY,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Handshake',
-    full_name='helloworld.Greeter.Handshake',
-    index=1,
-    containing_service=None,
-    input_type=_REQUESTMESSAGE,
-    output_type=_RESPONSEMESSAGE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SendPacket',
-    full_name='helloworld.Greeter.SendPacket',
-    index=2,
-    containing_service=None,
-    input_type=_REQUESTMESSAGE,
-    output_type=_RESPONSEMESSAGE,
-    options=None,
-  ),
-])
+    _descriptor.MethodDescriptor(
+      name='SayHello',
+      full_name='helloworld.Greeter.SayHello',
+      index=0,
+      containing_service=None,
+      input_type=_HELLOREQUEST,
+      output_type=_HELLOREPLY,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='Handshake',
+      full_name='helloworld.Greeter.Handshake',
+      index=1,
+      containing_service=None,
+      input_type=_REQUESTMESSAGE,
+      output_type=_RESPONSEMESSAGE,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='SendPacket',
+      full_name='helloworld.Greeter.SendPacket',
+      index=2,
+      containing_service=None,
+      input_type=_REQUESTMESSAGE,
+      output_type=_RESPONSEMESSAGE,
+      options=None,
+    ),
+  ])
 _sym_db.RegisterServiceDescriptor(_GREETER)
 
 DESCRIPTOR.services_by_name['Greeter'] = _GREETER

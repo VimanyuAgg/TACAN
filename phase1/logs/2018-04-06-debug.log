@@ -128,3 +128,128 @@
 2018-04-06 16:15:46,799 - Node - INFO - Starting Phase One Clustering on Node: 3
 2018-04-06 16:15:46,799 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 1
 2018-04-06 16:15:46,803 - client - INFO - sendSize starting on client.py for node: 3
+2018-04-06 17:12:37,257 - Node - INFO - Initializing Node: 0
+2018-04-06 17:12:37,258 - Node - INFO - Calling weightMatrix for id: 0
+2018-04-06 17:12:37,258 - Node - INFO - Calling phaseOneClustering
+2018-04-06 17:12:37,258 - Node - INFO - Starting Phase One Clustering on Node: 0
+2018-04-06 17:12:37,258 - Node - INFO - I don't have any parent: Node: 0
+2018-04-06 17:12:37,258 - Node - INFO - Starting Server on Node: 0
+2018-04-06 17:12:37,259 - main_server - INFO - Server starting for Node: 0
+2018-04-06 17:12:37,275 - main_server - INFO - Server Created
+2018-04-06 17:12:37,275 - main_server - INFO - Inside Mainserver __init__:
+2018-04-06 17:12:37,276 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-06 17:12:37,278 - main_server - INFO - Main Server init called successfully
+2018-04-06 17:12:37,282 - main_server - INFO - Run port assigned
+2018-04-06 17:12:37,284 - main_server - ERROR - first arg must be callable
+2018-04-06 17:12:37,285 - main_server - INFO - Inside forever while....
+2018-04-06 17:12:53,114 - Node - INFO - Server successfully started on node: 0
+2018-04-06 17:12:53,881 - Node - INFO - Initializing Node: 0
+2018-04-06 17:12:53,883 - Node - INFO - Calling weightMatrix for id: 0
+2018-04-06 17:12:53,883 - Node - INFO - Calling phaseOneClustering
+2018-04-06 17:12:53,883 - Node - INFO - Starting Phase One Clustering on Node: 0
+2018-04-06 17:12:53,883 - Node - INFO - I don't have any parent: Node: 0
+2018-04-06 17:12:53,883 - Node - INFO - Starting Server on Node: 0
+2018-04-06 17:12:53,883 - main_server - INFO - Server starting for Node: 0
+2018-04-06 17:12:53,898 - main_server - INFO - Server Created
+2018-04-06 17:12:53,898 - main_server - INFO - Inside Mainserver __init__:
+2018-04-06 17:12:53,898 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-06 17:12:53,902 - main_server - INFO - Main Server init called successfully
+2018-04-06 17:12:53,916 - main_server - INFO - Run port assigned
+2018-04-06 17:12:53,919 - main_server - ERROR - first arg must be callable
+2018-04-06 17:12:53,920 - main_server - INFO - Inside forever while....
+2018-04-06 17:13:00,324 - Node - INFO - Initializing Node: 1
+2018-04-06 17:13:00,324 - Node - INFO - Calling weightMatrix for id: 1
+2018-04-06 17:13:00,324 - Node - INFO - Calling phaseOneClustering
+2018-04-06 17:13:00,324 - Node - INFO - Starting Phase One Clustering on Node: 1
+2018-04-06 17:13:00,325 - Node - INFO - I don't have any parent: Node: 1
+2018-04-06 17:13:00,325 - Node - INFO - Starting Server on Node: 1
+2018-04-06 17:13:00,325 - main_server - INFO - Server starting for Node: 1
+2018-04-06 17:13:00,338 - main_server - INFO - Server Created
+2018-04-06 17:13:00,338 - main_server - INFO - Inside Mainserver __init__:
+2018-04-06 17:13:00,338 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-06 17:13:00,341 - main_server - INFO - Main Server init called successfully
+2018-04-06 17:13:00,345 - main_server - INFO - Run port assigned
+2018-04-06 17:13:00,347 - main_server - ERROR - first arg must be callable
+2018-04-06 17:13:00,348 - main_server - INFO - Inside forever while....
+2018-04-06 17:13:03,443 - Node - INFO - Initializing Node: 2
+2018-04-06 17:13:03,444 - Node - INFO - Calling weightMatrix for id: 2
+2018-04-06 17:13:03,445 - Node - INFO - Calling phaseOneClustering
+2018-04-06 17:13:03,445 - Node - INFO - Starting Phase One Clustering on Node: 2
+2018-04-06 17:13:03,445 - Node - INFO - I don't have any parent: Node: 2
+2018-04-06 17:13:03,445 - Node - INFO - Starting Server on Node: 2
+2018-04-06 17:13:03,445 - main_server - INFO - Server starting for Node: 2
+2018-04-06 17:13:03,451 - main_server - INFO - Server Created
+2018-04-06 17:13:03,451 - main_server - INFO - Inside Mainserver __init__:
+2018-04-06 17:13:03,451 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-06 17:13:03,453 - main_server - INFO - Main Server init called successfully
+2018-04-06 17:13:03,456 - main_server - INFO - Run port assigned
+2018-04-06 17:13:03,458 - main_server - ERROR - first arg must be callable
+2018-04-06 17:13:03,459 - main_server - INFO - Inside forever while....
+2018-04-06 17:13:05,980 - Node - INFO - Initializing Node: 3
+2018-04-06 17:13:05,980 - Node - INFO - Calling weightMatrix for id: 3
+2018-04-06 17:13:05,980 - Node - INFO - Calling phaseOneClustering
+2018-04-06 17:13:05,980 - Node - INFO - Starting Phase One Clustering on Node: 3
+2018-04-06 17:13:05,981 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 1
+2018-04-06 17:13:05,990 - client - INFO - sendSize starting on client.py for node: 3
+2018-04-06 17:13:06,007 - main_server - INFO - Server Node:1 current size is 47
+2018-04-06 17:13:06,007 - main_server - INFO - Server Node:1 Child size is 42
+2018-04-06 17:13:06,007 - main_server - INFO - Sending Accept
+2018-04-06 17:13:06,009 - client - INFO - Node 3 sent the size message of size 42 to 1
+2018-04-06 17:13:06,009 - client - INFO - Node 1: responded to Size RPC with reply: Accepted
+2018-04-06 17:13:06,011 - client - INFO - Didn't get Prune Node: 3
+2018-04-06 17:13:06,011 - Node - INFO - Node: 3 sent size() message to parent: 1
+2018-04-06 17:13:06,011 - Node - INFO - Starting Server on Node: 3
+2018-04-06 17:13:06,011 - main_server - INFO - Server starting for Node: 3
+2018-04-06 17:13:06,015 - main_server - INFO - Server Created
+2018-04-06 17:13:06,015 - main_server - INFO - Inside Mainserver __init__:
+2018-04-06 17:13:06,016 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-06 17:13:06,017 - main_server - INFO - Main Server init called successfully
+2018-04-06 17:13:06,018 - main_server - INFO - Run port assigned
+2018-04-06 17:13:06,020 - main_server - ERROR - first arg must be callable
+2018-04-06 17:13:06,020 - main_server - INFO - Inside forever while....
+2018-04-06 17:13:09,801 - Node - INFO - Initializing Node: 4
+2018-04-06 17:13:09,802 - Node - INFO - Calling weightMatrix for id: 4
+2018-04-06 17:13:09,802 - Node - INFO - Calling phaseOneClustering
+2018-04-06 17:13:09,802 - Node - INFO - Starting Phase One Clustering on Node: 4
+2018-04-06 17:13:09,803 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 2
+2018-04-06 17:13:09,807 - client - INFO - sendSize starting on client.py for node: 4
+2018-04-06 17:13:09,813 - main_server - INFO - Server Node:2 current size is 37
+2018-04-06 17:13:09,813 - main_server - INFO - Server Node:2 Child size is 42
+2018-04-06 17:13:09,814 - main_server - INFO - Sending Accept
+2018-04-06 17:13:09,815 - client - INFO - Node 4 sent the size message of size 42 to 2
+2018-04-06 17:13:09,815 - client - INFO - Node 2: responded to Size RPC with reply: Accepted
+2018-04-06 17:13:09,815 - client - INFO - Didn't get Prune Node: 4
+2018-04-06 17:13:09,815 - Node - INFO - Node: 4 sent size() message to parent: 2
+2018-04-06 17:13:09,816 - Node - INFO - Starting Server on Node: 4
+2018-04-06 17:13:09,816 - main_server - INFO - Server starting for Node: 4
+2018-04-06 17:13:09,819 - main_server - INFO - Server Created
+2018-04-06 17:13:09,819 - main_server - INFO - Inside Mainserver __init__:
+2018-04-06 17:13:09,820 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-06 17:13:09,822 - main_server - INFO - Main Server init called successfully
+2018-04-06 17:13:09,824 - main_server - INFO - Run port assigned
+2018-04-06 17:13:09,825 - main_server - ERROR - first arg must be callable
+2018-04-06 17:13:09,827 - main_server - INFO - Inside forever while....
+2018-04-06 17:13:12,575 - Node - INFO - Initializing Node: 5
+2018-04-06 17:13:12,575 - Node - INFO - Calling weightMatrix for id: 5
+2018-04-06 17:13:12,575 - Node - INFO - Calling phaseOneClustering
+2018-04-06 17:13:12,575 - Node - INFO - Starting Phase One Clustering on Node: 5
+2018-04-06 17:13:12,575 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 1
+2018-04-06 17:13:12,579 - client - INFO - sendSize starting on client.py for node: 5
+2018-04-06 17:13:12,585 - main_server - INFO - Server Node:1 current size is 89
+2018-04-06 17:13:12,585 - main_server - INFO - Server Node:1 Child size is 26
+2018-04-06 17:13:12,585 - main_server - INFO - Sending Accept
+2018-04-06 17:13:12,586 - client - INFO - Node 5 sent the size message of size 26 to 1
+2018-04-06 17:13:12,586 - client - INFO - Node 1: responded to Size RPC with reply: Accepted
+2018-04-06 17:13:12,586 - client - INFO - Didn't get Prune Node: 5
+2018-04-06 17:13:12,586 - Node - INFO - Node: 5 sent size() message to parent: 1
+2018-04-06 17:13:12,586 - Node - INFO - Starting Server on Node: 5
+2018-04-06 17:13:12,586 - main_server - INFO - Server starting for Node: 5
+2018-04-06 17:13:12,591 - main_server - INFO - Server Created
+2018-04-06 17:13:12,591 - main_server - INFO - Inside Mainserver __init__:
+2018-04-06 17:13:12,591 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-06 17:13:12,593 - main_server - INFO - Main Server init called successfully
+2018-04-06 17:13:12,594 - main_server - INFO - Run port assigned
+2018-04-06 17:13:12,596 - main_server - ERROR - first arg must be callable
+2018-04-06 17:13:12,596 - main_server - INFO - Inside forever while....
+2018-04-06 17:13:15,243 - Node - INFO - Initializing Node: 6
+2018-04-06 17:13:15,245 - Node - INFO - Calling weightMatrix for id: 6

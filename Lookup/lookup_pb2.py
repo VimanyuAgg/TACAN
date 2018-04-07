@@ -2,28 +2,25 @@
 # source: lookup.proto
 
 import sys
-_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+
+_b = sys.version_info[0] < 3 and (lambda x: x) or (lambda x: x.encode('latin1'))
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf import descriptor_pb2
+
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
-
-
-
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='lookup.proto',
   package='lookup',
   syntax='proto3',
-  serialized_pb=_b('\n\x0clookup.proto\x12\x06lookup\"\x1d\n\x0eRequestMessage\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x17\n\x06ValAck\x12\r\n\x05value\x18\x01 \x01(\t\" \n\x06Params\x12\n\n\x02id\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\"\x1e\n\x0fResponseMessage\x12\x0b\n\x03msg\x18\x01 \x01(\t2z\n\x0bMainService\x12\x34\n\x08Retrieve\x12\x16.lookup.RequestMessage\x1a\x0e.lookup.ValAck\"\x00\x12\x35\n\x08Register\x12\x0e.lookup.Params\x1a\x17.lookup.ResponseMessage\"\x00\x62\x06proto3')
+  serialized_pb=_b(
+    '\n\x0clookup.proto\x12\x06lookup\"\x1d\n\x0eRequestMessage\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x17\n\x06ValAck\x12\r\n\x05value\x18\x01 \x01(\t\" \n\x06Params\x12\n\n\x02id\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\"\x1e\n\x0fResponseMessage\x12\x0b\n\x03msg\x18\x01 \x01(\t2z\n\x0bMainService\x12\x34\n\x08Retrieve\x12\x16.lookup.RequestMessage\x1a\x0e.lookup.ValAck\"\x00\x12\x35\n\x08Register\x12\x0e.lookup.Params\x1a\x17.lookup.ResponseMessage\"\x00\x62\x06proto3')
 )
-
-
-
 
 _REQUESTMESSAGE = _descriptor.Descriptor(
   name='RequestMessage',
@@ -55,7 +52,6 @@ _REQUESTMESSAGE = _descriptor.Descriptor(
   serialized_end=53,
 )
 
-
 _VALACK = _descriptor.Descriptor(
   name='ValAck',
   full_name='lookup.ValAck',
@@ -85,7 +81,6 @@ _VALACK = _descriptor.Descriptor(
   serialized_start=55,
   serialized_end=78,
 )
-
 
 _PARAMS = _descriptor.Descriptor(
   name='Params',
@@ -124,7 +119,6 @@ _PARAMS = _descriptor.Descriptor(
   serialized_end=112,
 )
 
-
 _RESPONSEMESSAGE = _descriptor.Descriptor(
   name='ResponseMessage',
   full_name='lookup.ResponseMessage',
@@ -162,34 +156,32 @@ DESCRIPTOR.message_types_by_name['ResponseMessage'] = _RESPONSEMESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 RequestMessage = _reflection.GeneratedProtocolMessageType('RequestMessage', (_message.Message,), dict(
-  DESCRIPTOR = _REQUESTMESSAGE,
-  __module__ = 'lookup_pb2'
+  DESCRIPTOR=_REQUESTMESSAGE,
+  __module__='lookup_pb2'
   # @@protoc_insertion_point(class_scope:lookup.RequestMessage)
-  ))
+))
 _sym_db.RegisterMessage(RequestMessage)
 
 ValAck = _reflection.GeneratedProtocolMessageType('ValAck', (_message.Message,), dict(
-  DESCRIPTOR = _VALACK,
-  __module__ = 'lookup_pb2'
+  DESCRIPTOR=_VALACK,
+  __module__='lookup_pb2'
   # @@protoc_insertion_point(class_scope:lookup.ValAck)
-  ))
+))
 _sym_db.RegisterMessage(ValAck)
 
 Params = _reflection.GeneratedProtocolMessageType('Params', (_message.Message,), dict(
-  DESCRIPTOR = _PARAMS,
-  __module__ = 'lookup_pb2'
+  DESCRIPTOR=_PARAMS,
+  __module__='lookup_pb2'
   # @@protoc_insertion_point(class_scope:lookup.Params)
-  ))
+))
 _sym_db.RegisterMessage(Params)
 
 ResponseMessage = _reflection.GeneratedProtocolMessageType('ResponseMessage', (_message.Message,), dict(
-  DESCRIPTOR = _RESPONSEMESSAGE,
-  __module__ = 'lookup_pb2'
+  DESCRIPTOR=_RESPONSEMESSAGE,
+  __module__='lookup_pb2'
   # @@protoc_insertion_point(class_scope:lookup.ResponseMessage)
-  ))
+))
 _sym_db.RegisterMessage(ResponseMessage)
-
-
 
 _MAINSERVICE = _descriptor.ServiceDescriptor(
   name='MainService',
@@ -200,25 +192,25 @@ _MAINSERVICE = _descriptor.ServiceDescriptor(
   serialized_start=146,
   serialized_end=268,
   methods=[
-  _descriptor.MethodDescriptor(
-    name='Retrieve',
-    full_name='lookup.MainService.Retrieve',
-    index=0,
-    containing_service=None,
-    input_type=_REQUESTMESSAGE,
-    output_type=_VALACK,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Register',
-    full_name='lookup.MainService.Register',
-    index=1,
-    containing_service=None,
-    input_type=_PARAMS,
-    output_type=_RESPONSEMESSAGE,
-    options=None,
-  ),
-])
+    _descriptor.MethodDescriptor(
+      name='Retrieve',
+      full_name='lookup.MainService.Retrieve',
+      index=0,
+      containing_service=None,
+      input_type=_REQUESTMESSAGE,
+      output_type=_VALACK,
+      options=None,
+    ),
+    _descriptor.MethodDescriptor(
+      name='Register',
+      full_name='lookup.MainService.Register',
+      index=1,
+      containing_service=None,
+      input_type=_PARAMS,
+      output_type=_RESPONSEMESSAGE,
+      options=None,
+    ),
+  ])
 _sym_db.RegisterServiceDescriptor(_MAINSERVICE)
 
 DESCRIPTOR.services_by_name['MainService'] = _MAINSERVICE

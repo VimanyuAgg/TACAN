@@ -1,3 +1,3 @@
 from Node import Node
 
-node4=Node(4)
+node1 = Node(1)
