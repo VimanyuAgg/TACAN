@@ -21,10 +21,12 @@ service MainService {
   rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
   rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
   rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse){}
-  rpc SendShiftComplete(SendShiftCompleteAck) returns (ClusterheadAckSendShift){}
+  rpc ShiftComplete(SendShiftCompleteAck) returns (ClusterheadAckSendShift){}
   rpc RemoveChildIdFromParent(RemoveChildIdFromParentRequest) returns (RemoveChildIdFromParentResponse){}
   rpc Reject(RejectRequest) returns(RejectResponse){}
   rpc ShiftFinished(ShiftFinishedRequest) returns (ShiftFinishedResponse){}
+  rpc Retrieve (RedisRequest) returns (ValAck) {}
+  rpc Register (Params) returns (RedisResponse) {}
 }
 
 message RemoveChildIdFromParentRequest{
@@ -36,7 +38,8 @@ message RemoveChildIdFromParentResponse{
 }
 
 message SendShiftCompleteAck{
-    string sendShiftCompleteAck = 1;
+    string id = 1;
+    string sendShiftCompleteAck = 2;
 }
 
 message ClusterheadAckSendShift{
@@ -178,4 +181,23 @@ message ShiftFinishedRequest{
 
 message ShiftFinishedResponse{
   string message = 1;
+}
+
+message RedisRequest {
+  string key = 1;
+
+}
+
+message ValAck{
+  string value = 1;
+}
+
+message Params {
+  string id = 1;
+  string ip = 2;
+  
+}
+
+message RedisResponse {
+  string msg = 1;
 }

@@ -84,8 +84,8 @@ class MainServiceStub(object):
         request_serializer=phase1__pb2.UpdateClusterheadRequest.SerializeToString,
         response_deserializer=phase1__pb2.UpdateClusterheadResponse.FromString,
         )
-    self.SendShiftComplete = channel.unary_unary(
-        '/phase1.MainService/SendShiftComplete',
+    self.ShiftComplete = channel.unary_unary(
+        '/phase1.MainService/ShiftComplete',
         request_serializer=phase1__pb2.SendShiftCompleteAck.SerializeToString,
         response_deserializer=phase1__pb2.ClusterheadAckSendShift.FromString,
         )
@@ -103,6 +103,16 @@ class MainServiceStub(object):
         '/phase1.MainService/ShiftFinished',
         request_serializer=phase1__pb2.ShiftFinishedRequest.SerializeToString,
         response_deserializer=phase1__pb2.ShiftFinishedResponse.FromString,
+        )
+    self.Retrieve = channel.unary_unary(
+        '/phase1.MainService/Retrieve',
+        request_serializer=phase1__pb2.RedisRequest.SerializeToString,
+        response_deserializer=phase1__pb2.ValAck.FromString,
+        )
+    self.Register = channel.unary_unary(
+        '/phase1.MainService/Register',
+        request_serializer=phase1__pb2.Params.SerializeToString,
+        response_deserializer=phase1__pb2.RedisResponse.FromString,
         )
 
 
@@ -208,7 +218,7 @@ class MainServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def SendShiftComplete(self, request, context):
+  def ShiftComplete(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -230,6 +240,20 @@ class MainServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ShiftFinished(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Retrieve(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Register(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -309,8 +333,8 @@ def add_MainServiceServicer_to_server(servicer, server):
           request_deserializer=phase1__pb2.UpdateClusterheadRequest.FromString,
           response_serializer=phase1__pb2.UpdateClusterheadResponse.SerializeToString,
       ),
-      'SendShiftComplete': grpc.unary_unary_rpc_method_handler(
-          servicer.SendShiftComplete,
+      'ShiftComplete': grpc.unary_unary_rpc_method_handler(
+          servicer.ShiftComplete,
           request_deserializer=phase1__pb2.SendShiftCompleteAck.FromString,
           response_serializer=phase1__pb2.ClusterheadAckSendShift.SerializeToString,
       ),
@@ -328,6 +352,16 @@ def add_MainServiceServicer_to_server(servicer, server):
           servicer.ShiftFinished,
           request_deserializer=phase1__pb2.ShiftFinishedRequest.FromString,
           response_serializer=phase1__pb2.ShiftFinishedResponse.SerializeToString,
+      ),
+      'Retrieve': grpc.unary_unary_rpc_method_handler(
+          servicer.Retrieve,
+          request_deserializer=phase1__pb2.RedisRequest.FromString,
+          response_serializer=phase1__pb2.ValAck.SerializeToString,
+      ),
+      'Register': grpc.unary_unary_rpc_method_handler(
+          servicer.Register,
+          request_deserializer=phase1__pb2.Params.FromString,
+          response_serializer=phase1__pb2.RedisResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
