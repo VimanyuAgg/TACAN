@@ -65,6 +65,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.bestNodeId = self.node.id
       self.bestNodeHopCount = self.node.hopcount
       self.bestNodeClusterHeadId = self.node.clusterheadId
+
       self.neighbourHelloArray = set()
       print("Node created inside __init__ Mainserver...")
       logger.info("Node created inside __init__ Mainserver...")
@@ -88,11 +89,18 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     try:
       if self.node.size + childSize > raspberryPi_id_list.THRESHOLD_S:
           self.node.childRequestCounter += 1
-          logger.info("Sending Prune after checking if all children responded or not")
-          if self.node.childListId != None and self.node.childRequestCounter == len(self.node.childListId):
-              logger.info("All children responded. Sending size to parent")
-              thread = threading.Thread(target=self.node.sendSizeToParent, args=())
-              thread.start()
+
+          logger.info("Node id: %s Sending Prune after checking if all children responded or not"%(self.node.id))
+          if self.node.childListId != None and self.node.childRequestCounter == self.node.initialNodeChildLength:
+              logger.info("Node id: %s All children responded. Sending size to parent"%(self.node.id))
+              thread1 = threading.Thread(target=self.node.sendSizeToParent,args=())
+              thread1.start()
+          logger.info("Node id: %s removed child %s from childList"%(self.node.id,request.nodeId))
+          try:
+              self.node.childListId.remove(request.nodeId)
+          except Exception as e:
+              logger.error("ERROR OCCURRED WHILE KICKING CHILDREN")
+              logger.error("Node id: %s was kicking child %s from childList" % (self.node.id, request.nodeId))
           logger.info("Node: %s Sending Prune"%(self.node.id))
           return phase1_pb2.AccomodateChild(message="Prune")
       else:
@@ -100,10 +108,11 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         self.node.size += childSize
         logger.info("Node %s: new size is %s"%(self.node.id,self.node.size))
         self.node.childRequestCounter += 1
-        if self.node.childListId != None and self.node.childRequestCounter == len(self.node.childListId):
+        if self.node.childListId != None and self.node.childRequestCounter == self.node.initialNodeChildLength:
             logger.info("All children responded. Sending size to parent")
-            thread = threading.Thread(target=self.node.sendSizeToParent,args=())
-            thread.start()
+            thread2 = threading.Thread(target=self.node.sendSizeToParent, args=())
+            thread2.start()
+
         logger.info("Node: %s Sending accept to child" % (self.node.id))
         return phase1_pb2.AccomodateChild(message="Accepted")
 
@@ -122,7 +131,11 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       print("Server Node: "+str(self.node.id)+" is now joining Clusterleader "+str(clusterName))
       logger.info("Server Node: "+str(self.node.id)+" is now joining Clusterleader "+str(clusterName))
       if(self.node.childListId != None):
-          self.node.propogateClusterheadInfo(clusterName, hopCount)
+          logger.info("Server Node:%s has children. Starting ClusterheadId Propagation"%(self.node.id))
+          thread3 = threading.Thread(target=self.node.propogateClusterheadInfo,args=(clusterName, hopCount))
+          thread3.start()
+      else:
+          logger.info("Server Node: has NO children.")
       return phase1_pb2.JoinClusterResponse(joinClusterResponse="Joined")
 
   def ShiftNodeRequest(self,request,context):
@@ -151,7 +164,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   def Hello(self,request,context):
     if (self.node.isClusterhead == 1):
       #do nothing
-      pass
+      return phase1_pb2.HelloResponse(interested=-1)
     if (self.node.state == "active"):
       self.neighbourHelloArray.add(request.senderId)
       if (self.bestNodeClusterHeadId != request.senderClusterheadId and self.bestNodeHopCount < request.hopToSenderClusterhead):
@@ -159,12 +172,17 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         self.bestNodeHopCount = request.hopToSenderClusterhead
         self.bestNodeClusterHeadId = request.senderClusterheadId
 
+        if (len(self.neighbourHelloArray) == 8 and self.bestNodeId != self.node.id):
+            ## May need to add self.bestNodeHopCount in the sendShiftRPC to update self.node.hopcount if request is accepted
+            self.node.sendShiftNodeRequest(self.bestNodeClusterHeadId)
+        return phase1_pb2.HelloResponse(interested=1)
+
       if (len(self.neighbourHelloArray) == 8 and self.bestNodeId != self.node.id):
         ## May need to add self.bestNodeHopCount in the sendShiftRPC to update self.node.hopcount if request is accepted
         self.node.sendShiftNodeRequest(self.bestNodeClusterHeadId)
 
-      # send interested +1
-      return phase1_pb2.HelloResponse(interested=1)
+        # send interested -1
+      return phase1_pb2.HelloResponse(interested=-1)
     else:
       # send interested -1
       phase1_pb2.HelloResponse(interested=-1)

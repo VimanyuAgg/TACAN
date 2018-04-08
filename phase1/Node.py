@@ -41,7 +41,7 @@ class Node:
 	'''
 	def __init__(self,myId):
 		logger.info("Initializing Node: "+str(myId))
-		self.id = myId
+		self.id = str(myId)
 		#self.parentId = parentId
 		#self.childListId = childListId
 		my_info = SPANNING_INFO[myId]
@@ -60,6 +60,9 @@ class Node:
 		self.weight = weightMatrix.getWeight(self.id)
 		self.size = self.weight
 		self.childRequestCounter = 0
+		self.initialNodeChildLength = 0
+		if self.childListId != None and len(self.childListId) != 0:
+			self.initialNodeChildLength = len(self.childListId)
 
 		#info to be saved for shiftNodeRequest
 		self.shiftNodeId = None
@@ -106,7 +109,7 @@ class Node:
 			client.sendCluster(self)
 
 	def propogateClusterheadInfo(self,clusterName,hopCount):
-		if (self.childListId== None or len(self.childListId) == 0):
+		if (self.childListId != None and len(self.childListId) != 0):
 			client.propogateClusterheadInfo(self,clusterName,hopCount+1)
 		else:
 			logger.info("I don't have any children : Node: %s"%(self.id))
@@ -158,9 +161,13 @@ class Node:
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) - 1))
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)+1, int(rackIdCol) - 1))
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) + 1))
-		HARDCODEDNEIGHBOURS_ID  = [0,1,2,3,5,6,7,8]
+		HARDCODEDNEIGHBOURS_ID  = ['0','1','2','3','5','6','7','8']
 		for i in HARDCODEDNEIGHBOURS_ID:
-			resp = client.sendHello(self.id,i,raspberryPi_id_list[i],self.clusterheadId,self.hopcount,self.state)
+			print "***********************"
+			print raspberryPi_id_list.ID_IP_MAPPING
+			logger.info("***********************")
+			logger.info(raspberryPi_id_list.ID_IP_MAPPING[i])
+			resp = client.sendHello(self.id,i,raspberryPi_id_list.ID_IP_MAPPING[i],self.clusterheadId,self.hopcount,self.state)
 			logger.info("Node :%s got reply %s from Node: %s after sendHello"%(self.id,resp,i,))
 
 
@@ -168,12 +175,12 @@ class Node:
 
 	# Connects to Raspberry Pi and registers its IP address on the central lookup
 	# Can merge getIP and registerOnPi
-	def registerOnPi():
+	def registerOnPi(self):
 		pass
 
 	# Connects to Raspberry Pi (Central Service) and gets its IP address
 	# Can merge getIP and registerOnPi
-	def getIP():
+	def getIP(self):
 		pass
 
 	def getIPfromId(self,Id):
