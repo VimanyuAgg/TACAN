@@ -49,7 +49,7 @@ def getWeight(nodei):
 		# 	for j in range(0,w):
 		# 		sum = sum + Matrix[i][j] + Matrix[j][i]
 		for i in range(0,w):
-			sum += Matrix[nodei][i]
-			sum += Matrix[i][nodei]
+			sum += Matrix[int(nodei)][i]
+			sum += Matrix[i][int(nodei)]
 		return sum
  

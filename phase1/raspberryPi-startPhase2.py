@@ -44,7 +44,7 @@ def run():
     for key,value in raspberryPi_id_list.ID_IP_MAPPING.iteritems():
         channel = grpc.insecure_channel(value)
         stub = phase1_pb2_grpc.MainServiceStub(channel)
-        clusterRPC = stub.StartPhase2Clustering(phase1_pb2.StartPhase2ClusteringRequest("Start Phase 2 "))
+        clusterRPC = stub.StartPhase2Clustering(phase1_pb2.StartPhase2ClusteringRequest(startPhase2="Start Phase 2 "))
         logger.info("RaspberryPi got following response after sending Hello to node id: %s" % (key))
         logger.info(clusterRPC)
 

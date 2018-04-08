@@ -1,3 +1,3 @@
 from Node import Node
 
-node2=Node(2)
+node2=Node('2')

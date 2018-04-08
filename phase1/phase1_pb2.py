@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='phase1.proto',
   package='phase1',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cphase1.proto\x12\x06phase1\"2\n\x13JoinClusterResponse\x12\x1b\n\x13joinClusterResponse\x18\x01 \x01(\t\"?\n\x12JoinClusterRequest\x12\x17\n\x0f\x63lusterHeadName\x18\x01 \x01(\t\x12\x10\n\x08hopcount\x18\x02 \x01(\x05\"3\n\x1cStartPhase2ClusteringRequest\x12\x13\n\x0bstartPhase2\x18\x01 \x01(\t\"J\n\x1fStartedPhase2ClusteringResponse\x12\'\n\x1fstartedPhase2ClusteringResponse\x18\x01 \x01(\t\":\n\x1eRemoveChildIdFromParentRequest\x12\x18\n\x10\x64\x65partingChildId\x18\x01 \x01(\x05\"J\n\x1fRemoveChildIdFromParentResponse\x12\'\n\x1fremoveChildIdFromParentResponse\x18\x01 \x01(\t\"@\n\x14SendShiftCompleteAck\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1c\n\x14sendShiftCompleteAck\x18\x02 \x01(\t\":\n\x17\x43lusterheadAckSendShift\x12\x1f\n\x17\x63lusterheadAckSendShift\x18\x01 \x01(\t\"4\n\x18UpdateClusterheadRequest\x12\x18\n\x10newClusterheadId\x18\x01 \x01(\x05\">\n\x19UpdateClusterheadResponse\x12!\n\x19updateClusterheadResponse\x18\x01 \x01(\t\"*\n\x11UpdateSizeRequest\x12\x15\n\rsizeIncrement\x18\x01 \x01(\x05\"0\n\x12UpdateSizeResponse\x12\x1a\n\x12updateSizeResponse\x18\x01 \x01(\t\"9\n\x14JoinNewParentRequest\x12\x11\n\tchildSize\x18\x01 \x01(\x05\x12\x0e\n\x06nodeId\x18\x02 \x01(\x05\"-\n\x15JoinNewParentResponse\x12\x14\n\x0cjoinResponse\x18\x01 \x01(\t\")\n\x11ShiftStartRequest\x12\x14\n\x0ctargetNodeId\x18\x01 \x01(\t\"0\n\x12ShiftStartResponse\x12\x1a\n\x12shiftStartResponse\x18\x01 \x01(\t\"#\n\rwakeUpRequest\x12\x12\n\nwakeywakey\x18\x01 \x01(\t\"!\n\x0ewakeUpResponse\x12\x0f\n\x07wokenUp\x18\x01 \x01(\t\"o\n\tSendHello\x12\x10\n\x08senderId\x18\x01 \x01(\t\x12\x1e\n\x16hopToSenderClusterhead\x18\x02 \x01(\x05\x12\x13\n\x0bsenderState\x18\x03 \x01(\t\x12\x1b\n\x13senderClusterheadId\x18\x04 \x01(\t\"#\n\rHelloResponse\x12\x12\n\ninterested\x18\x01 \x01(\x05\"\x1c\n\nJamRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\x05\"\"\n\x0bJamResponse\x12\x13\n\x0bjamResponse\x18\x01 \x01(\t\"\x16\n\x06MySize\x12\x0c\n\x04size\x18\x01 \x01(\x05\"\"\n\x0f\x41\x63\x63omodateChild\x12\x0f\n\x07message\x18\x01 \x01(\t\"H\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t\"J\n\x0cShiftRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x13\n\x0bsumOfweight\x18\x02 \x01(\x05\x12\x15\n\rclusterHeadId\x18\x03 \x01(\t\" \n\rShiftResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"Z\n\x0fShiftClusterReq\x12\x1b\n\x13senderClusterHeadId\x18\x01 \x01(\t\x12\x14\n\x0csenderNodeId\x18\x02 \x01(\t\x12\x14\n\x0csumOfweights\x18\x03 \x01(\x05\"\"\n\x0fShiftClusterRes\x12\x0f\n\x07message\x18\x01 \x01(\t\"&\n\rAcceptRequest\x12\x15\n\rclusterHeadId\x18\x01 \x01(\t\"!\n\x0e\x41\x63\x63\x65ptResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"&\n\rRejectRequest\x12\x15\n\rclusterHeadId\x18\x01 \x01(\t\"!\n\x0eRejectResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"-\n\x14ShiftFinishedRequest\x12\x15\n\rclusterHeadId\x18\x01 \x01(\t\"(\n\x15ShiftFinishedResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1b\n\x0cRedisRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x17\n\x06ValAck\x12\r\n\x05value\x18\x01 \x01(\t\" \n\x06Params\x12\n\n\x02id\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\"\x1c\n\rRedisResponse\x12\x0b\n\x03msg\x18\x01 \x01(\t2\xce\x0b\n\x0bMainService\x12>\n\tHandshake\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12?\n\nSendPacket\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12\x31\n\x04Size\x12\x0e.phase1.MySize\x1a\x17.phase1.AccomodateChild\"\x00\x12\x41\n\x10ShiftNodeRequest\x12\x14.phase1.ShiftRequest\x1a\x15.phase1.ShiftResponse\"\x00\x12\x30\n\x03Jam\x12\x12.phase1.JamRequest\x1a\x13.phase1.JamResponse\"\x00\x12\x33\n\x05Hello\x12\x11.phase1.SendHello\x1a\x15.phase1.HelloResponse\"\x00\x12I\n\x13ShiftClusterRequest\x12\x17.phase1.ShiftClusterReq\x1a\x17.phase1.ShiftClusterRes\"\x00\x12\x39\n\x06\x41\x63\x63\x65pt\x12\x15.phase1.AcceptRequest\x1a\x16.phase1.AcceptResponse\"\x00\x12\x39\n\x06WakeUp\x12\x15.phase1.wakeUpRequest\x1a\x16.phase1.wakeUpResponse\"\x00\x12\x45\n\nShiftStart\x12\x19.phase1.ShiftStartRequest\x1a\x1a.phase1.ShiftStartResponse\"\x00\x12N\n\rJoinNewParent\x12\x1c.phase1.JoinNewParentRequest\x1a\x1d.phase1.JoinNewParentResponse\"\x00\x12\x45\n\nUpdateSize\x12\x19.phase1.UpdateSizeRequest\x1a\x1a.phase1.UpdateSizeResponse\"\x00\x12Z\n\x11UpdateClusterhead\x12 .phase1.UpdateClusterheadRequest\x1a!.phase1.UpdateClusterheadResponse\"\x00\x12P\n\rShiftComplete\x12\x1c.phase1.SendShiftCompleteAck\x1a\x1f.phase1.ClusterheadAckSendShift\"\x00\x12l\n\x17RemoveChildIdFromParent\x12&.phase1.RemoveChildIdFromParentRequest\x1a\'.phase1.RemoveChildIdFromParentResponse\"\x00\x12\x39\n\x06Reject\x12\x15.phase1.RejectRequest\x1a\x16.phase1.RejectResponse\"\x00\x12N\n\rShiftFinished\x12\x1c.phase1.ShiftFinishedRequest\x1a\x1d.phase1.ShiftFinishedResponse\"\x00\x12\x32\n\x08Retrieve\x12\x14.phase1.RedisRequest\x1a\x0e.phase1.ValAck\"\x00\x12\x33\n\x08Register\x12\x0e.phase1.Params\x1a\x15.phase1.RedisResponse\"\x00\x12h\n\x15StartPhase2Clustering\x12$.phase1.StartPhase2ClusteringRequest\x1a\'.phase1.StartedPhase2ClusteringResponse\"\x00\x12H\n\x0bJoinCluster\x12\x1a.phase1.JoinClusterRequest\x1a\x1b.phase1.JoinClusterResponse\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x0cphase1.proto\x12\x06phase1\"2\n\x13JoinClusterResponse\x12\x1b\n\x13joinClusterResponse\x18\x01 \x01(\t\"?\n\x12JoinClusterRequest\x12\x17\n\x0f\x63lusterHeadName\x18\x01 \x01(\t\x12\x10\n\x08hopcount\x18\x02 \x01(\x05\"3\n\x1cStartPhase2ClusteringRequest\x12\x13\n\x0bstartPhase2\x18\x01 \x01(\t\"J\n\x1fStartedPhase2ClusteringResponse\x12\'\n\x1fstartedPhase2ClusteringResponse\x18\x01 \x01(\t\":\n\x1eRemoveChildIdFromParentRequest\x12\x18\n\x10\x64\x65partingChildId\x18\x01 \x01(\x05\"J\n\x1fRemoveChildIdFromParentResponse\x12\'\n\x1fremoveChildIdFromParentResponse\x18\x01 \x01(\t\"@\n\x14SendShiftCompleteAck\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1c\n\x14sendShiftCompleteAck\x18\x02 \x01(\t\":\n\x17\x43lusterheadAckSendShift\x12\x1f\n\x17\x63lusterheadAckSendShift\x18\x01 \x01(\t\"4\n\x18UpdateClusterheadRequest\x12\x18\n\x10newClusterheadId\x18\x01 \x01(\x05\">\n\x19UpdateClusterheadResponse\x12!\n\x19updateClusterheadResponse\x18\x01 \x01(\t\"*\n\x11UpdateSizeRequest\x12\x15\n\rsizeIncrement\x18\x01 \x01(\x05\"0\n\x12UpdateSizeResponse\x12\x1a\n\x12updateSizeResponse\x18\x01 \x01(\t\"9\n\x14JoinNewParentRequest\x12\x11\n\tchildSize\x18\x01 \x01(\x05\x12\x0e\n\x06nodeId\x18\x02 \x01(\x05\"-\n\x15JoinNewParentResponse\x12\x14\n\x0cjoinResponse\x18\x01 \x01(\t\")\n\x11ShiftStartRequest\x12\x14\n\x0ctargetNodeId\x18\x01 \x01(\t\"0\n\x12ShiftStartResponse\x12\x1a\n\x12shiftStartResponse\x18\x01 \x01(\t\"#\n\rwakeUpRequest\x12\x12\n\nwakeywakey\x18\x01 \x01(\t\"!\n\x0ewakeUpResponse\x12\x0f\n\x07wokenUp\x18\x01 \x01(\t\"o\n\tSendHello\x12\x10\n\x08senderId\x18\x01 \x01(\t\x12\x1e\n\x16hopToSenderClusterhead\x18\x02 \x01(\x05\x12\x13\n\x0bsenderState\x18\x03 \x01(\t\x12\x1b\n\x13senderClusterheadId\x18\x04 \x01(\t\"#\n\rHelloResponse\x12\x12\n\ninterested\x18\x01 \x01(\x05\"\x1c\n\nJamRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\x05\"\"\n\x0bJamResponse\x12\x13\n\x0bjamResponse\x18\x01 \x01(\t\"&\n\x06MySize\x12\x0c\n\x04size\x18\x01 \x01(\x05\x12\x0e\n\x06nodeId\x18\x02 \x01(\t\"\"\n\x0f\x41\x63\x63omodateChild\x12\x0f\n\x07message\x18\x01 \x01(\t\"H\n\x0eRequestMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"L\n\x0fResponseMessage\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x15\n\rdestinationId\x18\x02 \x01(\t\x12\x12\n\nackMessage\x18\x03 \x01(\t\"J\n\x0cShiftRequest\x12\x0e\n\x06nodeId\x18\x01 \x01(\t\x12\x13\n\x0bsumOfweight\x18\x02 \x01(\x05\x12\x15\n\rclusterHeadId\x18\x03 \x01(\t\" \n\rShiftResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"Z\n\x0fShiftClusterReq\x12\x1b\n\x13senderClusterHeadId\x18\x01 \x01(\t\x12\x14\n\x0csenderNodeId\x18\x02 \x01(\t\x12\x14\n\x0csumOfweights\x18\x03 \x01(\x05\"\"\n\x0fShiftClusterRes\x12\x0f\n\x07message\x18\x01 \x01(\t\"&\n\rAcceptRequest\x12\x15\n\rclusterHeadId\x18\x01 \x01(\t\"!\n\x0e\x41\x63\x63\x65ptResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"&\n\rRejectRequest\x12\x15\n\rclusterHeadId\x18\x01 \x01(\t\"!\n\x0eRejectResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"-\n\x14ShiftFinishedRequest\x12\x15\n\rclusterHeadId\x18\x01 \x01(\t\"(\n\x15ShiftFinishedResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1b\n\x0cRedisRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x17\n\x06ValAck\x12\r\n\x05value\x18\x01 \x01(\t\" \n\x06Params\x12\n\n\x02id\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\"\x1c\n\rRedisResponse\x12\x0b\n\x03msg\x18\x01 \x01(\t2\xce\x0b\n\x0bMainService\x12>\n\tHandshake\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12?\n\nSendPacket\x12\x16.phase1.RequestMessage\x1a\x17.phase1.ResponseMessage\"\x00\x12\x31\n\x04Size\x12\x0e.phase1.MySize\x1a\x17.phase1.AccomodateChild\"\x00\x12\x41\n\x10ShiftNodeRequest\x12\x14.phase1.ShiftRequest\x1a\x15.phase1.ShiftResponse\"\x00\x12\x30\n\x03Jam\x12\x12.phase1.JamRequest\x1a\x13.phase1.JamResponse\"\x00\x12\x33\n\x05Hello\x12\x11.phase1.SendHello\x1a\x15.phase1.HelloResponse\"\x00\x12I\n\x13ShiftClusterRequest\x12\x17.phase1.ShiftClusterReq\x1a\x17.phase1.ShiftClusterRes\"\x00\x12\x39\n\x06\x41\x63\x63\x65pt\x12\x15.phase1.AcceptRequest\x1a\x16.phase1.AcceptResponse\"\x00\x12\x39\n\x06WakeUp\x12\x15.phase1.wakeUpRequest\x1a\x16.phase1.wakeUpResponse\"\x00\x12\x45\n\nShiftStart\x12\x19.phase1.ShiftStartRequest\x1a\x1a.phase1.ShiftStartResponse\"\x00\x12N\n\rJoinNewParent\x12\x1c.phase1.JoinNewParentRequest\x1a\x1d.phase1.JoinNewParentResponse\"\x00\x12\x45\n\nUpdateSize\x12\x19.phase1.UpdateSizeRequest\x1a\x1a.phase1.UpdateSizeResponse\"\x00\x12Z\n\x11UpdateClusterhead\x12 .phase1.UpdateClusterheadRequest\x1a!.phase1.UpdateClusterheadResponse\"\x00\x12P\n\rShiftComplete\x12\x1c.phase1.SendShiftCompleteAck\x1a\x1f.phase1.ClusterheadAckSendShift\"\x00\x12l\n\x17RemoveChildIdFromParent\x12&.phase1.RemoveChildIdFromParentRequest\x1a\'.phase1.RemoveChildIdFromParentResponse\"\x00\x12\x39\n\x06Reject\x12\x15.phase1.RejectRequest\x1a\x16.phase1.RejectResponse\"\x00\x12N\n\rShiftFinished\x12\x1c.phase1.ShiftFinishedRequest\x1a\x1d.phase1.ShiftFinishedResponse\"\x00\x12\x32\n\x08Retrieve\x12\x14.phase1.RedisRequest\x1a\x0e.phase1.ValAck\"\x00\x12\x33\n\x08Register\x12\x0e.phase1.Params\x1a\x15.phase1.RedisResponse\"\x00\x12h\n\x15StartPhase2Clustering\x12$.phase1.StartPhase2ClusteringRequest\x1a\'.phase1.StartedPhase2ClusteringResponse\"\x00\x12H\n\x0bJoinCluster\x12\x1a.phase1.JoinClusterRequest\x1a\x1b.phase1.JoinClusterResponse\"\x00\x62\x06proto3')
 )
 
 
@@ -763,6 +763,13 @@ _MYSIZE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='nodeId', full_name='phase1.MySize.nodeId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -776,7 +783,7 @@ _MYSIZE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1231,
-  serialized_end=1253,
+  serialized_end=1269,
 )
 
 
@@ -806,8 +813,8 @@ _ACCOMODATECHILD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1255,
-  serialized_end=1289,
+  serialized_start=1271,
+  serialized_end=1305,
 )
 
 
@@ -851,8 +858,8 @@ _REQUESTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1291,
-  serialized_end=1363,
+  serialized_start=1307,
+  serialized_end=1379,
 )
 
 
@@ -896,8 +903,8 @@ _RESPONSEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1365,
-  serialized_end=1441,
+  serialized_start=1381,
+  serialized_end=1457,
 )
 
 
@@ -941,8 +948,8 @@ _SHIFTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1443,
-  serialized_end=1517,
+  serialized_start=1459,
+  serialized_end=1533,
 )
 
 
@@ -972,8 +979,8 @@ _SHIFTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1519,
-  serialized_end=1551,
+  serialized_start=1535,
+  serialized_end=1567,
 )
 
 
@@ -1017,8 +1024,8 @@ _SHIFTCLUSTERREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1553,
-  serialized_end=1643,
+  serialized_start=1569,
+  serialized_end=1659,
 )
 
 
@@ -1048,8 +1055,8 @@ _SHIFTCLUSTERRES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1645,
-  serialized_end=1679,
+  serialized_start=1661,
+  serialized_end=1695,
 )
 
 
@@ -1079,8 +1086,8 @@ _ACCEPTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1681,
-  serialized_end=1719,
+  serialized_start=1697,
+  serialized_end=1735,
 )
 
 
@@ -1110,8 +1117,8 @@ _ACCEPTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1721,
-  serialized_end=1754,
+  serialized_start=1737,
+  serialized_end=1770,
 )
 
 
@@ -1141,8 +1148,8 @@ _REJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1756,
-  serialized_end=1794,
+  serialized_start=1772,
+  serialized_end=1810,
 )
 
 
@@ -1172,8 +1179,8 @@ _REJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1796,
-  serialized_end=1829,
+  serialized_start=1812,
+  serialized_end=1845,
 )
 
 
@@ -1203,8 +1210,8 @@ _SHIFTFINISHEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1831,
-  serialized_end=1876,
+  serialized_start=1847,
+  serialized_end=1892,
 )
 
 
@@ -1234,8 +1241,8 @@ _SHIFTFINISHEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1878,
-  serialized_end=1918,
+  serialized_start=1894,
+  serialized_end=1934,
 )
 
 
@@ -1265,8 +1272,8 @@ _REDISREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1920,
-  serialized_end=1947,
+  serialized_start=1936,
+  serialized_end=1963,
 )
 
 
@@ -1296,8 +1303,8 @@ _VALACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1949,
-  serialized_end=1972,
+  serialized_start=1965,
+  serialized_end=1988,
 )
 
 
@@ -1334,8 +1341,8 @@ _PARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1974,
-  serialized_end=2006,
+  serialized_start=1990,
+  serialized_end=2022,
 )
 
 
@@ -1365,8 +1372,8 @@ _REDISRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2008,
-  serialized_end=2036,
+  serialized_start=2024,
+  serialized_end=2052,
 )
 
 DESCRIPTOR.message_types_by_name['JoinClusterResponse'] = _JOINCLUSTERRESPONSE
@@ -1699,8 +1706,8 @@ _MAINSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=2039,
-  serialized_end=3525,
+  serialized_start=2055,
+  serialized_end=3541,
   methods=[
   _descriptor.MethodDescriptor(
     name='Handshake',

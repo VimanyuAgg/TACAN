@@ -135,6 +135,7 @@ message JamResponse{
 
 message MySize{
 	int32 size = 1;
+    string nodeId = 2;
 }
 
 message AccomodateChild{
