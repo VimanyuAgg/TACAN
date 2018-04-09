@@ -1804,3 +1804,12 @@
 2018-04-07 17:57:25,444 - main_server - INFO - Server Node: has NO children.
 2018-04-07 17:57:25,444 - client - INFO - Node 2: sent cluster message to child id: 4
 2018-04-07 17:57:25,444 - client - INFO - Node 2: got the reply: Joinedfrom child id: 4
+2018-04-08 09:43:52,325 - Node - INFO - Server successfully started on node: 0
+2018-04-08 09:43:53,938 - Node - INFO - Server successfully started on node: 1
+2018-04-08 09:43:54,994 - Node - INFO - Server successfully started on node: 2
+2018-04-08 09:43:56,102 - Node - INFO - Server successfully started on node: 3
+2018-04-08 09:43:57,211 - Node - INFO - Server successfully started on node: 4
+2018-04-08 09:43:58,233 - Node - INFO - Server successfully started on node: 5
+2018-04-08 09:43:59,639 - Node - INFO - Server successfully started on node: 7
+2018-04-08 09:44:00,582 - Node - INFO - Server successfully started on node: 6
+2018-04-08 09:44:01,579 - Node - INFO - Server successfully started on node: 8
