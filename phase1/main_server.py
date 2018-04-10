@@ -62,11 +62,9 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       print "Inside Mainserver __init__:"
       logger.info("Inside Mainserver __init__:")
       self.node = node
-      self.bestNodeId = self.node.id
-      self.bestNodeHopCount = self.node.hopcount
-      self.bestNodeClusterHeadId = self.node.clusterheadId
 
-      self.neighbourHelloArray = set()
+
+
       print("Node created inside __init__ Mainserver...")
       logger.info("Node created inside __init__ Mainserver...")
 
@@ -90,17 +88,22 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       if self.node.size + childSize > raspberryPi_id_list.THRESHOLD_S:
           self.node.childRequestCounter += 1
 
-          logger.info("Node id: %s Sending Prune after checking if all children responded or not"%(self.node.id))
-          if self.node.childListId != None and self.node.childRequestCounter == self.node.initialNodeChildLength:
-              logger.info("Node id: %s All children responded. Sending size to parent"%(self.node.id))
-              thread1 = threading.Thread(target=self.node.sendSizeToParent,args=())
-              thread1.start()
-          logger.info("Node id: %s removed child %s from childList"%(self.node.id,request.nodeId))
+          ### DONE #####
+          #### Move removing the child above sendSizeToParent as parent might send cluster but child needs to be removed
+          ###### Case of Node 0 and Node 1 (12 node cluster)
           try:
               self.node.childListId.remove(request.nodeId)
           except Exception as e:
               logger.error("ERROR OCCURRED WHILE KICKING CHILDREN")
               logger.error("Node id: %s was kicking child %s from childList" % (self.node.id, request.nodeId))
+          logger.info("Node id: %s removed child %s from childList" % (self.node.id, request.nodeId))
+
+          logger.info("Node id: %s Sending Prune after checking if all children responded or not"%(self.node.id))
+          if self.node.childRequestCounter == self.node.initialNodeChildLength:
+              logger.info("Node id: %s All children responded. Sending size to parent"%(self.node.id))
+              thread1 = threading.Thread(target=self.node.sendSizeToParent,args=())
+              thread1.start()
+
           logger.info("Node: %s Sending Prune"%(self.node.id))
           return phase1_pb2.AccomodateChild(message="Prune")
       else:
@@ -139,6 +142,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       return phase1_pb2.JoinClusterResponse(joinClusterResponse="Joined")
 
   def ShiftNodeRequest(self,request,context):
+    logger.info("ClusterheadId: %s got ShiftNodeRequest from node id: %s"%(self.node.id,request.nodeId))
     if self.node.isClusterhead and self.node.state == "free":
       #saving the info about this node
       self.node.state = "busy"
@@ -146,45 +150,72 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.shiftNodeSum = request.sumOfweight
       self.node.shiftNodeCluster = request.clusterHeadId
       #send jam request
+      logger.info("ClusterheadId: %s sending Jam Signal across its cluster"%(self.node.id))
       self.node.sendJamSignal()
       #send shift_cluster_request to Cj
+      logger.info("ClusterheadId: %s successfully sent Jam Signal across its cluster" % (self.node.id))
+      logger.info("ClusterheadId: %s now sending sendShiftClusterRequest" % (self.node.id))
       self.node.sendShiftClusterRequest()
       return phase1_pb2.ShiftResponse(message="Recieved ShiftNode Request")
     else:
-      pass
+      logger.info("ClusterheadId: %s is not free for accomodating ShiftNodeRequest from node id: %s" % (self.node.id, request.nodeId))
+      return phase1_pb2.ShiftResponse(message="Not approving ShiftNode Request")
 
       
   def Jam(self,request,context):
     jamId = request.nodeId
+    logger.info("Node: %s received Jam signal from clusterheadId: %s"%(self.node.id,jamId))
     if (self.node.isClusterhead != 1):
+      logger.info("Node: %s going to sleep zzzzzzzz"%(self.node.id))
       self.node.state = "sleep"
+      logger.info("Node: %s sending jam to all children" % (self.node.id))
       self.node.propagateJamToChildren(jamId)
+      logger.info("Node: %s successfully propagated jam to all children" % (self.node.id))
     return phase1_pb2.JamResponse(jamResponse="jammed")
 
   def Hello(self,request,context):
     if (self.node.isClusterhead == 1):
       #do nothing
+      logger.info("Node: %s got hello message from senderId: %s" % (self.node.id,request.senderId))
+      logger.info("Node: %s I am clusterhead. Sending Not interested"%(self.node.id))
       return phase1_pb2.HelloResponse(interested=-1)
     if (self.node.state == "active"):
-      self.neighbourHelloArray.add(request.senderId)
-      if (self.bestNodeClusterHeadId != request.senderClusterheadId and self.bestNodeHopCount < request.hopToSenderClusterhead):
-        self.bestNodeId = request.senderId
-        self.bestNodeHopCount = request.hopToSenderClusterhead
-        self.bestNodeClusterHeadId = request.senderClusterheadId
+      logger.info("Node: %s is active"%(self.node.id))
+      self.node.neighbourHelloArray.add(request.senderId)
+      logger.info("Node %s printing neighbourHelloArray"%(self.node.id))
+      logger.info(self.node.neighbourHelloArray)
+      logger.info("Node: %s has hopCount=%d with bestHopCount: %d and senderId: %s has hopCount %d"%(self.node.id,\
+                                                                                                    self.node.hopcount,\
+                                                                                                    self.node.bestNodeHopCount,\
+                                                                                                    request.senderId,request.hopToSenderClusterhead))
+      if (self.node.clusterheadId != request.senderClusterheadId and self.node.bestNodeHopCount > request.hopToSenderClusterhead):
+        logger.info("Node: %s updating bestNode as senderId: %s looks relevant choice as new parent"%(self.node.id,request.senderId))
+        self.node.bestNodeId = request.senderId
+        self.node.bestNodeHopCount = request.hopToSenderClusterhead
+        self.node.bestNodeClusterHeadId = request.senderClusterheadId
 
-        if (len(self.neighbourHelloArray) == 8 and self.bestNodeId != self.node.id):
+
+        if (len(self.node.neighbourHelloArray) == 8 and self.node.bestNodeId != self.node.id):
             ## May need to add self.bestNodeHopCount in the sendShiftRPC to update self.node.hopcount if request is accepted
-            self.node.sendShiftNodeRequest(self.bestNodeClusterHeadId)
+            logger.info("Node: %s got all helloes from neighbours. Sending shift node request to would be ex-clusterheadId:%s"%(self.node.id,self.node.clusterheadId))
+
+            self.node.sendShiftNodeRequest(self.node.bestNodeClusterHeadId)
+        logger.info("Node: %s sending interested response for senderId: %s"%(self.node.id,request.senderId))
         return phase1_pb2.HelloResponse(interested=1)
 
-      if (len(self.neighbourHelloArray) == 8 and self.bestNodeId != self.node.id):
+      if (len(self.node.neighbourHelloArray) == 8 and self.node.bestNodeId != self.node.id):
         ## May need to add self.bestNodeHopCount in the sendShiftRPC to update self.node.hopcount if request is accepted
-        self.node.sendShiftNodeRequest(self.bestNodeClusterHeadId)
+        logger.info(
+            "Node: %s got all helloes from neighbours. Sending shift node request to would be ex-clusterheadId:%s" % (
+            self.node.id, self.node.bestNodeClusterHeadId))
+        self.node.sendShiftNodeRequest(self.node.bestNodeClusterHeadId)
 
         # send interested -1
+      logger.info("Node: %s sending NOT - interested response for senderId: %s" % (self.node.id, request.senderId))
       return phase1_pb2.HelloResponse(interested=-1)
     else:
       # send interested -1
+      logger.info("Node: %s sending NOT - interested response for senderId: %s" % (self.node.id, request.senderId))
       phase1_pb2.HelloResponse(interested=-1)
 
   def ShiftClusterRequest(self,request,context):
@@ -192,6 +223,8 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       #check size bound condition
       if self.node.size + request.sumOfweights > raspberryPi_id_list.THRESHOLD_S:
         # send reject to Ci
+        logger.info("Node: %s is rejecting ShiftClusterRequest from \
+        clusterheadId: %s regarding node: %s"%(self.node.id,request.senderClusterHeadId,request.senderNodeId))
         self.node.reject(request.senderClusterHeadId)
         return phase1_pb2.ShiftClusterRes(message= "Rejecting") 
       else:
@@ -203,6 +236,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         #send jam to all nodes in cluster
         self.node.sendJamSignal()
         #accept to Ci
+        logger.info("Node: %s is accepting ShiftClusterRequest from clusterheadId: %s regarding node: %s" %(self.node.id, request.senderClusterHeadId, request.senderNodeId))
         self.node.accept(request.senderClusterHeadId)
         return phase1_pb2.ShiftClusterRes(message= "Accepting") 
     else:
@@ -223,8 +257,8 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       if (self.node.id == request.targetNodeId and self.node.state == "sleep"):
           oldClusterheadId = self.node.clusterheadId
           self.node.sayByeToParent()
-          self.node.updateInternalVariablesAndSendJoin(self.bestNodeId,self.bestNodeClusterHeadId,\
-                                                       self.bestNodeHopCount + 1)
+          self.node.updateInternalVariablesAndSendJoin(self.node.bestNodeId,self.node.bestNodeClusterHeadId,\
+                                                       self.node.bestNodeHopCount + 1)
           self.node.propagateNewClusterHeadToChildren()
           # is sendShiftCompleteToBothClusterHeads it necessary - can remove if not needed
           self.node.sendShiftCompleteToBothClusterHeads(oldClusterheadId,self.node.clusterheadId)
@@ -307,6 +341,8 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   def StartPhase2Clustering(self,request,context):
       logger.info("Node: %s got StartPhase2Clustering"%(self.node.id))
       self.node.startPhase2Clustering()
+      response = "Node: %s done with phase2 clustering"%self.node.id
+      return phase1_pb2.StartedPhase2ClusteringResponse(startedPhase2ClusteringResponse = response)
 
 def serve(node):
   logger.info("Server starting for Node: %s"%(node.id))

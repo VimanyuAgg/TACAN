@@ -21,13 +21,13 @@ today_date = str(datetime.datetime.now()).split(" ")[0]
 current_path = os.path.dirname(os.path.realpath(__file__))
 
 
-debug_handler = logging.handlers.RotatingFileHandler(os.path.join(current_path+"/logs/", today_date+'-debug.log'),maxBytes=30000000,backupCount=40)
+debug_handler = logging.handlers.RotatingFileHandler(os.path.join(current_path+"/rpilogs/", today_date+'-debug.log'),maxBytes=30000000,backupCount=40)
 debug_handler.setLevel(logging.DEBUG)
 
-info_handler = logging.handlers.RotatingFileHandler(os.path.join(current_path+"/logs/", today_date+'-info.log'),maxBytes=30000000,backupCount=40)
+info_handler = logging.handlers.RotatingFileHandler(os.path.join(current_path+"/rpilogs/", today_date+'-info.log'),maxBytes=30000000,backupCount=40)
 info_handler.setLevel(logging.INFO)
 
-error_handler = logging.handlers.RotatingFileHandler(os.path.join(current_path+"/logs/", today_date+'-error.log'),maxBytes=300000,backupCount=40)
+error_handler = logging.handlers.RotatingFileHandler(os.path.join(current_path+"/rpilogs/", today_date+'-error.log'),maxBytes=300000,backupCount=40)
 error_handler.setLevel(logging.ERROR)
 
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -41,12 +41,17 @@ logger.addHandler(debug_handler)
 
 
 def run():
+    logger.info("All ID_IP Mapping are as per below")
+    logger.info(raspberryPi_id_list.ID_IP_MAPPING)
+    counter = False
     for key,value in raspberryPi_id_list.ID_IP_MAPPING.iteritems():
-        channel = grpc.insecure_channel(value)
-        stub = phase1_pb2_grpc.MainServiceStub(channel)
-        clusterRPC = stub.StartPhase2Clustering(phase1_pb2.StartPhase2ClusteringRequest(startPhase2="Start Phase 2 "))
-        logger.info("RaspberryPi got following response after sending Hello to node id: %s" % (key))
-        logger.info(clusterRPC)
+        if not counter:
+            logger.info("RaspberryPi sending StartPhase clustering to %s, at IP: %s"%(key,value))
+            channel = grpc.insecure_channel(value)
+            stub = phase1_pb2_grpc.MainServiceStub(channel)
+            clusterRPC = stub.StartPhase2Clustering(phase1_pb2.StartPhase2ClusteringRequest(startPhase2="Start Phase 2 "))
+            logger.info("RaspberryPi got following response after sending Hello to node id: %s" % (key))
+            logger.info(clusterRPC)
 
 
 if __name__ == '__main__':run()

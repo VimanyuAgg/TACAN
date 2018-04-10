@@ -102,6 +102,7 @@ def sendJamSignal(childIpList,clusterHeadId):
 	for ip in childIpList:
 		channel = grpc.insecure_channel(ip)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
+		logger.info("Node: %s is sending jam to childIp: %s"%(clusterHeadId,ip))
 		clusterRPC = stub.Jam(phase1_pb2.JamRequest(nodeId=clusterHeadId))
 		logger.info("Node: %s sent jam to child ip: %s" % (clusterHeadId,ip))
 		logger.info(clusterRPC)
@@ -109,7 +110,8 @@ def sendJamSignal(childIpList,clusterHeadId):
 
 
 def sendCluster(node):
-	newClusterId = "C"+str(node.id)
+	# newClusterId = "C"+str(node.id)
+	newClusterId = str(node.id)
 	hopCount=1
 	if node.childListId is None:
 		print("I am the clusterhead with no children")
@@ -150,6 +152,7 @@ def sendShiftClusterRequest(clusterheadId,shiftNodeId,shiftNodeSum,shiftNodeClus
 	# send shift clusterRequest to Cj clusterhead
 	channel = grpc.insecure_channel(shiftNodeClusterIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	logger.info("ClusterHeadID: %s sending ShiftClusterRequest to ClusterheadIp: %s"%(clusterheadId,shiftNodeClusterIp))
 	clusterRPC = stub.ShiftClusterRequest(phase1_pb2.ShiftClusterReq(senderClusterHeadId=clusterheadId,senderNodeId=shiftNodeId,sumOfweights=shiftNodeSum))
 	logger.info("Node sent shift cluster request to Node ip: %s" % (shiftNodeClusterIp))
 	logger.info(clusterRPC)
@@ -252,9 +255,10 @@ def sendWakeUp(ipList,nodeId):
 def sendHello(nodeId,i,neighbourIp,nodeClusterheadId,nodeHopcount,nodeState):
 	channel = grpc.insecure_channel(neighbourIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	logger.info("Client of Node: %s is sending Hello to node: %s"%(nodeId,i))
 	clusterRPC = stub.Hello(phase1_pb2.SendHello(senderId=str(nodeId),hopToSenderClusterhead=nodeHopcount,\
 												 senderState=nodeState,senderClusterheadId=nodeClusterheadId))
-	logger.info("Node: %s got following response after sending Hello to child id: %s" % (nodeId, i))
+	logger.info("Node: %s got following response after sending Hello to id: %s" % (nodeId, i))
 	logger.info(clusterRPC)
 
 

@@ -15,6 +15,9 @@ if __name__ == '__main__':
 	thread6 = Thread(target=spawnNode, args=('7',))
 	thread7 = Thread(target=spawnNode, args=('6',))
 	thread8 = Thread(target=spawnNode, args=('8',))
+	thread9 = Thread(target=spawnNode, args=('9',))
+	thread10 = Thread(target=spawnNode, args=('10',))
+	thread11 = Thread(target=spawnNode, args=('11',))
 	thread0.start()
 	time.sleep(2)
 	thread1.start()
@@ -32,6 +35,12 @@ if __name__ == '__main__':
 	thread7.start()
 	time.sleep(2)
 	thread8.start()
+	time.sleep(2)
+	thread9.start()
+	time.sleep(2)
+	thread10.start()
+	time.sleep(2)
+	thread11.start()
 
 
 
