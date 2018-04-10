@@ -62,9 +62,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       print "Inside Mainserver __init__:"
       logger.info("Inside Mainserver __init__:")
       self.node = node
-      self.bestNodeId = self.node.id
-      self.bestNodeHopCount = self.node.hopcount
-      self.bestNodeClusterHeadId = self.node.clusterheadId
+
 
 
       print("Node created inside __init__ Mainserver...")
@@ -183,28 +181,29 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       logger.info(self.node.neighbourHelloArray)
       logger.info("Node: %s has hopCount=%d with bestHopCount: %d and senderId: %s has hopCount %d"%(self.node.id,\
                                                                                                     self.node.hopcount,\
-                                                                                                    self.bestNodeHopCount,\
+                                                                                                    self.node.bestNodeHopCount,\
                                                                                                     request.senderId,request.hopToSenderClusterhead))
-      if (self.bestNodeClusterHeadId != request.senderClusterheadId and self.bestNodeHopCount < request.hopToSenderClusterhead):
+      if (self.node.clusterheadId != request.senderClusterheadId and self.node.bestNodeHopCount > request.hopToSenderClusterhead):
         logger.info("Node: %s updating bestNode as senderId: %s looks relevant choice as new parent"%(self.node.id,request.senderId))
-        self.bestNodeId = request.senderId
-        self.bestNodeHopCount = request.hopToSenderClusterhead
-        self.bestNodeClusterHeadId = request.senderClusterheadId
+        self.node.bestNodeId = request.senderId
+        self.node.bestNodeHopCount = request.hopToSenderClusterhead
+        self.node.bestNodeClusterHeadId = request.senderClusterheadId
 
-        if (len(self.node.neighbourHelloArray) == 8 and self.bestNodeId != self.node.id):
+
+        if (len(self.node.neighbourHelloArray) == 8 and self.node.bestNodeId != self.node.id):
             ## May need to add self.bestNodeHopCount in the sendShiftRPC to update self.node.hopcount if request is accepted
-            logger.info("Node: %s got all helloes from neighbours. Sending shift node request to would be ex-clusterheadId:%s"%(self.node.id,self.bestNodeClusterHeadId))
+            logger.info("Node: %s got all helloes from neighbours. Sending shift node request to would be ex-clusterheadId:%s"%(self.node.id,self.node.clusterheadId))
 
-            self.node.sendShiftNodeRequest(self.bestNodeClusterHeadId)
+            self.node.sendShiftNodeRequest(self.node.bestNodeClusterHeadId)
         logger.info("Node: %s sending interested response for senderId: %s"%(self.node.id,request.senderId))
         return phase1_pb2.HelloResponse(interested=1)
 
-      if (len(self.node.neighbourHelloArray) == 8 and self.bestNodeId != self.node.id):
+      if (len(self.node.neighbourHelloArray) == 8 and self.node.bestNodeId != self.node.id):
         ## May need to add self.bestNodeHopCount in the sendShiftRPC to update self.node.hopcount if request is accepted
         logger.info(
             "Node: %s got all helloes from neighbours. Sending shift node request to would be ex-clusterheadId:%s" % (
-            self.node.id, self.bestNodeClusterHeadId))
-        self.node.sendShiftNodeRequest(self.bestNodeClusterHeadId)
+            self.node.id, self.node.bestNodeClusterHeadId))
+        self.node.sendShiftNodeRequest(self.node.bestNodeClusterHeadId)
 
         # send interested -1
       logger.info("Node: %s sending NOT - interested response for senderId: %s" % (self.node.id, request.senderId))
@@ -255,8 +254,8 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       if (self.node.id == request.targetNodeId and self.node.state == "sleep"):
           oldClusterheadId = self.node.clusterheadId
           self.node.sayByeToParent()
-          self.node.updateInternalVariablesAndSendJoin(self.bestNodeId,self.bestNodeClusterHeadId,\
-                                                       self.bestNodeHopCount + 1)
+          self.node.updateInternalVariablesAndSendJoin(self.node.bestNodeId,self.node.bestNodeClusterHeadId,\
+                                                       self.node.bestNodeHopCount + 1)
           self.node.propagateNewClusterHeadToChildren()
           # is sendShiftCompleteToBothClusterHeads it necessary - can remove if not needed
           self.node.sendShiftCompleteToBothClusterHeads(oldClusterheadId,self.node.clusterheadId)

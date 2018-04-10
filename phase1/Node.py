@@ -61,6 +61,10 @@ class Node:
 		self.size = self.weight
 		self.childRequestCounter = 0
 		self.initialNodeChildLength = 0
+		self.bestNodeId = self.id
+		self.bestNodeHopCount = self.hopcount
+		self.bestNodeClusterHeadId = self.clusterheadId
+
 		self.neighbourHelloArray = set()
 		if self.childListId != None and len(self.childListId) != 0:
 			self.initialNodeChildLength = len(self.childListId)
@@ -126,6 +130,10 @@ class Node:
 
 	def propagateJamToChildren(self,jamId):
 		logger.info("Node: %s in Node.py adding childIps for propagating jam signal"%(self.id))
+		if self.childListId == None or len(self.childListId) == 0:
+			logger.info("Node: %s is leaf node. NOT propagating Jam signal anymore"%(self.id))
+			return
+
 		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
 		logger.info(childIPs)
 		client.propagateJamToChildren(childIPs,jamId,self.id)
