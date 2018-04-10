@@ -46,7 +46,7 @@ message StartedPhase2ClusteringResponse{
     string startedPhase2ClusteringResponse =1;
 }
 message RemoveChildIdFromParentRequest{
-    int32 departingChildId = 1;
+    string departingChildId = 1;
 }
 
 message RemoveChildIdFromParentResponse{
