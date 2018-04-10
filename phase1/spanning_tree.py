@@ -95,7 +95,7 @@ SPANNING_INFO = {'0':{'parentId':None,
 					'rackLocation':'2,1'
 				},
 				 '8': {'parentId': '7',
-					 'childListId': [10],
+					 'childListId': ['10'],
 					 'dist': None,
 					 'clusterheadId': None,
 					 'subtreeList': None,

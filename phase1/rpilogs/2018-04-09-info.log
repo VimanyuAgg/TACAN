@@ -371,3 +371,157 @@
 2018-04-09 19:53:54,464 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 8
 2018-04-09 19:53:54,464 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 8 done with phase2 clustering"
 
+2018-04-09 21:49:01,787 - __main__ - INFO - All ID_IP Mapping are as per below
+2018-04-09 21:49:01,787 - __main__ - INFO - {'11': 'localhost:50061', '10': 'localhost:50060', '1': 'localhost:50051', '0': 'localhost:50050', '3': 'localhost:50053', '2': 'localhost:50052', '5': 'localhost:50055', '4': 'localhost:50054', '7': 'localhost:50057', '6': 'localhost:50056', '9': 'localhost:50059', '8': 'localhost:50058'}
+2018-04-09 21:49:01,788 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 11, at IP: localhost:50061
+2018-04-09 21:49:01,824 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 11
+2018-04-09 21:49:01,824 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 11 done with phase2 clustering"
+
+2018-04-09 21:49:01,825 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 10, at IP: localhost:50060
+2018-04-09 21:49:01,856 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 10
+2018-04-09 21:49:01,856 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 10 done with phase2 clustering"
+
+2018-04-09 21:49:01,857 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 1, at IP: localhost:50051
+2018-04-09 21:49:01,861 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 1
+2018-04-09 21:49:01,861 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 1 done with phase2 clustering"
+
+2018-04-09 21:49:01,862 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 0, at IP: localhost:50050
+2018-04-09 21:49:01,866 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 0
+2018-04-09 21:49:01,866 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 0 done with phase2 clustering"
+
+2018-04-09 21:49:01,867 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 3, at IP: localhost:50053
+2018-04-09 21:49:01,890 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 3
+2018-04-09 21:49:01,890 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 3 done with phase2 clustering"
+
+2018-04-09 21:49:01,891 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 2, at IP: localhost:50052
+2018-04-09 21:49:01,913 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 2
+2018-04-09 21:49:01,913 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 2 done with phase2 clustering"
+
+2018-04-09 21:49:01,914 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 5, at IP: localhost:50055
+2018-04-09 21:49:01,936 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 5
+2018-04-09 21:49:01,937 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 5 done with phase2 clustering"
+
+2018-04-09 21:49:01,937 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 4, at IP: localhost:50054
+2018-04-09 21:49:01,967 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 4
+2018-04-09 21:49:01,967 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 4 done with phase2 clustering"
+
+2018-04-09 21:49:01,968 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 7, at IP: localhost:50057
+2018-04-09 21:49:01,972 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 7
+2018-04-09 21:49:01,972 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 7 done with phase2 clustering"
+
+2018-04-09 21:49:01,973 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 6, at IP: localhost:50056
+2018-04-09 21:49:01,996 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 6
+2018-04-09 21:49:01,996 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 6 done with phase2 clustering"
+
+2018-04-09 21:49:01,997 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 9, at IP: localhost:50059
+2018-04-09 21:49:02,028 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 9
+2018-04-09 21:49:02,029 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 9 done with phase2 clustering"
+
+2018-04-09 21:49:02,029 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 8, at IP: localhost:50058
+2018-04-09 21:49:02,033 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 8
+2018-04-09 21:49:02,034 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 8 done with phase2 clustering"
+
+2018-04-09 21:51:43,121 - __main__ - INFO - All ID_IP Mapping are as per below
+2018-04-09 21:51:43,121 - __main__ - INFO - {'11': 'localhost:50061', '10': 'localhost:50060', '1': 'localhost:50051', '0': 'localhost:50050', '3': 'localhost:50053', '2': 'localhost:50052', '5': 'localhost:50055', '4': 'localhost:50054', '7': 'localhost:50057', '6': 'localhost:50056', '9': 'localhost:50059', '8': 'localhost:50058'}
+2018-04-09 21:51:43,121 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 11, at IP: localhost:50061
+2018-04-09 21:51:43,170 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 11
+2018-04-09 21:51:43,170 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 11 done with phase2 clustering"
+
+2018-04-09 21:51:43,171 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 10, at IP: localhost:50060
+2018-04-09 21:51:43,215 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 10
+2018-04-09 21:51:43,215 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 10 done with phase2 clustering"
+
+2018-04-09 21:51:43,216 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 1, at IP: localhost:50051
+2018-04-09 21:51:43,220 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 1
+2018-04-09 21:51:43,220 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 1 done with phase2 clustering"
+
+2018-04-09 21:51:43,220 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 0, at IP: localhost:50050
+2018-04-09 21:51:43,224 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 0
+2018-04-09 21:51:43,225 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 0 done with phase2 clustering"
+
+2018-04-09 21:51:43,225 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 3, at IP: localhost:50053
+2018-04-09 21:51:43,266 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 3
+2018-04-09 21:51:43,267 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 3 done with phase2 clustering"
+
+2018-04-09 21:51:43,267 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 2, at IP: localhost:50052
+2018-04-09 21:51:43,309 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 2
+2018-04-09 21:51:43,310 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 2 done with phase2 clustering"
+
+2018-04-09 21:51:43,310 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 5, at IP: localhost:50055
+2018-04-09 21:51:43,352 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 5
+2018-04-09 21:51:43,352 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 5 done with phase2 clustering"
+
+2018-04-09 21:51:43,353 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 4, at IP: localhost:50054
+2018-04-09 21:51:43,402 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 4
+2018-04-09 21:51:43,403 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 4 done with phase2 clustering"
+
+2018-04-09 21:51:43,403 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 7, at IP: localhost:50057
+2018-04-09 21:51:43,407 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 7
+2018-04-09 21:51:43,408 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 7 done with phase2 clustering"
+
+2018-04-09 21:51:43,408 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 6, at IP: localhost:50056
+2018-04-09 21:51:43,449 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 6
+2018-04-09 21:51:43,450 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 6 done with phase2 clustering"
+
+2018-04-09 21:51:43,450 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 9, at IP: localhost:50059
+2018-04-09 21:51:43,499 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 9
+2018-04-09 21:51:43,500 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 9 done with phase2 clustering"
+
+2018-04-09 21:51:43,500 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 8, at IP: localhost:50058
+2018-04-09 21:51:43,508 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 8
+2018-04-09 21:51:43,508 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 8 done with phase2 clustering"
+
+2018-04-09 21:57:06,930 - __main__ - INFO - All ID_IP Mapping are as per below
+2018-04-09 21:57:06,931 - __main__ - INFO - {'11': 'localhost:50061', '10': 'localhost:50060', '1': 'localhost:50051', '0': 'localhost:50050', '3': 'localhost:50053', '2': 'localhost:50052', '5': 'localhost:50055', '4': 'localhost:50054', '7': 'localhost:50057', '6': 'localhost:50056', '9': 'localhost:50059', '8': 'localhost:50058'}
+2018-04-09 21:57:06,931 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 11, at IP: localhost:50061
+2018-04-09 21:57:06,979 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 11
+2018-04-09 21:57:06,979 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 11 done with phase2 clustering"
+
+2018-04-09 21:57:06,980 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 10, at IP: localhost:50060
+2018-04-09 21:57:07,024 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 10
+2018-04-09 21:57:07,024 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 10 done with phase2 clustering"
+
+2018-04-09 21:57:07,025 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 1, at IP: localhost:50051
+2018-04-09 21:57:07,029 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 1
+2018-04-09 21:57:07,029 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 1 done with phase2 clustering"
+
+2018-04-09 21:57:07,030 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 0, at IP: localhost:50050
+2018-04-09 21:57:07,034 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 0
+2018-04-09 21:57:07,034 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 0 done with phase2 clustering"
+
+2018-04-09 21:57:07,035 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 3, at IP: localhost:50053
+2018-04-09 21:57:07,076 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 3
+2018-04-09 21:57:07,076 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 3 done with phase2 clustering"
+
+2018-04-09 21:57:07,077 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 2, at IP: localhost:50052
+2018-04-09 21:57:07,117 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 2
+2018-04-09 21:57:07,117 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 2 done with phase2 clustering"
+
+2018-04-09 21:57:07,118 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 5, at IP: localhost:50055
+2018-04-09 21:59:17,812 - __main__ - INFO - All ID_IP Mapping are as per below
+2018-04-09 21:59:17,812 - __main__ - INFO - {'11': 'localhost:50061', '10': 'localhost:50060', '1': 'localhost:50051', '0': 'localhost:50050', '3': 'localhost:50053', '2': 'localhost:50052', '5': 'localhost:50055', '4': 'localhost:50054', '7': 'localhost:50057', '6': 'localhost:50056', '9': 'localhost:50059', '8': 'localhost:50058'}
+2018-04-09 21:59:17,813 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 11, at IP: localhost:50061
+2018-04-09 21:59:17,921 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 11
+2018-04-09 21:59:17,921 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 11 done with phase2 clustering"
+
+2018-04-09 21:59:17,923 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 10, at IP: localhost:50060
+2018-04-09 21:59:18,019 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 10
+2018-04-09 21:59:18,020 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 10 done with phase2 clustering"
+
+2018-04-09 21:59:18,021 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 1, at IP: localhost:50051
+2018-04-09 21:59:18,033 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 1
+2018-04-09 21:59:18,035 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 1 done with phase2 clustering"
+
+2018-04-09 21:59:18,036 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 0, at IP: localhost:50050
+2018-04-09 21:59:18,045 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 0
+2018-04-09 21:59:18,046 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 0 done with phase2 clustering"
+
+2018-04-09 21:59:18,047 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 3, at IP: localhost:50053
+2018-04-09 21:59:18,140 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 3
+2018-04-09 21:59:18,141 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 3 done with phase2 clustering"
+
+2018-04-09 21:59:18,142 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 2, at IP: localhost:50052
+2018-04-09 21:59:18,235 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 2
+2018-04-09 21:59:18,235 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 2 done with phase2 clustering"
+
+2018-04-09 21:59:18,236 - __main__ - INFO - RaspberryPi sending StartPhase clustering to 5, at IP: localhost:50055

@@ -88,17 +88,22 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       if self.node.size + childSize > raspberryPi_id_list.THRESHOLD_S:
           self.node.childRequestCounter += 1
 
-          logger.info("Node id: %s Sending Prune after checking if all children responded or not"%(self.node.id))
-          if self.node.childListId != None and self.node.childRequestCounter == self.node.initialNodeChildLength:
-              logger.info("Node id: %s All children responded. Sending size to parent"%(self.node.id))
-              thread1 = threading.Thread(target=self.node.sendSizeToParent,args=())
-              thread1.start()
-          logger.info("Node id: %s removed child %s from childList"%(self.node.id,request.nodeId))
+          ### DONE #####
+          #### Move removing the child above sendSizeToParent as parent might send cluster but child needs to be removed
+          ###### Case of Node 0 and Node 1 (12 node cluster)
           try:
               self.node.childListId.remove(request.nodeId)
           except Exception as e:
               logger.error("ERROR OCCURRED WHILE KICKING CHILDREN")
               logger.error("Node id: %s was kicking child %s from childList" % (self.node.id, request.nodeId))
+          logger.info("Node id: %s removed child %s from childList" % (self.node.id, request.nodeId))
+
+          logger.info("Node id: %s Sending Prune after checking if all children responded or not"%(self.node.id))
+          if self.node.childRequestCounter == self.node.initialNodeChildLength:
+              logger.info("Node id: %s All children responded. Sending size to parent"%(self.node.id))
+              thread1 = threading.Thread(target=self.node.sendSizeToParent,args=())
+              thread1.start()
+
           logger.info("Node: %s Sending Prune"%(self.node.id))
           return phase1_pb2.AccomodateChild(message="Prune")
       else:
@@ -231,9 +236,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         #send jam to all nodes in cluster
         self.node.sendJamSignal()
         #accept to Ci
-        logger.info("Node: %s is accepting ShiftClusterRequest from \
-                clusterheadId: %s regarding node: %s" % (
-        self.node.id, request.senderClusterHeadId, request.senderNodeId))
+        logger.info("Node: %s is accepting ShiftClusterRequest from clusterheadId: %s regarding node: %s" %(self.node.id, request.senderClusterHeadId, request.senderNodeId))
         self.node.accept(request.senderClusterHeadId)
         return phase1_pb2.ShiftClusterRes(message= "Accepting") 
     else:

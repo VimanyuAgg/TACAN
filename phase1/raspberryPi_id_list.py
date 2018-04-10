@@ -13,4 +13,4 @@ ID_IP_MAPPING = {'0': 'localhost:50050',
 
 
 ## Size threshold
-THRESHOLD_S = 120
+THRESHOLD_S = 150
