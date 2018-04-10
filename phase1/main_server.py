@@ -244,7 +244,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.reject(request.senderClusterHeadId)
       return phase1_pb2.ShiftClusterRes(message= "Rejecting")
        
-  def wakeUp(self,request,context):
+  def WakeUp(self,request,context):
       if (self.node.state == "sleep"):
           self.node.state = "active"
           self.node.propagateWakeUp()
@@ -259,10 +259,10 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
           self.node.sayByeToParent()
           self.node.updateInternalVariablesAndSendJoin(self.node.bestNodeId,self.node.bestNodeClusterHeadId,\
                                                        self.node.bestNodeHopCount + 1)
-          self.node.propagateNewClusterHeadToChildren()
+          # self.node.propagateNewClusterHeadToChildren()
           # is sendShiftCompleteToBothClusterHeads it necessary - can remove if not needed
           self.node.sendShiftCompleteToBothClusterHeads(oldClusterheadId,self.node.clusterheadId)
-          return phase1_pb2.ShiftStartResponse(shifStartResponse="byebye")
+          return phase1_pb2.ShiftStartResponse(shiftStartResponse="byebye")
       else:
           return phase1_pb2.ShiftStartResponse(shifStartResponse="ShiftStart Sent to Wrong Node")
 
@@ -271,6 +271,8 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   # Also inform parents about size addition
   def JoinNewParent(self,request,context):
     if self.node.state == "sleep":
+      if self.node.childListId == None:
+          self.node.childListId = []
       self.node.childListId.append(request.nodeId)
       sizeIncrement = request.childSize
       self.node.size += request.childSize
@@ -293,7 +295,9 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
   def ShiftComplete(self,request,context):
       logger.info("ClusterheadId: %s got SendShiftComplete rpc with message:%s"%(self.node.id,request.sendShiftCompleteAck))
+      logger.info("ClusterheadId: %s sending wakeup across its cluster"%(self.node.id))
       self.node.sendWakeup()
+      logger.info("ClusterheadId: %s successfully sent wakeup across its cluster" % (self.node.id))
       self.node.state ="free"
       return phase1_pb2.ClusterheadAckSendShift(clusterheadAckSendShift = "ClusterheadId: %s acknowledged shift.."%(self.node.id))
 
@@ -308,7 +312,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
   def Accept(self,request,context):
       if self.node.state == "busy":
-        logger.info("Accept Request recieved from clusterhead " % (request.clusterHeadId))
+        logger.info("Node: %s - Accept Request recieved from clusterhead:%s " % (self.node.id,request.clusterHeadId))
       # send shift start to the i node if energy matric reduces
       #   if energyvalue < currentValue:
         if True:

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3225d66-e96f-456c-8fcf-fadd49934867" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/phase1/Node.py" afterPath="$PROJECT_DIR$/phase1/Node.py" />
+      <change beforePath="$PROJECT_DIR$/phase1/client.py" afterPath="$PROJECT_DIR$/phase1/client.py" />
+      <change beforePath="$PROJECT_DIR$/phase1/logs/2018-04-09-debug.log" afterPath="$PROJECT_DIR$/phase1/logs/2018-04-09-debug.log" />
+      <change beforePath="$PROJECT_DIR$/phase1/logs/2018-04-09-info.log" afterPath="$PROJECT_DIR$/phase1/logs/2018-04-09-info.log" />
+      <change beforePath="$PROJECT_DIR$/phase1/main_server.py" afterPath="$PROJECT_DIR$/phase1/main_server.py" />
+      <change beforePath="$PROJECT_DIR$/phase1/rpilogs/2018-04-09-debug.log" afterPath="$PROJECT_DIR$/phase1/rpilogs/2018-04-09-debug.log" />
+      <change beforePath="$PROJECT_DIR$/phase1/rpilogs/2018-04-09-info.log" afterPath="$PROJECT_DIR$/phase1/rpilogs/2018-04-09-info.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,21 +22,11 @@
       <file leaf-file-name="Node.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phase1/Node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="167" column="45" lean-forward="false" selection-start-line="167" selection-start-column="45" selection-end-line="167" selection-end-column="45" />
+            <state relative-caret-position="236">
+              <caret line="146" column="93" lean-forward="false" selection-start-line="146" selection-start-column="93" selection-end-line="146" selection-end-column="93" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weightMatrix.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phase1/weightMatrix.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="52" column="23" lean-forward="false" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -39,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/phase1/client.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="137">
-              <caret line="123" column="48" lean-forward="false" selection-start-line="123" selection-start-column="48" selection-end-line="123" selection-end-column="84" />
+              <caret line="182" column="41" lean-forward="true" selection-start-line="182" selection-start-column="41" selection-end-line="182" selection-end-column="41" />
               <folding>
                 <element signature="e#2#39#0" expanded="true" />
               </folding>
@@ -47,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spanning_tree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phase1/spanning_tree.py">
+      <file leaf-file-name="phase1.proto" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protos/phase1.proto">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="97" column="42" lean-forward="false" selection-start-line="97" selection-start-column="42" selection-end-line="97" selection-end-column="42" />
+            <state relative-caret-position="153">
+              <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -60,8 +56,8 @@
       <file leaf-file-name="main_server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phase1/main_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="240" column="64" lean-forward="true" selection-start-line="240" selection-start-column="64" selection-end-line="240" selection-end-column="64" />
+            <state relative-caret-position="408">
+              <caret line="264" column="65" lean-forward="false" selection-start-line="264" selection-start-column="47" selection-end-line="264" selection-end-column="65" />
               <folding>
                 <element signature="e#1#31#0" expanded="true" />
               </folding>
@@ -69,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-04-09-info.log" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2018-04-09-info.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-09-info.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="627" column="22" lean-forward="true" selection-start-line="627" selection-start-column="22" selection-end-line="627" selection-end-column="22" />
+            <state relative-caret-position="382">
+              <caret line="5911" column="102" lean-forward="true" selection-start-line="5911" selection-start-column="65" selection-end-line="5911" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -90,36 +86,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Jam</find>
-      <find>Jamr</find>
-      <find>sendJamSignal</find>
-      <find>def Jam</find>
-      <find>propagateJamToChildren</find>
-      <find>childListId</find>
-      <find>selfid</find>
-      <find>sending ShiftClusterRequest to ClusterheadIp</find>
-      <find>ShiftCluster</find>
-      <find>sent sendShiftNodeRequest about</find>
-      <find>ShiftNodeRequest</find>
-      <find>Node: 2 updating bestNode as senderId:</find>
-      <find>sendShiftNode</find>
-      <find>sending ShiftClusterRequest</find>
-      <find>Server Node:2 current size is</find>
-      <find>Server Node:0 current size is</find>
-      <find>sendSize</find>
-      <find>sendCluster</find>
-      <find>Node: 8 Sending accept to child</find>
-      <find>Prune</find>
-      <find>initialNodeChildLength</find>
       <find>sending</find>
-      <find>sending cluster message to child id:</find>
-      <find>is now joining Clusterleader</find>
-      <find>sending clu</find>
-      <find>Node 9 printing neighbourHelloArray</find>
-      <find>rack</find>
-      <find>bestHop</find>
       <find>is accepting ShiftClusterRequest</find>
-      <find>phase</find>
+      <find>sendAccept</find>
+      <find>departingChildId</find>
+      <find>RemoveChildIdFromParentRequest.</find>
+      <find>RemoveChildIdFromParentRequest</find>
+      <find>accept</find>
+      <find>Accept Request recieved</find>
+      <find>JoinNewParentRequest</find>
+      <find>departingChidId</find>
+      <find>sendShiftStart</find>
+      <find>ShiftStart</find>
+      <find>removeChildIdFromParent</find>
+      <find>RemoveChildIdFromParent</find>
+      <find>sayByeToParent</find>
+      <find>UpdateSize</find>
+      <find>informParentAboutNewSize</find>
+      <find>updateInternalVariablesAndSendJoin</find>
+      <find>propagate</find>
+      <find>sent join request to new parent ip</find>
+      <find>JoinNewParent</find>
+      <find>joinNewParent</find>
+      <find>sendShiftCompleteToBothClusterHeads</find>
+      <find>ShiftComplete</find>
+      <find>sendWakeup</find>
+      <find>sendWakeUp</find>
+      <find>WakeUp</find>
+      <find>propagateWakeUp</find>
+      <find>def WakeUp</find>
+      <find>shiftStartResponse</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,16 +143,16 @@
         <option value="$PROJECT_DIR$/phase1/logs/2018-04-08-debug.log" />
         <option value="$PROJECT_DIR$/phase1/logs/2018-04-09-debug.log" />
         <option value="$PROJECT_DIR$/phase1/raspberryPi-startPhase2.py" />
-        <option value="$PROJECT_DIR$/protos/phase1.proto" />
-        <option value="$PROJECT_DIR$/phase1/client.py" />
         <option value="$PROJECT_DIR$/phase1/weightMatrix.py" />
         <option value="$PROJECT_DIR$/phase1/logs/2018-04-09-info.log" />
         <option value="$PROJECT_DIR$/phase1/raspberryPi_id_list.py" />
         <option value="$PROJECT_DIR$/phase1/initScript.py" />
         <option value="$PROJECT_DIR$/phase1/spanning_tree.py" />
+        <option value="$PROJECT_DIR$/phase1/killScript.sh" />
+        <option value="$PROJECT_DIR$/protos/phase1.proto" />
+        <option value="$PROJECT_DIR$/phase1/client.py" />
         <option value="$PROJECT_DIR$/phase1/Node.py" />
         <option value="$PROJECT_DIR$/phase1/main_server.py" />
-        <option value="$PROJECT_DIR$/phase1/killScript.sh" />
       </list>
     </option>
   </component>
@@ -225,7 +221,8 @@
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="protos" type="462c0819:PsiDirectoryNode" />
+              <item name="phase1" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -429,13 +426,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="42" width="1420" height="858" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.50290275" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32896462" sideWeight="0.49709725" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32896462" sideWeight="0.49709725" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22133526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -601,8 +599,8 @@
         <state relative-caret-position="284">
           <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
           <folding>
-            <marker date="1523326443136" expanded="true" signature="148:992" ph="..." />
-            <marker date="1523326443136" expanded="true" signature="220:992" ph="..." />
+            <marker date="1523339489514" expanded="true" signature="148:992" ph="..." />
+            <marker date="1523339489514" expanded="true" signature="220:992" ph="..." />
           </folding>
         </state>
       </provider>
@@ -781,14 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protos/phase1.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="118" column="22" lean-forward="true" selection-start-line="118" selection-start-column="22" selection-end-line="118" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phase1/raspberryPi-startPhase2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -813,20 +803,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phase1/client.py">
+    <entry file="file://$PROJECT_DIR$/phase1/killScript.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="123" column="48" lean-forward="false" selection-start-line="123" selection-start-column="48" selection-end-line="123" selection-end-column="84" />
-          <folding>
-            <element signature="e#2#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phase1/spanning_tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="97" column="42" lean-forward="false" selection-start-line="97" selection-start-column="42" selection-end-line="97" selection-end-column="42" />
+        <state relative-caret-position="0">
+          <caret line="0" column="43" lean-forward="true" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -839,10 +819,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/phase1/spanning_tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="103" column="34" lean-forward="true" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-09-info.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="5911" column="102" lean-forward="true" selection-start-line="5911" selection-start-column="65" selection-end-line="5911" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phase1/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="182" column="41" lean-forward="true" selection-start-line="182" selection-start-column="41" selection-end-line="182" selection-end-column="41" />
+          <folding>
+            <element signature="e#2#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/phase1/Node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="167" column="45" lean-forward="false" selection-start-line="167" selection-start-column="45" selection-end-line="167" selection-end-column="45" />
+        <state relative-caret-position="236">
+          <caret line="146" column="93" lean-forward="false" selection-start-line="146" selection-start-column="93" selection-end-line="146" selection-end-column="93" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -851,26 +857,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phase1/main_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="240" column="64" lean-forward="true" selection-start-line="240" selection-start-column="64" selection-end-line="240" selection-end-column="64" />
+        <state relative-caret-position="408">
+          <caret line="264" column="65" lean-forward="false" selection-start-line="264" selection-start-column="47" selection-end-line="264" selection-end-column="65" />
           <folding>
             <element signature="e#1#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phase1/killScript.sh">
+    <entry file="file://$PROJECT_DIR$/protos/phase1.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="43" lean-forward="true" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-09-info.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="627" column="22" lean-forward="true" selection-start-line="627" selection-start-column="22" selection-end-line="627" selection-end-column="22" />
+        <state relative-caret-position="153">
+          <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="29" />
           <folding />
         </state>
       </provider>

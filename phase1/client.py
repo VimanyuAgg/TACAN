@@ -160,8 +160,9 @@ def sendShiftClusterRequest(clusterheadId,shiftNodeId,shiftNodeSum,shiftNodeClus
 def sendAccept(clusterHeadId,senderClusterHeadIp):
 	channel = grpc.insecure_channel(senderClusterHeadIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	logger.info("Node:%s is sending shift Accept to Node ip: %s" % (clusterHeadId, senderClusterHeadIp))
 	clusterRPC = stub.Accept(phase1_pb2.AcceptRequest(clusterHeadId=clusterHeadId))
-	logger.info("Node sent shift Accept to Node ip: %s" % (senderClusterHeadIp))
+	logger.info("Node:%s successfully sent shift Accept to Node ip: %s" % (clusterHeadId, senderClusterHeadIp))
 	logger.info(clusterRPC)
 
 def sendReject(clusterHeadId,senderClusterHeadIp):
@@ -226,7 +227,7 @@ def sendShiftCompleteToBothClusterHeads(oldClusterheadIp,newClusterheadIp,nodeId
 def removeChildIdFromParent(nodeId,parentIp):
 	channel = grpc.insecure_channel(parentIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	clusterRPC = stub.RemoveChildIdFromParent(phase1_pb2.RemoveChildIdFromParentRequest(departingChidId=str(nodeId)))
+	clusterRPC = stub.RemoveChildIdFromParent(phase1_pb2.RemoveChildIdFromParentRequest(departingChildId=str(nodeId)))
 	logger.info("Node: %s sent removeChildIdFromParent to (old) parent ip: %s" % (nodeId,parentIp))
 	logger.info(clusterRPC)
 
@@ -248,8 +249,9 @@ def sendWakeUp(ipList,nodeId):
 	for cip in ipList:
 		channel = grpc.insecure_channel(cip)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
+		logger.info("Node: %s sending wakeup to child ip: %s"%(nodeId,cip))
 		clusterRPC = stub.WakeUp(phase1_pb2.wakeUpRequest(wakeywakey=str(nodeId)))
-		logger.info("Node: %s sent wakeup to child ip: %s" % (nodeId,cip))
+		logger.info("Node: %s sucessfully sent wakeup to child ip: %s" % (nodeId,cip))
 		logger.info(clusterRPC)
 
 def sendHello(nodeId,i,neighbourIp,nodeClusterheadId,nodeHopcount,nodeState):

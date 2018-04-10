@@ -46,7 +46,7 @@ message StartedPhase2ClusteringResponse{
     string startedPhase2ClusteringResponse =1;
 }
 message RemoveChildIdFromParentRequest{
-    int32 departingChildId = 1;
+    string departingChildId = 1;
 }
 
 message RemoveChildIdFromParentResponse{
@@ -81,7 +81,7 @@ message UpdateSizeResponse{
 
 message JoinNewParentRequest{
     int32 childSize = 1;
-    int32 nodeId = 2;
+    string nodeId = 2;
 }
 
 message JoinNewParentResponse{
