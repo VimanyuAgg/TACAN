@@ -686,3 +686,328 @@
 2018-04-09 21:59:18,405 - client - INFO - jamResponse: "jammed"
 
 2018-04-09 21:59:18,406 - main_server - INFO - Node: 8 is accepting ShiftClusterRequest from clusterheadId: 1 regarding node: 11
+2018-04-09 22:35:12,351 - Node - INFO - Initializing Node: 0
+2018-04-09 22:35:12,351 - Node - INFO - Calling weightMatrix for id: 0
+2018-04-09 22:35:12,351 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:12,352 - Node - INFO - Starting Phase One Clustering on Node: 0
+2018-04-09 22:35:12,352 - Node - INFO - I am a parent not leaf: Node: 0
+2018-04-09 22:35:12,352 - Node - INFO - Starting Server on Node: 0
+2018-04-09 22:35:12,352 - main_server - INFO - Server starting for Node: 0
+2018-04-09 22:35:12,359 - main_server - INFO - Server Created
+2018-04-09 22:35:12,359 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:12,359 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:12,360 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:12,363 - main_server - INFO - Run port assigned
+2018-04-09 22:35:12,365 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:12,365 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:14,352 - Node - INFO - Initializing Node: 1
+2018-04-09 22:35:14,352 - Node - INFO - Calling weightMatrix for id: 1
+2018-04-09 22:35:14,353 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:14,353 - Node - INFO - Starting Phase One Clustering on Node: 1
+2018-04-09 22:35:14,353 - Node - INFO - I am a parent not leaf: Node: 1
+2018-04-09 22:35:14,353 - Node - INFO - Starting Server on Node: 1
+2018-04-09 22:35:14,353 - main_server - INFO - Server starting for Node: 1
+2018-04-09 22:35:14,354 - main_server - INFO - Server Created
+2018-04-09 22:35:14,354 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:14,354 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:14,355 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:14,356 - main_server - INFO - Run port assigned
+2018-04-09 22:35:14,358 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:14,358 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:16,356 - Node - INFO - Initializing Node: 2
+2018-04-09 22:35:16,357 - Node - INFO - Calling weightMatrix for id: 2
+2018-04-09 22:35:16,357 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:16,357 - Node - INFO - Starting Phase One Clustering on Node: 2
+2018-04-09 22:35:16,357 - Node - INFO - I am a parent not leaf: Node: 2
+2018-04-09 22:35:16,358 - Node - INFO - Starting Server on Node: 2
+2018-04-09 22:35:16,358 - main_server - INFO - Server starting for Node: 2
+2018-04-09 22:35:16,358 - main_server - INFO - Server Created
+2018-04-09 22:35:16,358 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:16,358 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:16,359 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:16,360 - main_server - INFO - Run port assigned
+2018-04-09 22:35:16,362 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:16,362 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:18,357 - Node - INFO - Initializing Node: 3
+2018-04-09 22:35:18,357 - Node - INFO - Calling weightMatrix for id: 3
+2018-04-09 22:35:18,358 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:18,358 - Node - INFO - Starting Phase One Clustering on Node: 3
+2018-04-09 22:35:18,358 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 1
+2018-04-09 22:35:18,361 - client - INFO - sendSize starting on client.py for node: 3
+2018-04-09 22:35:18,364 - main_server - INFO - Server Node:1 current size is 47
+2018-04-09 22:35:18,364 - main_server - INFO - Server Node:1 Child size is 42
+2018-04-09 22:35:18,365 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:35:18,365 - main_server - INFO - Node 1: new size is 89
+2018-04-09 22:35:18,365 - main_server - INFO - Node: 1 Sending accept to child
+2018-04-09 22:35:18,365 - client - INFO - Node 3 sent the size message of size 42 to 1
+2018-04-09 22:35:18,365 - client - INFO - Node 1: responded to Size RPC with reply: Accepted
+2018-04-09 22:35:18,365 - client - INFO - Didn't get Prune Node: 3
+2018-04-09 22:35:18,366 - Node - INFO - Node: 3 sent size() message to parent: 1
+2018-04-09 22:35:18,366 - Node - INFO - Starting Server on Node: 3
+2018-04-09 22:35:18,366 - main_server - INFO - Server starting for Node: 3
+2018-04-09 22:35:18,366 - main_server - INFO - Server Created
+2018-04-09 22:35:18,366 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:18,366 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:18,366 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:18,367 - main_server - INFO - Run port assigned
+2018-04-09 22:35:18,369 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:18,369 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:20,363 - Node - INFO - Initializing Node: 4
+2018-04-09 22:35:20,363 - Node - INFO - Calling weightMatrix for id: 4
+2018-04-09 22:35:20,363 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:20,364 - Node - INFO - Starting Phase One Clustering on Node: 4
+2018-04-09 22:35:20,364 - Node - INFO - I am a parent not leaf: Node: 4
+2018-04-09 22:35:20,364 - Node - INFO - Starting Server on Node: 4
+2018-04-09 22:35:20,364 - main_server - INFO - Server starting for Node: 4
+2018-04-09 22:35:20,365 - main_server - INFO - Server Created
+2018-04-09 22:35:20,365 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:20,365 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:20,365 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:20,366 - main_server - INFO - Run port assigned
+2018-04-09 22:35:20,369 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:20,369 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:22,368 - Node - INFO - Initializing Node: 5
+2018-04-09 22:35:22,369 - Node - INFO - Calling weightMatrix for id: 5
+2018-04-09 22:35:22,369 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:22,369 - Node - INFO - Starting Phase One Clustering on Node: 5
+2018-04-09 22:35:22,369 - Node - INFO - I am a parent not leaf: Node: 5
+2018-04-09 22:35:22,370 - Node - INFO - Starting Server on Node: 5
+2018-04-09 22:35:22,370 - main_server - INFO - Server starting for Node: 5
+2018-04-09 22:35:22,370 - main_server - INFO - Server Created
+2018-04-09 22:35:22,370 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:22,371 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:22,371 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:22,372 - main_server - INFO - Run port assigned
+2018-04-09 22:35:22,375 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:22,375 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:24,374 - Node - INFO - Initializing Node: 7
+2018-04-09 22:35:24,374 - Node - INFO - Calling weightMatrix for id: 7
+2018-04-09 22:35:24,375 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:24,375 - Node - INFO - Starting Phase One Clustering on Node: 7
+2018-04-09 22:35:24,375 - Node - INFO - I am a parent not leaf: Node: 7
+2018-04-09 22:35:24,375 - Node - INFO - Starting Server on Node: 7
+2018-04-09 22:35:24,375 - main_server - INFO - Server starting for Node: 7
+2018-04-09 22:35:24,376 - main_server - INFO - Server Created
+2018-04-09 22:35:24,376 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:24,376 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:24,376 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:24,378 - main_server - INFO - Run port assigned
+2018-04-09 22:35:24,380 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:24,380 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:26,377 - Node - INFO - Initializing Node: 6
+2018-04-09 22:35:26,377 - Node - INFO - Calling weightMatrix for id: 6
+2018-04-09 22:35:26,377 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:26,377 - Node - INFO - Starting Phase One Clustering on Node: 6
+2018-04-09 22:35:26,378 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 7
+2018-04-09 22:35:26,378 - client - INFO - sendSize starting on client.py for node: 6
+2018-04-09 22:35:26,381 - main_server - INFO - Server Node:7 current size is 43
+2018-04-09 22:35:26,381 - main_server - INFO - Server Node:7 Child size is 44
+2018-04-09 22:35:26,382 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:35:26,382 - main_server - INFO - Node 7: new size is 87
+2018-04-09 22:35:26,382 - main_server - INFO - Node: 7 Sending accept to child
+2018-04-09 22:35:26,382 - client - INFO - Node 6 sent the size message of size 44 to 7
+2018-04-09 22:35:26,383 - client - INFO - Node 7: responded to Size RPC with reply: Accepted
+2018-04-09 22:35:26,383 - client - INFO - Didn't get Prune Node: 6
+2018-04-09 22:35:26,383 - Node - INFO - Node: 6 sent size() message to parent: 7
+2018-04-09 22:35:26,383 - Node - INFO - Starting Server on Node: 6
+2018-04-09 22:35:26,383 - main_server - INFO - Server starting for Node: 6
+2018-04-09 22:35:26,384 - main_server - INFO - Server Created
+2018-04-09 22:35:26,384 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:26,384 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:26,384 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:26,385 - main_server - INFO - Run port assigned
+2018-04-09 22:35:26,386 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:26,387 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:28,380 - Node - INFO - Initializing Node: 8
+2018-04-09 22:35:28,381 - Node - INFO - Calling weightMatrix for id: 8
+2018-04-09 22:35:28,381 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:28,381 - Node - INFO - Starting Phase One Clustering on Node: 8
+2018-04-09 22:35:28,381 - Node - INFO - I am a parent not leaf: Node: 8
+2018-04-09 22:35:28,382 - Node - INFO - Starting Server on Node: 8
+2018-04-09 22:35:28,382 - main_server - INFO - Server starting for Node: 8
+2018-04-09 22:35:28,382 - main_server - INFO - Server Created
+2018-04-09 22:35:28,382 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:28,382 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:28,383 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:28,384 - main_server - INFO - Run port assigned
+2018-04-09 22:35:28,386 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:28,386 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:30,386 - Node - INFO - Initializing Node: 9
+2018-04-09 22:35:30,386 - Node - INFO - Calling weightMatrix for id: 9
+2018-04-09 22:35:30,386 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:30,387 - Node - INFO - Starting Phase One Clustering on Node: 9
+2018-04-09 22:35:30,387 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 4
+2018-04-09 22:35:30,388 - client - INFO - sendSize starting on client.py for node: 9
+2018-04-09 22:35:30,391 - main_server - INFO - Server Node:4 current size is 42
+2018-04-09 22:35:30,391 - main_server - INFO - Server Node:4 Child size is 27
+2018-04-09 22:35:30,391 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:35:30,391 - main_server - INFO - Node 4: new size is 69
+2018-04-09 22:35:30,392 - main_server - INFO - All children responded. Sending size to parent
+2018-04-09 22:35:30,392 - main_server - INFO - Node: 4 Sending accept to child
+2018-04-09 22:35:30,393 - client - INFO - sendSize starting on client.py for node: 4
+2018-04-09 22:35:30,394 - client - INFO - Node 9 sent the size message of size 27 to 4
+2018-04-09 22:35:30,394 - client - INFO - Node 4: responded to Size RPC with reply: Accepted
+2018-04-09 22:35:30,394 - client - INFO - Didn't get Prune Node: 9
+2018-04-09 22:35:30,396 - Node - INFO - Node: 9 sent size() message to parent: 4
+2018-04-09 22:35:30,396 - main_server - INFO - Server Node:2 current size is 37
+2018-04-09 22:35:30,396 - Node - INFO - Starting Server on Node: 9
+2018-04-09 22:35:30,396 - main_server - INFO - Server Node:2 Child size is 69
+2018-04-09 22:35:30,396 - main_server - INFO - Server starting for Node: 9
+2018-04-09 22:35:30,396 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:35:30,397 - main_server - INFO - Server Created
+2018-04-09 22:35:30,397 - main_server - INFO - Node 2: new size is 106
+2018-04-09 22:35:30,397 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:30,397 - main_server - INFO - Node: 2 Sending accept to child
+2018-04-09 22:35:30,397 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:30,398 - client - INFO - Node 4 sent the size message of size 69 to 2
+2018-04-09 22:35:30,398 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:30,398 - client - INFO - Node 2: responded to Size RPC with reply: Accepted
+2018-04-09 22:35:30,398 - client - INFO - Didn't get Prune Node: 4
+2018-04-09 22:35:30,399 - main_server - INFO - Run port assigned
+2018-04-09 22:35:30,401 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:30,401 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:32,388 - Node - INFO - Initializing Node: 10
+2018-04-09 22:35:32,388 - Node - INFO - Calling weightMatrix for id: 10
+2018-04-09 22:35:32,388 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:32,388 - Node - INFO - Starting Phase One Clustering on Node: 10
+2018-04-09 22:35:32,389 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 8
+2018-04-09 22:35:32,389 - client - INFO - sendSize starting on client.py for node: 10
+2018-04-09 22:35:32,393 - main_server - INFO - Server Node:8 current size is 66
+2018-04-09 22:35:32,393 - main_server - INFO - Server Node:8 Child size is 22
+2018-04-09 22:35:32,393 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:35:32,393 - main_server - INFO - Node 8: new size is 88
+2018-04-09 22:35:32,393 - main_server - INFO - All children responded. Sending size to parent
+2018-04-09 22:35:32,394 - main_server - INFO - Node: 8 Sending accept to child
+2018-04-09 22:35:32,395 - client - INFO - Node 10 sent the size message of size 22 to 8
+2018-04-09 22:35:32,395 - client - INFO - sendSize starting on client.py for node: 8
+2018-04-09 22:35:32,395 - client - INFO - Node 8: responded to Size RPC with reply: Accepted
+2018-04-09 22:35:32,396 - client - INFO - Didn't get Prune Node: 10
+2018-04-09 22:35:32,396 - Node - INFO - Node: 10 sent size() message to parent: 8
+2018-04-09 22:35:32,396 - Node - INFO - Starting Server on Node: 10
+2018-04-09 22:35:32,396 - main_server - INFO - Server starting for Node: 10
+2018-04-09 22:35:32,397 - main_server - INFO - Server Created
+2018-04-09 22:35:32,398 - main_server - INFO - Server Node:7 current size is 87
+2018-04-09 22:35:32,398 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:32,398 - main_server - INFO - Server Node:7 Child size is 88
+2018-04-09 22:35:32,398 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:32,399 - main_server - INFO - Node id: 7 removed child 8 from childList
+2018-04-09 22:35:32,399 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:32,399 - main_server - INFO - Node id: 7 Sending Prune after checking if all children responded or not
+2018-04-09 22:35:32,399 - main_server - INFO - Node id: 7 All children responded. Sending size to parent
+2018-04-09 22:35:32,400 - main_server - INFO - Node: 7 Sending Prune
+2018-04-09 22:35:32,400 - main_server - INFO - Run port assigned
+2018-04-09 22:35:32,400 - client - INFO - sendSize starting on client.py for node: 7
+2018-04-09 22:35:32,401 - client - INFO - Node 8 sent the size message of size 88 to 7
+2018-04-09 22:35:32,401 - client - INFO - Node 7: responded to Size RPC with reply: Prune
+2018-04-09 22:35:32,401 - client - INFO - Got Prune 8
+2018-04-09 22:35:32,402 - client - INFO - Node 8: sending cluster message to child id: 10
+2018-04-09 22:35:32,403 - client - INFO - Child IP: localhost:50060
+2018-04-09 22:35:32,403 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:32,404 - main_server - INFO - Server Node:2 current size is 106
+2018-04-09 22:35:32,404 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:32,404 - main_server - INFO - Server Node:2 Child size is 87
+2018-04-09 22:35:32,405 - main_server - INFO - Node id: 2 removed child 7 from childList
+2018-04-09 22:35:32,405 - main_server - INFO - Server Node: 10 is now joining Clusterleader 8
+2018-04-09 22:35:32,405 - main_server - INFO - Node id: 2 Sending Prune after checking if all children responded or not
+2018-04-09 22:35:32,406 - main_server - INFO - Server Node: has NO children.
+2018-04-09 22:35:32,406 - main_server - INFO - Node id: 2 All children responded. Sending size to parent
+2018-04-09 22:35:32,407 - client - INFO - Node 8: sent cluster message to child id: 10
+2018-04-09 22:35:32,406 - main_server - INFO - Node: 2 Sending Prune
+2018-04-09 22:35:32,407 - client - INFO - sendSize starting on client.py for node: 2
+2018-04-09 22:35:32,407 - client - INFO - Node 8: got the reply: Joinedfrom child id: 10
+2018-04-09 22:35:32,408 - client - INFO - Node 7 sent the size message of size 87 to 2
+2018-04-09 22:35:32,408 - client - INFO - Node 2: responded to Size RPC with reply: Prune
+2018-04-09 22:35:32,408 - client - INFO - Got Prune 7
+2018-04-09 22:35:32,409 - client - INFO - Node 7: sending cluster message to child id: 6
+2018-04-09 22:35:32,410 - client - INFO - Child IP: localhost:50056
+2018-04-09 22:35:32,410 - main_server - INFO - Server Node:0 current size is 34
+2018-04-09 22:35:32,410 - main_server - INFO - Server Node:0 Child size is 106
+2018-04-09 22:35:32,410 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:35:32,411 - main_server - INFO - Node 0: new size is 140
+2018-04-09 22:35:32,411 - main_server - INFO - Node: 0 Sending accept to child
+2018-04-09 22:35:32,412 - client - INFO - Node 2 sent the size message of size 106 to 0
+2018-04-09 22:35:32,412 - client - INFO - Node 0: responded to Size RPC with reply: Accepted
+2018-04-09 22:35:32,412 - client - INFO - Didn't get Prune Node: 2
+2018-04-09 22:35:32,413 - main_server - INFO - Server Node: 6 is now joining Clusterleader 7
+2018-04-09 22:35:32,413 - main_server - INFO - Server Node: has NO children.
+2018-04-09 22:35:32,413 - client - INFO - Node 7: sent cluster message to child id: 6
+2018-04-09 22:35:32,413 - client - INFO - Node 7: got the reply: Joinedfrom child id: 6
+2018-04-09 22:35:34,393 - Node - INFO - Initializing Node: 11
+2018-04-09 22:35:34,394 - Node - INFO - Calling weightMatrix for id: 11
+2018-04-09 22:35:34,394 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:35:34,394 - Node - INFO - Starting Phase One Clustering on Node: 11
+2018-04-09 22:35:34,394 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 5
+2018-04-09 22:35:34,396 - client - INFO - sendSize starting on client.py for node: 11
+2018-04-09 22:35:34,399 - main_server - INFO - Server Node:5 current size is 26
+2018-04-09 22:35:34,399 - main_server - INFO - Server Node:5 Child size is 32
+2018-04-09 22:35:34,399 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:35:34,399 - main_server - INFO - Node 5: new size is 58
+2018-04-09 22:35:34,399 - main_server - INFO - All children responded. Sending size to parent
+2018-04-09 22:35:34,400 - main_server - INFO - Node: 5 Sending accept to child
+2018-04-09 22:35:34,400 - client - INFO - sendSize starting on client.py for node: 5
+2018-04-09 22:35:34,401 - client - INFO - Node 11 sent the size message of size 32 to 5
+2018-04-09 22:35:34,402 - client - INFO - Node 5: responded to Size RPC with reply: Accepted
+2018-04-09 22:35:34,402 - client - INFO - Didn't get Prune Node: 11
+2018-04-09 22:35:34,403 - Node - INFO - Node: 11 sent size() message to parent: 5
+2018-04-09 22:35:34,403 - main_server - INFO - Server Node:1 current size is 89
+2018-04-09 22:35:34,404 - Node - INFO - Starting Server on Node: 11
+2018-04-09 22:35:34,404 - main_server - INFO - Server Node:1 Child size is 58
+2018-04-09 22:35:34,404 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:35:34,404 - main_server - INFO - Server starting for Node: 11
+2018-04-09 22:35:34,404 - main_server - INFO - Node 1: new size is 147
+2018-04-09 22:35:34,405 - main_server - INFO - Server Created
+2018-04-09 22:35:34,405 - main_server - INFO - All children responded. Sending size to parent
+2018-04-09 22:35:34,405 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:35:34,405 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:35:34,405 - main_server - INFO - Node: 1 Sending accept to child
+2018-04-09 22:35:34,406 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:35:34,406 - client - INFO - sendSize starting on client.py for node: 1
+2018-04-09 22:35:34,407 - client - INFO - Node 5 sent the size message of size 58 to 1
+2018-04-09 22:35:34,407 - client - INFO - Node 1: responded to Size RPC with reply: Accepted
+2018-04-09 22:35:34,407 - client - INFO - Didn't get Prune Node: 5
+2018-04-09 22:35:34,408 - main_server - INFO - Run port assigned
+2018-04-09 22:35:34,409 - main_server - INFO - Server Node:0 current size is 140
+2018-04-09 22:35:34,409 - main_server - INFO - Server Node:0 Child size is 147
+2018-04-09 22:35:34,409 - main_server - INFO - Node id: 0 removed child 1 from childList
+2018-04-09 22:35:34,409 - main_server - INFO - Node id: 0 Sending Prune after checking if all children responded or not
+2018-04-09 22:35:34,409 - main_server - INFO - Node id: 0 All children responded. Sending size to parent
+2018-04-09 22:35:34,410 - main_server - INFO - Node: 0 Sending Prune
+2018-04-09 22:35:34,409 - Node - INFO - Node: 0 setting myself as clusterhead as no parent found!
+2018-04-09 22:35:34,410 - client - INFO - Node 1 sent the size message of size 147 to 0
+2018-04-09 22:35:34,410 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:35:34,411 - client - INFO - Node 0: sending cluster message to child id: 2
+2018-04-09 22:35:34,411 - main_server - INFO - Inside forever while....
+2018-04-09 22:35:34,411 - client - INFO - Node 0: responded to Size RPC with reply: Prune
+2018-04-09 22:35:34,411 - client - INFO - Child IP: localhost:50052
+2018-04-09 22:35:34,412 - client - INFO - Got Prune 1
+2018-04-09 22:35:34,412 - client - INFO - Node 1: sending cluster message to child id: 3
+2018-04-09 22:35:34,413 - client - INFO - Child IP: localhost:50053
+2018-04-09 22:35:34,415 - main_server - INFO - Server Node: 2 is now joining Clusterleader 0
+2018-04-09 22:35:34,416 - main_server - INFO - Server Node:2 has children. Starting ClusterheadId Propagation
+2018-04-09 22:35:34,416 - client - INFO - Node 2: is sending propagate cluster message to child id: 4
+2018-04-09 22:35:34,417 - main_server - INFO - Server Node: 3 is now joining Clusterleader 1
+2018-04-09 22:35:34,417 - client - INFO - Node 0: sent cluster message to child id: 2
+2018-04-09 22:35:34,418 - main_server - INFO - Server Node: has NO children.
+2018-04-09 22:35:34,418 - client - INFO - Node 0: got the reply: Joinedfrom child id: 2
+2018-04-09 22:35:34,419 - client - INFO - Node 1: sent cluster message to child id: 3
+2018-04-09 22:35:34,420 - client - INFO - Node 1: got the reply: Joinedfrom child id: 3
+2018-04-09 22:35:34,420 - main_server - INFO - Server Node: 4 is now joining Clusterleader 0
+2018-04-09 22:35:34,420 - main_server - INFO - Server Node:4 has children. Starting ClusterheadId Propagation
+2018-04-09 22:35:34,420 - client - INFO - Node 1: sending cluster message to child id: 5
+2018-04-09 22:35:34,420 - client - INFO - Child IP: localhost:50055
+2018-04-09 22:35:34,421 - client - INFO - Node 2: sent cluster message to child id: 4
+2018-04-09 22:35:34,421 - client - INFO - Node 4: is sending propagate cluster message to child id: 9
+2018-04-09 22:35:34,422 - client - INFO - Node 2: got the reply: Joinedfrom child id: 4
+2018-04-09 22:35:34,423 - main_server - INFO - Server Node: 5 is now joining Clusterleader 1
+2018-04-09 22:35:34,423 - main_server - INFO - Server Node:5 has children. Starting ClusterheadId Propagation
+2018-04-09 22:35:34,425 - client - INFO - Node 1: sent cluster message to child id: 5
+2018-04-09 22:35:34,425 - client - INFO - Node 5: is sending propagate cluster message to child id: 11
+2018-04-09 22:35:34,426 - main_server - INFO - Server Node: 9 is now joining Clusterleader 0
+2018-04-09 22:35:34,426 - client - INFO - Node 1: got the reply: Joinedfrom child id: 5
+2018-04-09 22:35:34,426 - main_server - INFO - Server Node: has NO children.
+2018-04-09 22:35:34,427 - client - INFO - Node 4: sent cluster message to child id: 9
+2018-04-09 22:35:34,427 - client - INFO - Node 4: got the reply: Joinedfrom child id: 9
+2018-04-09 22:35:34,428 - main_server - INFO - Server Node: 11 is now joining Clusterleader 1
+2018-04-09 22:35:34,428 - main_server - INFO - Server Node: has NO children.
+2018-04-09 22:35:34,429 - client - INFO - Node 5: sent cluster message to child id: 11
+2018-04-09 22:35:34,429 - client - INFO - Node 5: got the reply: Joinedfrom child id: 11

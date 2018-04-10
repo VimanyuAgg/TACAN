@@ -1,0 +1,1 @@
+kill $(ps -ef | awk '/[p]ython/{print $2}')
