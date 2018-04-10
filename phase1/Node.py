@@ -143,6 +143,7 @@ class Node:
 		client.propagateWakeUp(childIPs, self.id)
 
 	def updateInternalVariablesAndSendJoin(self,bestNodeId,bestNodeClusterHeadId,newHopCount):
+		logger.info("Node: %s Updating parent,clusterhead and hopcount"%(self.id))
 		self.parentId = bestNodeId
 		self.clusterheadId = bestNodeClusterHeadId
 		self.hopcount = newHopCount

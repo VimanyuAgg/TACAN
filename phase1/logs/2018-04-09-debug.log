@@ -3830,3 +3830,715 @@
 2018-04-09 22:50:57,341 - client - INFO - Node: 11 sent updateSize request to existing parent ip: localhost:50055
 2018-04-09 22:50:57,341 - client - INFO - updateSizeResponse: "updated size"
 
+2018-04-09 22:52:02,053 - Node - INFO - Initializing Node: 0
+2018-04-09 22:52:02,053 - Node - INFO - Calling weightMatrix for id: 0
+2018-04-09 22:52:02,053 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:02,054 - Node - INFO - Starting Phase One Clustering on Node: 0
+2018-04-09 22:52:02,054 - Node - INFO - I am a parent not leaf: Node: 0
+2018-04-09 22:52:02,054 - Node - INFO - Starting Server on Node: 0
+2018-04-09 22:52:02,054 - main_server - INFO - Server starting for Node: 0
+2018-04-09 22:52:02,057 - main_server - INFO - Server Created
+2018-04-09 22:52:02,057 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:02,057 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:02,058 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:02,061 - main_server - INFO - Run port assigned
+2018-04-09 22:52:02,063 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:02,063 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:04,055 - Node - INFO - Initializing Node: 1
+2018-04-09 22:52:04,055 - Node - INFO - Calling weightMatrix for id: 1
+2018-04-09 22:52:04,055 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:04,056 - Node - INFO - Starting Phase One Clustering on Node: 1
+2018-04-09 22:52:04,056 - Node - INFO - I am a parent not leaf: Node: 1
+2018-04-09 22:52:04,056 - Node - INFO - Starting Server on Node: 1
+2018-04-09 22:52:04,056 - main_server - INFO - Server starting for Node: 1
+2018-04-09 22:52:04,057 - main_server - INFO - Server Created
+2018-04-09 22:52:04,057 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:04,057 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:04,057 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:04,058 - main_server - INFO - Run port assigned
+2018-04-09 22:52:04,061 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:04,061 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:06,060 - Node - INFO - Initializing Node: 2
+2018-04-09 22:52:06,061 - Node - INFO - Calling weightMatrix for id: 2
+2018-04-09 22:52:06,061 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:06,061 - Node - INFO - Starting Phase One Clustering on Node: 2
+2018-04-09 22:52:06,061 - Node - INFO - I am a parent not leaf: Node: 2
+2018-04-09 22:52:06,061 - Node - INFO - Starting Server on Node: 2
+2018-04-09 22:52:06,061 - main_server - INFO - Server starting for Node: 2
+2018-04-09 22:52:06,061 - main_server - INFO - Server Created
+2018-04-09 22:52:06,062 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:06,062 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:06,062 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:06,063 - main_server - INFO - Run port assigned
+2018-04-09 22:52:06,064 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:06,064 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:08,063 - Node - INFO - Initializing Node: 3
+2018-04-09 22:52:08,063 - Node - INFO - Calling weightMatrix for id: 3
+2018-04-09 22:52:08,064 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:08,064 - Node - INFO - Starting Phase One Clustering on Node: 3
+2018-04-09 22:52:08,064 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 1
+2018-04-09 22:52:08,066 - client - INFO - sendSize starting on client.py for node: 3
+2018-04-09 22:52:08,070 - main_server - INFO - Server Node:1 current size is 47
+2018-04-09 22:52:08,070 - main_server - INFO - Server Node:1 Child size is 42
+2018-04-09 22:52:08,070 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:52:08,070 - main_server - INFO - Node 1: new size is 89
+2018-04-09 22:52:08,070 - main_server - INFO - Node: 1 Sending accept to child
+2018-04-09 22:52:08,071 - client - INFO - Node 3 sent the size message of size 42 to 1
+2018-04-09 22:52:08,071 - client - INFO - Node 1: responded to Size RPC with reply: Accepted
+2018-04-09 22:52:08,071 - client - INFO - Didn't get Prune Node: 3
+2018-04-09 22:52:08,072 - Node - INFO - Node: 3 sent size() message to parent: 1
+2018-04-09 22:52:08,072 - Node - INFO - Starting Server on Node: 3
+2018-04-09 22:52:08,072 - main_server - INFO - Server starting for Node: 3
+2018-04-09 22:52:08,072 - main_server - INFO - Server Created
+2018-04-09 22:52:08,072 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:08,072 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:08,073 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:08,073 - main_server - INFO - Run port assigned
+2018-04-09 22:52:08,075 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:08,075 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:10,064 - Node - INFO - Initializing Node: 4
+2018-04-09 22:52:10,064 - Node - INFO - Calling weightMatrix for id: 4
+2018-04-09 22:52:10,064 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:10,065 - Node - INFO - Starting Phase One Clustering on Node: 4
+2018-04-09 22:52:10,065 - Node - INFO - I am a parent not leaf: Node: 4
+2018-04-09 22:52:10,065 - Node - INFO - Starting Server on Node: 4
+2018-04-09 22:52:10,065 - main_server - INFO - Server starting for Node: 4
+2018-04-09 22:52:10,066 - main_server - INFO - Server Created
+2018-04-09 22:52:10,066 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:10,066 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:10,066 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:10,067 - main_server - INFO - Run port assigned
+2018-04-09 22:52:10,070 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:10,070 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:12,067 - Node - INFO - Initializing Node: 5
+2018-04-09 22:52:12,067 - Node - INFO - Calling weightMatrix for id: 5
+2018-04-09 22:52:12,068 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:12,068 - Node - INFO - Starting Phase One Clustering on Node: 5
+2018-04-09 22:52:12,068 - Node - INFO - I am a parent not leaf: Node: 5
+2018-04-09 22:52:12,068 - Node - INFO - Starting Server on Node: 5
+2018-04-09 22:52:12,068 - main_server - INFO - Server starting for Node: 5
+2018-04-09 22:52:12,069 - main_server - INFO - Server Created
+2018-04-09 22:52:12,069 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:12,069 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:12,070 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:12,071 - main_server - INFO - Run port assigned
+2018-04-09 22:52:12,073 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:12,073 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:14,073 - Node - INFO - Initializing Node: 7
+2018-04-09 22:52:14,073 - Node - INFO - Calling weightMatrix for id: 7
+2018-04-09 22:52:14,073 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:14,074 - Node - INFO - Starting Phase One Clustering on Node: 7
+2018-04-09 22:52:14,074 - Node - INFO - I am a parent not leaf: Node: 7
+2018-04-09 22:52:14,074 - Node - INFO - Starting Server on Node: 7
+2018-04-09 22:52:14,074 - main_server - INFO - Server starting for Node: 7
+2018-04-09 22:52:14,074 - main_server - INFO - Server Created
+2018-04-09 22:52:14,075 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:14,075 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:14,075 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:14,077 - main_server - INFO - Run port assigned
+2018-04-09 22:52:14,079 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:14,079 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:16,073 - Node - INFO - Initializing Node: 6
+2018-04-09 22:52:16,074 - Node - INFO - Calling weightMatrix for id: 6
+2018-04-09 22:52:16,074 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:16,074 - Node - INFO - Starting Phase One Clustering on Node: 6
+2018-04-09 22:52:16,074 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 7
+2018-04-09 22:52:16,075 - client - INFO - sendSize starting on client.py for node: 6
+2018-04-09 22:52:16,077 - main_server - INFO - Server Node:7 current size is 43
+2018-04-09 22:52:16,077 - main_server - INFO - Server Node:7 Child size is 44
+2018-04-09 22:52:16,077 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:52:16,077 - main_server - INFO - Node 7: new size is 87
+2018-04-09 22:52:16,078 - main_server - INFO - Node: 7 Sending accept to child
+2018-04-09 22:52:16,078 - client - INFO - Node 6 sent the size message of size 44 to 7
+2018-04-09 22:52:16,078 - client - INFO - Node 7: responded to Size RPC with reply: Accepted
+2018-04-09 22:52:16,078 - client - INFO - Didn't get Prune Node: 6
+2018-04-09 22:52:16,078 - Node - INFO - Node: 6 sent size() message to parent: 7
+2018-04-09 22:52:16,079 - Node - INFO - Starting Server on Node: 6
+2018-04-09 22:52:16,079 - main_server - INFO - Server starting for Node: 6
+2018-04-09 22:52:16,079 - main_server - INFO - Server Created
+2018-04-09 22:52:16,079 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:16,079 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:16,079 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:16,080 - main_server - INFO - Run port assigned
+2018-04-09 22:52:16,082 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:16,082 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:18,078 - Node - INFO - Initializing Node: 8
+2018-04-09 22:52:18,079 - Node - INFO - Calling weightMatrix for id: 8
+2018-04-09 22:52:18,079 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:18,079 - Node - INFO - Starting Phase One Clustering on Node: 8
+2018-04-09 22:52:18,079 - Node - INFO - I am a parent not leaf: Node: 8
+2018-04-09 22:52:18,080 - Node - INFO - Starting Server on Node: 8
+2018-04-09 22:52:18,080 - main_server - INFO - Server starting for Node: 8
+2018-04-09 22:52:18,080 - main_server - INFO - Server Created
+2018-04-09 22:52:18,080 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:18,081 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:18,081 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:18,082 - main_server - INFO - Run port assigned
+2018-04-09 22:52:18,085 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:18,085 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:20,079 - Node - INFO - Initializing Node: 9
+2018-04-09 22:52:20,080 - Node - INFO - Calling weightMatrix for id: 9
+2018-04-09 22:52:20,080 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:20,080 - Node - INFO - Starting Phase One Clustering on Node: 9
+2018-04-09 22:52:20,081 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 4
+2018-04-09 22:52:20,082 - client - INFO - sendSize starting on client.py for node: 9
+2018-04-09 22:52:20,085 - main_server - INFO - Server Node:4 current size is 42
+2018-04-09 22:52:20,085 - main_server - INFO - Server Node:4 Child size is 27
+2018-04-09 22:52:20,085 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:52:20,086 - main_server - INFO - Node 4: new size is 69
+2018-04-09 22:52:20,086 - main_server - INFO - All children responded. Sending size to parent
+2018-04-09 22:52:20,086 - main_server - INFO - Node: 4 Sending accept to child
+2018-04-09 22:52:20,087 - client - INFO - sendSize starting on client.py for node: 4
+2018-04-09 22:52:20,088 - client - INFO - Node 9 sent the size message of size 27 to 4
+2018-04-09 22:52:20,089 - client - INFO - Node 4: responded to Size RPC with reply: Accepted
+2018-04-09 22:52:20,089 - client - INFO - Didn't get Prune Node: 9
+2018-04-09 22:52:20,090 - Node - INFO - Node: 9 sent size() message to parent: 4
+2018-04-09 22:52:20,090 - Node - INFO - Starting Server on Node: 9
+2018-04-09 22:52:20,091 - main_server - INFO - Server starting for Node: 9
+2018-04-09 22:52:20,091 - main_server - INFO - Server Node:2 current size is 37
+2018-04-09 22:52:20,091 - main_server - INFO - Server Created
+2018-04-09 22:52:20,092 - main_server - INFO - Server Node:2 Child size is 69
+2018-04-09 22:52:20,092 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:20,092 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:52:20,092 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:20,092 - main_server - INFO - Node 2: new size is 106
+2018-04-09 22:52:20,093 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:20,093 - main_server - INFO - Node: 2 Sending accept to child
+2018-04-09 22:52:20,093 - main_server - INFO - Run port assigned
+2018-04-09 22:52:20,093 - client - INFO - Node 4 sent the size message of size 69 to 2
+2018-04-09 22:52:20,094 - client - INFO - Node 2: responded to Size RPC with reply: Accepted
+2018-04-09 22:52:20,094 - client - INFO - Didn't get Prune Node: 4
+2018-04-09 22:52:20,095 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:20,095 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:22,085 - Node - INFO - Initializing Node: 10
+2018-04-09 22:52:22,086 - Node - INFO - Calling weightMatrix for id: 10
+2018-04-09 22:52:22,086 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:22,086 - Node - INFO - Starting Phase One Clustering on Node: 10
+2018-04-09 22:52:22,086 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 8
+2018-04-09 22:52:22,087 - client - INFO - sendSize starting on client.py for node: 10
+2018-04-09 22:52:22,090 - main_server - INFO - Server Node:8 current size is 66
+2018-04-09 22:52:22,091 - main_server - INFO - Server Node:8 Child size is 22
+2018-04-09 22:52:22,091 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:52:22,091 - main_server - INFO - Node 8: new size is 88
+2018-04-09 22:52:22,091 - main_server - INFO - All children responded. Sending size to parent
+2018-04-09 22:52:22,091 - main_server - INFO - Node: 8 Sending accept to child
+2018-04-09 22:52:22,092 - client - INFO - sendSize starting on client.py for node: 8
+2018-04-09 22:52:22,093 - client - INFO - Node 10 sent the size message of size 22 to 8
+2018-04-09 22:52:22,093 - client - INFO - Node 8: responded to Size RPC with reply: Accepted
+2018-04-09 22:52:22,094 - client - INFO - Didn't get Prune Node: 10
+2018-04-09 22:52:22,094 - Node - INFO - Node: 10 sent size() message to parent: 8
+2018-04-09 22:52:22,094 - Node - INFO - Starting Server on Node: 10
+2018-04-09 22:52:22,095 - main_server - INFO - Server starting for Node: 10
+2018-04-09 22:52:22,095 - main_server - INFO - Server Node:7 current size is 87
+2018-04-09 22:52:22,096 - main_server - INFO - Server Created
+2018-04-09 22:52:22,096 - main_server - INFO - Server Node:7 Child size is 88
+2018-04-09 22:52:22,096 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:22,096 - main_server - INFO - Node id: 7 removed child 8 from childList
+2018-04-09 22:52:22,096 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:22,097 - main_server - INFO - Node id: 7 Sending Prune after checking if all children responded or not
+2018-04-09 22:52:22,097 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:22,097 - main_server - INFO - Node id: 7 All children responded. Sending size to parent
+2018-04-09 22:52:22,097 - main_server - INFO - Node: 7 Sending Prune
+2018-04-09 22:52:22,098 - main_server - INFO - Run port assigned
+2018-04-09 22:52:22,098 - client - INFO - sendSize starting on client.py for node: 7
+2018-04-09 22:52:22,099 - client - INFO - Node 8 sent the size message of size 88 to 7
+2018-04-09 22:52:22,099 - client - INFO - Node 7: responded to Size RPC with reply: Prune
+2018-04-09 22:52:22,099 - client - INFO - Got Prune 8
+2018-04-09 22:52:22,101 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:22,101 - client - INFO - Node 8: sending cluster message to child id: 10
+2018-04-09 22:52:22,101 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:22,102 - client - INFO - Child IP: localhost:50060
+2018-04-09 22:52:22,102 - main_server - INFO - Server Node:2 current size is 106
+2018-04-09 22:52:22,102 - main_server - INFO - Server Node:2 Child size is 87
+2018-04-09 22:52:22,102 - main_server - INFO - Node id: 2 removed child 7 from childList
+2018-04-09 22:52:22,103 - main_server - INFO - Node id: 2 Sending Prune after checking if all children responded or not
+2018-04-09 22:52:22,103 - main_server - INFO - Node id: 2 All children responded. Sending size to parent
+2018-04-09 22:52:22,103 - main_server - INFO - Node: 2 Sending Prune
+2018-04-09 22:52:22,104 - client - INFO - sendSize starting on client.py for node: 2
+2018-04-09 22:52:22,105 - client - INFO - Node 7 sent the size message of size 87 to 2
+2018-04-09 22:52:22,105 - main_server - DEBUG - Got Cluster message as server Node:10
+2018-04-09 22:52:22,105 - main_server - INFO - Server Node: 10 is now joining Clusterleader 8
+2018-04-09 22:52:22,105 - client - INFO - Node 2: responded to Size RPC with reply: Prune
+2018-04-09 22:52:22,106 - main_server - INFO - Server Node: has NO children.
+2018-04-09 22:52:22,106 - client - INFO - Got Prune 7
+2018-04-09 22:52:22,107 - client - INFO - Node 7: sending cluster message to child id: 6
+2018-04-09 22:52:22,107 - client - INFO - Node 8: sent cluster message to child id: 10
+2018-04-09 22:52:22,108 - main_server - INFO - Server Node:0 current size is 34
+2018-04-09 22:52:22,108 - main_server - INFO - Server Node:0 Child size is 106
+2018-04-09 22:52:22,108 - client - INFO - Child IP: localhost:50056
+2018-04-09 22:52:22,108 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:52:22,108 - client - INFO - Node 8: got the reply: Joinedfrom child id: 10
+2018-04-09 22:52:22,109 - main_server - INFO - Node 0: new size is 140
+2018-04-09 22:52:22,109 - main_server - INFO - Node: 0 Sending accept to child
+2018-04-09 22:52:22,109 - client - INFO - Node 2 sent the size message of size 106 to 0
+2018-04-09 22:52:22,110 - client - INFO - Node 0: responded to Size RPC with reply: Accepted
+2018-04-09 22:52:22,111 - main_server - DEBUG - Got Cluster message as server Node:6
+2018-04-09 22:52:22,110 - client - INFO - Didn't get Prune Node: 2
+2018-04-09 22:52:22,111 - main_server - INFO - Server Node: 6 is now joining Clusterleader 7
+2018-04-09 22:52:22,111 - main_server - INFO - Server Node: has NO children.
+2018-04-09 22:52:22,111 - client - INFO - Node 7: sent cluster message to child id: 6
+2018-04-09 22:52:22,112 - client - INFO - Node 7: got the reply: Joinedfrom child id: 6
+2018-04-09 22:52:24,091 - Node - INFO - Initializing Node: 11
+2018-04-09 22:52:24,092 - Node - INFO - Calling weightMatrix for id: 11
+2018-04-09 22:52:24,092 - Node - INFO - Calling phaseOneClustering
+2018-04-09 22:52:24,092 - Node - INFO - Starting Phase One Clustering on Node: 11
+2018-04-09 22:52:24,092 - Node - INFO - Calling phaseOneClusterStart on client.py from Node.py with parentId: 5
+2018-04-09 22:52:24,093 - client - INFO - sendSize starting on client.py for node: 11
+2018-04-09 22:52:24,096 - main_server - INFO - Server Node:5 current size is 26
+2018-04-09 22:52:24,097 - main_server - INFO - Server Node:5 Child size is 32
+2018-04-09 22:52:24,097 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:52:24,097 - main_server - INFO - Node 5: new size is 58
+2018-04-09 22:52:24,097 - main_server - INFO - All children responded. Sending size to parent
+2018-04-09 22:52:24,097 - main_server - INFO - Node: 5 Sending accept to child
+2018-04-09 22:52:24,098 - client - INFO - Node 11 sent the size message of size 32 to 5
+2018-04-09 22:52:24,099 - client - INFO - Node 5: responded to Size RPC with reply: Accepted
+2018-04-09 22:52:24,099 - client - INFO - sendSize starting on client.py for node: 5
+2018-04-09 22:52:24,099 - client - INFO - Didn't get Prune Node: 11
+2018-04-09 22:52:24,100 - Node - INFO - Node: 11 sent size() message to parent: 5
+2018-04-09 22:52:24,100 - Node - INFO - Starting Server on Node: 11
+2018-04-09 22:52:24,100 - main_server - INFO - Server starting for Node: 11
+2018-04-09 22:52:24,100 - main_server - INFO - Server Created
+2018-04-09 22:52:24,101 - main_server - INFO - Inside Mainserver __init__:
+2018-04-09 22:52:24,102 - main_server - INFO - Node created inside __init__ Mainserver...
+2018-04-09 22:52:24,102 - main_server - INFO - Server Node:1 current size is 89
+2018-04-09 22:52:24,102 - main_server - INFO - Main Server init called successfully
+2018-04-09 22:52:24,102 - main_server - INFO - Server Node:1 Child size is 58
+2018-04-09 22:52:24,103 - main_server - INFO - Sending Accept after checking if all children responded or not
+2018-04-09 22:52:24,103 - main_server - INFO - Node 1: new size is 147
+2018-04-09 22:52:24,103 - main_server - INFO - All children responded. Sending size to parent
+2018-04-09 22:52:24,103 - main_server - INFO - Run port assigned
+2018-04-09 22:52:24,103 - main_server - INFO - Node: 1 Sending accept to child
+2018-04-09 22:52:24,104 - client - INFO - sendSize starting on client.py for node: 1
+2018-04-09 22:52:24,104 - client - INFO - Node 5 sent the size message of size 58 to 1
+2018-04-09 22:52:24,105 - client - INFO - Node 1: responded to Size RPC with reply: Accepted
+2018-04-09 22:52:24,105 - client - INFO - Didn't get Prune Node: 5
+2018-04-09 22:52:24,105 - main_server - INFO - Server started successfully. Entering forever while below
+2018-04-09 22:52:24,106 - main_server - INFO - Inside forever while....
+2018-04-09 22:52:24,107 - main_server - INFO - Server Node:0 current size is 140
+2018-04-09 22:52:24,107 - main_server - INFO - Server Node:0 Child size is 147
+2018-04-09 22:52:24,107 - main_server - INFO - Node id: 0 removed child 1 from childList
+2018-04-09 22:52:24,107 - main_server - INFO - Node id: 0 Sending Prune after checking if all children responded or not
+2018-04-09 22:52:24,107 - main_server - INFO - Node id: 0 All children responded. Sending size to parent
+2018-04-09 22:52:24,108 - Node - INFO - Node: 0 setting myself as clusterhead as no parent found!
+2018-04-09 22:52:24,108 - main_server - INFO - Node: 0 Sending Prune
+2018-04-09 22:52:24,108 - client - INFO - Node 0: sending cluster message to child id: 2
+2018-04-09 22:52:24,109 - client - INFO - Node 1 sent the size message of size 147 to 0
+2018-04-09 22:52:24,109 - client - INFO - Child IP: localhost:50052
+2018-04-09 22:52:24,109 - client - INFO - Node 0: responded to Size RPC with reply: Prune
+2018-04-09 22:52:24,109 - client - INFO - Got Prune 1
+2018-04-09 22:52:24,110 - client - INFO - Node 1: sending cluster message to child id: 3
+2018-04-09 22:52:24,110 - client - INFO - Child IP: localhost:50053
+2018-04-09 22:52:24,112 - main_server - DEBUG - Got Cluster message as server Node:2
+2018-04-09 22:52:24,112 - main_server - INFO - Server Node: 2 is now joining Clusterleader 0
+2018-04-09 22:52:24,112 - main_server - INFO - Server Node:2 has children. Starting ClusterheadId Propagation
+2018-04-09 22:52:24,114 - main_server - DEBUG - Got Cluster message as server Node:3
+2018-04-09 22:52:24,114 - client - INFO - Node 0: sent cluster message to child id: 2
+2018-04-09 22:52:24,114 - client - INFO - Node 2: is sending propagate cluster message to child id: 4
+2018-04-09 22:52:24,114 - main_server - INFO - Server Node: 3 is now joining Clusterleader 1
+2018-04-09 22:52:24,115 - client - INFO - Node 0: got the reply: Joinedfrom child id: 2
+2018-04-09 22:52:24,115 - main_server - INFO - Server Node: has NO children.
+2018-04-09 22:52:24,115 - client - INFO - Node 1: sent cluster message to child id: 3
+2018-04-09 22:52:24,116 - client - INFO - Node 1: got the reply: Joinedfrom child id: 3
+2018-04-09 22:52:24,117 - client - INFO - Node 1: sending cluster message to child id: 5
+2018-04-09 22:52:24,117 - client - INFO - Child IP: localhost:50055
+2018-04-09 22:52:24,117 - main_server - DEBUG - Got Cluster message as server Node:4
+2018-04-09 22:52:24,117 - main_server - INFO - Server Node: 4 is now joining Clusterleader 0
+2018-04-09 22:52:24,117 - main_server - INFO - Server Node:4 has children. Starting ClusterheadId Propagation
+2018-04-09 22:52:24,118 - client - INFO - Node 4: is sending propagate cluster message to child id: 9
+2018-04-09 22:52:24,120 - main_server - DEBUG - Got Cluster message as server Node:5
+2018-04-09 22:52:24,119 - client - INFO - Node 2: sent cluster message to child id: 4
+2018-04-09 22:52:24,120 - main_server - INFO - Server Node: 5 is now joining Clusterleader 1
+2018-04-09 22:52:24,120 - client - INFO - Node 2: got the reply: Joinedfrom child id: 4
+2018-04-09 22:52:24,120 - main_server - INFO - Server Node:5 has children. Starting ClusterheadId Propagation
+2018-04-09 22:52:24,121 - main_server - DEBUG - Got Cluster message as server Node:9
+2018-04-09 22:52:24,122 - main_server - INFO - Server Node: 9 is now joining Clusterleader 0
+2018-04-09 22:52:24,122 - client - INFO - Node 5: is sending propagate cluster message to child id: 11
+2018-04-09 22:52:24,122 - client - INFO - Node 1: sent cluster message to child id: 5
+2018-04-09 22:52:24,123 - main_server - INFO - Server Node: has NO children.
+2018-04-09 22:52:24,123 - client - INFO - Node 1: got the reply: Joinedfrom child id: 5
+2018-04-09 22:52:24,124 - client - INFO - Node 4: sent cluster message to child id: 9
+2018-04-09 22:52:24,124 - client - INFO - Node 4: got the reply: Joinedfrom child id: 9
+2018-04-09 22:52:24,130 - main_server - DEBUG - Got Cluster message as server Node:11
+2018-04-09 22:52:24,130 - main_server - INFO - Server Node: 11 is now joining Clusterleader 1
+2018-04-09 22:52:24,130 - main_server - INFO - Server Node: has NO children.
+2018-04-09 22:52:24,131 - client - INFO - Node 5: sent cluster message to child id: 11
+2018-04-09 22:52:24,131 - client - INFO - Node 5: got the reply: Joinedfrom child id: 11
+2018-04-09 22:53:05,259 - main_server - INFO - Node: 11 got StartPhase2Clustering
+2018-04-09 22:53:05,259 - Node - INFO - Node: 11 is starting phase 2 clustering
+2018-04-09 22:53:05,259 - client - INFO - Client of Node: 11 is sending Hello to node: 2
+2018-04-09 22:53:05,261 - main_server - INFO - Node: 2 is active
+2018-04-09 22:53:05,262 - main_server - INFO - Node 2 printing neighbourHelloArray
+2018-04-09 22:53:05,262 - main_server - INFO - set([u'11'])
+2018-04-09 22:53:05,262 - main_server - INFO - Node: 2 has hopCount=1 with bestHopCount: 0 and senderId: 11 has hopCount 2
+2018-04-09 22:53:05,262 - main_server - INFO - Node: 2 sending NOT - interested response for senderId: 11
+2018-04-09 22:53:05,262 - client - INFO - Node: 11 got following response after sending Hello to id: 2
+2018-04-09 22:53:05,263 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,263 - Node - INFO - Node :11 got reply None from Node: 2 after sendHello
+2018-04-09 22:53:05,263 - client - INFO - Client of Node: 11 is sending Hello to node: 3
+2018-04-09 22:53:05,265 - main_server - INFO - Node: 3 is active
+2018-04-09 22:53:05,265 - main_server - INFO - Node 3 printing neighbourHelloArray
+2018-04-09 22:53:05,265 - main_server - INFO - set([u'11'])
+2018-04-09 22:53:05,265 - main_server - INFO - Node: 3 has hopCount=1 with bestHopCount: 0 and senderId: 11 has hopCount 2
+2018-04-09 22:53:05,265 - main_server - INFO - Node: 3 sending NOT - interested response for senderId: 11
+2018-04-09 22:53:05,266 - client - INFO - Node: 11 got following response after sending Hello to id: 3
+2018-04-09 22:53:05,266 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,266 - Node - INFO - Node :11 got reply None from Node: 3 after sendHello
+2018-04-09 22:53:05,267 - client - INFO - Client of Node: 11 is sending Hello to node: 5
+2018-04-09 22:53:05,268 - main_server - INFO - Node: 5 is active
+2018-04-09 22:53:05,268 - main_server - INFO - Node 5 printing neighbourHelloArray
+2018-04-09 22:53:05,269 - main_server - INFO - set([u'11'])
+2018-04-09 22:53:05,269 - main_server - INFO - Node: 5 has hopCount=1 with bestHopCount: 0 and senderId: 11 has hopCount 2
+2018-04-09 22:53:05,269 - main_server - INFO - Node: 5 sending NOT - interested response for senderId: 11
+2018-04-09 22:53:05,269 - client - INFO - Node: 11 got following response after sending Hello to id: 5
+2018-04-09 22:53:05,269 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,270 - Node - INFO - Node :11 got reply None from Node: 5 after sendHello
+2018-04-09 22:53:05,270 - client - INFO - Client of Node: 11 is sending Hello to node: 6
+2018-04-09 22:53:05,272 - main_server - INFO - Node: 6 is active
+2018-04-09 22:53:05,272 - main_server - INFO - Node 6 printing neighbourHelloArray
+2018-04-09 22:53:05,272 - main_server - INFO - set([u'11'])
+2018-04-09 22:53:05,272 - main_server - INFO - Node: 6 has hopCount=1 with bestHopCount: 0 and senderId: 11 has hopCount 2
+2018-04-09 22:53:05,272 - main_server - INFO - Node: 6 sending NOT - interested response for senderId: 11
+2018-04-09 22:53:05,272 - client - INFO - Node: 11 got following response after sending Hello to id: 6
+2018-04-09 22:53:05,273 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,273 - Node - INFO - Node :11 got reply None from Node: 6 after sendHello
+2018-04-09 22:53:05,273 - client - INFO - Client of Node: 11 is sending Hello to node: 9
+2018-04-09 22:53:05,275 - main_server - INFO - Node: 9 is active
+2018-04-09 22:53:05,275 - main_server - INFO - Node 9 printing neighbourHelloArray
+2018-04-09 22:53:05,275 - main_server - INFO - set([u'11'])
+2018-04-09 22:53:05,275 - main_server - INFO - Node: 9 has hopCount=3 with bestHopCount: 0 and senderId: 11 has hopCount 2
+2018-04-09 22:53:05,276 - main_server - INFO - Node: 9 sending NOT - interested response for senderId: 11
+2018-04-09 22:53:05,276 - client - INFO - Node: 11 got following response after sending Hello to id: 9
+2018-04-09 22:53:05,276 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,276 - Node - INFO - Node :11 got reply None from Node: 9 after sendHello
+2018-04-09 22:53:05,277 - client - INFO - Client of Node: 11 is sending Hello to node: 10
+2018-04-09 22:53:05,278 - main_server - INFO - Node: 10 is active
+2018-04-09 22:53:05,279 - main_server - INFO - Node 10 printing neighbourHelloArray
+2018-04-09 22:53:05,279 - main_server - INFO - set([u'11'])
+2018-04-09 22:53:05,279 - main_server - INFO - Node: 10 has hopCount=1 with bestHopCount: 0 and senderId: 11 has hopCount 2
+2018-04-09 22:53:05,279 - main_server - INFO - Node: 10 sending NOT - interested response for senderId: 11
+2018-04-09 22:53:05,279 - client - INFO - Node: 11 got following response after sending Hello to id: 10
+2018-04-09 22:53:05,280 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,280 - Node - INFO - Node :11 got reply None from Node: 10 after sendHello
+2018-04-09 22:53:05,282 - main_server - INFO - Node: 10 got StartPhase2Clustering
+2018-04-09 22:53:05,282 - Node - INFO - Node: 10 is starting phase 2 clustering
+2018-04-09 22:53:05,283 - client - INFO - Client of Node: 10 is sending Hello to node: 2
+2018-04-09 22:53:05,285 - main_server - INFO - Node: 2 is active
+2018-04-09 22:53:05,285 - main_server - INFO - Node 2 printing neighbourHelloArray
+2018-04-09 22:53:05,285 - main_server - INFO - set([u'11', u'10'])
+2018-04-09 22:53:05,285 - main_server - INFO - Node: 2 has hopCount=1 with bestHopCount: 0 and senderId: 10 has hopCount 1
+2018-04-09 22:53:05,285 - main_server - INFO - Node: 2 sending NOT - interested response for senderId: 10
+2018-04-09 22:53:05,285 - client - INFO - Node: 10 got following response after sending Hello to id: 2
+2018-04-09 22:53:05,286 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,286 - Node - INFO - Node :10 got reply None from Node: 2 after sendHello
+2018-04-09 22:53:05,286 - client - INFO - Client of Node: 10 is sending Hello to node: 3
+2018-04-09 22:53:05,288 - main_server - INFO - Node: 3 is active
+2018-04-09 22:53:05,288 - main_server - INFO - Node 3 printing neighbourHelloArray
+2018-04-09 22:53:05,288 - main_server - INFO - set([u'11', u'10'])
+2018-04-09 22:53:05,288 - main_server - INFO - Node: 3 has hopCount=1 with bestHopCount: 0 and senderId: 10 has hopCount 1
+2018-04-09 22:53:05,288 - main_server - INFO - Node: 3 sending NOT - interested response for senderId: 10
+2018-04-09 22:53:05,289 - client - INFO - Node: 10 got following response after sending Hello to id: 3
+2018-04-09 22:53:05,289 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,289 - Node - INFO - Node :10 got reply None from Node: 3 after sendHello
+2018-04-09 22:53:05,289 - client - INFO - Client of Node: 10 is sending Hello to node: 5
+2018-04-09 22:53:05,291 - main_server - INFO - Node: 5 is active
+2018-04-09 22:53:05,291 - main_server - INFO - Node 5 printing neighbourHelloArray
+2018-04-09 22:53:05,291 - main_server - INFO - set([u'11', u'10'])
+2018-04-09 22:53:05,292 - main_server - INFO - Node: 5 has hopCount=1 with bestHopCount: 0 and senderId: 10 has hopCount 1
+2018-04-09 22:53:05,292 - main_server - INFO - Node: 5 sending NOT - interested response for senderId: 10
+2018-04-09 22:53:05,292 - client - INFO - Node: 10 got following response after sending Hello to id: 5
+2018-04-09 22:53:05,292 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,292 - Node - INFO - Node :10 got reply None from Node: 5 after sendHello
+2018-04-09 22:53:05,293 - client - INFO - Client of Node: 10 is sending Hello to node: 6
+2018-04-09 22:53:05,294 - main_server - INFO - Node: 6 is active
+2018-04-09 22:53:05,295 - main_server - INFO - Node 6 printing neighbourHelloArray
+2018-04-09 22:53:05,295 - main_server - INFO - set([u'11', u'10'])
+2018-04-09 22:53:05,295 - main_server - INFO - Node: 6 has hopCount=1 with bestHopCount: 0 and senderId: 10 has hopCount 1
+2018-04-09 22:53:05,295 - main_server - INFO - Node: 6 sending NOT - interested response for senderId: 10
+2018-04-09 22:53:05,295 - client - INFO - Node: 10 got following response after sending Hello to id: 6
+2018-04-09 22:53:05,296 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,296 - Node - INFO - Node :10 got reply None from Node: 6 after sendHello
+2018-04-09 22:53:05,296 - client - INFO - Client of Node: 10 is sending Hello to node: 9
+2018-04-09 22:53:05,298 - main_server - INFO - Node: 9 is active
+2018-04-09 22:53:05,298 - main_server - INFO - Node 9 printing neighbourHelloArray
+2018-04-09 22:53:05,298 - main_server - INFO - set([u'11', u'10'])
+2018-04-09 22:53:05,298 - main_server - INFO - Node: 9 has hopCount=3 with bestHopCount: 0 and senderId: 10 has hopCount 1
+2018-04-09 22:53:05,298 - main_server - INFO - Node: 9 sending NOT - interested response for senderId: 10
+2018-04-09 22:53:05,299 - client - INFO - Node: 10 got following response after sending Hello to id: 9
+2018-04-09 22:53:05,299 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,299 - Node - INFO - Node :10 got reply None from Node: 9 after sendHello
+2018-04-09 22:53:05,300 - client - INFO - Client of Node: 10 is sending Hello to node: 11
+2018-04-09 22:53:05,301 - main_server - INFO - Node: 11 is active
+2018-04-09 22:53:05,301 - main_server - INFO - Node 11 printing neighbourHelloArray
+2018-04-09 22:53:05,301 - main_server - INFO - set(['C8', 'C1', 'C0', 'C7', u'10'])
+2018-04-09 22:53:05,302 - main_server - INFO - Node: 11 has hopCount=2 with bestHopCount: 2 and senderId: 10 has hopCount 1
+2018-04-09 22:53:05,302 - main_server - INFO - Node: 11 updating bestNode as senderId: 10 looks relevant choice as new parent
+2018-04-09 22:53:05,302 - main_server - INFO - Node: 11 sending interested response for senderId: 10
+2018-04-09 22:53:05,302 - client - INFO - Node: 10 got following response after sending Hello to id: 11
+2018-04-09 22:53:05,302 - client - INFO - interested: 1
+
+2018-04-09 22:53:05,303 - Node - INFO - Node :10 got reply None from Node: 11 after sendHello
+2018-04-09 22:53:05,306 - main_server - INFO - Node: 1 got StartPhase2Clustering
+2018-04-09 22:53:05,306 - Node - INFO - Node: 1 is starting phase 2 clustering
+2018-04-09 22:53:05,306 - Node - INFO - Node: 1 is clusterhead. Not taking any action
+2018-04-09 22:53:05,308 - main_server - INFO - Node: 0 got StartPhase2Clustering
+2018-04-09 22:53:05,308 - Node - INFO - Node: 0 is starting phase 2 clustering
+2018-04-09 22:53:05,308 - Node - INFO - Node: 0 is clusterhead. Not taking any action
+2018-04-09 22:53:05,311 - main_server - INFO - Node: 3 got StartPhase2Clustering
+2018-04-09 22:53:05,311 - Node - INFO - Node: 3 is starting phase 2 clustering
+2018-04-09 22:53:05,311 - client - INFO - Client of Node: 3 is sending Hello to node: 2
+2018-04-09 22:53:05,313 - main_server - INFO - Node: 2 is active
+2018-04-09 22:53:05,313 - main_server - INFO - Node 2 printing neighbourHelloArray
+2018-04-09 22:53:05,313 - main_server - INFO - set([u'11', u'10', u'3'])
+2018-04-09 22:53:05,313 - main_server - INFO - Node: 2 has hopCount=1 with bestHopCount: 0 and senderId: 3 has hopCount 1
+2018-04-09 22:53:05,314 - main_server - INFO - Node: 2 sending NOT - interested response for senderId: 3
+2018-04-09 22:53:05,314 - client - INFO - Node: 3 got following response after sending Hello to id: 2
+2018-04-09 22:53:05,314 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,314 - Node - INFO - Node :3 got reply None from Node: 2 after sendHello
+2018-04-09 22:53:05,315 - client - INFO - Client of Node: 3 is sending Hello to node: 5
+2018-04-09 22:53:05,316 - main_server - INFO - Node: 5 is active
+2018-04-09 22:53:05,316 - main_server - INFO - Node 5 printing neighbourHelloArray
+2018-04-09 22:53:05,317 - main_server - INFO - set([u'11', u'10', u'3'])
+2018-04-09 22:53:05,317 - main_server - INFO - Node: 5 has hopCount=1 with bestHopCount: 0 and senderId: 3 has hopCount 1
+2018-04-09 22:53:05,317 - main_server - INFO - Node: 5 sending NOT - interested response for senderId: 3
+2018-04-09 22:53:05,317 - client - INFO - Node: 3 got following response after sending Hello to id: 5
+2018-04-09 22:53:05,317 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,318 - Node - INFO - Node :3 got reply None from Node: 5 after sendHello
+2018-04-09 22:53:05,318 - client - INFO - Client of Node: 3 is sending Hello to node: 6
+2018-04-09 22:53:05,320 - main_server - INFO - Node: 6 is active
+2018-04-09 22:53:05,320 - main_server - INFO - Node 6 printing neighbourHelloArray
+2018-04-09 22:53:05,320 - main_server - INFO - set([u'11', u'10', u'3'])
+2018-04-09 22:53:05,320 - main_server - INFO - Node: 6 has hopCount=1 with bestHopCount: 0 and senderId: 3 has hopCount 1
+2018-04-09 22:53:05,320 - main_server - INFO - Node: 6 sending NOT - interested response for senderId: 3
+2018-04-09 22:53:05,321 - client - INFO - Node: 3 got following response after sending Hello to id: 6
+2018-04-09 22:53:05,321 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,321 - Node - INFO - Node :3 got reply None from Node: 6 after sendHello
+2018-04-09 22:53:05,321 - client - INFO - Client of Node: 3 is sending Hello to node: 9
+2018-04-09 22:53:05,323 - main_server - INFO - Node: 9 is active
+2018-04-09 22:53:05,323 - main_server - INFO - Node 9 printing neighbourHelloArray
+2018-04-09 22:53:05,323 - main_server - INFO - set([u'11', u'10', u'3'])
+2018-04-09 22:53:05,323 - main_server - INFO - Node: 9 has hopCount=3 with bestHopCount: 0 and senderId: 3 has hopCount 1
+2018-04-09 22:53:05,323 - main_server - INFO - Node: 9 sending NOT - interested response for senderId: 3
+2018-04-09 22:53:05,324 - client - INFO - Node: 3 got following response after sending Hello to id: 9
+2018-04-09 22:53:05,324 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,324 - Node - INFO - Node :3 got reply None from Node: 9 after sendHello
+2018-04-09 22:53:05,325 - client - INFO - Client of Node: 3 is sending Hello to node: 10
+2018-04-09 22:53:05,326 - main_server - INFO - Node: 10 is active
+2018-04-09 22:53:05,326 - main_server - INFO - Node 10 printing neighbourHelloArray
+2018-04-09 22:53:05,326 - main_server - INFO - set([u'11', u'3', 'C8', 'C1', 'C0', 'C7'])
+2018-04-09 22:53:05,327 - main_server - INFO - Node: 10 has hopCount=1 with bestHopCount: 1 and senderId: 3 has hopCount 1
+2018-04-09 22:53:05,327 - main_server - INFO - Node: 10 sending NOT - interested response for senderId: 3
+2018-04-09 22:53:05,327 - client - INFO - Node: 3 got following response after sending Hello to id: 10
+2018-04-09 22:53:05,327 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,327 - Node - INFO - Node :3 got reply None from Node: 10 after sendHello
+2018-04-09 22:53:05,328 - client - INFO - Client of Node: 3 is sending Hello to node: 11
+2018-04-09 22:53:05,329 - main_server - INFO - Node: 11 is active
+2018-04-09 22:53:05,330 - main_server - INFO - Node 11 printing neighbourHelloArray
+2018-04-09 22:53:05,330 - main_server - INFO - set([u'10', u'3', 'C8', 'C1', 'C0', 'C7'])
+2018-04-09 22:53:05,330 - main_server - INFO - Node: 11 has hopCount=2 with bestHopCount: 1 and senderId: 3 has hopCount 1
+2018-04-09 22:53:05,330 - main_server - INFO - Node: 11 sending NOT - interested response for senderId: 3
+2018-04-09 22:53:05,330 - client - INFO - Node: 3 got following response after sending Hello to id: 11
+2018-04-09 22:53:05,331 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,331 - Node - INFO - Node :3 got reply None from Node: 11 after sendHello
+2018-04-09 22:53:05,333 - main_server - INFO - Node: 2 got StartPhase2Clustering
+2018-04-09 22:53:05,333 - Node - INFO - Node: 2 is starting phase 2 clustering
+2018-04-09 22:53:05,334 - client - INFO - Client of Node: 2 is sending Hello to node: 3
+2018-04-09 22:53:05,336 - main_server - INFO - Node: 3 is active
+2018-04-09 22:53:05,336 - main_server - INFO - Node 3 printing neighbourHelloArray
+2018-04-09 22:53:05,336 - main_server - INFO - set([u'11', u'10', 'C8', u'2', 'C1', 'C0', 'C7'])
+2018-04-09 22:53:05,336 - main_server - INFO - Node: 3 has hopCount=1 with bestHopCount: 1 and senderId: 2 has hopCount 1
+2018-04-09 22:53:05,336 - main_server - INFO - Node: 3 sending NOT - interested response for senderId: 2
+2018-04-09 22:53:05,337 - client - INFO - Node: 2 got following response after sending Hello to id: 3
+2018-04-09 22:53:05,337 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,337 - Node - INFO - Node :2 got reply None from Node: 3 after sendHello
+2018-04-09 22:53:05,337 - client - INFO - Client of Node: 2 is sending Hello to node: 5
+2018-04-09 22:53:05,339 - main_server - INFO - Node: 5 is active
+2018-04-09 22:53:05,339 - main_server - INFO - Node 5 printing neighbourHelloArray
+2018-04-09 22:53:05,339 - main_server - INFO - set([u'11', u'10', u'3', u'2'])
+2018-04-09 22:53:05,340 - main_server - INFO - Node: 5 has hopCount=1 with bestHopCount: 0 and senderId: 2 has hopCount 1
+2018-04-09 22:53:05,340 - main_server - INFO - Node: 5 sending NOT - interested response for senderId: 2
+2018-04-09 22:53:05,340 - client - INFO - Node: 2 got following response after sending Hello to id: 5
+2018-04-09 22:53:05,340 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,340 - Node - INFO - Node :2 got reply None from Node: 5 after sendHello
+2018-04-09 22:53:05,341 - client - INFO - Client of Node: 2 is sending Hello to node: 6
+2018-04-09 22:53:05,342 - main_server - INFO - Node: 6 is active
+2018-04-09 22:53:05,343 - main_server - INFO - Node 6 printing neighbourHelloArray
+2018-04-09 22:53:05,343 - main_server - INFO - set([u'11', u'10', u'3', u'2'])
+2018-04-09 22:53:05,343 - main_server - INFO - Node: 6 has hopCount=1 with bestHopCount: 0 and senderId: 2 has hopCount 1
+2018-04-09 22:53:05,343 - main_server - INFO - Node: 6 sending NOT - interested response for senderId: 2
+2018-04-09 22:53:05,343 - client - INFO - Node: 2 got following response after sending Hello to id: 6
+2018-04-09 22:53:05,344 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,344 - Node - INFO - Node :2 got reply None from Node: 6 after sendHello
+2018-04-09 22:53:05,344 - client - INFO - Client of Node: 2 is sending Hello to node: 9
+2018-04-09 22:53:05,346 - main_server - INFO - Node: 9 is active
+2018-04-09 22:53:05,346 - main_server - INFO - Node 9 printing neighbourHelloArray
+2018-04-09 22:53:05,346 - main_server - INFO - set([u'11', u'10', u'3', u'2'])
+2018-04-09 22:53:05,346 - main_server - INFO - Node: 9 has hopCount=3 with bestHopCount: 0 and senderId: 2 has hopCount 1
+2018-04-09 22:53:05,346 - main_server - INFO - Node: 9 sending NOT - interested response for senderId: 2
+2018-04-09 22:53:05,347 - client - INFO - Node: 2 got following response after sending Hello to id: 9
+2018-04-09 22:53:05,347 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,347 - Node - INFO - Node :2 got reply None from Node: 9 after sendHello
+2018-04-09 22:53:05,347 - client - INFO - Client of Node: 2 is sending Hello to node: 10
+2018-04-09 22:53:05,349 - main_server - INFO - Node: 10 is active
+2018-04-09 22:53:05,349 - main_server - INFO - Node 10 printing neighbourHelloArray
+2018-04-09 22:53:05,349 - main_server - INFO - set([u'11', u'3', 'C8', u'2', 'C1', 'C0', 'C7'])
+2018-04-09 22:53:05,349 - main_server - INFO - Node: 10 has hopCount=1 with bestHopCount: 1 and senderId: 2 has hopCount 1
+2018-04-09 22:53:05,349 - main_server - INFO - Node: 10 sending NOT - interested response for senderId: 2
+2018-04-09 22:53:05,350 - client - INFO - Node: 2 got following response after sending Hello to id: 10
+2018-04-09 22:53:05,350 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,350 - Node - INFO - Node :2 got reply None from Node: 10 after sendHello
+2018-04-09 22:53:05,351 - client - INFO - Client of Node: 2 is sending Hello to node: 11
+2018-04-09 22:53:05,352 - main_server - INFO - Node: 11 is active
+2018-04-09 22:53:05,352 - main_server - INFO - Node 11 printing neighbourHelloArray
+2018-04-09 22:53:05,353 - main_server - INFO - set([u'10', u'3', 'C8', u'2', 'C1', 'C0', 'C7'])
+2018-04-09 22:53:05,353 - main_server - INFO - Node: 11 has hopCount=2 with bestHopCount: 1 and senderId: 2 has hopCount 1
+2018-04-09 22:53:05,353 - main_server - INFO - Node: 11 sending NOT - interested response for senderId: 2
+2018-04-09 22:53:05,353 - client - INFO - Node: 2 got following response after sending Hello to id: 11
+2018-04-09 22:53:05,353 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,354 - Node - INFO - Node :2 got reply None from Node: 11 after sendHello
+2018-04-09 22:53:05,356 - main_server - INFO - Node: 5 got StartPhase2Clustering
+2018-04-09 22:53:05,356 - Node - INFO - Node: 5 is starting phase 2 clustering
+2018-04-09 22:53:05,357 - client - INFO - Client of Node: 5 is sending Hello to node: 2
+2018-04-09 22:53:05,358 - main_server - INFO - Node: 2 is active
+2018-04-09 22:53:05,358 - main_server - INFO - Node 2 printing neighbourHelloArray
+2018-04-09 22:53:05,359 - main_server - INFO - set([u'11', u'10', u'3', 'C8', u'5', 'C1', 'C0', 'C7'])
+2018-04-09 22:53:05,359 - main_server - INFO - Node: 2 has hopCount=1 with bestHopCount: 1 and senderId: 5 has hopCount 1
+2018-04-09 22:53:05,359 - main_server - INFO - Node: 2 sending NOT - interested response for senderId: 5
+2018-04-09 22:53:05,359 - client - INFO - Node: 5 got following response after sending Hello to id: 2
+2018-04-09 22:53:05,359 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,360 - Node - INFO - Node :5 got reply None from Node: 2 after sendHello
+2018-04-09 22:53:05,360 - client - INFO - Client of Node: 5 is sending Hello to node: 3
+2018-04-09 22:53:05,362 - main_server - INFO - Node: 3 is active
+2018-04-09 22:53:05,362 - main_server - INFO - Node 3 printing neighbourHelloArray
+2018-04-09 22:53:05,362 - main_server - INFO - set([u'11', u'10', 'C8', u'5', u'2', 'C1', 'C0', 'C7'])
+2018-04-09 22:53:05,362 - main_server - INFO - Node: 3 has hopCount=1 with bestHopCount: 1 and senderId: 5 has hopCount 1
+2018-04-09 22:53:05,362 - main_server - INFO - Node: 3 sending NOT - interested response for senderId: 5
+2018-04-09 22:53:05,363 - client - INFO - Node: 5 got following response after sending Hello to id: 3
+2018-04-09 22:53:05,363 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,363 - Node - INFO - Node :5 got reply None from Node: 3 after sendHello
+2018-04-09 22:53:05,363 - client - INFO - Client of Node: 5 is sending Hello to node: 6
+2018-04-09 22:53:05,365 - main_server - INFO - Node: 6 is active
+2018-04-09 22:53:05,365 - main_server - INFO - Node 6 printing neighbourHelloArray
+2018-04-09 22:53:05,365 - main_server - INFO - set([u'11', u'10', u'3', u'2', u'5'])
+2018-04-09 22:53:05,365 - main_server - INFO - Node: 6 has hopCount=1 with bestHopCount: 0 and senderId: 5 has hopCount 1
+2018-04-09 22:53:05,365 - main_server - INFO - Node: 6 sending NOT - interested response for senderId: 5
+2018-04-09 22:53:05,366 - client - INFO - Node: 5 got following response after sending Hello to id: 6
+2018-04-09 22:53:05,366 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,366 - Node - INFO - Node :5 got reply None from Node: 6 after sendHello
+2018-04-09 22:53:05,367 - client - INFO - Client of Node: 5 is sending Hello to node: 9
+2018-04-09 22:53:05,368 - main_server - INFO - Node: 9 is active
+2018-04-09 22:53:05,369 - main_server - INFO - Node 9 printing neighbourHelloArray
+2018-04-09 22:53:05,369 - main_server - INFO - set([u'11', u'10', u'3', u'2', u'5'])
+2018-04-09 22:53:05,369 - main_server - INFO - Node: 9 has hopCount=3 with bestHopCount: 0 and senderId: 5 has hopCount 1
+2018-04-09 22:53:05,369 - main_server - INFO - Node: 9 sending NOT - interested response for senderId: 5
+2018-04-09 22:53:05,369 - client - INFO - Node: 5 got following response after sending Hello to id: 9
+2018-04-09 22:53:05,370 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,370 - Node - INFO - Node :5 got reply None from Node: 9 after sendHello
+2018-04-09 22:53:05,370 - client - INFO - Client of Node: 5 is sending Hello to node: 10
+2018-04-09 22:53:05,372 - main_server - INFO - Node: 10 is active
+2018-04-09 22:53:05,372 - main_server - INFO - Node 10 printing neighbourHelloArray
+2018-04-09 22:53:05,372 - main_server - INFO - set([u'11', u'3', 'C8', u'5', u'2', 'C1', 'C0', 'C7'])
+2018-04-09 22:53:05,372 - main_server - INFO - Node: 10 has hopCount=1 with bestHopCount: 1 and senderId: 5 has hopCount 1
+2018-04-09 22:53:05,372 - main_server - INFO - Node: 10 sending NOT - interested response for senderId: 5
+2018-04-09 22:53:05,373 - client - INFO - Node: 5 got following response after sending Hello to id: 10
+2018-04-09 22:53:05,373 - client - INFO - interested: -1
+
+2018-04-09 22:53:05,373 - Node - INFO - Node :5 got reply None from Node: 10 after sendHello
+2018-04-09 22:53:05,373 - client - INFO - Client of Node: 5 is sending Hello to node: 11
+2018-04-09 22:53:05,375 - main_server - INFO - Node: 11 is active
+2018-04-09 22:53:05,375 - main_server - INFO - Node 11 printing neighbourHelloArray
+2018-04-09 22:53:05,375 - main_server - INFO - set([u'10', u'3', 'C8', u'5', u'2', 'C1', 'C0', 'C7'])
+2018-04-09 22:53:05,375 - main_server - INFO - Node: 11 has hopCount=2 with bestHopCount: 1 and senderId: 5 has hopCount 1
+2018-04-09 22:53:05,376 - main_server - INFO - Node: 11 got all helloes from neighbours. Sending shift node request to would be ex-clusterheadId:8
+2018-04-09 22:53:05,377 - main_server - INFO - ClusterheadId: 1 got ShiftNodeRequest from node id: 11
+2018-04-09 22:53:05,378 - main_server - INFO - ClusterheadId: 1 sending Jam Signal across its cluster
+2018-04-09 22:53:05,378 - Node - INFO - Node: 1 childIpList is below
+2018-04-09 22:53:05,378 - Node - INFO - ['localhost:50053', 'localhost:50055']
+2018-04-09 22:53:05,378 - client - INFO - Node: 1 is sending jam to childIp: localhost:50053
+2018-04-09 22:53:05,380 - main_server - INFO - Node: 3 received Jam signal from clusterheadId: 1
+2018-04-09 22:53:05,380 - main_server - INFO - Node: 3 going to sleep zzzzzzzz
+2018-04-09 22:53:05,380 - main_server - INFO - Node: 3 sending jam to all children
+2018-04-09 22:53:05,380 - Node - INFO - Node: 3 in Node.py adding childIps for propagating jam signal
+2018-04-09 22:53:05,380 - Node - INFO - Node: 3 is leaf node. NOT propagating Jam signal anymore
+2018-04-09 22:53:05,381 - main_server - INFO - Node: 3 successfully propagated jam to all children
+2018-04-09 22:53:05,381 - client - INFO - Node: 1 sent jam to child ip: localhost:50053
+2018-04-09 22:53:05,381 - client - INFO - jamResponse: "jammed"
+
+2018-04-09 22:53:05,382 - client - INFO - Node: 1 is sending jam to childIp: localhost:50055
+2018-04-09 22:53:05,383 - main_server - INFO - Node: 5 received Jam signal from clusterheadId: 1
+2018-04-09 22:53:05,383 - main_server - INFO - Node: 5 going to sleep zzzzzzzz
+2018-04-09 22:53:05,384 - main_server - INFO - Node: 5 sending jam to all children
+2018-04-09 22:53:05,384 - Node - INFO - Node: 5 in Node.py adding childIps for propagating jam signal
+2018-04-09 22:53:05,384 - Node - INFO - ['localhost:50061']
+2018-04-09 22:53:05,385 - main_server - INFO - Node: 11 received Jam signal from clusterheadId: 1
+2018-04-09 22:53:05,386 - main_server - INFO - Node: 11 going to sleep zzzzzzzz
+2018-04-09 22:53:05,386 - main_server - INFO - Node: 11 sending jam to all children
+2018-04-09 22:53:05,386 - Node - INFO - Node: 11 in Node.py adding childIps for propagating jam signal
+2018-04-09 22:53:05,386 - Node - INFO - Node: 11 is leaf node. NOT propagating Jam signal anymore
+2018-04-09 22:53:05,386 - main_server - INFO - Node: 11 successfully propagated jam to all children
+2018-04-09 22:53:05,386 - client - INFO - Node: 5 sent JAM to child ip: localhost:50061
+2018-04-09 22:53:05,387 - client - INFO - jamResponse: "jammed"
+
+2018-04-09 22:53:05,387 - main_server - INFO - Node: 5 successfully propagated jam to all children
+2018-04-09 22:53:05,387 - client - INFO - Node: 1 sent jam to child ip: localhost:50055
+2018-04-09 22:53:05,387 - client - INFO - jamResponse: "jammed"
+
+2018-04-09 22:53:05,388 - main_server - INFO - ClusterheadId: 1 successfully sent Jam Signal across its cluster
+2018-04-09 22:53:05,388 - main_server - INFO - ClusterheadId: 1 now sending sendShiftClusterRequest
+2018-04-09 22:53:05,388 - Node - INFO - ClusterheadID: 1 sending ShiftClusterRequest to clusterheadId: 8
+2018-04-09 22:53:05,388 - client - INFO - ClusterHeadID: 1 sending ShiftClusterRequest to ClusterheadIp: localhost:50058
+2018-04-09 22:53:05,390 - Node - INFO - Node: 8 childIpList is below
+2018-04-09 22:53:05,390 - Node - INFO - ['localhost:50060']
+2018-04-09 22:53:05,390 - client - INFO - Node: 8 is sending jam to childIp: localhost:50060
+2018-04-09 22:53:05,392 - main_server - INFO - Node: 10 received Jam signal from clusterheadId: 8
+2018-04-09 22:53:05,392 - main_server - INFO - Node: 10 going to sleep zzzzzzzz
+2018-04-09 22:53:05,392 - main_server - INFO - Node: 10 sending jam to all children
+2018-04-09 22:53:05,392 - Node - INFO - Node: 10 in Node.py adding childIps for propagating jam signal
+2018-04-09 22:53:05,393 - Node - INFO - Node: 10 is leaf node. NOT propagating Jam signal anymore
+2018-04-09 22:53:05,393 - main_server - INFO - Node: 10 successfully propagated jam to all children
+2018-04-09 22:53:05,393 - client - INFO - Node: 8 sent jam to child ip: localhost:50060
+2018-04-09 22:53:05,393 - client - INFO - jamResponse: "jammed"
+
+2018-04-09 22:53:05,394 - main_server - INFO - Node: 8 is accepting ShiftClusterRequest from clusterheadId: 1 regarding node: 11
+2018-04-09 22:53:05,394 - client - INFO - Node:8 is sending shift Accept to Node ip: localhost:50051
+2018-04-09 22:53:05,395 - main_server - INFO - Node: 1 - Accept Request recieved from clusterhead:8 
+2018-04-09 22:53:05,399 - main_server - INFO - Parent: 5 got RemoveChildIdFromParent rpc from Node:11
+2018-04-09 22:53:05,399 - main_server - INFO - Parent: 5 has below children before removal
+2018-04-09 22:53:05,399 - main_server - INFO - ['11']
+2018-04-09 22:53:05,399 - main_server - INFO - Parent: 5 has below children after removal
+2018-04-09 22:53:05,399 - main_server - INFO - []
+2018-04-09 22:53:05,400 - client - INFO - Node: 11 sent removeChildIdFromParent to (old) parent ip: localhost:50055
+2018-04-09 22:53:05,400 - client - INFO - removeChildIdFromParentResponse: "Removed"
+
+2018-04-09 22:53:05,404 - client - INFO - Node: 5 sent updateSize request to existing parent ip: localhost:50051
+2018-04-09 22:53:05,404 - client - INFO - updateSizeResponse: "updated size"
+
+2018-04-09 22:53:05,405 - client - INFO - Node: 11 sent updateSize request to existing parent ip: localhost:50055
+2018-04-09 22:53:05,405 - client - INFO - updateSizeResponse: "updated size"
+

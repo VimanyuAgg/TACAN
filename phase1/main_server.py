@@ -271,6 +271,8 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   # Also inform parents about size addition
   def JoinNewParent(self,request,context):
     if self.node.state == "sleep":
+      if self.node.childListId == None:
+          self.node.childListId = []
       self.node.childListId.append(request.nodeId)
       sizeIncrement = request.childSize
       self.node.size += request.childSize
