@@ -249,8 +249,9 @@ def sendWakeUp(ipList,nodeId):
 	for cip in ipList:
 		channel = grpc.insecure_channel(cip)
 		stub = phase1_pb2_grpc.MainServiceStub(channel)
+		logger.info("Node: %s sending wakeup to child ip: %s"%(nodeId,cip))
 		clusterRPC = stub.WakeUp(phase1_pb2.wakeUpRequest(wakeywakey=str(nodeId)))
-		logger.info("Node: %s sent wakeup to child ip: %s" % (nodeId,cip))
+		logger.info("Node: %s sucessfully sent wakeup to child ip: %s" % (nodeId,cip))
 		logger.info(clusterRPC)
 
 def sendHello(nodeId,i,neighbourIp,nodeClusterheadId,nodeHopcount,nodeState):

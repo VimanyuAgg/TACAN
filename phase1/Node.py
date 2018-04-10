@@ -139,8 +139,13 @@ class Node:
 		client.propagateJamToChildren(childIPs,jamId,self.id)
 
 	def propagateWakeUp(self):
-		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
-		client.propagateWakeUp(childIPs, self.id)
+		if self.childListId != None and len(self.childListId) != 0:
+			logger.info("Node: %s propagating wakeup to children."%(self.id))
+			childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
+			client.propagateWakeUp(childIPs, self.id)
+		else:
+			logger.info("Node: %s no children found! Stopping wakeup propagation."%(self.id))
+			return
 
 	def updateInternalVariablesAndSendJoin(self,bestNodeId,bestNodeClusterHeadId,newHopCount):
 		logger.info("Node: %s Updating parent,clusterhead and hopcount"%(self.id))
@@ -247,13 +252,14 @@ class Node:
 
 	def sendWakeup(self):
 		childIpList=[]
-		#send jam signal to children
+		#send wakeup signal to children
 		if(self.childListId!= None and len(self.childListId)!=0):
 			for childId in self.childListId:
 				childIpList.append(self.getIPfromId(childId))
 			# call client
 			client.sendWakeUp(childIpList, self.id)
 		else:
+			logger.info("Node: %s No children found to wakeup. Returning"%(self.id))
 			return
 
 
