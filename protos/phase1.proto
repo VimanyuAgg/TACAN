@@ -116,7 +116,7 @@ message HelloResponse{
 }
 
 message JamRequest{
-    int32 nodeId = 1;
+    string nodeId = 1;
 
 }
 

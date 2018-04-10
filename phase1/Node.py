@@ -61,6 +61,7 @@ class Node:
 		self.size = self.weight
 		self.childRequestCounter = 0
 		self.initialNodeChildLength = 0
+		self.neighbourHelloArray = set()
 		if self.childListId != None and len(self.childListId) != 0:
 			self.initialNodeChildLength = len(self.childListId)
 
@@ -106,6 +107,10 @@ class Node:
 		if (self.parentId != None):
 			client.phaseOneClusterStart(self,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
 		else:
+			logger.info("Node: %s setting myself as clusterhead as no parent found!"%(self.id))
+			self.isClusterhead = 1
+			self.clusterheadId = str(self.id)
+			self.state = "free"
 			client.sendCluster(self)
 
 	def propogateClusterheadInfo(self,clusterName,hopCount):
@@ -116,10 +121,13 @@ class Node:
 
 	def sendShiftNodeRequest(self, bestNodeClusterHeadId):
 		if self.isClusterhead != 1:
+
 			client.sendShiftNodeRequest(self,bestNodeClusterHeadId,raspberryPi_id_list.ID_IP_MAPPING[self.clusterheadId])
 
 	def propagateJamToChildren(self,jamId):
+		logger.info("Node: %s in Node.py adding childIps for propagating jam signal"%(self.id))
 		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
+		logger.info(childIPs)
 		client.propagateJamToChildren(childIPs,jamId,self.id)
 
 	def propagateWakeUp(self):
@@ -149,6 +157,11 @@ class Node:
 												   raspberryPi_id_list.ID_IP_MAPPING[newClusterheadId],self.id)
 
 	def startPhase2Clustering(self):
+		logger.info("Node: %s is starting phase 2 clustering"%(self.id))
+		if self.isClusterhead == 1:
+			logger.info("Node: %s is clusterhead. Not taking any action"%(self.id))
+			return
+
 		rackIdRow = self.rackLocation.split(",")[0]
 		rackIdCol = self.rackLocation.split(",")[1]
 
@@ -161,12 +174,13 @@ class Node:
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) - 1))
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)+1, int(rackIdCol) - 1))
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) + 1))
-		HARDCODEDNEIGHBOURS_ID  = ['0','1','2','3','5','6','7','8']
+		HARDCODEDNEIGHBOURS_ID  = ['C0','C1','2','3','5','6','C7','C8']
 		for i in HARDCODEDNEIGHBOURS_ID:
-			print "***********************"
-			print raspberryPi_id_list.ID_IP_MAPPING
-			logger.info("***********************")
-			logger.info(raspberryPi_id_list.ID_IP_MAPPING[i])
+			if i== self.id:
+				continue
+			if i.find("C") != -1:
+				self.neighbourHelloArray.add(i)
+				continue
 			resp = client.sendHello(self.id,i,raspberryPi_id_list.ID_IP_MAPPING[i],self.clusterheadId,self.hopcount,self.state)
 			logger.info("Node :%s got reply %s from Node: %s after sendHello"%(self.id,resp,i,))
 
@@ -193,6 +207,8 @@ class Node:
 			for childId in self.childListId:
 				childIpList.append(self.getIPfromId(childId))
 			# call client
+			logger.info("Node: %s childIpList is below"%(self.id))
+			logger.info(childIpList)
 			client.sendJamSignal(childIpList, self.clusterheadId)
 		else:
 			return
@@ -200,16 +216,17 @@ class Node:
 
 	def sendShiftClusterRequest(self):
 		'''calculate ip for the Cj cluster'''
-		shiftNodeClusterIp = self.getIPfromId(self.shiftNodeCluster[1:])
+		logger.info("ClusterheadID: %s sending ShiftClusterRequest to clusterheadId: %s"%(self.id,self.shiftNodeCluster))
+		shiftNodeClusterIp = self.getIPfromId(self.shiftNodeCluster)
 		client.sendShiftClusterRequest(self.clusterheadId,self.shiftNodeId,self.shiftNodeSum,shiftNodeClusterIp)
 
 	def accept(self,senderClusterHeadId):
 		'''send shift accept'''
-		senderClusterHeadIp = self.getIPfromId(senderClusterHeadId[1:])
+		senderClusterHeadIp = self.getIPfromId(senderClusterHeadId)
 		client.sendAccept(self.id,senderClusterHeadIp)
 
 	def reject(self,senderClusterHeadId):
-		senderClusterHeadIp = self.getIPfromId(senderClusterHeadId[1:])
+		senderClusterHeadIp = self.getIPfromId(senderClusterHeadId)
 		client.sendReject(self.id,senderClusterHeadIp)
 
 	def sendShiftStart(self):
