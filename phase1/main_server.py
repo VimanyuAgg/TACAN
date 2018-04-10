@@ -308,7 +308,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
   def Accept(self,request,context):
       if self.node.state == "busy":
-        logger.info("Accept Request recieved from clusterhead " % (request.clusterHeadId))
+        logger.info("Node: %s - Accept Request recieved from clusterhead:%s " % (self.node.id,request.clusterHeadId))
       # send shift start to the i node if energy matric reduces
       #   if energyvalue < currentValue:
         if True:

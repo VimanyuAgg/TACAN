@@ -160,8 +160,9 @@ def sendShiftClusterRequest(clusterheadId,shiftNodeId,shiftNodeSum,shiftNodeClus
 def sendAccept(clusterHeadId,senderClusterHeadIp):
 	channel = grpc.insecure_channel(senderClusterHeadIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
+	logger.info("Node:%s is sending shift Accept to Node ip: %s" % (clusterHeadId, senderClusterHeadIp))
 	clusterRPC = stub.Accept(phase1_pb2.AcceptRequest(clusterHeadId=clusterHeadId))
-	logger.info("Node sent shift Accept to Node ip: %s" % (senderClusterHeadIp))
+	logger.info("Node:%s successfully sent shift Accept to Node ip: %s" % (clusterHeadId, senderClusterHeadIp))
 	logger.info(clusterRPC)
 
 def sendReject(clusterHeadId,senderClusterHeadIp):
