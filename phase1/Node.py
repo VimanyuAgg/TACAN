@@ -65,6 +65,7 @@ class Node:
 		self.bestNodeHopCount = self.hopcount
 		self.bestNodeClusterHeadId = self.clusterheadId
 
+
 		self.neighbourHelloArray = set()
 		if self.childListId != None and len(self.childListId) != 0:
 			self.initialNodeChildLength = len(self.childListId)
@@ -173,9 +174,9 @@ class Node:
 	def startPhase2Clustering(self):
 		self.bestNodeHopCount = self.hopcount
 		logger.info("Node: %s is starting phase 2 clustering"%(self.id))
-		if self.isClusterhead == 1:
-			logger.info("Node: %s is clusterhead. Not taking any action"%(self.id))
-			return
+		# if self.isClusterhead == 1:
+		# 	logger.info("Node: %s is clusterhead. Not taking any action"%(self.id))
+		# 	return
 
 		rackIdRow = self.rackLocation.split(",")[0]
 		rackIdCol = self.rackLocation.split(",")[1]
@@ -189,13 +190,13 @@ class Node:
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) - 1))
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)+1, int(rackIdCol) - 1))
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) + 1))
-		HARDCODEDNEIGHBOURS_ID  = ['C0','C1','2','3','5','6','C7','C8','9','10','11']
+		HARDCODEDNEIGHBOURS_ID  = ['0','1','2','3','5','6','7','8','9','10','11']
 		for i in HARDCODEDNEIGHBOURS_ID:
 			if i== self.id:
 				continue
-			if i.find("C") != -1:
-				self.neighbourHelloArray.add(i)
-				continue
+			# if i.find("C") != -1:
+			# 	self.neighbourHelloArray.add(i)
+			# 	continue
 			resp = client.sendHello(self.id,i,raspberryPi_id_list.ID_IP_MAPPING[i],self.clusterheadId,self.hopcount,self.state)
 			logger.info("Node :%s got reply %s from Node: %s after sendHello"%(self.id,resp,i,))
 
