@@ -131,8 +131,10 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.clusterheadId= clusterName
       self.node.state = "active"
       self.node.hopcount= hopCount
+      self.node.bestNodeHopCount = hopCount
       print("Server Node: "+str(self.node.id)+" is now joining Clusterleader "+str(clusterName))
       logger.info("Server Node: "+str(self.node.id)+" is now joining Clusterleader "+str(clusterName))
+      logger.info("Server Node: "+str(self.node.id)+" has hopCount = %s"%(self.node.hopcount))
       if(self.node.childListId != None):
           logger.info("Server Node:%s has children. Starting ClusterheadId Propagation"%(self.node.id))
           thread3 = threading.Thread(target=self.node.propogateClusterheadInfo,args=(clusterName, hopCount))
@@ -184,20 +186,24 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.neighbourHelloArray.add(request.senderId)
       logger.info("Node %s printing neighbourHelloArray"%(self.node.id))
       logger.info(self.node.neighbourHelloArray)
+      if (request.senderId == request.senderClusterheadId):
+          logger.info("Got hello from Clusterhead. Adding it to neighbourArray. Returning -1")
+          return phase1_pb2.HelloResponse(interested=-1)
       logger.info("Node: %s has hopCount=%d with bestHopCount: %d and senderId: %s has hopCount %d"%(self.node.id,\
                                                                                                     self.node.hopcount,\
                                                                                                     self.node.bestNodeHopCount,\
                                                                                                     request.senderId,request.hopToSenderClusterhead))
-      if (self.node.clusterheadId != request.senderClusterheadId and self.node.bestNodeHopCount > request.hopToSenderClusterhead):
+      if (self.node.clusterheadId != request.senderClusterheadId and self.node.bestNodeHopCount > request.hopToSenderClusterhead+1):
         logger.info("Node: %s updating bestNode as senderId: %s looks relevant choice as new parent"%(self.node.id,request.senderId))
         self.node.bestNodeId = request.senderId
-        self.node.bestNodeHopCount = request.hopToSenderClusterhead
+        self.node.bestNodeHopCount = request.hopToSenderClusterhead + 1
         self.node.bestNodeClusterHeadId = request.senderClusterheadId
 
 
         if (len(self.node.neighbourHelloArray) == 8 and self.node.bestNodeId != self.node.id):
             ## May need to add self.bestNodeHopCount in the sendShiftRPC to update self.node.hopcount if request is accepted
             logger.info("Node: %s got all helloes from neighbours. Sending shift node request to would be ex-clusterheadId:%s"%(self.node.id,self.node.clusterheadId))
+            logger.info("Node: %s state variables: bestNodeId: {},bestNodeClusterHeadId:{},current clusterheadId: {},current parent: {}".format(self.node.bestNodeId,self.node.bestNodeClusterHeadId, self.node.clusterheadId,self.node.parentId))
 
             self.node.sendShiftNodeRequest(self.node.bestNodeClusterHeadId)
         logger.info("Node: %s sending interested response for senderId: %s"%(self.node.id,request.senderId))
@@ -207,7 +213,10 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         ## May need to add self.bestNodeHopCount in the sendShiftRPC to update self.node.hopcount if request is accepted
         logger.info(
             "Node: %s got all helloes from neighbours. Sending shift node request to would be ex-clusterheadId:%s" % (
-            self.node.id, self.node.bestNodeClusterHeadId))
+            self.node.id, self.node.clusterheadId))
+        logger.info(
+            "Node: %s state variables: bestNodeId: {},bestNodeClusterHeadId:{},current clusterheadId: {},current parent: {}".format(
+                self.node.bestNodeId, self.node.bestNodeClusterHeadId, self.node.clusterheadId, self.node.parentId))
         self.node.sendShiftNodeRequest(self.node.bestNodeClusterHeadId)
 
         # send interested -1
