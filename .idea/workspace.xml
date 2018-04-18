@@ -14,11 +14,21 @@
       <file leaf-file-name="Node.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phase1/Node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="49" column="21" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="21" />
+            <state relative-caret-position="246">
+              <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018-04-17-info.log" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-17-info.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1237">
+              <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -37,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/phase1/spanning_tree.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1545">
-              <caret line="103" column="34" lean-forward="true" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="34" />
+              <caret line="103" column="34" lean-forward="false" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -46,8 +56,8 @@
       <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phase1/client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-709">
-              <caret line="138" column="51" lean-forward="false" selection-start-line="138" selection-start-column="46" selection-end-line="138" selection-end-column="51" />
+            <state relative-caret-position="210">
+              <caret line="236" column="40" lean-forward="false" selection-start-line="236" selection-start-column="40" selection-end-line="236" selection-end-column="40" />
               <folding>
                 <element signature="e#2#39#0" expanded="true" />
               </folding>
@@ -58,8 +68,8 @@
       <file leaf-file-name="main_server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phase1/main_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="211" column="92" lean-forward="true" selection-start-line="211" selection-start-column="92" selection-end-line="211" selection-end-column="92" />
+            <state relative-caret-position="243">
+              <caret line="367" column="38" lean-forward="true" selection-start-line="367" selection-start-column="38" selection-end-line="367" selection-end-column="38" />
               <folding>
                 <element signature="e#1#31#0" expanded="true" />
               </folding>
@@ -67,11 +77,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-04-16-info.log" pinned="false" current-in-tab="true">
+      <file leaf-file-name="phase1.proto" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protos/phase1.proto">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="137" column="17" lean-forward="false" selection-start-line="137" selection-start-column="11" selection-end-line="137" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018-04-16-info.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-16-info.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="1031" column="70" lean-forward="false" selection-start-line="1031" selection-start-column="55" selection-end-line="1031" selection-end-column="70" />
+            <state relative-caret-position="153">
+              <caret line="239" column="90" lean-forward="false" selection-start-line="239" selection-start-column="69" selection-end-line="239" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -88,12 +108,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>informParentAboutNewSize</find>
-      <find>updateInternalVariablesAndSendJoin</find>
-      <find>propagate</find>
-      <find>sent join request to new parent ip</find>
-      <find>JoinNewParent</find>
-      <find>joinNewParent</find>
       <find>sendShiftCompleteToBothClusterHeads</find>
       <find>ShiftComplete</find>
       <find>sendWakeup</find>
@@ -118,6 +132,12 @@
       <find>sendShiftNodeRequest</find>
       <find>self.node.hopcount=</find>
       <find>got all helloes</find>
+      <find>jam to child ip</find>
+      <find>got the reply:</find>
+      <find>Initializing</find>
+      <find>joining Clusterleader</find>
+      <find>size</find>
+      <find>sendShiftStart</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,11 +171,11 @@
         <option value="$PROJECT_DIR$/phase1/spanning_tree.py" />
         <option value="$PROJECT_DIR$/phase1/killScript.sh" />
         <option value="$PROJECT_DIR$/protos/phase1.proto" />
-        <option value="$PROJECT_DIR$/phase1/client.py" />
         <option value="$PROJECT_DIR$/phase1/logs/2018-04-09-info.log" />
         <option value="$PROJECT_DIR$/phase1/logs/2018-04-16-info.log" />
-        <option value="$PROJECT_DIR$/phase1/Node.py" />
+        <option value="$PROJECT_DIR$/phase1/client.py" />
         <option value="$PROJECT_DIR$/phase1/main_server.py" />
+        <option value="$PROJECT_DIR$/phase1/Node.py" />
       </list>
     </option>
   </component>
@@ -233,6 +253,11 @@
               <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="phase1" type="462c0819:PsiDirectoryNode" />
               <item name="rpilogs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="protos" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -442,7 +467,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32896462" sideWeight="0.49709725" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22714078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23004355" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -494,13 +519,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-01-info.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6480">
-          <caret line="432" column="0" lean-forward="false" selection-start-line="432" selection-start-column="0" selection-end-line="432" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/greeter_server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -768,43 +786,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protos/phase1.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-16-debug-1.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="323" column="57" lean-forward="true" selection-start-line="323" selection-start-column="57" selection-end-line="323" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-16-debug-1.log" />
     <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-09-info.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="4318" column="73" lean-forward="true" selection-start-line="4318" selection-start-column="73" selection-end-line="4318" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-16-info-1.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-16-info-1.log" />
     <entry file="file://$PROJECT_DIR$/phase1/rpilogs/2018-04-16-info.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="103" column="96" lean-forward="false" selection-start-line="102" selection-start-column="66" selection-end-line="103" selection-end-column="96" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -812,14 +806,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phase1/spanning_tree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1545">
-          <caret line="103" column="34" lean-forward="true" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="34" />
+          <caret line="103" column="34" lean-forward="false" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -834,38 +827,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phase1/client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-709">
-          <caret line="138" column="51" lean-forward="false" selection-start-line="138" selection-start-column="46" selection-end-line="138" selection-end-column="51" />
+        <state relative-caret-position="210">
+          <caret line="236" column="40" lean-forward="false" selection-start-line="236" selection-start-column="40" selection-end-line="236" selection-end-column="40" />
           <folding>
             <element signature="e#2#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phase1/Node.py">
+    <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-16-info.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="49" column="21" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="239" column="90" lean-forward="false" selection-start-line="239" selection-start-column="69" selection-end-line="239" selection-end-column="90" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phase1/main_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="211" column="92" lean-forward="true" selection-start-line="211" selection-start-column="92" selection-end-line="211" selection-end-column="92" />
+        <state relative-caret-position="243">
+          <caret line="367" column="38" lean-forward="true" selection-start-line="367" selection-start-column="38" selection-end-line="367" selection-end-column="38" />
           <folding>
             <element signature="e#1#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-16-info.log">
+    <entry file="file://$PROJECT_DIR$/protos/phase1.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="1031" column="70" lean-forward="false" selection-start-line="1031" selection-start-column="55" selection-end-line="1031" selection-end-column="70" />
+        <state relative-caret-position="183">
+          <caret line="137" column="17" lean-forward="false" selection-start-line="137" selection-start-column="11" selection-end-line="137" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phase1/Node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phase1/logs/2018-04-17-info.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1237">
+          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding />
         </state>
       </provider>
