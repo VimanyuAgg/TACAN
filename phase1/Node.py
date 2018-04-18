@@ -40,13 +40,14 @@ class Node:
 	Node class representing each node in the network
 	'''
 	def __init__(self,myId):
-		logger.info("Initializing Node: "+str(myId))
+		logger.info("#######################")
+		logger.info("Node: %s - Initializing"%(str(myId)))
+		logger.info("#######################")
 		self.id = str(myId)
 		#self.parentId = parentId
 		#self.childListId = childListId
 		my_info = SPANNING_INFO[myId]
 		self.ipAddress= raspberryPi_id_list.ID_IP_MAPPING[myId]
-		print self.ipAddress
 		self.parentId = my_info['parentId']
 		self.childListId = my_info['childListId']
 		self.dist = my_info['dist']
@@ -55,8 +56,6 @@ class Node:
 		self.rackLocation = my_info['rackLocation']
 		self.subtreeList = my_info['subtreeList']
 		self.neighbourList = my_info['neighbourList']
-		print "Calling weightMatrix for id: "+str(self.id)
-		logger.info("Calling weightMatrix for id: "+str(self.id))
 		self.weight = weightMatrix.getWeight(self.id)
 		self.size = self.weight
 		self.childRequestCounter = 0
@@ -78,12 +77,11 @@ class Node:
 		# self.childWeight = self.getChildWeight()
 		self.isClusterhead = my_info['isClusterhead']
 		self.state = my_info['state']
-		logger.info("Calling phaseOneClustering")
+		logger.info("Node: %s - Calling phaseOneClustering"%(myId))
 		self.startPhaseOneClustering()
-		logger.info("Starting Server on Node: "+str(myId))
+		logger.info("Node: %s - Starting Server"%(str(myId)))
 		# thread.start_new_thread(main_server.serve,(self,))
 		main_server.serve(self)
-		logger.info("Server successfully started on node: "+str(myId))
 
 
 
@@ -96,14 +94,14 @@ class Node:
 
 	# As a leaf node, send size to parent
 	def startPhaseOneClustering(self):
-		logger.info("Starting Phase One Clustering on Node: " + str(self.id))
+		logger.info("Node: %s - Starting Phase One Clustering" + str(self.id))
 		if (self.childListId== None or len(self.childListId) == 0):
-			logger.info("Calling phaseOneClusterStart on client.py from Node.py with parentId: %s"%(self.parentId))
+			logger.info("Node: %s - Calling phaseOneClusterStart with parentId: %s"%(self.id,self.parentId))
 			client.phaseOneClusterStart(self,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
-			print "Node: %s sent size() message to parent: %s" % (self.id, self.parentId)
-			logger.info("Node: %s sent size() message to parent: %s" % (self.id, self.parentId))
+			print "Node: %s - Sent size() message to parent: %s" % (self.id, self.parentId)
+			logger.info("Node: %s - Sent size() message to parent: %s" % (self.id, self.parentId))
 		else:
-			logger.info("I am a parent not leaf: Node: %s"%(self.id))
+			logger.info("Node: %s - I am a parent not leaf"%(self.id))
 
 
 	# As a parent, send size to YOUR parent
@@ -112,7 +110,7 @@ class Node:
 		if (self.parentId != None):
 			client.phaseOneClusterStart(self,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
 		else:
-			logger.info("Node: %s setting myself as clusterhead as no parent found!"%(self.id))
+			logger.info("Node: %s - Setting myself as clusterhead as no parent found!"%(self.id))
 			self.isClusterhead = 1
 			self.clusterheadId = str(self.id)
 			self.state = "free"
@@ -122,7 +120,7 @@ class Node:
 		if (self.childListId != None and len(self.childListId) != 0):
 			client.propogateClusterheadInfo(self,clusterName,hopCount+1)
 		else:
-			logger.info("I don't have any children : Node: %s"%(self.id))
+			logger.info("Node: %s - I don't have any children"%(self.id))
 
 	def sendShiftNodeRequest(self, bestNodeClusterHeadId):
 		if self.isClusterhead != 1:
@@ -130,9 +128,9 @@ class Node:
 			client.sendShiftNodeRequest(self,bestNodeClusterHeadId,raspberryPi_id_list.ID_IP_MAPPING[self.clusterheadId])
 
 	def propagateJamToChildren(self,jamId):
-		logger.info("Node: %s in Node.py adding childIps for propagating jam signal"%(self.id))
+		logger.info("Node: %s - Adding childIps for propagating jam signal"%(self.id))
 		if self.childListId == None or len(self.childListId) == 0:
-			logger.info("Node: %s is leaf node. NOT propagating Jam signal anymore"%(self.id))
+			logger.info("Node: %s - Leaf node. NOT propagating Jam signal anymore"%(self.id))
 			return
 
 		childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
@@ -141,15 +139,18 @@ class Node:
 
 	def propagateWakeUp(self):
 		if self.childListId != None and len(self.childListId) != 0:
-			logger.info("Node: %s propagating wakeup to children."%(self.id))
+			logger.info("Node: %s - Propagating wakeup to children."%(self.id))
 			childIPs = [raspberryPi_id_list.ID_IP_MAPPING[childId] for childId in self.childListId]
 			client.propagateWakeUp(childIPs, self.id)
 		else:
-			logger.info("Node: %s no children found! Stopping wakeup propagation."%(self.id))
+			logger.info("Node: %s - No children found! Stopping wakeup propagation."%(self.id))
 			return
 
 	def updateInternalVariablesAndSendJoin(self,bestNodeId,bestNodeClusterHeadId,newHopCount):
-		logger.info("Node: %s Updating parent,clusterhead and hopcount"%(self.id))
+		logger.info("Node: {} - Updating parent,clusterhead and hopcount from {},{},{}, to {},{},{}".format(self.id,self.parentId,\
+																											self.clusterheadId,self.hopcount,\
+																											self.bestNodeId,bestNodeClusterHeadId,\
+																											self.hopcount))
 		self.parentId = bestNodeId
 		self.clusterheadId = bestNodeClusterHeadId
 		self.hopcount = newHopCount
@@ -173,7 +174,7 @@ class Node:
 
 	def startPhase2Clustering(self):
 		self.bestNodeHopCount = self.hopcount
-		logger.info("Node: %s is starting phase 2 clustering"%(self.id))
+		logger.info("Node: %s - Starting phase 2 clustering"%(self.id))
 		# if self.isClusterhead == 1:
 		# 	logger.info("Node: %s is clusterhead. Not taking any action"%(self.id))
 		# 	return
@@ -223,8 +224,7 @@ class Node:
 			for childId in self.childListId:
 				childIpList.append(self.getIPfromId(childId))
 			# call client
-			logger.info("Node: %s childIpList is below"%(self.id))
-			logger.info(childIpList)
+			logger.info("Node: {} - ChildIpList is {}".format(self.id,childIpList))
 			client.sendJamSignal(childIpList, self.clusterheadId)
 		else:
 			return
@@ -232,7 +232,7 @@ class Node:
 
 	def sendShiftClusterRequest(self):
 		'''calculate ip for the Cj cluster'''
-		logger.info("ClusterheadID: %s sending ShiftClusterRequest to clusterheadId: %s"%(self.id,self.shiftNodeCluster))
+		logger.info("Node: %s - Clusterhead sending ShiftClusterRequest to clusterheadId: %s"%(self.id,self.shiftNodeCluster))
 		shiftNodeClusterIp = self.getIPfromId(self.shiftNodeCluster)
 		client.sendShiftClusterRequest(self.clusterheadId,self.shiftNodeId,self.shiftNodeSum,shiftNodeClusterIp)
 
@@ -246,7 +246,7 @@ class Node:
 		client.sendReject(self.id,senderClusterHeadIp)
 
 	def sendShiftStart(self):
-		client.sendShiftStart(self.shiftNodeId,self.getIPfromId(self.shiftNodeId))
+		client.sendShiftStart(self.id,self.shiftNodeId,self.getIPfromId(self.shiftNodeId))
 
 	def sendShiftFinished(self):
 		client.sendShiftFinished(self.id,self.getIPfromId(self.shiftNodeCluster))
@@ -260,7 +260,7 @@ class Node:
 			# call client
 			client.sendWakeUp(childIpList, self.id)
 		else:
-			logger.info("Node: %s No children found to wakeup. Returning"%(self.id))
+			logger.info("Node: %s - No children found to wakeup. Returning"%(self.id))
 			return
 
 
