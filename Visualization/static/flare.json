@@ -5,17 +5,23 @@
         "children":[
             {
                 "name":"Node 3",
-                "children":[]
+                "children":[],
+                "size":42
+
+
             },{
                 "name":"Node 5",
                 "children":[{
 
                 "name":"Node 11",
-                "children":[]
-                }]
+                "children":[],
+                "size":32
+                }],
+                "size":26
             }
 
-        ]
+        ],
+    "size":47
     },{
         "name":"Node 2",
         "children":[{
@@ -24,8 +30,11 @@
                 "children":[{
 
                 "name":"Node 9",
-                "children":[]
+                "children":[],
+                "size":27
                 }]
+                ,
+                "size":42
         },{
           
                 "name":"Node 7",
@@ -36,10 +45,15 @@
                 "children":[{
 
                 "name":"Node 10",
-                "children":[]
-                }]
-                }]
-        }]
+                "children":[],
+                "size":22
+                }],
+                "size":66
+                }],
+                "size":43
+        }],
+        "size":37
 
-    }]
+    }],
+    "size":34
 }
