@@ -43,7 +43,7 @@ for line in lines:
     # print ('parent', parent)
     node_id = int(node_id)
     tree.add_node(node=node_id,parent=parent)
-    # pp.pprint(tree.data)
+    pp.pprint(tree.data)
 
   elif last_part == 'Got Prune':
     print line
