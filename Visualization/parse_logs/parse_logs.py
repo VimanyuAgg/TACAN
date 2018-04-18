@@ -15,6 +15,7 @@ from spanning_tree import SPANNING_INFO
 # print spanning_tree.SPANNING_INFO
 
 from Tree import Tree
+from Draw import draw
 import pprint
 
 pp= pprint.PrettyPrinter()
@@ -42,8 +43,17 @@ for line in lines:
       parent = int(parent)
     # print ('parent', parent)
     node_id = int(node_id)
-    tree.add_node(node=node_id,parent=parent)
-    pp.pprint(tree.data)
+    tree.add_node(node=node_id, parent=parent)
+    draw(tree.data)
+    # pp.pprint(tree.data)
+    # print "\n"
 
   elif last_part == 'Got Prune':
     print line
+    node_id = line.split('-')[-2].split(':')[-1].strip()
+    # prune tree
+    tree.prune(node_id)
+    # pp.pprint(tree.data)
+    draw(tree.data)
+    # print "\n"
+
