@@ -94,7 +94,7 @@ class Node:
 
 	# As a leaf node, send size to parent
 	def startPhaseOneClustering(self):
-		logger.info("Node: %s - Starting Phase One Clustering" + str(self.id))
+		logger.info("Node: %s - Starting Phase One Clustering"%(str(self.id)))
 		if (self.childListId== None or len(self.childListId) == 0):
 			logger.info("Node: %s - Calling phaseOneClusterStart with parentId: %s"%(self.id,self.parentId))
 			client.phaseOneClusterStart(self,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
