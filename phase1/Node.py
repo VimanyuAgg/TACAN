@@ -82,6 +82,7 @@ class Node:
 		self.isClusterhead = my_info['isClusterhead']
 		self.state = my_info['state']
 		logger.info("Node: %s - Calling phaseOneClustering"%(myId))
+
 		self.startPhaseOneClustering()
 		logger.info("Node: %s - Starting Server"%(str(myId)))
 		# thread.start_new_thread(main_server.serve,(self,))
@@ -118,6 +119,10 @@ class Node:
 			self.isClusterhead = 1
 			self.clusterheadId = str(self.id)
 			self.state = "free"
+			try:
+				db.spanningtree.update_one({'_id':ObjectId("")},{'$set':{'isClusterhead':self.isClusterhead,'clusterheadId':self.clusterheadId,'state':self.state}},upsert=False)
+			except Exception as e:
+				logger.error("Some Error occurred in sendSizeToParent()")
 			client.sendCluster(self)
 
 	def propogateClusterheadInfo(self,clusterName,hopCount):
@@ -158,6 +163,12 @@ class Node:
 		self.parentId = bestNodeId
 		self.clusterheadId = bestNodeClusterHeadId
 		self.hopcount = newHopCount
+		try:
+			db.spanningtree.update_one({'_id': ObjectId("")}, {
+				'$set': {'parentId': self.parentId, 'clusterheadId': self.clusterheadId,
+						 'hopcount': self.hopcount}}, upsert=False)
+		except Exception as e:
+			logger.error("Some error occurred while updating db in updateInternalVariablesAndSendJoin()")
 		client.joinNewParent(self.id,self.size,raspberryPi_id_list.ID_IP_MAPPING[bestNodeId])
 
 	def propagateNewClusterHeadToChildren(self):
@@ -178,6 +189,11 @@ class Node:
 
 	def startPhase2Clustering(self):
 		self.bestNodeHopCount = self.hopcount
+		try:
+			db.spanningtree.update_one({"_id":ObjectId("")},{'$set':{'bestNodeHopCount':self.bestNodeHopCount}},upsert=False)
+		except Exception as e:
+			logger.error("Some error occurred while updating db in startPhase2Clustering()")
+			logger.error(e)
 		logger.info("Node: %s - Starting phase 2 clustering"%(self.id))
 		# if self.isClusterhead == 1:
 		# 	logger.info("Node: %s is clusterhead. Not taking any action"%(self.id))

@@ -15,6 +15,10 @@ import logging
 import os
 import logging.handlers
 
+import pymongo
+from pymongo import MongoClient
+
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
@@ -40,6 +44,8 @@ logger.addHandler(info_handler)
 logger.addHandler(error_handler)
 logger.addHandler(debug_handler)
 
+con = MongoClient("mongodb://localhost:27017/spanningtreemap")
+db = con.spanningtreemap
 
 class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
