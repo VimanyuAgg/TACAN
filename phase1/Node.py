@@ -3,6 +3,8 @@ from spanning_tree import SPANNING_INFO
 import raspberryPi_id_list
 import main_server
 import client
+import pymongo
+from pymongo import MongoClient
 
 import logging
 import os
@@ -35,6 +37,8 @@ logger.addHandler(info_handler)
 logger.addHandler(error_handler)
 logger.addHandler(debug_handler)
 
+con = MongoClient("mongodb://localhost:27017/spanningtreemap")
+db = con.spanningtreemap
 class Node:
 	'''
 	Node class representing each node in the network
@@ -263,7 +267,42 @@ class Node:
 			logger.info("Node: %s - No children found to wakeup. Returning"%(self.id))
 			return
 
+	def checkEnergy(self):
+		initialEnergy = 0
+		finalEnergy = 0
+		shiftNode = db.spanningtree.find_one({})[self.shiftNodeId]
+		shiftNodeInitialHopCount = shiftNode['hopcount']
+		bestNode = db.spanningtree.find_one({})[self.shiftNodeId][shiftNode['bestNodeId']]
+		shiftNodeFinalHopCount = db.spanningtree.find_one({})[bestNode['id']][bestNode['hopcount']] + 1
 
+		shiftNodeCluster = db.spanningtree.find_one({})[self.shiftNodeCluster]
+		childrenList1 = [i for i in self.childListId]
+		childrenList2 = [i for i in shiftNodeCluster['childListId']]
+		for childId in childrenList1:
+			node = db.spanningtree.find_one({})[childId]
+			weight = weightMatrix.matrix[childId][self.shiftNodeId]
+			hops = node['hopcount']
+			initialEnergy += weight*(hops+shiftNodeInitialHopCount)
+			finalEnergy += weight*(hops+shiftNodeFinalHopCount)
+			try:
+				for child in node['childListId']:
+					childrenList1.append(child)
+			except KeyError as e:
+				pass
+
+		for childIdOtherCluster in childrenList2:
+			node = db.spanningtree.find_one({})[childIdOtherCluster]
+			weight = weightMatrix.matrix[childIdOtherCluster][self.shiftNodeId]
+			hops = node['hopcount']
+			initialEnergy += weight * (hops + shiftNodeInitialHopCount)
+			finalEnergy += weight * (hops + shiftNodeFinalHopCount)
+			try:
+				for child in node['childListId']:
+					childrenList2.append(child)
+			except KeyError as e:
+				pass
+
+		return initialEnergy < finalEnergy
 
 
 #

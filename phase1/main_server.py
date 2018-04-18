@@ -317,7 +317,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         logger.info("Node: %s - Accept Request received from clusterhead: %s " % (self.node.id,request.clusterHeadId))
       # send shift start to the i node if energy matric reduces
       #   if energyvalue < currentValue:
-        if True:
+        if self.node.checkEnergy():
           self.node.sendShiftStart()
           return phase1_pb2.AcceptResponse(message= "Starting Shift Start")
         else:
