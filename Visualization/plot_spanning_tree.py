@@ -4,6 +4,14 @@ import plotly.graph_objs as go
 import igraph
 from igraph import *
 
+import pprint
+pp = pprint.PrettyPrinter()
+
+## inputs:
+"""
+nr_vertices
+
+"""
 
 ## Set Up Tree with igraph
 nr_vertices = 25
@@ -21,6 +29,8 @@ E = [e.tuple for e in G.es] # list of edges
 L = len(position)
 Xn = [position[k][0] for k in range(L)]
 Yn = [2*M-position[k][1] for k in range(L)]
+
+
 Xe = []
 Ye = []
 for edge in E:
@@ -28,6 +38,12 @@ for edge in E:
     Ye+=[2*M-position[edge[0]][1],2*M-position[edge[1]][1], None]
 
 labels = v_label
+
+# print pp.pprint(Xe)
+# print pp.pprint(Ye)
+for i in xrange(len(Xn)):
+  print (i, Xn[i], Yn[i])
+
 
 ## Create Plotly Traces
 lines = go.Scatter(x=Xe,
@@ -90,4 +106,4 @@ layout = dict(title= 'Tree with Reingold-Tilford Layout',
 data=go.Data([lines, dots])
 fig=dict(data=data, layout=layout)
 fig['layout'].update(annotations=make_annotations(position, v_label))
-print py.offline.iplot(fig, filename='Tree-Reingold-Tilf')
+# print py.iplot(fig, filename='Tree-Reingold-Tilf')
