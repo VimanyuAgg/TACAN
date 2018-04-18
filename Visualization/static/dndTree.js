@@ -1,54 +1,7 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style type="text/css">
-  
-	.node {
-    cursor: pointer;
-  }
+// Get JSON data
 
-  .overlay{
-      background-color:#EEE;
-  }
-   
-  .node circle {
-    fill: #fff;
-    stroke: steelblue;
-    stroke-width: 1.5px;
-  }
-   
-  .node text {
-    font-size:10px; 
-    font-family:sans-serif;
-  }
-   
-  .link {
-    fill: none;
-    stroke: #ccc;
-    stroke-width: 1.5px;
-  }
+treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}", function(error, treeData) {
 
-  .templink {
-    fill: none;
-    stroke: red;
-    stroke-width: 3px;
-  }
-
-  .ghostCircle.show{
-      display:block;
-  }
-
-  .ghostCircle, .activeDrag .ghostCircle{
-       display: none;
-  }
-
-</style>
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-
-<script type="text/javascript">
-var noCache = new Date().getTime();
-treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCache, function(error, treeData) {
-  if (error) throw error;
     // Calculate total nodes, max label length
     var totalNodes = 0;
     var maxLabelLength = 0;
@@ -568,10 +521,3 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
     update(root);
     centerNode(root);
 });
-
-
-
-</script><body>
-    <div id="tree-container"></div>
-</body>
-</html>
