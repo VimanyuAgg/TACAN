@@ -471,13 +471,14 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
             })
             .on('click', click);
 
+
         nodeEnter.append("circle")
             .attr('class', 'nodeCircle')
             .attr("r", 0)
             .style("fill", function(d) {
-                return d._children ? "lightsteelblue" : "#fff";
+                return d._children ? "red" : "blue";
             });
-
+          
         nodeEnter.append("text")
             .attr("x", function(d) {
                 return d.children || d._children ? -10 : 10;
@@ -522,7 +523,7 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
         node.select("circle.nodeCircle")
             .attr("r", 4.5)
             .style("fill", function(d) {
-                return d._children ? "lightsteelblue" : "#fff";
+                return d._children ? "red" : "blue";
             });
 
         // Transition nodes to their new position.
