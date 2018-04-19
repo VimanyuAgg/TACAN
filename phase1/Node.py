@@ -7,7 +7,7 @@ import pymongo
 from pymongo import MongoClient
 
 import logging
-import os
+import os, traceback
 import logging.handlers
 import datetime
 import thread
@@ -119,10 +119,10 @@ class Node:
 			self.isClusterhead = 1
 			self.clusterheadId = str(self.id)
 			self.state = "free"
-			try:
-				db.spanningtree.update_one({'_id':ObjectId("")},{'$set':{'isClusterhead':self.isClusterhead,'clusterheadId':self.clusterheadId,'state':self.state}},upsert=False)
-			except Exception as e:
-				logger.error("Some Error occurred in sendSizeToParent()")
+			# try:
+			# 	db.spanningtree.update_one({'_id':ObjectId("")},{'$set':{'isClusterhead':self.isClusterhead,'clusterheadId':self.clusterheadId,'state':self.state}},upsert=False)
+			# except Exception as e:
+			# 	logger.error("Some Error occurred in sendSizeToParent()")
 			client.sendCluster(self)
 
 	def propogateClusterheadInfo(self,clusterName,hopCount):
@@ -159,16 +159,16 @@ class Node:
 		logger.info("Node: {} - Updating parent,clusterhead and hopcount from {},{},{}, to {},{},{}".format(self.id,self.parentId,\
 																											self.clusterheadId,self.hopcount,\
 																											self.bestNodeId,bestNodeClusterHeadId,\
-																											self.hopcount))
+																											self.bestNodeHopCount))
 		self.parentId = bestNodeId
 		self.clusterheadId = bestNodeClusterHeadId
 		self.hopcount = newHopCount
-		try:
-			db.spanningtree.update_one({'_id': ObjectId("")}, {
-				'$set': {'parentId': self.parentId, 'clusterheadId': self.clusterheadId,
-						 'hopcount': self.hopcount}}, upsert=False)
-		except Exception as e:
-			logger.error("Some error occurred while updating db in updateInternalVariablesAndSendJoin()")
+		# try:
+		# 	db.spanningtree.update_one({'_id': ObjectId("")}, {
+		# 		'$set': {'parentId': self.parentId, 'clusterheadId': self.clusterheadId,
+		# 				 'hopcount': self.hopcount}}, upsert=False)
+		# except Exception as e:
+		# 	logger.error("Some error occurred while updating db in updateInternalVariablesAndSendJoin()")
 		client.joinNewParent(self.id,self.size,raspberryPi_id_list.ID_IP_MAPPING[bestNodeId])
 
 	def propagateNewClusterHeadToChildren(self):
@@ -189,11 +189,12 @@ class Node:
 
 	def startPhase2Clustering(self):
 		self.bestNodeHopCount = self.hopcount
-		try:
-			db.spanningtree.update_one({"_id":ObjectId("")},{'$set':{'bestNodeHopCount':self.bestNodeHopCount}},upsert=False)
-		except Exception as e:
-			logger.error("Some error occurred while updating db in startPhase2Clustering()")
-			logger.error(e)
+		logger.info("Node: %s - hopcount before Phase 2 clustering: %s"%(self.id,self.hopcount))
+		# try:
+		# 	db.spanningtree.update_one({"_id":ObjectId("")},{'$set':{'bestNodeHopCount':self.bestNodeHopCount}},upsert=False)
+		# except Exception as e:
+		# 	logger.error("Some error occurred while updating db in startPhase2Clustering()")
+		# 	logger.error(e)
 		logger.info("Node: %s - Starting phase 2 clustering"%(self.id))
 		# if self.isClusterhead == 1:
 		# 	logger.info("Node: %s is clusterhead. Not taking any action"%(self.id))
@@ -211,7 +212,7 @@ class Node:
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) - 1))
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)+1, int(rackIdCol) - 1))
 		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) + 1))
-		HARDCODEDNEIGHBOURS_ID  = ['0','1','2','3','5','6','7','8','9','10','11']
+		HARDCODEDNEIGHBOURS_ID  = ['0','1','2','3','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20']
 		for i in HARDCODEDNEIGHBOURS_ID:
 			if i== self.id:
 				continue
@@ -235,7 +236,13 @@ class Node:
 		pass
 
 	def getIPfromId(self,Id):
-		return raspberryPi_id_list.ID_IP_MAPPING[Id]
+		ip = ""
+		try:
+			ip = raspberryPi_id_list.ID_IP_MAPPING[str(Id)]
+		except Exception as e:
+			logger.error("Error occurred while finding IP of {}".format(Id))
+			logger.error(traceback.format_exc())
+		return ip
 
 	def sendJamSignal(self):
 		childIpList=[]
@@ -319,6 +326,10 @@ class Node:
 				pass
 
 		return initialEnergy < finalEnergy
+
+	def startCheckingEnergyDrain(self):
+		childList = [c for c in self.childListId]
+		hopCount = 0
 
 
 #

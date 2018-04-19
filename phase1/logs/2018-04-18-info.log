@@ -1,0 +1,1413 @@
+2018-04-18 19:27:12,575 - Node - INFO - #######################
+2018-04-18 19:27:12,576 - Node - INFO - Node: 0 - Initializing
+2018-04-18 19:27:12,576 - Node - INFO - #######################
+2018-04-18 19:27:12,576 - Node - INFO - Node: 0 - Calling phaseOneClustering
+2018-04-18 19:27:12,576 - Node - INFO - Node: 0 - Starting Phase One Clustering
+2018-04-18 19:27:12,576 - Node - INFO - Node: 0 - I am a parent not leaf
+2018-04-18 19:27:12,577 - Node - INFO - Node: 0 - Starting Server
+2018-04-18 19:27:12,577 - main_server - INFO - Node: 0 - Creating GRPC Server 
+2018-04-18 19:27:12,579 - main_server - INFO - Node 0 - Created GRPC Server
+2018-04-18 19:27:12,580 - main_server - INFO - Node: 0 - Inside Mainserver __init__
+2018-04-18 19:27:12,584 - main_server - INFO - Node 0 - Starting GRPC Server
+2018-04-18 19:27:12,584 - main_server - INFO - Node: 0 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:14,578 - Node - INFO - #######################
+2018-04-18 19:27:14,579 - Node - INFO - Node: 1 - Initializing
+2018-04-18 19:27:14,579 - Node - INFO - #######################
+2018-04-18 19:27:14,579 - Node - INFO - Node: 1 - Calling phaseOneClustering
+2018-04-18 19:27:14,579 - Node - INFO - Node: 1 - Starting Phase One Clustering
+2018-04-18 19:27:14,580 - Node - INFO - Node: 1 - I am a parent not leaf
+2018-04-18 19:27:14,580 - Node - INFO - Node: 1 - Starting Server
+2018-04-18 19:27:14,580 - main_server - INFO - Node: 1 - Creating GRPC Server 
+2018-04-18 19:27:14,580 - main_server - INFO - Node 1 - Created GRPC Server
+2018-04-18 19:27:14,580 - main_server - INFO - Node: 1 - Inside Mainserver __init__
+2018-04-18 19:27:14,584 - main_server - INFO - Node 1 - Starting GRPC Server
+2018-04-18 19:27:14,584 - main_server - INFO - Node: 1 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:16,584 - Node - INFO - #######################
+2018-04-18 19:27:16,585 - Node - INFO - Node: 2 - Initializing
+2018-04-18 19:27:16,585 - Node - INFO - #######################
+2018-04-18 19:27:16,585 - Node - INFO - Node: 2 - Calling phaseOneClustering
+2018-04-18 19:27:16,585 - Node - INFO - Node: 2 - Starting Phase One Clustering
+2018-04-18 19:27:16,585 - Node - INFO - Node: 2 - I am a parent not leaf
+2018-04-18 19:27:16,585 - Node - INFO - Node: 2 - Starting Server
+2018-04-18 19:27:16,586 - main_server - INFO - Node: 2 - Creating GRPC Server 
+2018-04-18 19:27:16,586 - main_server - INFO - Node 2 - Created GRPC Server
+2018-04-18 19:27:16,586 - main_server - INFO - Node: 2 - Inside Mainserver __init__
+2018-04-18 19:27:16,590 - main_server - INFO - Node 2 - Starting GRPC Server
+2018-04-18 19:27:16,590 - main_server - INFO - Node: 2 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:18,586 - Node - INFO - #######################
+2018-04-18 19:27:18,586 - Node - INFO - Node: 3 - Initializing
+2018-04-18 19:27:18,587 - Node - INFO - #######################
+2018-04-18 19:27:18,587 - Node - INFO - Node: 3 - Calling phaseOneClustering
+2018-04-18 19:27:18,588 - Node - INFO - Node: 3 - Starting Phase One Clustering
+2018-04-18 19:27:18,588 - Node - INFO - Node: 3 - Calling phaseOneClusterStart with parentId: 1
+2018-04-18 19:27:18,596 - client - INFO - Node: 3 - Starting sendSize
+2018-04-18 19:27:18,601 - main_server - INFO - Node: 1 - Current size: 47
+2018-04-18 19:27:18,602 - main_server - INFO - Node:1 - Child Node: 3 has size 42
+2018-04-18 19:27:18,602 - main_server - INFO - Node: 1 - Sending Accept to childId: 3 after checking if all children responded or not
+2018-04-18 19:27:18,602 - main_server - INFO - Node 1: - New size: 89
+2018-04-18 19:27:18,603 - main_server - INFO - Node: 1 Sending accept to childId: 3
+2018-04-18 19:27:18,604 - client - INFO - Node: 3 - Successfully sent the size message of size 42 to parentId: 1
+2018-04-18 19:27:18,604 - client - INFO - Node: 1 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:27:18,604 - client - INFO - Node: 3 - Didn't get Prune 
+2018-04-18 19:27:18,604 - Node - INFO - Node: 3 - Sent size() message to parent: 1
+2018-04-18 19:27:18,605 - Node - INFO - Node: 3 - Starting Server
+2018-04-18 19:27:18,605 - main_server - INFO - Node: 3 - Creating GRPC Server 
+2018-04-18 19:27:18,605 - main_server - INFO - Node 3 - Created GRPC Server
+2018-04-18 19:27:18,605 - main_server - INFO - Node: 3 - Inside Mainserver __init__
+2018-04-18 19:27:18,608 - main_server - INFO - Node 3 - Starting GRPC Server
+2018-04-18 19:27:18,608 - main_server - INFO - Node: 3 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:20,592 - Node - INFO - #######################
+2018-04-18 19:27:20,592 - Node - INFO - Node: 4 - Initializing
+2018-04-18 19:27:20,592 - Node - INFO - #######################
+2018-04-18 19:27:20,593 - Node - INFO - Node: 4 - Calling phaseOneClustering
+2018-04-18 19:27:20,593 - Node - INFO - Node: 4 - Starting Phase One Clustering
+2018-04-18 19:27:20,593 - Node - INFO - Node: 4 - I am a parent not leaf
+2018-04-18 19:27:20,593 - Node - INFO - Node: 4 - Starting Server
+2018-04-18 19:27:20,593 - main_server - INFO - Node: 4 - Creating GRPC Server 
+2018-04-18 19:27:20,594 - main_server - INFO - Node 4 - Created GRPC Server
+2018-04-18 19:27:20,594 - main_server - INFO - Node: 4 - Inside Mainserver __init__
+2018-04-18 19:27:20,599 - main_server - INFO - Node 4 - Starting GRPC Server
+2018-04-18 19:27:20,600 - main_server - INFO - Node: 4 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:22,597 - Node - INFO - #######################
+2018-04-18 19:27:22,597 - Node - INFO - Node: 5 - Initializing
+2018-04-18 19:27:22,597 - Node - INFO - #######################
+2018-04-18 19:27:22,598 - Node - INFO - Node: 5 - Calling phaseOneClustering
+2018-04-18 19:27:22,598 - Node - INFO - Node: 5 - Starting Phase One Clustering
+2018-04-18 19:27:22,598 - Node - INFO - Node: 5 - I am a parent not leaf
+2018-04-18 19:27:22,598 - Node - INFO - Node: 5 - Starting Server
+2018-04-18 19:27:22,598 - main_server - INFO - Node: 5 - Creating GRPC Server 
+2018-04-18 19:27:22,599 - main_server - INFO - Node 5 - Created GRPC Server
+2018-04-18 19:27:22,599 - main_server - INFO - Node: 5 - Inside Mainserver __init__
+2018-04-18 19:27:22,602 - main_server - INFO - Node 5 - Starting GRPC Server
+2018-04-18 19:27:22,603 - main_server - INFO - Node: 5 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:24,602 - Node - INFO - #######################
+2018-04-18 19:27:24,603 - Node - INFO - Node: 6 - Initializing
+2018-04-18 19:27:24,603 - Node - INFO - #######################
+2018-04-18 19:27:24,603 - Node - INFO - Node: 6 - Calling phaseOneClustering
+2018-04-18 19:27:24,603 - Node - INFO - Node: 6 - Starting Phase One Clustering
+2018-04-18 19:27:24,604 - Node - INFO - Node: 6 - I am a parent not leaf
+2018-04-18 19:27:24,604 - Node - INFO - Node: 6 - Starting Server
+2018-04-18 19:27:24,604 - main_server - INFO - Node: 6 - Creating GRPC Server 
+2018-04-18 19:27:24,604 - main_server - INFO - Node 6 - Created GRPC Server
+2018-04-18 19:27:24,604 - main_server - INFO - Node: 6 - Inside Mainserver __init__
+2018-04-18 19:27:24,608 - main_server - INFO - Node 6 - Starting GRPC Server
+2018-04-18 19:27:24,608 - main_server - INFO - Node: 6 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:26,608 - Node - INFO - #######################
+2018-04-18 19:27:26,608 - Node - INFO - Node: 7 - Initializing
+2018-04-18 19:27:26,608 - Node - INFO - #######################
+2018-04-18 19:27:26,608 - Node - INFO - Node: 7 - Calling phaseOneClustering
+2018-04-18 19:27:26,608 - Node - INFO - Node: 7 - Starting Phase One Clustering
+2018-04-18 19:27:26,608 - Node - INFO - Node: 7 - I am a parent not leaf
+2018-04-18 19:27:26,608 - Node - INFO - Node: 7 - Starting Server
+2018-04-18 19:27:26,609 - main_server - INFO - Node: 7 - Creating GRPC Server 
+2018-04-18 19:27:26,609 - main_server - INFO - Node 7 - Created GRPC Server
+2018-04-18 19:27:26,609 - main_server - INFO - Node: 7 - Inside Mainserver __init__
+2018-04-18 19:27:26,611 - main_server - INFO - Node 7 - Starting GRPC Server
+2018-04-18 19:27:26,611 - main_server - INFO - Node: 7 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:28,610 - Node - INFO - #######################
+2018-04-18 19:27:28,610 - Node - INFO - Node: 8 - Initializing
+2018-04-18 19:27:28,610 - Node - INFO - #######################
+2018-04-18 19:27:28,610 - Node - INFO - Node: 8 - Calling phaseOneClustering
+2018-04-18 19:27:28,610 - Node - INFO - Node: 8 - Starting Phase One Clustering
+2018-04-18 19:27:28,611 - Node - INFO - Node: 8 - I am a parent not leaf
+2018-04-18 19:27:28,611 - Node - INFO - Node: 8 - Starting Server
+2018-04-18 19:27:28,611 - main_server - INFO - Node: 8 - Creating GRPC Server 
+2018-04-18 19:27:28,611 - main_server - INFO - Node 8 - Created GRPC Server
+2018-04-18 19:27:28,611 - main_server - INFO - Node: 8 - Inside Mainserver __init__
+2018-04-18 19:27:28,614 - main_server - INFO - Node 8 - Starting GRPC Server
+2018-04-18 19:27:28,614 - main_server - INFO - Node: 8 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:30,615 - Node - INFO - #######################
+2018-04-18 19:27:30,615 - Node - INFO - Node: 9 - Initializing
+2018-04-18 19:27:30,616 - Node - INFO - #######################
+2018-04-18 19:27:30,616 - Node - INFO - Node: 9 - Calling phaseOneClustering
+2018-04-18 19:27:30,616 - Node - INFO - Node: 9 - Starting Phase One Clustering
+2018-04-18 19:27:30,616 - Node - INFO - Node: 9 - I am a parent not leaf
+2018-04-18 19:27:30,616 - Node - INFO - Node: 9 - Starting Server
+2018-04-18 19:27:30,617 - main_server - INFO - Node: 9 - Creating GRPC Server 
+2018-04-18 19:27:30,617 - main_server - INFO - Node 9 - Created GRPC Server
+2018-04-18 19:27:30,617 - main_server - INFO - Node: 9 - Inside Mainserver __init__
+2018-04-18 19:27:30,621 - main_server - INFO - Node 9 - Starting GRPC Server
+2018-04-18 19:27:30,621 - main_server - INFO - Node: 9 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:32,619 - Node - INFO - #######################
+2018-04-18 19:27:32,619 - Node - INFO - Node: 10 - Initializing
+2018-04-18 19:27:32,619 - Node - INFO - #######################
+2018-04-18 19:27:32,619 - Node - INFO - Node: 10 - Calling phaseOneClustering
+2018-04-18 19:27:32,620 - Node - INFO - Node: 10 - Starting Phase One Clustering
+2018-04-18 19:27:32,620 - Node - INFO - Node: 10 - I am a parent not leaf
+2018-04-18 19:27:32,620 - Node - INFO - Node: 10 - Starting Server
+2018-04-18 19:27:32,620 - main_server - INFO - Node: 10 - Creating GRPC Server 
+2018-04-18 19:27:32,620 - main_server - INFO - Node 10 - Created GRPC Server
+2018-04-18 19:27:32,621 - main_server - INFO - Node: 10 - Inside Mainserver __init__
+2018-04-18 19:27:32,624 - main_server - INFO - Node 10 - Starting GRPC Server
+2018-04-18 19:27:32,624 - main_server - INFO - Node: 10 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:34,624 - Node - INFO - #######################
+2018-04-18 19:27:34,624 - Node - INFO - Node: 11 - Initializing
+2018-04-18 19:27:34,624 - Node - INFO - #######################
+2018-04-18 19:27:34,625 - Node - INFO - Node: 11 - Calling phaseOneClustering
+2018-04-18 19:27:34,625 - Node - INFO - Node: 11 - Starting Phase One Clustering
+2018-04-18 19:27:34,625 - Node - INFO - Node: 11 - I am a parent not leaf
+2018-04-18 19:27:34,625 - Node - INFO - Node: 11 - Starting Server
+2018-04-18 19:27:34,625 - main_server - INFO - Node: 11 - Creating GRPC Server 
+2018-04-18 19:27:34,626 - main_server - INFO - Node 11 - Created GRPC Server
+2018-04-18 19:27:34,626 - main_server - INFO - Node: 11 - Inside Mainserver __init__
+2018-04-18 19:27:34,630 - main_server - INFO - Node 11 - Starting GRPC Server
+2018-04-18 19:27:34,630 - main_server - INFO - Node: 11 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:36,625 - Node - INFO - #######################
+2018-04-18 19:27:36,625 - Node - INFO - Node: 12 - Initializing
+2018-04-18 19:27:36,625 - Node - INFO - #######################
+2018-04-18 19:27:36,625 - Node - INFO - Node: 12 - Calling phaseOneClustering
+2018-04-18 19:27:36,626 - Node - INFO - Node: 12 - Starting Phase One Clustering
+2018-04-18 19:27:36,626 - Node - INFO - Node: 12 - I am a parent not leaf
+2018-04-18 19:27:36,626 - Node - INFO - Node: 12 - Starting Server
+2018-04-18 19:27:36,626 - main_server - INFO - Node: 12 - Creating GRPC Server 
+2018-04-18 19:27:36,626 - main_server - INFO - Node 12 - Created GRPC Server
+2018-04-18 19:27:36,627 - main_server - INFO - Node: 12 - Inside Mainserver __init__
+2018-04-18 19:27:36,630 - main_server - INFO - Node 12 - Starting GRPC Server
+2018-04-18 19:27:36,630 - main_server - INFO - Node: 12 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:38,627 - Node - INFO - #######################
+2018-04-18 19:27:38,627 - Node - INFO - Node: 13 - Initializing
+2018-04-18 19:27:38,628 - Node - INFO - #######################
+2018-04-18 19:27:38,628 - Node - INFO - Node: 13 - Calling phaseOneClustering
+2018-04-18 19:27:38,628 - Node - INFO - Node: 13 - Starting Phase One Clustering
+2018-04-18 19:27:38,628 - Node - INFO - Node: 13 - I am a parent not leaf
+2018-04-18 19:27:38,628 - Node - INFO - Node: 13 - Starting Server
+2018-04-18 19:27:38,629 - main_server - INFO - Node: 13 - Creating GRPC Server 
+2018-04-18 19:27:38,629 - main_server - INFO - Node 13 - Created GRPC Server
+2018-04-18 19:27:38,629 - main_server - INFO - Node: 13 - Inside Mainserver __init__
+2018-04-18 19:27:38,633 - main_server - INFO - Node 13 - Starting GRPC Server
+2018-04-18 19:27:38,633 - main_server - INFO - Node: 13 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:40,632 - Node - INFO - #######################
+2018-04-18 19:27:40,632 - Node - INFO - Node: 14 - Initializing
+2018-04-18 19:27:40,633 - Node - INFO - #######################
+2018-04-18 19:27:40,633 - Node - INFO - Node: 14 - Calling phaseOneClustering
+2018-04-18 19:27:40,633 - Node - INFO - Node: 14 - Starting Phase One Clustering
+2018-04-18 19:27:40,633 - Node - INFO - Node: 14 - I am a parent not leaf
+2018-04-18 19:27:40,633 - Node - INFO - Node: 14 - Starting Server
+2018-04-18 19:27:40,634 - main_server - INFO - Node: 14 - Creating GRPC Server 
+2018-04-18 19:27:40,634 - main_server - INFO - Node 14 - Created GRPC Server
+2018-04-18 19:27:40,634 - main_server - INFO - Node: 14 - Inside Mainserver __init__
+2018-04-18 19:27:40,638 - main_server - INFO - Node 14 - Starting GRPC Server
+2018-04-18 19:27:40,638 - main_server - INFO - Node: 14 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:42,635 - Node - INFO - #######################
+2018-04-18 19:27:42,635 - Node - INFO - Node: 15 - Initializing
+2018-04-18 19:27:42,635 - Node - INFO - #######################
+2018-04-18 19:27:42,636 - Node - INFO - Node: 15 - Calling phaseOneClustering
+2018-04-18 19:27:42,636 - Node - INFO - Node: 15 - Starting Phase One Clustering
+2018-04-18 19:27:42,636 - Node - INFO - Node: 15 - I am a parent not leaf
+2018-04-18 19:27:42,636 - Node - INFO - Node: 15 - Starting Server
+2018-04-18 19:27:42,636 - main_server - INFO - Node: 15 - Creating GRPC Server 
+2018-04-18 19:27:42,637 - main_server - INFO - Node 15 - Created GRPC Server
+2018-04-18 19:27:42,637 - main_server - INFO - Node: 15 - Inside Mainserver __init__
+2018-04-18 19:27:42,640 - main_server - INFO - Node 15 - Starting GRPC Server
+2018-04-18 19:27:42,641 - main_server - INFO - Node: 15 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:44,641 - Node - INFO - #######################
+2018-04-18 19:27:44,641 - Node - INFO - Node: 16 - Initializing
+2018-04-18 19:27:44,641 - Node - INFO - #######################
+2018-04-18 19:27:44,642 - Node - INFO - Node: 16 - Calling phaseOneClustering
+2018-04-18 19:27:44,642 - Node - INFO - Node: 16 - Starting Phase One Clustering
+2018-04-18 19:27:44,642 - Node - INFO - Node: 16 - I am a parent not leaf
+2018-04-18 19:27:44,642 - Node - INFO - Node: 16 - Starting Server
+2018-04-18 19:27:44,642 - main_server - INFO - Node: 16 - Creating GRPC Server 
+2018-04-18 19:27:44,643 - main_server - INFO - Node 16 - Created GRPC Server
+2018-04-18 19:27:44,643 - main_server - INFO - Node: 16 - Inside Mainserver __init__
+2018-04-18 19:27:44,647 - main_server - INFO - Node 16 - Starting GRPC Server
+2018-04-18 19:27:44,647 - main_server - INFO - Node: 16 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:46,645 - Node - INFO - #######################
+2018-04-18 19:27:46,646 - Node - INFO - Node: 17 - Initializing
+2018-04-18 19:27:46,646 - Node - INFO - #######################
+2018-04-18 19:27:46,646 - Node - INFO - Node: 17 - Calling phaseOneClustering
+2018-04-18 19:27:46,646 - Node - INFO - Node: 17 - Starting Phase One Clustering
+2018-04-18 19:27:46,647 - Node - INFO - Node: 17 - I am a parent not leaf
+2018-04-18 19:27:46,647 - Node - INFO - Node: 17 - Starting Server
+2018-04-18 19:27:46,647 - main_server - INFO - Node: 17 - Creating GRPC Server 
+2018-04-18 19:27:46,647 - main_server - INFO - Node 17 - Created GRPC Server
+2018-04-18 19:27:46,647 - main_server - INFO - Node: 17 - Inside Mainserver __init__
+2018-04-18 19:27:46,651 - main_server - INFO - Node 17 - Starting GRPC Server
+2018-04-18 19:27:46,651 - main_server - INFO - Node: 17 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:48,649 - Node - INFO - #######################
+2018-04-18 19:27:48,649 - Node - INFO - Node: 18 - Initializing
+2018-04-18 19:27:48,650 - Node - INFO - #######################
+2018-04-18 19:27:48,650 - Node - INFO - Node: 18 - Calling phaseOneClustering
+2018-04-18 19:27:48,650 - Node - INFO - Node: 18 - Starting Phase One Clustering
+2018-04-18 19:27:48,650 - Node - INFO - Node: 18 - I am a parent not leaf
+2018-04-18 19:27:48,650 - Node - INFO - Node: 18 - Starting Server
+2018-04-18 19:27:48,651 - main_server - INFO - Node: 18 - Creating GRPC Server 
+2018-04-18 19:27:48,651 - main_server - INFO - Node 18 - Created GRPC Server
+2018-04-18 19:27:48,651 - main_server - INFO - Node: 18 - Inside Mainserver __init__
+2018-04-18 19:27:48,655 - main_server - INFO - Node 18 - Starting GRPC Server
+2018-04-18 19:27:48,655 - main_server - INFO - Node: 18 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:50,651 - Node - INFO - #######################
+2018-04-18 19:27:50,652 - Node - INFO - Node: 19 - Initializing
+2018-04-18 19:27:50,652 - Node - INFO - #######################
+2018-04-18 19:27:50,652 - Node - INFO - Node: 19 - Calling phaseOneClustering
+2018-04-18 19:27:50,652 - Node - INFO - Node: 19 - Starting Phase One Clustering
+2018-04-18 19:27:50,653 - Node - INFO - Node: 19 - I am a parent not leaf
+2018-04-18 19:27:50,653 - Node - INFO - Node: 19 - Starting Server
+2018-04-18 19:27:50,653 - main_server - INFO - Node: 19 - Creating GRPC Server 
+2018-04-18 19:27:50,653 - main_server - INFO - Node 19 - Created GRPC Server
+2018-04-18 19:27:50,653 - main_server - INFO - Node: 19 - Inside Mainserver __init__
+2018-04-18 19:27:50,657 - main_server - INFO - Node 19 - Starting GRPC Server
+2018-04-18 19:27:50,657 - main_server - INFO - Node: 19 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:52,657 - Node - INFO - #######################
+2018-04-18 19:27:52,657 - Node - INFO - Node: 20 - Initializing
+2018-04-18 19:27:52,657 - Node - INFO - #######################
+2018-04-18 19:27:52,657 - Node - INFO - Node: 20 - Calling phaseOneClustering
+2018-04-18 19:27:52,658 - Node - INFO - Node: 20 - Starting Phase One Clustering
+2018-04-18 19:27:52,658 - Node - INFO - Node: 20 - I am a parent not leaf
+2018-04-18 19:27:52,658 - Node - INFO - Node: 20 - Starting Server
+2018-04-18 19:27:52,658 - main_server - INFO - Node: 20 - Creating GRPC Server 
+2018-04-18 19:27:52,658 - main_server - INFO - Node 20 - Created GRPC Server
+2018-04-18 19:27:52,659 - main_server - INFO - Node: 20 - Inside Mainserver __init__
+2018-04-18 19:27:52,662 - main_server - INFO - Node 20 - Starting GRPC Server
+2018-04-18 19:27:52,662 - main_server - INFO - Node: 20 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:54,661 - Node - INFO - #######################
+2018-04-18 19:27:54,662 - Node - INFO - Node: 21 - Initializing
+2018-04-18 19:27:54,662 - Node - INFO - #######################
+2018-04-18 19:27:54,662 - Node - INFO - Node: 21 - Calling phaseOneClustering
+2018-04-18 19:27:54,662 - Node - INFO - Node: 21 - Starting Phase One Clustering
+2018-04-18 19:27:54,662 - Node - INFO - Node: 21 - I am a parent not leaf
+2018-04-18 19:27:54,663 - Node - INFO - Node: 21 - Starting Server
+2018-04-18 19:27:54,663 - main_server - INFO - Node: 21 - Creating GRPC Server 
+2018-04-18 19:27:54,663 - main_server - INFO - Node 21 - Created GRPC Server
+2018-04-18 19:27:54,663 - main_server - INFO - Node: 21 - Inside Mainserver __init__
+2018-04-18 19:27:54,667 - main_server - INFO - Node 21 - Starting GRPC Server
+2018-04-18 19:27:54,667 - main_server - INFO - Node: 21 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:56,663 - Node - INFO - #######################
+2018-04-18 19:27:56,663 - Node - INFO - Node: 22 - Initializing
+2018-04-18 19:27:56,663 - Node - INFO - #######################
+2018-04-18 19:27:56,663 - Node - INFO - Node: 22 - Calling phaseOneClustering
+2018-04-18 19:27:56,664 - Node - INFO - Node: 22 - Starting Phase One Clustering
+2018-04-18 19:27:56,664 - Node - INFO - Node: 22 - I am a parent not leaf
+2018-04-18 19:27:56,664 - Node - INFO - Node: 22 - Starting Server
+2018-04-18 19:27:56,664 - main_server - INFO - Node: 22 - Creating GRPC Server 
+2018-04-18 19:27:56,664 - main_server - INFO - Node 22 - Created GRPC Server
+2018-04-18 19:27:56,665 - main_server - INFO - Node: 22 - Inside Mainserver __init__
+2018-04-18 19:27:56,668 - main_server - INFO - Node 22 - Starting GRPC Server
+2018-04-18 19:27:56,668 - main_server - INFO - Node: 22 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:27:58,667 - Node - INFO - #######################
+2018-04-18 19:27:58,668 - Node - INFO - Node: 23 - Initializing
+2018-04-18 19:27:58,668 - Node - INFO - #######################
+2018-04-18 19:27:58,668 - Node - INFO - Node: 23 - Calling phaseOneClustering
+2018-04-18 19:27:58,668 - Node - INFO - Node: 23 - Starting Phase One Clustering
+2018-04-18 19:27:58,668 - Node - INFO - Node: 23 - I am a parent not leaf
+2018-04-18 19:27:58,669 - Node - INFO - Node: 23 - Starting Server
+2018-04-18 19:27:58,669 - main_server - INFO - Node: 23 - Creating GRPC Server 
+2018-04-18 19:27:58,669 - main_server - INFO - Node 23 - Created GRPC Server
+2018-04-18 19:27:58,669 - main_server - INFO - Node: 23 - Inside Mainserver __init__
+2018-04-18 19:27:58,673 - main_server - INFO - Node 23 - Starting GRPC Server
+2018-04-18 19:27:58,673 - main_server - INFO - Node: 23 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:00,668 - Node - INFO - #######################
+2018-04-18 19:28:00,669 - Node - INFO - Node: 24 - Initializing
+2018-04-18 19:28:00,669 - Node - INFO - #######################
+2018-04-18 19:28:00,669 - Node - INFO - Node: 24 - Calling phaseOneClustering
+2018-04-18 19:28:00,669 - Node - INFO - Node: 24 - Starting Phase One Clustering
+2018-04-18 19:28:00,669 - Node - INFO - Node: 24 - Calling phaseOneClusterStart with parentId: 9
+2018-04-18 19:28:00,670 - client - INFO - Node: 24 - Starting sendSize
+2018-04-18 19:28:00,674 - main_server - INFO - Node: 9 - Current size: 27
+2018-04-18 19:28:00,674 - main_server - INFO - Node:9 - Child Node: 24 has size 19
+2018-04-18 19:28:00,674 - main_server - INFO - Node: 9 - Sending Accept to childId: 24 after checking if all children responded or not
+2018-04-18 19:28:00,674 - main_server - INFO - Node 9: - New size: 46
+2018-04-18 19:28:00,674 - main_server - INFO - Node: 9 - All children responded. Sending size to parent
+2018-04-18 19:28:00,675 - main_server - INFO - Node: 9 Sending accept to childId: 24
+2018-04-18 19:28:00,676 - client - INFO - Node: 9 - Starting sendSize
+2018-04-18 19:28:00,676 - client - INFO - Node: 24 - Successfully sent the size message of size 19 to parentId: 9
+2018-04-18 19:28:00,677 - client - INFO - Node: 9 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:00,677 - client - INFO - Node: 24 - Didn't get Prune 
+2018-04-18 19:28:00,678 - Node - INFO - Node: 24 - Sent size() message to parent: 9
+2018-04-18 19:28:00,678 - Node - INFO - Node: 24 - Starting Server
+2018-04-18 19:28:00,678 - main_server - INFO - Node: 4 - Current size: 42
+2018-04-18 19:28:00,678 - main_server - INFO - Node: 24 - Creating GRPC Server 
+2018-04-18 19:28:00,679 - main_server - INFO - Node:4 - Child Node: 9 has size 46
+2018-04-18 19:28:00,679 - main_server - INFO - Node 24 - Created GRPC Server
+2018-04-18 19:28:00,679 - main_server - INFO - Node: 4 - Sending Accept to childId: 9 after checking if all children responded or not
+2018-04-18 19:28:00,679 - main_server - INFO - Node: 24 - Inside Mainserver __init__
+2018-04-18 19:28:00,679 - main_server - INFO - Node 4: - New size: 88
+2018-04-18 19:28:00,680 - main_server - INFO - Node: 4 - All children responded. Sending size to parent
+2018-04-18 19:28:00,680 - main_server - INFO - Node: 4 Sending accept to childId: 9
+2018-04-18 19:28:00,680 - client - INFO - Node: 4 - Starting sendSize
+2018-04-18 19:28:00,681 - client - INFO - Node: 9 - Successfully sent the size message of size 46 to parentId: 4
+2018-04-18 19:28:00,681 - client - INFO - Node: 4 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:00,682 - client - INFO - Node: 9 - Didn't get Prune 
+2018-04-18 19:28:00,682 - main_server - INFO - Node 24 - Starting GRPC Server
+2018-04-18 19:28:00,682 - main_server - INFO - Node: 24 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:00,683 - main_server - INFO - Node: 2 - Current size: 37
+2018-04-18 19:28:00,683 - main_server - INFO - Node:2 - Child Node: 4 has size 88
+2018-04-18 19:28:00,683 - main_server - INFO - Node: 2 - Sending Accept to childId: 4 after checking if all children responded or not
+2018-04-18 19:28:00,683 - main_server - INFO - Node 2: - New size: 125
+2018-04-18 19:28:00,684 - main_server - INFO - Node: 2 Sending accept to childId: 4
+2018-04-18 19:28:00,684 - client - INFO - Node: 4 - Successfully sent the size message of size 88 to parentId: 2
+2018-04-18 19:28:00,684 - client - INFO - Node: 2 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:00,684 - client - INFO - Node: 4 - Didn't get Prune 
+2018-04-18 19:28:02,671 - Node - INFO - #######################
+2018-04-18 19:28:02,672 - Node - INFO - Node: 25 - Initializing
+2018-04-18 19:28:02,672 - Node - INFO - #######################
+2018-04-18 19:28:02,672 - Node - INFO - Node: 25 - Calling phaseOneClustering
+2018-04-18 19:28:02,672 - Node - INFO - Node: 25 - Starting Phase One Clustering
+2018-04-18 19:28:02,672 - Node - INFO - Node: 25 - Calling phaseOneClusterStart with parentId: 17
+2018-04-18 19:28:02,673 - client - INFO - Node: 25 - Starting sendSize
+2018-04-18 19:28:02,677 - main_server - INFO - Node: 17 - Current size: 14
+2018-04-18 19:28:02,677 - main_server - INFO - Node:17 - Child Node: 25 has size 19
+2018-04-18 19:28:02,677 - main_server - INFO - Node: 17 - Sending Accept to childId: 25 after checking if all children responded or not
+2018-04-18 19:28:02,677 - main_server - INFO - Node 17: - New size: 33
+2018-04-18 19:28:02,677 - main_server - INFO - Node: 17 Sending accept to childId: 25
+2018-04-18 19:28:02,678 - client - INFO - Node: 25 - Successfully sent the size message of size 19 to parentId: 17
+2018-04-18 19:28:02,678 - client - INFO - Node: 17 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:02,679 - client - INFO - Node: 25 - Didn't get Prune 
+2018-04-18 19:28:02,679 - Node - INFO - Node: 25 - Sent size() message to parent: 17
+2018-04-18 19:28:02,679 - Node - INFO - Node: 25 - Starting Server
+2018-04-18 19:28:02,679 - main_server - INFO - Node: 25 - Creating GRPC Server 
+2018-04-18 19:28:02,679 - main_server - INFO - Node 25 - Created GRPC Server
+2018-04-18 19:28:02,679 - main_server - INFO - Node: 25 - Inside Mainserver __init__
+2018-04-18 19:28:02,682 - main_server - INFO - Node 25 - Starting GRPC Server
+2018-04-18 19:28:02,683 - main_server - INFO - Node: 25 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:04,672 - Node - INFO - #######################
+2018-04-18 19:28:04,673 - Node - INFO - Node: 26 - Initializing
+2018-04-18 19:28:04,673 - Node - INFO - #######################
+2018-04-18 19:28:04,673 - Node - INFO - Node: 26 - Calling phaseOneClustering
+2018-04-18 19:28:04,673 - Node - INFO - Node: 26 - Starting Phase One Clustering
+2018-04-18 19:28:04,673 - Node - INFO - Node: 26 - Calling phaseOneClusterStart with parentId: 17
+2018-04-18 19:28:04,674 - client - INFO - Node: 26 - Starting sendSize
+2018-04-18 19:28:04,676 - main_server - INFO - Node: 17 - Current size: 33
+2018-04-18 19:28:04,676 - main_server - INFO - Node:17 - Child Node: 26 has size 13
+2018-04-18 19:28:04,676 - main_server - INFO - Node: 17 - Sending Accept to childId: 26 after checking if all children responded or not
+2018-04-18 19:28:04,677 - main_server - INFO - Node 17: - New size: 46
+2018-04-18 19:28:04,677 - main_server - INFO - Node: 17 - All children responded. Sending size to parent
+2018-04-18 19:28:04,677 - main_server - INFO - Node: 17 Sending accept to childId: 26
+2018-04-18 19:28:04,678 - client - INFO - Node: 17 - Starting sendSize
+2018-04-18 19:28:04,678 - client - INFO - Node: 26 - Successfully sent the size message of size 13 to parentId: 17
+2018-04-18 19:28:04,679 - client - INFO - Node: 17 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:04,679 - client - INFO - Node: 26 - Didn't get Prune 
+2018-04-18 19:28:04,679 - Node - INFO - Node: 26 - Sent size() message to parent: 17
+2018-04-18 19:28:04,679 - Node - INFO - Node: 26 - Starting Server
+2018-04-18 19:28:04,679 - main_server - INFO - Node: 26 - Creating GRPC Server 
+2018-04-18 19:28:04,680 - main_server - INFO - Node 26 - Created GRPC Server
+2018-04-18 19:28:04,680 - main_server - INFO - Node: 26 - Inside Mainserver __init__
+2018-04-18 19:28:04,681 - main_server - INFO - Node: 16 - Current size: 19
+2018-04-18 19:28:04,681 - main_server - INFO - Node:16 - Child Node: 17 has size 46
+2018-04-18 19:28:04,681 - main_server - INFO - Node: 16 - Sending Accept to childId: 17 after checking if all children responded or not
+2018-04-18 19:28:04,681 - main_server - INFO - Node 16: - New size: 65
+2018-04-18 19:28:04,681 - main_server - INFO - Node: 16 - All children responded. Sending size to parent
+2018-04-18 19:28:04,682 - main_server - INFO - Node: 16 Sending accept to childId: 17
+2018-04-18 19:28:04,682 - client - INFO - Node: 16 - Starting sendSize
+2018-04-18 19:28:04,683 - client - INFO - Node: 17 - Successfully sent the size message of size 46 to parentId: 16
+2018-04-18 19:28:04,683 - main_server - INFO - Node 26 - Starting GRPC Server
+2018-04-18 19:28:04,683 - client - INFO - Node: 16 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:04,684 - main_server - INFO - Node: 26 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:04,685 - client - INFO - Node: 17 - Didn't get Prune 
+2018-04-18 19:28:04,685 - main_server - INFO - Node: 15 - Current size: 19
+2018-04-18 19:28:04,685 - main_server - INFO - Node:15 - Child Node: 16 has size 65
+2018-04-18 19:28:04,685 - main_server - INFO - Node: 15 - Sending Accept to childId: 16 after checking if all children responded or not
+2018-04-18 19:28:04,686 - main_server - INFO - Node 15: - New size: 84
+2018-04-18 19:28:04,686 - main_server - INFO - Node: 15 - All children responded. Sending size to parent
+2018-04-18 19:28:04,686 - main_server - INFO - Node: 15 Sending accept to childId: 16
+2018-04-18 19:28:04,686 - client - INFO - Node: 15 - Starting sendSize
+2018-04-18 19:28:04,687 - client - INFO - Node: 16 - Successfully sent the size message of size 65 to parentId: 15
+2018-04-18 19:28:04,687 - client - INFO - Node: 15 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:04,687 - client - INFO - Node: 16 - Didn't get Prune 
+2018-04-18 19:28:04,688 - main_server - INFO - Node: 14 - Current size: 19
+2018-04-18 19:28:04,689 - main_server - INFO - Node:14 - Child Node: 15 has size 84
+2018-04-18 19:28:04,689 - main_server - INFO - Node: 14 - Sending Accept to childId: 15 after checking if all children responded or not
+2018-04-18 19:28:04,689 - main_server - INFO - Node 14: - New size: 103
+2018-04-18 19:28:04,689 - main_server - INFO - Node: 14 - All children responded. Sending size to parent
+2018-04-18 19:28:04,689 - main_server - INFO - Node: 14 Sending accept to childId: 15
+2018-04-18 19:28:04,689 - client - INFO - Node: 14 - Starting sendSize
+2018-04-18 19:28:04,690 - client - INFO - Node: 15 - Successfully sent the size message of size 84 to parentId: 14
+2018-04-18 19:28:04,690 - client - INFO - Node: 14 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:04,690 - client - INFO - Node: 15 - Didn't get Prune 
+2018-04-18 19:28:04,691 - main_server - INFO - Node: 6 - Current size: 44
+2018-04-18 19:28:04,692 - main_server - INFO - Node:6 - Child Node: 14 has size 103
+2018-04-18 19:28:04,692 - main_server - INFO - Node: 6 - Sending Accept to childId: 14 after checking if all children responded or not
+2018-04-18 19:28:04,692 - main_server - INFO - Node 6: - New size: 147
+2018-04-18 19:28:04,692 - main_server - INFO - Node: 6 - All children responded. Sending size to parent
+2018-04-18 19:28:04,692 - main_server - INFO - Node: 6 Sending accept to childId: 14
+2018-04-18 19:28:04,693 - client - INFO - Node: 6 - Starting sendSize
+2018-04-18 19:28:04,693 - client - INFO - Node: 14 - Successfully sent the size message of size 103 to parentId: 6
+2018-04-18 19:28:04,694 - client - INFO - Node: 6 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:04,694 - client - INFO - Node: 14 - Didn't get Prune 
+2018-04-18 19:28:04,695 - main_server - INFO - Node: 7 - Current size: 43
+2018-04-18 19:28:04,695 - main_server - INFO - Node:7 - Child Node: 6 has size 147
+2018-04-18 19:28:04,696 - main_server - INFO - Node: 7 - Removed child 6 from childList
+2018-04-18 19:28:04,696 - main_server - INFO - Node: 7 - Sending Prune after checking if all children responded or not
+2018-04-18 19:28:04,696 - main_server - INFO - Node: 7 - Sending Prune to childId: 6
+2018-04-18 19:28:04,696 - client - INFO - Node: 6 - Successfully sent the size message of size 147 to parentId: 7
+2018-04-18 19:28:04,696 - client - INFO - Node: 7 - Responded to Size RPC with reply: Prune
+2018-04-18 19:28:04,697 - client - INFO - Node: 6 - Got Prune
+2018-04-18 19:28:04,697 - client - INFO - Node: 6 - Sending cluster message to child id: 14
+2018-04-18 19:28:04,699 - main_server - INFO - Node: 14 - Now joining Clusterleader Node: 6
+2018-04-18 19:28:04,699 - main_server - INFO - Node: 14 - current hop count: 1
+2018-04-18 19:28:04,699 - main_server - INFO - Node:14 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:04,700 - client - INFO - Node: 14 - Sending propagate cluster message to child id: 15
+2018-04-18 19:28:04,701 - client - INFO - Node: 6 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 14
+2018-04-18 19:28:04,703 - main_server - INFO - Node: 15 - Now joining Clusterleader Node: 6
+2018-04-18 19:28:04,703 - main_server - INFO - Node: 15 - current hop count: 2
+2018-04-18 19:28:04,703 - main_server - INFO - Node:15 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:04,704 - client - INFO - Node: 15 - Sending propagate cluster message to child id: 16
+2018-04-18 19:28:04,704 - client - INFO - Node: 14 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 15
+2018-04-18 19:28:04,707 - main_server - INFO - Node: 16 - Now joining Clusterleader Node: 6
+2018-04-18 19:28:04,707 - main_server - INFO - Node: 16 - current hop count: 3
+2018-04-18 19:28:04,707 - main_server - INFO - Node:16 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:04,708 - client - INFO - Node: 16 - Sending propagate cluster message to child id: 17
+2018-04-18 19:28:04,708 - client - INFO - Node: 15 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 16
+2018-04-18 19:28:04,710 - main_server - INFO - Node: 17 - Now joining Clusterleader Node: 6
+2018-04-18 19:28:04,710 - main_server - INFO - Node: 17 - current hop count: 4
+2018-04-18 19:28:04,710 - main_server - INFO - Node:17 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:04,711 - client - INFO - Node: 17 - Sending propagate cluster message to child id: 25
+2018-04-18 19:28:04,711 - client - INFO - Node: 16 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 17
+2018-04-18 19:28:04,713 - main_server - INFO - Node: 25 - Now joining Clusterleader Node: 6
+2018-04-18 19:28:04,713 - main_server - INFO - Node: 25 - current hop count: 5
+2018-04-18 19:28:04,713 - main_server - INFO - Node: 25 - NO children found!
+2018-04-18 19:28:04,714 - client - INFO - Node: 17 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 25
+2018-04-18 19:28:04,714 - client - INFO - Node: 17 - Sending propagate cluster message to child id: 26
+2018-04-18 19:28:04,716 - main_server - INFO - Node: 26 - Now joining Clusterleader Node: 6
+2018-04-18 19:28:04,716 - main_server - INFO - Node: 26 - current hop count: 5
+2018-04-18 19:28:04,716 - main_server - INFO - Node: 26 - NO children found!
+2018-04-18 19:28:04,717 - client - INFO - Node: 17 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 26
+2018-04-18 19:28:06,673 - Node - INFO - #######################
+2018-04-18 19:28:06,673 - Node - INFO - Node: 27 - Initializing
+2018-04-18 19:28:06,674 - Node - INFO - #######################
+2018-04-18 19:28:06,674 - Node - INFO - Node: 27 - Calling phaseOneClustering
+2018-04-18 19:28:06,674 - Node - INFO - Node: 27 - Starting Phase One Clustering
+2018-04-18 19:28:06,674 - Node - INFO - Node: 27 - Calling phaseOneClusterStart with parentId: 19
+2018-04-18 19:28:06,675 - client - INFO - Node: 27 - Starting sendSize
+2018-04-18 19:28:06,678 - main_server - INFO - Node: 19 - Current size: 17
+2018-04-18 19:28:06,679 - main_server - INFO - Node:19 - Child Node: 27 has size 13
+2018-04-18 19:28:06,679 - main_server - INFO - Node: 19 - Sending Accept to childId: 27 after checking if all children responded or not
+2018-04-18 19:28:06,679 - main_server - INFO - Node 19: - New size: 30
+2018-04-18 19:28:06,679 - main_server - INFO - Node: 19 Sending accept to childId: 27
+2018-04-18 19:28:06,680 - client - INFO - Node: 27 - Successfully sent the size message of size 13 to parentId: 19
+2018-04-18 19:28:06,680 - client - INFO - Node: 19 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:06,680 - client - INFO - Node: 27 - Didn't get Prune 
+2018-04-18 19:28:06,681 - Node - INFO - Node: 27 - Sent size() message to parent: 19
+2018-04-18 19:28:06,681 - Node - INFO - Node: 27 - Starting Server
+2018-04-18 19:28:06,681 - main_server - INFO - Node: 27 - Creating GRPC Server 
+2018-04-18 19:28:06,681 - main_server - INFO - Node 27 - Created GRPC Server
+2018-04-18 19:28:06,681 - main_server - INFO - Node: 27 - Inside Mainserver __init__
+2018-04-18 19:28:06,684 - main_server - INFO - Node 27 - Starting GRPC Server
+2018-04-18 19:28:06,684 - main_server - INFO - Node: 27 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:08,674 - Node - INFO - #######################
+2018-04-18 19:28:08,674 - Node - INFO - Node: 28 - Initializing
+2018-04-18 19:28:08,674 - Node - INFO - #######################
+2018-04-18 19:28:08,674 - Node - INFO - Node: 28 - Calling phaseOneClustering
+2018-04-18 19:28:08,675 - Node - INFO - Node: 28 - Starting Phase One Clustering
+2018-04-18 19:28:08,675 - Node - INFO - Node: 28 - I am a parent not leaf
+2018-04-18 19:28:08,675 - Node - INFO - Node: 28 - Starting Server
+2018-04-18 19:28:08,675 - main_server - INFO - Node: 28 - Creating GRPC Server 
+2018-04-18 19:28:08,676 - main_server - INFO - Node 28 - Created GRPC Server
+2018-04-18 19:28:08,676 - main_server - INFO - Node: 28 - Inside Mainserver __init__
+2018-04-18 19:28:08,679 - main_server - INFO - Node 28 - Starting GRPC Server
+2018-04-18 19:28:08,679 - main_server - INFO - Node: 28 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:10,675 - Node - INFO - #######################
+2018-04-18 19:28:10,676 - Node - INFO - Node: 29 - Initializing
+2018-04-18 19:28:10,676 - Node - INFO - #######################
+2018-04-18 19:28:10,676 - Node - INFO - Node: 29 - Calling phaseOneClustering
+2018-04-18 19:28:10,676 - Node - INFO - Node: 29 - Starting Phase One Clustering
+2018-04-18 19:28:10,676 - Node - INFO - Node: 29 - Calling phaseOneClusterStart with parentId: 28
+2018-04-18 19:28:10,678 - client - INFO - Node: 29 - Starting sendSize
+2018-04-18 19:28:10,680 - main_server - INFO - Node: 28 - Current size: 13
+2018-04-18 19:28:10,681 - main_server - INFO - Node:28 - Child Node: 29 has size 19
+2018-04-18 19:28:10,681 - main_server - INFO - Node: 28 - Sending Accept to childId: 29 after checking if all children responded or not
+2018-04-18 19:28:10,681 - main_server - INFO - Node 28: - New size: 32
+2018-04-18 19:28:10,681 - main_server - INFO - Node: 28 - All children responded. Sending size to parent
+2018-04-18 19:28:10,682 - main_server - INFO - Node: 28 Sending accept to childId: 29
+2018-04-18 19:28:10,683 - client - INFO - Node: 28 - Starting sendSize
+2018-04-18 19:28:10,683 - client - INFO - Node: 29 - Successfully sent the size message of size 19 to parentId: 28
+2018-04-18 19:28:10,684 - client - INFO - Node: 28 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:10,684 - client - INFO - Node: 29 - Didn't get Prune 
+2018-04-18 19:28:10,684 - Node - INFO - Node: 29 - Sent size() message to parent: 28
+2018-04-18 19:28:10,684 - Node - INFO - Node: 29 - Starting Server
+2018-04-18 19:28:10,684 - main_server - INFO - Node: 29 - Creating GRPC Server 
+2018-04-18 19:28:10,685 - main_server - INFO - Node 29 - Created GRPC Server
+2018-04-18 19:28:10,686 - main_server - INFO - Node: 29 - Inside Mainserver __init__
+2018-04-18 19:28:10,686 - main_server - INFO - Node: 19 - Current size: 30
+2018-04-18 19:28:10,687 - main_server - INFO - Node:19 - Child Node: 28 has size 32
+2018-04-18 19:28:10,687 - main_server - INFO - Node: 19 - Sending Accept to childId: 28 after checking if all children responded or not
+2018-04-18 19:28:10,687 - main_server - INFO - Node 19: - New size: 62
+2018-04-18 19:28:10,687 - main_server - INFO - Node: 19 - All children responded. Sending size to parent
+2018-04-18 19:28:10,687 - main_server - INFO - Node: 19 Sending accept to childId: 28
+2018-04-18 19:28:10,688 - client - INFO - Node: 19 - Starting sendSize
+2018-04-18 19:28:10,688 - client - INFO - Node: 28 - Successfully sent the size message of size 32 to parentId: 19
+2018-04-18 19:28:10,689 - main_server - INFO - Node 29 - Starting GRPC Server
+2018-04-18 19:28:10,689 - client - INFO - Node: 19 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:10,689 - main_server - INFO - Node: 29 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:10,690 - client - INFO - Node: 28 - Didn't get Prune 
+2018-04-18 19:28:10,691 - main_server - INFO - Node: 18 - Current size: 13
+2018-04-18 19:28:10,691 - main_server - INFO - Node:18 - Child Node: 19 has size 62
+2018-04-18 19:28:10,691 - main_server - INFO - Node: 18 - Sending Accept to childId: 19 after checking if all children responded or not
+2018-04-18 19:28:10,691 - main_server - INFO - Node 18: - New size: 75
+2018-04-18 19:28:10,691 - main_server - INFO - Node: 18 - All children responded. Sending size to parent
+2018-04-18 19:28:10,691 - main_server - INFO - Node: 18 Sending accept to childId: 19
+2018-04-18 19:28:10,692 - client - INFO - Node: 18 - Starting sendSize
+2018-04-18 19:28:10,692 - client - INFO - Node: 19 - Successfully sent the size message of size 62 to parentId: 18
+2018-04-18 19:28:10,693 - client - INFO - Node: 18 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:10,693 - client - INFO - Node: 19 - Didn't get Prune 
+2018-04-18 19:28:10,694 - main_server - INFO - Node: 10 - Current size: 22
+2018-04-18 19:28:10,694 - main_server - INFO - Node:10 - Child Node: 18 has size 75
+2018-04-18 19:28:10,694 - main_server - INFO - Node: 10 - Sending Accept to childId: 18 after checking if all children responded or not
+2018-04-18 19:28:10,694 - main_server - INFO - Node 10: - New size: 97
+2018-04-18 19:28:10,694 - main_server - INFO - Node: 10 Sending accept to childId: 18
+2018-04-18 19:28:10,695 - client - INFO - Node: 18 - Successfully sent the size message of size 75 to parentId: 10
+2018-04-18 19:28:10,695 - client - INFO - Node: 10 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:10,695 - client - INFO - Node: 18 - Didn't get Prune 
+2018-04-18 19:28:12,678 - Node - INFO - #######################
+2018-04-18 19:28:12,679 - Node - INFO - Node: 30 - Initializing
+2018-04-18 19:28:12,679 - Node - INFO - #######################
+2018-04-18 19:28:12,679 - Node - INFO - Node: 30 - Calling phaseOneClustering
+2018-04-18 19:28:12,679 - Node - INFO - Node: 30 - Starting Phase One Clustering
+2018-04-18 19:28:12,679 - Node - INFO - Node: 30 - Calling phaseOneClusterStart with parentId: 20
+2018-04-18 19:28:12,680 - client - INFO - Node: 30 - Starting sendSize
+2018-04-18 19:28:12,682 - main_server - INFO - Node: 20 - Current size: 13
+2018-04-18 19:28:12,683 - main_server - INFO - Node:20 - Child Node: 30 has size 19
+2018-04-18 19:28:12,683 - main_server - INFO - Node: 20 - Sending Accept to childId: 30 after checking if all children responded or not
+2018-04-18 19:28:12,683 - main_server - INFO - Node 20: - New size: 32
+2018-04-18 19:28:12,683 - main_server - INFO - Node: 20 - All children responded. Sending size to parent
+2018-04-18 19:28:12,683 - main_server - INFO - Node: 20 Sending accept to childId: 30
+2018-04-18 19:28:12,684 - client - INFO - Node: 20 - Starting sendSize
+2018-04-18 19:28:12,684 - client - INFO - Node: 30 - Successfully sent the size message of size 19 to parentId: 20
+2018-04-18 19:28:12,685 - client - INFO - Node: 20 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:12,685 - client - INFO - Node: 30 - Didn't get Prune 
+2018-04-18 19:28:12,685 - Node - INFO - Node: 30 - Sent size() message to parent: 20
+2018-04-18 19:28:12,685 - Node - INFO - Node: 30 - Starting Server
+2018-04-18 19:28:12,685 - main_server - INFO - Node: 30 - Creating GRPC Server 
+2018-04-18 19:28:12,685 - main_server - INFO - Node 30 - Created GRPC Server
+2018-04-18 19:28:12,686 - main_server - INFO - Node: 30 - Inside Mainserver __init__
+2018-04-18 19:28:12,687 - main_server - INFO - Node: 10 - Current size: 97
+2018-04-18 19:28:12,687 - main_server - INFO - Node:10 - Child Node: 20 has size 32
+2018-04-18 19:28:12,687 - main_server - INFO - Node: 10 - Sending Accept to childId: 20 after checking if all children responded or not
+2018-04-18 19:28:12,687 - main_server - INFO - Node 10: - New size: 129
+2018-04-18 19:28:12,687 - main_server - INFO - Node: 10 - All children responded. Sending size to parent
+2018-04-18 19:28:12,688 - main_server - INFO - Node: 10 Sending accept to childId: 20
+2018-04-18 19:28:12,688 - client - INFO - Node: 10 - Starting sendSize
+2018-04-18 19:28:12,689 - client - INFO - Node: 20 - Successfully sent the size message of size 32 to parentId: 10
+2018-04-18 19:28:12,689 - main_server - INFO - Node 30 - Starting GRPC Server
+2018-04-18 19:28:12,689 - client - INFO - Node: 10 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:12,690 - main_server - INFO - Node: 30 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:12,691 - client - INFO - Node: 20 - Didn't get Prune 
+2018-04-18 19:28:12,691 - main_server - INFO - Node: 8 - Current size: 66
+2018-04-18 19:28:12,691 - main_server - INFO - Node:8 - Child Node: 10 has size 129
+2018-04-18 19:28:12,692 - main_server - INFO - Node: 8 - Removed child 10 from childList
+2018-04-18 19:28:12,692 - main_server - INFO - Node: 8 - Sending Prune after checking if all children responded or not
+2018-04-18 19:28:12,692 - main_server - INFO - Node: 8 - All children responded. Sending size to parent
+2018-04-18 19:28:12,692 - main_server - INFO - Node: 8 - Sending Prune to childId: 10
+2018-04-18 19:28:12,692 - client - INFO - Node: 8 - Starting sendSize
+2018-04-18 19:28:12,693 - client - INFO - Node: 10 - Successfully sent the size message of size 129 to parentId: 8
+2018-04-18 19:28:12,693 - client - INFO - Node: 8 - Responded to Size RPC with reply: Prune
+2018-04-18 19:28:12,693 - client - INFO - Node: 10 - Got Prune
+2018-04-18 19:28:12,694 - client - INFO - Node: 10 - Sending cluster message to child id: 18
+2018-04-18 19:28:12,695 - main_server - INFO - Node: 7 - Current size: 43
+2018-04-18 19:28:12,696 - main_server - INFO - Node:7 - Child Node: 8 has size 66
+2018-04-18 19:28:12,696 - main_server - INFO - Node: 7 - Sending Accept to childId: 8 after checking if all children responded or not
+2018-04-18 19:28:12,696 - main_server - INFO - Node 7: - New size: 109
+2018-04-18 19:28:12,697 - main_server - INFO - Node: 7 Sending accept to childId: 8
+2018-04-18 19:28:12,698 - main_server - INFO - Node: 18 - Now joining Clusterleader Node: 10
+2018-04-18 19:28:12,698 - client - INFO - Node: 8 - Successfully sent the size message of size 66 to parentId: 7
+2018-04-18 19:28:12,698 - main_server - INFO - Node: 18 - current hop count: 1
+2018-04-18 19:28:12,698 - client - INFO - Node: 7 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:12,699 - main_server - INFO - Node:18 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:12,699 - client - INFO - Node: 8 - Didn't get Prune 
+2018-04-18 19:28:12,700 - client - INFO - Node: 18 - Sending propagate cluster message to child id: 19
+2018-04-18 19:28:12,700 - client - INFO - Node: 10 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 18
+2018-04-18 19:28:12,701 - client - INFO - Node: 10 - Sending cluster message to child id: 20
+2018-04-18 19:28:12,702 - main_server - INFO - Node: 19 - Now joining Clusterleader Node: 10
+2018-04-18 19:28:12,702 - main_server - INFO - Node: 19 - current hop count: 2
+2018-04-18 19:28:12,703 - main_server - INFO - Node:19 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:12,704 - main_server - INFO - Node: 20 - Now joining Clusterleader Node: 10
+2018-04-18 19:28:12,705 - client - INFO - Node: 18 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 19
+2018-04-18 19:28:12,705 - client - INFO - Node: 19 - Sending propagate cluster message to child id: 27
+2018-04-18 19:28:12,705 - main_server - INFO - Node: 20 - current hop count: 1
+2018-04-18 19:28:12,706 - main_server - INFO - Node:20 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:12,707 - client - INFO - Node: 20 - Sending propagate cluster message to child id: 30
+2018-04-18 19:28:12,708 - client - INFO - Node: 10 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 20
+2018-04-18 19:28:12,709 - main_server - INFO - Node: 27 - Now joining Clusterleader Node: 10
+2018-04-18 19:28:12,709 - main_server - INFO - Node: 27 - current hop count: 3
+2018-04-18 19:28:12,709 - main_server - INFO - Node: 27 - NO children found!
+2018-04-18 19:28:12,710 - client - INFO - Node: 19 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 27
+2018-04-18 19:28:12,711 - main_server - INFO - Node: 30 - Now joining Clusterleader Node: 10
+2018-04-18 19:28:12,711 - client - INFO - Node: 19 - Sending propagate cluster message to child id: 28
+2018-04-18 19:28:12,712 - main_server - INFO - Node: 30 - current hop count: 2
+2018-04-18 19:28:12,712 - main_server - INFO - Node: 30 - NO children found!
+2018-04-18 19:28:12,712 - client - INFO - Node: 20 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 30
+2018-04-18 19:28:12,714 - main_server - INFO - Node: 28 - Now joining Clusterleader Node: 10
+2018-04-18 19:28:12,714 - main_server - INFO - Node: 28 - current hop count: 3
+2018-04-18 19:28:12,714 - main_server - INFO - Node:28 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:12,714 - client - INFO - Node: 28 - Sending propagate cluster message to child id: 29
+2018-04-18 19:28:12,715 - client - INFO - Node: 19 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 28
+2018-04-18 19:28:12,717 - main_server - INFO - Node: 29 - Now joining Clusterleader Node: 10
+2018-04-18 19:28:12,717 - main_server - INFO - Node: 29 - current hop count: 4
+2018-04-18 19:28:12,717 - main_server - INFO - Node: 29 - NO children found!
+2018-04-18 19:28:12,717 - client - INFO - Node: 28 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 29
+2018-04-18 19:28:14,684 - Node - INFO - #######################
+2018-04-18 19:28:14,684 - Node - INFO - Node: 31 - Initializing
+2018-04-18 19:28:14,684 - Node - INFO - #######################
+2018-04-18 19:28:14,684 - Node - INFO - Node: 31 - Calling phaseOneClustering
+2018-04-18 19:28:14,685 - Node - INFO - Node: 31 - Starting Phase One Clustering
+2018-04-18 19:28:14,685 - Node - INFO - Node: 31 - I am a parent not leaf
+2018-04-18 19:28:14,685 - Node - INFO - Node: 31 - Starting Server
+2018-04-18 19:28:14,685 - main_server - INFO - Node: 31 - Creating GRPC Server 
+2018-04-18 19:28:14,685 - main_server - INFO - Node 31 - Created GRPC Server
+2018-04-18 19:28:14,686 - main_server - INFO - Node: 31 - Inside Mainserver __init__
+2018-04-18 19:28:14,689 - main_server - INFO - Node 31 - Starting GRPC Server
+2018-04-18 19:28:14,690 - main_server - INFO - Node: 31 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:16,688 - Node - INFO - #######################
+2018-04-18 19:28:16,688 - Node - INFO - Node: 32 - Initializing
+2018-04-18 19:28:16,689 - Node - INFO - #######################
+2018-04-18 19:28:16,689 - Node - INFO - Node: 32 - Calling phaseOneClustering
+2018-04-18 19:28:16,689 - Node - INFO - Node: 32 - Starting Phase One Clustering
+2018-04-18 19:28:16,689 - Node - INFO - Node: 32 - I am a parent not leaf
+2018-04-18 19:28:16,689 - Node - INFO - Node: 32 - Starting Server
+2018-04-18 19:28:16,690 - main_server - INFO - Node: 32 - Creating GRPC Server 
+2018-04-18 19:28:16,690 - main_server - INFO - Node 32 - Created GRPC Server
+2018-04-18 19:28:16,690 - main_server - INFO - Node: 32 - Inside Mainserver __init__
+2018-04-18 19:28:16,694 - main_server - INFO - Node 32 - Starting GRPC Server
+2018-04-18 19:28:16,694 - main_server - INFO - Node: 32 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:18,694 - Node - INFO - #######################
+2018-04-18 19:28:18,694 - Node - INFO - Node: 33 - Initializing
+2018-04-18 19:28:18,694 - Node - INFO - #######################
+2018-04-18 19:28:18,695 - Node - INFO - Node: 33 - Calling phaseOneClustering
+2018-04-18 19:28:18,695 - Node - INFO - Node: 33 - Starting Phase One Clustering
+2018-04-18 19:28:18,695 - Node - INFO - Node: 33 - Calling phaseOneClusterStart with parentId: 32
+2018-04-18 19:28:18,696 - client - INFO - Node: 33 - Starting sendSize
+2018-04-18 19:28:18,699 - main_server - INFO - Node: 32 - Current size: 13
+2018-04-18 19:28:18,700 - main_server - INFO - Node:32 - Child Node: 33 has size 19
+2018-04-18 19:28:18,700 - main_server - INFO - Node: 32 - Sending Accept to childId: 33 after checking if all children responded or not
+2018-04-18 19:28:18,700 - main_server - INFO - Node 32: - New size: 32
+2018-04-18 19:28:18,700 - main_server - INFO - Node: 32 - All children responded. Sending size to parent
+2018-04-18 19:28:18,700 - main_server - INFO - Node: 32 Sending accept to childId: 33
+2018-04-18 19:28:18,701 - client - INFO - Node: 32 - Starting sendSize
+2018-04-18 19:28:18,702 - client - INFO - Node: 33 - Successfully sent the size message of size 19 to parentId: 32
+2018-04-18 19:28:18,702 - client - INFO - Node: 32 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:18,702 - client - INFO - Node: 33 - Didn't get Prune 
+2018-04-18 19:28:18,703 - Node - INFO - Node: 33 - Sent size() message to parent: 32
+2018-04-18 19:28:18,703 - Node - INFO - Node: 33 - Starting Server
+2018-04-18 19:28:18,703 - main_server - INFO - Node: 33 - Creating GRPC Server 
+2018-04-18 19:28:18,703 - main_server - INFO - Node 33 - Created GRPC Server
+2018-04-18 19:28:18,704 - main_server - INFO - Node: 33 - Inside Mainserver __init__
+2018-04-18 19:28:18,705 - main_server - INFO - Node: 31 - Current size: 13
+2018-04-18 19:28:18,705 - main_server - INFO - Node:31 - Child Node: 32 has size 32
+2018-04-18 19:28:18,705 - main_server - INFO - Node: 31 - Sending Accept to childId: 32 after checking if all children responded or not
+2018-04-18 19:28:18,705 - main_server - INFO - Node 31: - New size: 45
+2018-04-18 19:28:18,705 - main_server - INFO - Node: 31 - All children responded. Sending size to parent
+2018-04-18 19:28:18,706 - main_server - INFO - Node: 31 Sending accept to childId: 32
+2018-04-18 19:28:18,706 - client - INFO - Node: 31 - Starting sendSize
+2018-04-18 19:28:18,707 - client - INFO - Node: 32 - Successfully sent the size message of size 32 to parentId: 31
+2018-04-18 19:28:18,707 - main_server - INFO - Node 33 - Starting GRPC Server
+2018-04-18 19:28:18,708 - main_server - INFO - Node: 33 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:18,707 - client - INFO - Node: 31 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:18,709 - client - INFO - Node: 32 - Didn't get Prune 
+2018-04-18 19:28:18,710 - main_server - INFO - Node: 7 - Current size: 109
+2018-04-18 19:28:18,710 - main_server - INFO - Node:7 - Child Node: 31 has size 45
+2018-04-18 19:28:18,710 - main_server - INFO - Node: 7 - Removed child 31 from childList
+2018-04-18 19:28:18,710 - main_server - INFO - Node: 7 - Sending Prune after checking if all children responded or not
+2018-04-18 19:28:18,710 - main_server - INFO - Node: 7 - All children responded. Sending size to parent
+2018-04-18 19:28:18,711 - main_server - INFO - Node: 7 - Sending Prune to childId: 31
+2018-04-18 19:28:18,711 - client - INFO - Node: 7 - Starting sendSize
+2018-04-18 19:28:18,712 - client - INFO - Node: 31 - Successfully sent the size message of size 45 to parentId: 7
+2018-04-18 19:28:18,712 - client - INFO - Node: 7 - Responded to Size RPC with reply: Prune
+2018-04-18 19:28:18,712 - client - INFO - Node: 31 - Got Prune
+2018-04-18 19:28:18,713 - client - INFO - Node: 31 - Sending cluster message to child id: 32
+2018-04-18 19:28:18,714 - main_server - INFO - Node: 2 - Current size: 125
+2018-04-18 19:28:18,714 - main_server - INFO - Node:2 - Child Node: 7 has size 109
+2018-04-18 19:28:18,714 - main_server - INFO - Node: 2 - Removed child 7 from childList
+2018-04-18 19:28:18,714 - main_server - INFO - Node: 2 - Sending Prune after checking if all children responded or not
+2018-04-18 19:28:18,715 - main_server - INFO - Node: 2 - All children responded. Sending size to parent
+2018-04-18 19:28:18,716 - main_server - INFO - Node: 2 - Sending Prune to childId: 7
+2018-04-18 19:28:18,716 - client - INFO - Node: 2 - Starting sendSize
+2018-04-18 19:28:18,716 - main_server - INFO - Node: 32 - Now joining Clusterleader Node: 31
+2018-04-18 19:28:18,717 - main_server - INFO - Node: 32 - current hop count: 1
+2018-04-18 19:28:18,717 - client - INFO - Node: 7 - Successfully sent the size message of size 109 to parentId: 2
+2018-04-18 19:28:18,718 - client - INFO - Node: 2 - Responded to Size RPC with reply: Prune
+2018-04-18 19:28:18,718 - main_server - INFO - Node:32 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:18,719 - client - INFO - Node: 7 - Got Prune
+2018-04-18 19:28:18,721 - main_server - INFO - Node: 0 - Current size: 34
+2018-04-18 19:28:18,721 - client - INFO - Node: 31 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 32
+2018-04-18 19:28:18,721 - client - INFO - Node: 32 - Sending propagate cluster message to child id: 33
+2018-04-18 19:28:18,721 - main_server - INFO - Node:0 - Child Node: 2 has size 125
+2018-04-18 19:28:18,721 - client - INFO - Node: 7 - Sending cluster message to child id: 8
+2018-04-18 19:28:18,722 - main_server - INFO - Node: 0 - Removed child 2 from childList
+2018-04-18 19:28:18,722 - main_server - INFO - Node: 0 - Sending Prune after checking if all children responded or not
+2018-04-18 19:28:18,723 - main_server - INFO - Node: 0 - Sending Prune to childId: 2
+2018-04-18 19:28:18,725 - client - INFO - Node: 2 - Successfully sent the size message of size 125 to parentId: 0
+2018-04-18 19:28:18,725 - main_server - INFO - Node: 33 - Now joining Clusterleader Node: 31
+2018-04-18 19:28:18,725 - main_server - INFO - Node: 8 - Now joining Clusterleader Node: 7
+2018-04-18 19:28:18,725 - client - INFO - Node: 0 - Responded to Size RPC with reply: Prune
+2018-04-18 19:28:18,726 - main_server - INFO - Node: 33 - current hop count: 2
+2018-04-18 19:28:18,726 - client - INFO - Node: 2 - Got Prune
+2018-04-18 19:28:18,726 - main_server - INFO - Node: 8 - current hop count: 1
+2018-04-18 19:28:18,726 - main_server - INFO - Node: 33 - NO children found!
+2018-04-18 19:28:18,726 - main_server - INFO - Node:8 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:18,727 - client - INFO - Node: 2 - Sending cluster message to child id: 4
+2018-04-18 19:28:18,728 - Node - INFO - Node: 8 - I don't have any children
+2018-04-18 19:28:18,729 - client - INFO - Node: 32 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 33
+2018-04-18 19:28:18,730 - client - INFO - Node: 7 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 8
+2018-04-18 19:28:18,731 - main_server - INFO - Node: 4 - Now joining Clusterleader Node: 2
+2018-04-18 19:28:18,732 - main_server - INFO - Node: 4 - current hop count: 1
+2018-04-18 19:28:18,732 - main_server - INFO - Node:4 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:18,733 - client - INFO - Node: 4 - Sending propagate cluster message to child id: 9
+2018-04-18 19:28:18,733 - client - INFO - Node: 2 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 4
+2018-04-18 19:28:18,736 - main_server - INFO - Node: 9 - Now joining Clusterleader Node: 2
+2018-04-18 19:28:18,736 - main_server - INFO - Node: 9 - current hop count: 2
+2018-04-18 19:28:18,736 - main_server - INFO - Node:9 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:18,737 - client - INFO - Node: 9 - Sending propagate cluster message to child id: 24
+2018-04-18 19:28:18,738 - client - INFO - Node: 4 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 9
+2018-04-18 19:28:18,740 - main_server - INFO - Node: 24 - Now joining Clusterleader Node: 2
+2018-04-18 19:28:18,740 - main_server - INFO - Node: 24 - current hop count: 3
+2018-04-18 19:28:18,740 - main_server - INFO - Node: 24 - NO children found!
+2018-04-18 19:28:18,740 - client - INFO - Node: 9 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 24
+2018-04-18 19:28:20,699 - Node - INFO - #######################
+2018-04-18 19:28:20,699 - Node - INFO - Node: 34 - Initializing
+2018-04-18 19:28:20,699 - Node - INFO - #######################
+2018-04-18 19:28:20,700 - Node - INFO - Node: 34 - Calling phaseOneClustering
+2018-04-18 19:28:20,700 - Node - INFO - Node: 34 - Starting Phase One Clustering
+2018-04-18 19:28:20,700 - Node - INFO - Node: 34 - I am a parent not leaf
+2018-04-18 19:28:20,700 - Node - INFO - Node: 34 - Starting Server
+2018-04-18 19:28:20,700 - main_server - INFO - Node: 34 - Creating GRPC Server 
+2018-04-18 19:28:20,701 - main_server - INFO - Node 34 - Created GRPC Server
+2018-04-18 19:28:20,701 - main_server - INFO - Node: 34 - Inside Mainserver __init__
+2018-04-18 19:28:20,705 - main_server - INFO - Node 34 - Starting GRPC Server
+2018-04-18 19:28:20,705 - main_server - INFO - Node: 34 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:22,700 - Node - INFO - #######################
+2018-04-18 19:28:22,700 - Node - INFO - Node: 35 - Initializing
+2018-04-18 19:28:22,701 - Node - INFO - #######################
+2018-04-18 19:28:22,701 - Node - INFO - Node: 35 - Calling phaseOneClustering
+2018-04-18 19:28:22,701 - Node - INFO - Node: 35 - Starting Phase One Clustering
+2018-04-18 19:28:22,701 - Node - INFO - Node: 35 - Calling phaseOneClusterStart with parentId: 34
+2018-04-18 19:28:22,702 - client - INFO - Node: 35 - Starting sendSize
+2018-04-18 19:28:22,705 - main_server - INFO - Node: 34 - Current size: 19
+2018-04-18 19:28:22,706 - main_server - INFO - Node:34 - Child Node: 35 has size 13
+2018-04-18 19:28:22,706 - main_server - INFO - Node: 34 - Sending Accept to childId: 35 after checking if all children responded or not
+2018-04-18 19:28:22,706 - main_server - INFO - Node 34: - New size: 32
+2018-04-18 19:28:22,706 - main_server - INFO - Node: 34 Sending accept to childId: 35
+2018-04-18 19:28:22,707 - client - INFO - Node: 35 - Successfully sent the size message of size 13 to parentId: 34
+2018-04-18 19:28:22,707 - client - INFO - Node: 34 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:22,707 - client - INFO - Node: 35 - Didn't get Prune 
+2018-04-18 19:28:22,707 - Node - INFO - Node: 35 - Sent size() message to parent: 34
+2018-04-18 19:28:22,708 - Node - INFO - Node: 35 - Starting Server
+2018-04-18 19:28:22,708 - main_server - INFO - Node: 35 - Creating GRPC Server 
+2018-04-18 19:28:22,708 - main_server - INFO - Node 35 - Created GRPC Server
+2018-04-18 19:28:22,708 - main_server - INFO - Node: 35 - Inside Mainserver __init__
+2018-04-18 19:28:22,711 - main_server - INFO - Node 35 - Starting GRPC Server
+2018-04-18 19:28:22,711 - main_server - INFO - Node: 35 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:24,704 - Node - INFO - #######################
+2018-04-18 19:28:24,704 - Node - INFO - Node: 36 - Initializing
+2018-04-18 19:28:24,704 - Node - INFO - #######################
+2018-04-18 19:28:24,704 - Node - INFO - Node: 36 - Calling phaseOneClustering
+2018-04-18 19:28:24,705 - Node - INFO - Node: 36 - Starting Phase One Clustering
+2018-04-18 19:28:24,705 - Node - INFO - Node: 36 - I am a parent not leaf
+2018-04-18 19:28:24,705 - Node - INFO - Node: 36 - Starting Server
+2018-04-18 19:28:24,705 - main_server - INFO - Node: 36 - Creating GRPC Server 
+2018-04-18 19:28:24,705 - main_server - INFO - Node 36 - Created GRPC Server
+2018-04-18 19:28:24,706 - main_server - INFO - Node: 36 - Inside Mainserver __init__
+2018-04-18 19:28:24,709 - main_server - INFO - Node 36 - Starting GRPC Server
+2018-04-18 19:28:24,709 - main_server - INFO - Node: 36 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:26,707 - Node - INFO - #######################
+2018-04-18 19:28:26,708 - Node - INFO - Node: 37 - Initializing
+2018-04-18 19:28:26,708 - Node - INFO - #######################
+2018-04-18 19:28:26,708 - Node - INFO - Node: 37 - Calling phaseOneClustering
+2018-04-18 19:28:26,708 - Node - INFO - Node: 37 - Starting Phase One Clustering
+2018-04-18 19:28:26,709 - Node - INFO - Node: 37 - I am a parent not leaf
+2018-04-18 19:28:26,709 - Node - INFO - Node: 37 - Starting Server
+2018-04-18 19:28:26,709 - main_server - INFO - Node: 37 - Creating GRPC Server 
+2018-04-18 19:28:26,709 - main_server - INFO - Node 37 - Created GRPC Server
+2018-04-18 19:28:26,710 - main_server - INFO - Node: 37 - Inside Mainserver __init__
+2018-04-18 19:28:26,713 - main_server - INFO - Node 37 - Starting GRPC Server
+2018-04-18 19:28:26,713 - main_server - INFO - Node: 37 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:28,713 - Node - INFO - #######################
+2018-04-18 19:28:28,714 - Node - INFO - Node: 38 - Initializing
+2018-04-18 19:28:28,714 - Node - INFO - #######################
+2018-04-18 19:28:28,714 - Node - INFO - Node: 38 - Calling phaseOneClustering
+2018-04-18 19:28:28,714 - Node - INFO - Node: 38 - Starting Phase One Clustering
+2018-04-18 19:28:28,714 - Node - INFO - Node: 38 - I am a parent not leaf
+2018-04-18 19:28:28,715 - Node - INFO - Node: 38 - Starting Server
+2018-04-18 19:28:28,715 - main_server - INFO - Node: 38 - Creating GRPC Server 
+2018-04-18 19:28:28,715 - main_server - INFO - Node 38 - Created GRPC Server
+2018-04-18 19:28:28,715 - main_server - INFO - Node: 38 - Inside Mainserver __init__
+2018-04-18 19:28:28,719 - main_server - INFO - Node 38 - Starting GRPC Server
+2018-04-18 19:28:28,719 - main_server - INFO - Node: 38 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:30,716 - Node - INFO - #######################
+2018-04-18 19:28:30,717 - Node - INFO - Node: 39 - Initializing
+2018-04-18 19:28:30,717 - Node - INFO - #######################
+2018-04-18 19:28:30,717 - Node - INFO - Node: 39 - Calling phaseOneClustering
+2018-04-18 19:28:30,717 - Node - INFO - Node: 39 - Starting Phase One Clustering
+2018-04-18 19:28:30,718 - Node - INFO - Node: 39 - I am a parent not leaf
+2018-04-18 19:28:30,718 - Node - INFO - Node: 39 - Starting Server
+2018-04-18 19:28:30,718 - main_server - INFO - Node: 39 - Creating GRPC Server 
+2018-04-18 19:28:30,718 - main_server - INFO - Node 39 - Created GRPC Server
+2018-04-18 19:28:30,719 - main_server - INFO - Node: 39 - Inside Mainserver __init__
+2018-04-18 19:28:30,723 - main_server - INFO - Node 39 - Starting GRPC Server
+2018-04-18 19:28:30,723 - main_server - INFO - Node: 39 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:32,721 - Node - INFO - #######################
+2018-04-18 19:28:32,721 - Node - INFO - Node: 40 - Initializing
+2018-04-18 19:28:32,721 - Node - INFO - #######################
+2018-04-18 19:28:32,722 - Node - INFO - Node: 40 - Calling phaseOneClustering
+2018-04-18 19:28:32,722 - Node - INFO - Node: 40 - Starting Phase One Clustering
+2018-04-18 19:28:32,722 - Node - INFO - Node: 40 - Calling phaseOneClusterStart with parentId: 13
+2018-04-18 19:28:32,723 - client - INFO - Node: 40 - Starting sendSize
+2018-04-18 19:28:32,726 - main_server - INFO - Node: 13 - Current size: 19
+2018-04-18 19:28:32,727 - main_server - INFO - Node:13 - Child Node: 40 has size 13
+2018-04-18 19:28:32,727 - main_server - INFO - Node: 13 - Sending Accept to childId: 40 after checking if all children responded or not
+2018-04-18 19:28:32,727 - main_server - INFO - Node 13: - New size: 32
+2018-04-18 19:28:32,727 - main_server - INFO - Node: 13 Sending accept to childId: 40
+2018-04-18 19:28:32,728 - client - INFO - Node: 40 - Successfully sent the size message of size 13 to parentId: 13
+2018-04-18 19:28:32,728 - client - INFO - Node: 13 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:32,728 - client - INFO - Node: 40 - Didn't get Prune 
+2018-04-18 19:28:32,728 - Node - INFO - Node: 40 - Sent size() message to parent: 13
+2018-04-18 19:28:32,729 - Node - INFO - Node: 40 - Starting Server
+2018-04-18 19:28:32,729 - main_server - INFO - Node: 40 - Creating GRPC Server 
+2018-04-18 19:28:32,729 - main_server - INFO - Node 40 - Created GRPC Server
+2018-04-18 19:28:32,729 - main_server - INFO - Node: 40 - Inside Mainserver __init__
+2018-04-18 19:28:32,732 - main_server - INFO - Node 40 - Starting GRPC Server
+2018-04-18 19:28:32,732 - main_server - INFO - Node: 40 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:34,727 - Node - INFO - #######################
+2018-04-18 19:28:34,727 - Node - INFO - Node: 41 - Initializing
+2018-04-18 19:28:34,727 - Node - INFO - #######################
+2018-04-18 19:28:34,727 - Node - INFO - Node: 41 - Calling phaseOneClustering
+2018-04-18 19:28:34,728 - Node - INFO - Node: 41 - Starting Phase One Clustering
+2018-04-18 19:28:34,728 - Node - INFO - Node: 41 - I am a parent not leaf
+2018-04-18 19:28:34,728 - Node - INFO - Node: 41 - Starting Server
+2018-04-18 19:28:34,728 - main_server - INFO - Node: 41 - Creating GRPC Server 
+2018-04-18 19:28:34,728 - main_server - INFO - Node 41 - Created GRPC Server
+2018-04-18 19:28:34,729 - main_server - INFO - Node: 41 - Inside Mainserver __init__
+2018-04-18 19:28:34,732 - main_server - INFO - Node 41 - Starting GRPC Server
+2018-04-18 19:28:34,732 - main_server - INFO - Node: 41 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:36,728 - Node - INFO - #######################
+2018-04-18 19:28:36,729 - Node - INFO - Node: 42 - Initializing
+2018-04-18 19:28:36,729 - Node - INFO - #######################
+2018-04-18 19:28:36,729 - Node - INFO - Node: 42 - Calling phaseOneClustering
+2018-04-18 19:28:36,729 - Node - INFO - Node: 42 - Starting Phase One Clustering
+2018-04-18 19:28:36,729 - Node - INFO - Node: 42 - I am a parent not leaf
+2018-04-18 19:28:36,729 - Node - INFO - Node: 42 - Starting Server
+2018-04-18 19:28:36,729 - main_server - INFO - Node: 42 - Creating GRPC Server 
+2018-04-18 19:28:36,730 - main_server - INFO - Node 42 - Created GRPC Server
+2018-04-18 19:28:36,730 - main_server - INFO - Node: 42 - Inside Mainserver __init__
+2018-04-18 19:28:36,733 - main_server - INFO - Node 42 - Starting GRPC Server
+2018-04-18 19:28:36,733 - main_server - INFO - Node: 42 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:38,733 - Node - INFO - #######################
+2018-04-18 19:28:38,733 - Node - INFO - Node: 43 - Initializing
+2018-04-18 19:28:38,733 - Node - INFO - #######################
+2018-04-18 19:28:38,733 - Node - INFO - Node: 43 - Calling phaseOneClustering
+2018-04-18 19:28:38,734 - Node - INFO - Node: 43 - Starting Phase One Clustering
+2018-04-18 19:28:38,734 - Node - INFO - Node: 43 - I am a parent not leaf
+2018-04-18 19:28:38,734 - Node - INFO - Node: 43 - Starting Server
+2018-04-18 19:28:38,734 - main_server - INFO - Node: 43 - Creating GRPC Server 
+2018-04-18 19:28:38,735 - main_server - INFO - Node 43 - Created GRPC Server
+2018-04-18 19:28:38,735 - main_server - INFO - Node: 43 - Inside Mainserver __init__
+2018-04-18 19:28:38,738 - main_server - INFO - Node 43 - Starting GRPC Server
+2018-04-18 19:28:38,738 - main_server - INFO - Node: 43 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:40,738 - Node - INFO - #######################
+2018-04-18 19:28:40,738 - Node - INFO - Node: 44 - Initializing
+2018-04-18 19:28:40,739 - Node - INFO - #######################
+2018-04-18 19:28:40,739 - Node - INFO - Node: 44 - Calling phaseOneClustering
+2018-04-18 19:28:40,739 - Node - INFO - Node: 44 - Starting Phase One Clustering
+2018-04-18 19:28:40,739 - Node - INFO - Node: 44 - Calling phaseOneClusterStart with parentId: 43
+2018-04-18 19:28:40,741 - client - INFO - Node: 44 - Starting sendSize
+2018-04-18 19:28:40,744 - main_server - INFO - Node: 43 - Current size: 19
+2018-04-18 19:28:40,744 - main_server - INFO - Node:43 - Child Node: 44 has size 19
+2018-04-18 19:28:40,744 - main_server - INFO - Node: 43 - Sending Accept to childId: 44 after checking if all children responded or not
+2018-04-18 19:28:40,745 - main_server - INFO - Node 43: - New size: 38
+2018-04-18 19:28:40,745 - main_server - INFO - Node: 43 - All children responded. Sending size to parent
+2018-04-18 19:28:40,745 - main_server - INFO - Node: 43 Sending accept to childId: 44
+2018-04-18 19:28:40,746 - client - INFO - Node: 43 - Starting sendSize
+2018-04-18 19:28:40,747 - client - INFO - Node: 44 - Successfully sent the size message of size 19 to parentId: 43
+2018-04-18 19:28:40,747 - client - INFO - Node: 43 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:40,747 - client - INFO - Node: 44 - Didn't get Prune 
+2018-04-18 19:28:40,747 - Node - INFO - Node: 44 - Sent size() message to parent: 43
+2018-04-18 19:28:40,748 - Node - INFO - Node: 44 - Starting Server
+2018-04-18 19:28:40,748 - main_server - INFO - Node: 44 - Creating GRPC Server 
+2018-04-18 19:28:40,749 - main_server - INFO - Node 44 - Created GRPC Server
+2018-04-18 19:28:40,749 - main_server - INFO - Node: 37 - Current size: 19
+2018-04-18 19:28:40,749 - main_server - INFO - Node: 44 - Inside Mainserver __init__
+2018-04-18 19:28:40,750 - main_server - INFO - Node:37 - Child Node: 43 has size 38
+2018-04-18 19:28:40,750 - main_server - INFO - Node: 37 - Sending Accept to childId: 43 after checking if all children responded or not
+2018-04-18 19:28:40,750 - main_server - INFO - Node 37: - New size: 57
+2018-04-18 19:28:40,750 - main_server - INFO - Node: 37 - All children responded. Sending size to parent
+2018-04-18 19:28:40,750 - main_server - INFO - Node: 37 Sending accept to childId: 43
+2018-04-18 19:28:40,751 - client - INFO - Node: 37 - Starting sendSize
+2018-04-18 19:28:40,752 - client - INFO - Node: 43 - Successfully sent the size message of size 38 to parentId: 37
+2018-04-18 19:28:40,752 - client - INFO - Node: 37 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:40,752 - main_server - INFO - Node 44 - Starting GRPC Server
+2018-04-18 19:28:40,753 - client - INFO - Node: 43 - Didn't get Prune 
+2018-04-18 19:28:40,753 - main_server - INFO - Node: 44 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:40,754 - main_server - INFO - Node: 23 - Current size: 19
+2018-04-18 19:28:40,754 - main_server - INFO - Node:23 - Child Node: 37 has size 57
+2018-04-18 19:28:40,754 - main_server - INFO - Node: 23 - Sending Accept to childId: 37 after checking if all children responded or not
+2018-04-18 19:28:40,754 - main_server - INFO - Node 23: - New size: 76
+2018-04-18 19:28:40,754 - main_server - INFO - Node: 23 Sending accept to childId: 37
+2018-04-18 19:28:40,755 - client - INFO - Node: 37 - Successfully sent the size message of size 57 to parentId: 23
+2018-04-18 19:28:40,755 - client - INFO - Node: 23 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:40,755 - client - INFO - Node: 37 - Didn't get Prune 
+2018-04-18 19:28:42,744 - Node - INFO - #######################
+2018-04-18 19:28:42,744 - Node - INFO - Node: 45 - Initializing
+2018-04-18 19:28:42,744 - Node - INFO - #######################
+2018-04-18 19:28:42,745 - Node - INFO - Node: 45 - Calling phaseOneClustering
+2018-04-18 19:28:42,745 - Node - INFO - Node: 45 - Starting Phase One Clustering
+2018-04-18 19:28:42,745 - Node - INFO - Node: 45 - Calling phaseOneClusterStart with parentId: 36
+2018-04-18 19:28:42,746 - client - INFO - Node: 45 - Starting sendSize
+2018-04-18 19:28:42,749 - main_server - INFO - Node: 36 - Current size: 13
+2018-04-18 19:28:42,749 - main_server - INFO - Node:36 - Child Node: 45 has size 13
+2018-04-18 19:28:42,750 - main_server - INFO - Node: 36 - Sending Accept to childId: 45 after checking if all children responded or not
+2018-04-18 19:28:42,750 - main_server - INFO - Node 36: - New size: 26
+2018-04-18 19:28:42,750 - main_server - INFO - Node: 36 - All children responded. Sending size to parent
+2018-04-18 19:28:42,750 - main_server - INFO - Node: 36 Sending accept to childId: 45
+2018-04-18 19:28:42,751 - client - INFO - Node: 45 - Successfully sent the size message of size 13 to parentId: 36
+2018-04-18 19:28:42,752 - client - INFO - Node: 36 - Starting sendSize
+2018-04-18 19:28:42,752 - client - INFO - Node: 36 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:42,753 - client - INFO - Node: 45 - Didn't get Prune 
+2018-04-18 19:28:42,753 - Node - INFO - Node: 45 - Sent size() message to parent: 36
+2018-04-18 19:28:42,753 - Node - INFO - Node: 45 - Starting Server
+2018-04-18 19:28:42,753 - main_server - INFO - Node: 45 - Creating GRPC Server 
+2018-04-18 19:28:42,753 - main_server - INFO - Node 45 - Created GRPC Server
+2018-04-18 19:28:42,754 - main_server - INFO - Node: 45 - Inside Mainserver __init__
+2018-04-18 19:28:42,755 - main_server - INFO - Node: 34 - Current size: 32
+2018-04-18 19:28:42,755 - main_server - INFO - Node:34 - Child Node: 36 has size 26
+2018-04-18 19:28:42,755 - main_server - INFO - Node: 34 - Sending Accept to childId: 36 after checking if all children responded or not
+2018-04-18 19:28:42,755 - main_server - INFO - Node 34: - New size: 58
+2018-04-18 19:28:42,755 - main_server - INFO - Node: 34 - All children responded. Sending size to parent
+2018-04-18 19:28:42,756 - main_server - INFO - Node: 34 Sending accept to childId: 36
+2018-04-18 19:28:42,756 - client - INFO - Node: 34 - Starting sendSize
+2018-04-18 19:28:42,757 - client - INFO - Node: 36 - Successfully sent the size message of size 26 to parentId: 34
+2018-04-18 19:28:42,758 - main_server - INFO - Node 45 - Starting GRPC Server
+2018-04-18 19:28:42,758 - client - INFO - Node: 34 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:42,758 - main_server - INFO - Node: 45 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:42,758 - client - INFO - Node: 36 - Didn't get Prune 
+2018-04-18 19:28:42,760 - main_server - INFO - Node: 21 - Current size: 19
+2018-04-18 19:28:42,760 - main_server - INFO - Node:21 - Child Node: 34 has size 58
+2018-04-18 19:28:42,760 - main_server - INFO - Node: 21 - Sending Accept to childId: 34 after checking if all children responded or not
+2018-04-18 19:28:42,760 - main_server - INFO - Node 21: - New size: 77
+2018-04-18 19:28:42,760 - main_server - INFO - Node: 21 Sending accept to childId: 34
+2018-04-18 19:28:42,761 - client - INFO - Node: 34 - Successfully sent the size message of size 58 to parentId: 21
+2018-04-18 19:28:42,761 - client - INFO - Node: 21 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:42,761 - client - INFO - Node: 34 - Didn't get Prune 
+2018-04-18 19:28:44,749 - Node - INFO - #######################
+2018-04-18 19:28:44,750 - Node - INFO - Node: 46 - Initializing
+2018-04-18 19:28:44,750 - Node - INFO - #######################
+2018-04-18 19:28:44,750 - Node - INFO - Node: 46 - Calling phaseOneClustering
+2018-04-18 19:28:44,750 - Node - INFO - Node: 46 - Starting Phase One Clustering
+2018-04-18 19:28:44,750 - Node - INFO - Node: 46 - Calling phaseOneClusterStart with parentId: 41
+2018-04-18 19:28:44,751 - client - INFO - Node: 46 - Starting sendSize
+2018-04-18 19:28:44,755 - main_server - INFO - Node: 41 - Current size: 25
+2018-04-18 19:28:44,755 - main_server - INFO - Node:41 - Child Node: 46 has size 13
+2018-04-18 19:28:44,755 - main_server - INFO - Node: 41 - Sending Accept to childId: 46 after checking if all children responded or not
+2018-04-18 19:28:44,756 - main_server - INFO - Node 41: - New size: 38
+2018-04-18 19:28:44,756 - main_server - INFO - Node: 41 - All children responded. Sending size to parent
+2018-04-18 19:28:44,756 - main_server - INFO - Node: 41 Sending accept to childId: 46
+2018-04-18 19:28:44,757 - client - INFO - Node: 41 - Starting sendSize
+2018-04-18 19:28:44,758 - client - INFO - Node: 46 - Successfully sent the size message of size 13 to parentId: 41
+2018-04-18 19:28:44,759 - client - INFO - Node: 41 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:44,759 - client - INFO - Node: 46 - Didn't get Prune 
+2018-04-18 19:28:44,759 - Node - INFO - Node: 46 - Sent size() message to parent: 41
+2018-04-18 19:28:44,759 - Node - INFO - Node: 46 - Starting Server
+2018-04-18 19:28:44,759 - main_server - INFO - Node: 46 - Creating GRPC Server 
+2018-04-18 19:28:44,759 - main_server - INFO - Node 46 - Created GRPC Server
+2018-04-18 19:28:44,760 - main_server - INFO - Node: 46 - Inside Mainserver __init__
+2018-04-18 19:28:44,761 - main_server - INFO - Node: 38 - Current size: 19
+2018-04-18 19:28:44,761 - main_server - INFO - Node:38 - Child Node: 41 has size 38
+2018-04-18 19:28:44,761 - main_server - INFO - Node: 38 - Sending Accept to childId: 41 after checking if all children responded or not
+2018-04-18 19:28:44,761 - main_server - INFO - Node 38: - New size: 57
+2018-04-18 19:28:44,761 - main_server - INFO - Node: 38 Sending accept to childId: 41
+2018-04-18 19:28:44,762 - client - INFO - Node: 41 - Successfully sent the size message of size 38 to parentId: 38
+2018-04-18 19:28:44,762 - client - INFO - Node: 38 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:44,762 - client - INFO - Node: 41 - Didn't get Prune 
+2018-04-18 19:28:44,763 - main_server - INFO - Node 46 - Starting GRPC Server
+2018-04-18 19:28:44,763 - main_server - INFO - Node: 46 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:46,754 - Node - INFO - #######################
+2018-04-18 19:28:46,755 - Node - INFO - Node: 47 - Initializing
+2018-04-18 19:28:46,755 - Node - INFO - #######################
+2018-04-18 19:28:46,755 - Node - INFO - Node: 47 - Calling phaseOneClustering
+2018-04-18 19:28:46,755 - Node - INFO - Node: 47 - Starting Phase One Clustering
+2018-04-18 19:28:46,756 - Node - INFO - Node: 47 - I am a parent not leaf
+2018-04-18 19:28:46,756 - Node - INFO - Node: 47 - Starting Server
+2018-04-18 19:28:46,756 - main_server - INFO - Node: 47 - Creating GRPC Server 
+2018-04-18 19:28:46,756 - main_server - INFO - Node 47 - Created GRPC Server
+2018-04-18 19:28:46,756 - main_server - INFO - Node: 47 - Inside Mainserver __init__
+2018-04-18 19:28:46,760 - main_server - INFO - Node 47 - Starting GRPC Server
+2018-04-18 19:28:46,760 - main_server - INFO - Node: 47 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:48,757 - Node - INFO - #######################
+2018-04-18 19:28:48,758 - Node - INFO - Node: 48 - Initializing
+2018-04-18 19:28:48,758 - Node - INFO - #######################
+2018-04-18 19:28:48,758 - Node - INFO - Node: 48 - Calling phaseOneClustering
+2018-04-18 19:28:48,759 - Node - INFO - Node: 48 - Starting Phase One Clustering
+2018-04-18 19:28:48,759 - Node - INFO - Node: 48 - I am a parent not leaf
+2018-04-18 19:28:48,759 - Node - INFO - Node: 48 - Starting Server
+2018-04-18 19:28:48,759 - main_server - INFO - Node: 48 - Creating GRPC Server 
+2018-04-18 19:28:48,759 - main_server - INFO - Node 48 - Created GRPC Server
+2018-04-18 19:28:48,760 - main_server - INFO - Node: 48 - Inside Mainserver __init__
+2018-04-18 19:28:48,763 - main_server - INFO - Node 48 - Starting GRPC Server
+2018-04-18 19:28:48,764 - main_server - INFO - Node: 48 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:50,760 - Node - INFO - #######################
+2018-04-18 19:28:50,761 - Node - INFO - Node: 49 - Initializing
+2018-04-18 19:28:50,761 - Node - INFO - #######################
+2018-04-18 19:28:50,761 - Node - INFO - Node: 49 - Calling phaseOneClustering
+2018-04-18 19:28:50,761 - Node - INFO - Node: 49 - Starting Phase One Clustering
+2018-04-18 19:28:50,761 - Node - INFO - Node: 49 - Calling phaseOneClusterStart with parentId: 48
+2018-04-18 19:28:50,762 - client - INFO - Node: 49 - Starting sendSize
+2018-04-18 19:28:50,765 - main_server - INFO - Node: 48 - Current size: 13
+2018-04-18 19:28:50,765 - main_server - INFO - Node:48 - Child Node: 49 has size 13
+2018-04-18 19:28:50,766 - main_server - INFO - Node: 48 - Sending Accept to childId: 49 after checking if all children responded or not
+2018-04-18 19:28:50,766 - main_server - INFO - Node 48: - New size: 26
+2018-04-18 19:28:50,766 - main_server - INFO - Node: 48 - All children responded. Sending size to parent
+2018-04-18 19:28:50,766 - main_server - INFO - Node: 48 Sending accept to childId: 49
+2018-04-18 19:28:50,768 - client - INFO - Node: 49 - Successfully sent the size message of size 13 to parentId: 48
+2018-04-18 19:28:50,768 - client - INFO - Node: 48 - Starting sendSize
+2018-04-18 19:28:50,768 - client - INFO - Node: 48 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:50,769 - client - INFO - Node: 49 - Didn't get Prune 
+2018-04-18 19:28:50,769 - Node - INFO - Node: 49 - Sent size() message to parent: 48
+2018-04-18 19:28:50,769 - Node - INFO - Node: 49 - Starting Server
+2018-04-18 19:28:50,770 - main_server - INFO - Node: 49 - Creating GRPC Server 
+2018-04-18 19:28:50,771 - main_server - INFO - Node 49 - Created GRPC Server
+2018-04-18 19:28:50,771 - main_server - INFO - Node: 49 - Inside Mainserver __init__
+2018-04-18 19:28:50,771 - main_server - INFO - Node: 47 - Current size: 13
+2018-04-18 19:28:50,772 - main_server - INFO - Node:47 - Child Node: 48 has size 26
+2018-04-18 19:28:50,772 - main_server - INFO - Node: 47 - Sending Accept to childId: 48 after checking if all children responded or not
+2018-04-18 19:28:50,772 - main_server - INFO - Node 47: - New size: 39
+2018-04-18 19:28:50,772 - main_server - INFO - Node: 47 - All children responded. Sending size to parent
+2018-04-18 19:28:50,772 - main_server - INFO - Node: 47 Sending accept to childId: 48
+2018-04-18 19:28:50,773 - client - INFO - Node: 47 - Starting sendSize
+2018-04-18 19:28:50,774 - client - INFO - Node: 48 - Successfully sent the size message of size 26 to parentId: 47
+2018-04-18 19:28:50,774 - main_server - INFO - Node 49 - Starting GRPC Server
+2018-04-18 19:28:50,775 - client - INFO - Node: 47 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:50,775 - main_server - INFO - Node: 49 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:50,775 - client - INFO - Node: 48 - Didn't get Prune 
+2018-04-18 19:28:50,776 - main_server - INFO - Node: 42 - Current size: 25
+2018-04-18 19:28:50,776 - main_server - INFO - Node:42 - Child Node: 47 has size 39
+2018-04-18 19:28:50,776 - main_server - INFO - Node: 42 - Sending Accept to childId: 47 after checking if all children responded or not
+2018-04-18 19:28:50,776 - main_server - INFO - Node 42: - New size: 64
+2018-04-18 19:28:50,776 - main_server - INFO - Node: 42 - All children responded. Sending size to parent
+2018-04-18 19:28:50,776 - main_server - INFO - Node: 42 Sending accept to childId: 47
+2018-04-18 19:28:50,777 - client - INFO - Node: 42 - Starting sendSize
+2018-04-18 19:28:50,778 - client - INFO - Node: 47 - Successfully sent the size message of size 39 to parentId: 42
+2018-04-18 19:28:50,778 - client - INFO - Node: 42 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:50,778 - client - INFO - Node: 47 - Didn't get Prune 
+2018-04-18 19:28:50,779 - main_server - INFO - Node: 38 - Current size: 57
+2018-04-18 19:28:50,779 - main_server - INFO - Node:38 - Child Node: 42 has size 64
+2018-04-18 19:28:50,779 - main_server - INFO - Node: 38 - Sending Accept to childId: 42 after checking if all children responded or not
+2018-04-18 19:28:50,779 - main_server - INFO - Node 38: - New size: 121
+2018-04-18 19:28:50,779 - main_server - INFO - Node: 38 - All children responded. Sending size to parent
+2018-04-18 19:28:50,780 - main_server - INFO - Node: 38 Sending accept to childId: 42
+2018-04-18 19:28:50,780 - client - INFO - Node: 38 - Starting sendSize
+2018-04-18 19:28:50,781 - client - INFO - Node: 42 - Successfully sent the size message of size 64 to parentId: 38
+2018-04-18 19:28:50,781 - client - INFO - Node: 38 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:50,781 - client - INFO - Node: 42 - Didn't get Prune 
+2018-04-18 19:28:50,782 - main_server - INFO - Node: 23 - Current size: 76
+2018-04-18 19:28:50,783 - main_server - INFO - Node:23 - Child Node: 38 has size 121
+2018-04-18 19:28:50,783 - main_server - INFO - Node: 23 - Removed child 38 from childList
+2018-04-18 19:28:50,783 - main_server - INFO - Node: 23 - Sending Prune after checking if all children responded or not
+2018-04-18 19:28:50,783 - main_server - INFO - Node: 23 - All children responded. Sending size to parent
+2018-04-18 19:28:50,783 - main_server - INFO - Node: 23 - Sending Prune to childId: 38
+2018-04-18 19:28:50,784 - client - INFO - Node: 23 - Starting sendSize
+2018-04-18 19:28:50,785 - client - INFO - Node: 38 - Successfully sent the size message of size 121 to parentId: 23
+2018-04-18 19:28:50,785 - client - INFO - Node: 23 - Responded to Size RPC with reply: Prune
+2018-04-18 19:28:50,785 - client - INFO - Node: 38 - Got Prune
+2018-04-18 19:28:50,786 - client - INFO - Node: 38 - Sending cluster message to child id: 41
+2018-04-18 19:28:50,787 - main_server - INFO - Node: 22 - Current size: 19
+2018-04-18 19:28:50,787 - main_server - INFO - Node:22 - Child Node: 23 has size 76
+2018-04-18 19:28:50,787 - main_server - INFO - Node: 22 - Sending Accept to childId: 23 after checking if all children responded or not
+2018-04-18 19:28:50,787 - main_server - INFO - Node 22: - New size: 95
+2018-04-18 19:28:50,788 - main_server - INFO - Node: 22 - All children responded. Sending size to parent
+2018-04-18 19:28:50,789 - main_server - INFO - Node: 22 Sending accept to childId: 23
+2018-04-18 19:28:50,789 - main_server - INFO - Node: 41 - Now joining Clusterleader Node: 38
+2018-04-18 19:28:50,789 - client - INFO - Node: 22 - Starting sendSize
+2018-04-18 19:28:50,790 - main_server - INFO - Node: 41 - current hop count: 1
+2018-04-18 19:28:50,790 - client - INFO - Node: 23 - Successfully sent the size message of size 76 to parentId: 22
+2018-04-18 19:28:50,791 - client - INFO - Node: 22 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:50,791 - main_server - INFO - Node:41 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:50,791 - client - INFO - Node: 23 - Didn't get Prune 
+2018-04-18 19:28:50,792 - main_server - INFO - Node: 21 - Current size: 77
+2018-04-18 19:28:50,793 - client - INFO - Node: 41 - Sending propagate cluster message to child id: 46
+2018-04-18 19:28:50,793 - main_server - INFO - Node:21 - Child Node: 22 has size 95
+2018-04-18 19:28:50,793 - client - INFO - Node: 38 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 41
+2018-04-18 19:28:50,794 - main_server - INFO - Node: 21 - Removed child 22 from childList
+2018-04-18 19:28:50,794 - main_server - INFO - Node: 21 - Sending Prune after checking if all children responded or not
+2018-04-18 19:28:50,794 - client - INFO - Node: 38 - Sending cluster message to child id: 42
+2018-04-18 19:28:50,794 - main_server - INFO - Node: 21 - All children responded. Sending size to parent
+2018-04-18 19:28:50,796 - main_server - INFO - Node: 21 - Sending Prune to childId: 22
+2018-04-18 19:28:50,797 - client - INFO - Node: 21 - Starting sendSize
+2018-04-18 19:28:50,797 - client - INFO - Node: 22 - Successfully sent the size message of size 95 to parentId: 21
+2018-04-18 19:28:50,798 - main_server - INFO - Node: 46 - Now joining Clusterleader Node: 38
+2018-04-18 19:28:50,798 - client - INFO - Node: 21 - Responded to Size RPC with reply: Prune
+2018-04-18 19:28:50,799 - main_server - INFO - Node: 46 - current hop count: 2
+2018-04-18 19:28:50,799 - main_server - INFO - Node: 42 - Now joining Clusterleader Node: 38
+2018-04-18 19:28:50,799 - client - INFO - Node: 22 - Got Prune
+2018-04-18 19:28:50,799 - main_server - INFO - Node: 46 - NO children found!
+2018-04-18 19:28:50,799 - main_server - INFO - Node: 42 - current hop count: 1
+2018-04-18 19:28:50,801 - client - INFO - Node: 22 - Sending cluster message to child id: 23
+2018-04-18 19:28:50,801 - main_server - INFO - Node:42 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:50,801 - client - INFO - Node: 41 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 46
+2018-04-18 19:28:50,804 - main_server - INFO - Node: 13 - Current size: 32
+2018-04-18 19:28:50,804 - client - INFO - Node: 42 - Sending propagate cluster message to child id: 47
+2018-04-18 19:28:50,804 - client - INFO - Node: 38 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 42
+2018-04-18 19:28:50,805 - main_server - INFO - Node:13 - Child Node: 21 has size 77
+2018-04-18 19:28:50,806 - main_server - INFO - Node: 13 - Sending Accept to childId: 21 after checking if all children responded or not
+2018-04-18 19:28:50,806 - main_server - INFO - Node 13: - New size: 109
+2018-04-18 19:28:50,806 - main_server - INFO - Node: 13 Sending accept to childId: 21
+2018-04-18 19:28:50,807 - main_server - INFO - Node: 23 - Now joining Clusterleader Node: 22
+2018-04-18 19:28:50,807 - main_server - INFO - Node: 23 - current hop count: 1
+2018-04-18 19:28:50,808 - client - INFO - Node: 21 - Successfully sent the size message of size 77 to parentId: 13
+2018-04-18 19:28:50,808 - main_server - INFO - Node:23 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:50,809 - client - INFO - Node: 13 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:50,810 - main_server - INFO - Node: 47 - Now joining Clusterleader Node: 38
+2018-04-18 19:28:50,810 - client - INFO - Node: 22 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 23
+2018-04-18 19:28:50,810 - client - INFO - Node: 23 - Sending propagate cluster message to child id: 37
+2018-04-18 19:28:50,810 - client - INFO - Node: 21 - Didn't get Prune 
+2018-04-18 19:28:50,811 - main_server - INFO - Node: 47 - current hop count: 2
+2018-04-18 19:28:50,811 - main_server - INFO - Node:47 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:50,812 - client - INFO - Node: 47 - Sending propagate cluster message to child id: 48
+2018-04-18 19:28:50,813 - client - INFO - Node: 42 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 47
+2018-04-18 19:28:50,814 - main_server - INFO - Node: 37 - Now joining Clusterleader Node: 22
+2018-04-18 19:28:50,815 - main_server - INFO - Node: 37 - current hop count: 2
+2018-04-18 19:28:50,816 - main_server - INFO - Node: 48 - Now joining Clusterleader Node: 38
+2018-04-18 19:28:50,816 - main_server - INFO - Node:37 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:50,816 - main_server - INFO - Node: 48 - current hop count: 3
+2018-04-18 19:28:50,816 - main_server - INFO - Node:48 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:50,817 - client - INFO - Node: 23 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 37
+2018-04-18 19:28:50,817 - client - INFO - Node: 37 - Sending propagate cluster message to child id: 43
+2018-04-18 19:28:50,818 - client - INFO - Node: 48 - Sending propagate cluster message to child id: 49
+2018-04-18 19:28:50,819 - client - INFO - Node: 47 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 48
+2018-04-18 19:28:50,823 - main_server - INFO - Node: 43 - Now joining Clusterleader Node: 22
+2018-04-18 19:28:50,823 - main_server - INFO - Node: 49 - Now joining Clusterleader Node: 38
+2018-04-18 19:28:50,824 - main_server - INFO - Node: 43 - current hop count: 3
+2018-04-18 19:28:50,824 - main_server - INFO - Node: 49 - current hop count: 4
+2018-04-18 19:28:50,824 - main_server - INFO - Node:43 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:50,824 - main_server - INFO - Node: 49 - NO children found!
+2018-04-18 19:28:50,825 - client - INFO - Node: 43 - Sending propagate cluster message to child id: 44
+2018-04-18 19:28:50,826 - client - INFO - Node: 37 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 43
+2018-04-18 19:28:50,826 - client - INFO - Node: 48 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 49
+2018-04-18 19:28:50,828 - main_server - INFO - Node: 44 - Now joining Clusterleader Node: 22
+2018-04-18 19:28:50,828 - main_server - INFO - Node: 44 - current hop count: 4
+2018-04-18 19:28:50,828 - main_server - INFO - Node: 44 - NO children found!
+2018-04-18 19:28:50,829 - client - INFO - Node: 43 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 44
+2018-04-18 19:28:52,762 - Node - INFO - #######################
+2018-04-18 19:28:52,762 - Node - INFO - Node: 50 - Initializing
+2018-04-18 19:28:52,762 - Node - INFO - #######################
+2018-04-18 19:28:52,762 - Node - INFO - Node: 50 - Calling phaseOneClustering
+2018-04-18 19:28:52,763 - Node - INFO - Node: 50 - Starting Phase One Clustering
+2018-04-18 19:28:52,763 - Node - INFO - Node: 50 - Calling phaseOneClusterStart with parentId: 39
+2018-04-18 19:28:52,764 - client - INFO - Node: 50 - Starting sendSize
+2018-04-18 19:28:52,767 - main_server - INFO - Node: 39 - Current size: 13
+2018-04-18 19:28:52,767 - main_server - INFO - Node:39 - Child Node: 50 has size 13
+2018-04-18 19:28:52,767 - main_server - INFO - Node: 39 - Sending Accept to childId: 50 after checking if all children responded or not
+2018-04-18 19:28:52,767 - main_server - INFO - Node 39: - New size: 26
+2018-04-18 19:28:52,768 - main_server - INFO - Node: 39 - All children responded. Sending size to parent
+2018-04-18 19:28:52,768 - main_server - INFO - Node: 39 Sending accept to childId: 50
+2018-04-18 19:28:52,769 - client - INFO - Node: 39 - Starting sendSize
+2018-04-18 19:28:52,769 - client - INFO - Node: 50 - Successfully sent the size message of size 13 to parentId: 39
+2018-04-18 19:28:52,770 - client - INFO - Node: 39 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:52,770 - client - INFO - Node: 50 - Didn't get Prune 
+2018-04-18 19:28:52,770 - Node - INFO - Node: 50 - Sent size() message to parent: 39
+2018-04-18 19:28:52,771 - Node - INFO - Node: 50 - Starting Server
+2018-04-18 19:28:52,771 - main_server - INFO - Node: 50 - Creating GRPC Server 
+2018-04-18 19:28:52,772 - main_server - INFO - Node 50 - Created GRPC Server
+2018-04-18 19:28:52,772 - main_server - INFO - Node: 13 - Current size: 109
+2018-04-18 19:28:52,772 - main_server - INFO - Node: 50 - Inside Mainserver __init__
+2018-04-18 19:28:52,773 - main_server - INFO - Node:13 - Child Node: 39 has size 26
+2018-04-18 19:28:52,773 - main_server - INFO - Node: 13 - Sending Accept to childId: 39 after checking if all children responded or not
+2018-04-18 19:28:52,773 - main_server - INFO - Node 13: - New size: 135
+2018-04-18 19:28:52,773 - main_server - INFO - Node: 13 - All children responded. Sending size to parent
+2018-04-18 19:28:52,774 - main_server - INFO - Node: 13 Sending accept to childId: 39
+2018-04-18 19:28:52,774 - client - INFO - Node: 13 - Starting sendSize
+2018-04-18 19:28:52,775 - client - INFO - Node: 39 - Successfully sent the size message of size 26 to parentId: 13
+2018-04-18 19:28:52,775 - client - INFO - Node: 13 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:52,775 - client - INFO - Node: 39 - Didn't get Prune 
+2018-04-18 19:28:52,776 - main_server - INFO - Node 50 - Starting GRPC Server
+2018-04-18 19:28:52,776 - main_server - INFO - Node: 50 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-04-18 19:28:52,777 - main_server - INFO - Node: 12 - Current size: 19
+2018-04-18 19:28:52,777 - main_server - INFO - Node:12 - Child Node: 13 has size 135
+2018-04-18 19:28:52,777 - main_server - INFO - Node: 12 - Removed child 13 from childList
+2018-04-18 19:28:52,777 - main_server - INFO - Node: 12 - Sending Prune after checking if all children responded or not
+2018-04-18 19:28:52,777 - main_server - INFO - Node: 12 - All children responded. Sending size to parent
+2018-04-18 19:28:52,778 - client - INFO - Node: 12 - Starting sendSize
+2018-04-18 19:28:52,778 - main_server - INFO - Node: 12 - Sending Prune to childId: 13
+2018-04-18 19:28:52,779 - client - INFO - Node: 13 - Successfully sent the size message of size 135 to parentId: 12
+2018-04-18 19:28:52,779 - client - INFO - Node: 12 - Responded to Size RPC with reply: Prune
+2018-04-18 19:28:52,779 - client - INFO - Node: 13 - Got Prune
+2018-04-18 19:28:52,780 - client - INFO - Node: 13 - Sending cluster message to child id: 40
+2018-04-18 19:28:52,781 - main_server - INFO - Node: 11 - Current size: 32
+2018-04-18 19:28:52,781 - main_server - INFO - Node:11 - Child Node: 12 has size 19
+2018-04-18 19:28:52,781 - main_server - INFO - Node: 11 - Sending Accept to childId: 12 after checking if all children responded or not
+2018-04-18 19:28:52,781 - main_server - INFO - Node 11: - New size: 51
+2018-04-18 19:28:52,782 - main_server - INFO - Node: 11 - All children responded. Sending size to parent
+2018-04-18 19:28:52,783 - main_server - INFO - Node: 11 Sending accept to childId: 12
+2018-04-18 19:28:52,784 - main_server - INFO - Node: 40 - Now joining Clusterleader Node: 13
+2018-04-18 19:28:52,784 - client - INFO - Node: 11 - Starting sendSize
+2018-04-18 19:28:52,785 - main_server - INFO - Node: 40 - current hop count: 1
+2018-04-18 19:28:52,785 - client - INFO - Node: 12 - Successfully sent the size message of size 19 to parentId: 11
+2018-04-18 19:28:52,785 - main_server - INFO - Node: 40 - NO children found!
+2018-04-18 19:28:52,786 - client - INFO - Node: 11 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:52,786 - client - INFO - Node: 12 - Didn't get Prune 
+2018-04-18 19:28:52,787 - client - INFO - Node: 13 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 40
+2018-04-18 19:28:52,788 - client - INFO - Node: 13 - Sending cluster message to child id: 21
+2018-04-18 19:28:52,788 - main_server - INFO - Node: 5 - Current size: 26
+2018-04-18 19:28:52,789 - main_server - INFO - Node:5 - Child Node: 11 has size 51
+2018-04-18 19:28:52,789 - main_server - INFO - Node: 5 - Sending Accept to childId: 11 after checking if all children responded or not
+2018-04-18 19:28:52,789 - main_server - INFO - Node 5: - New size: 77
+2018-04-18 19:28:52,789 - main_server - INFO - Node: 5 - All children responded. Sending size to parent
+2018-04-18 19:28:52,790 - main_server - INFO - Node: 5 Sending accept to childId: 11
+2018-04-18 19:28:52,791 - client - INFO - Node: 5 - Starting sendSize
+2018-04-18 19:28:52,791 - main_server - INFO - Node: 21 - Now joining Clusterleader Node: 13
+2018-04-18 19:28:52,792 - client - INFO - Node: 11 - Successfully sent the size message of size 51 to parentId: 5
+2018-04-18 19:28:52,792 - main_server - INFO - Node: 21 - current hop count: 1
+2018-04-18 19:28:52,792 - client - INFO - Node: 5 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:52,792 - main_server - INFO - Node:21 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:52,793 - client - INFO - Node: 11 - Didn't get Prune 
+2018-04-18 19:28:52,794 - client - INFO - Node: 21 - Sending propagate cluster message to child id: 34
+2018-04-18 19:28:52,795 - main_server - INFO - Node: 1 - Current size: 89
+2018-04-18 19:28:52,795 - client - INFO - Node: 13 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 21
+2018-04-18 19:28:52,795 - main_server - INFO - Node:1 - Child Node: 5 has size 77
+2018-04-18 19:28:52,795 - main_server - INFO - Node: 1 - Removed child 5 from childList
+2018-04-18 19:28:52,796 - client - INFO - Node: 13 - Sending cluster message to child id: 39
+2018-04-18 19:28:52,796 - main_server - INFO - Node: 1 - Sending Prune after checking if all children responded or not
+2018-04-18 19:28:52,797 - main_server - INFO - Node: 1 - All children responded. Sending size to parent
+2018-04-18 19:28:52,798 - main_server - INFO - Node: 34 - Now joining Clusterleader Node: 13
+2018-04-18 19:28:52,798 - main_server - INFO - Node: 1 - Sending Prune to childId: 5
+2018-04-18 19:28:52,799 - main_server - INFO - Node: 34 - current hop count: 2
+2018-04-18 19:28:52,800 - client - INFO - Node: 1 - Starting sendSize
+2018-04-18 19:28:52,800 - main_server - INFO - Node:34 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:52,801 - client - INFO - Node: 5 - Successfully sent the size message of size 77 to parentId: 1
+2018-04-18 19:28:52,801 - main_server - INFO - Node: 39 - Now joining Clusterleader Node: 13
+2018-04-18 19:28:52,802 - main_server - INFO - Node: 39 - current hop count: 1
+2018-04-18 19:28:52,802 - client - INFO - Node: 1 - Responded to Size RPC with reply: Prune
+2018-04-18 19:28:52,803 - client - INFO - Node: 21 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 34
+2018-04-18 19:28:52,803 - client - INFO - Node: 34 - Sending propagate cluster message to child id: 35
+2018-04-18 19:28:52,804 - main_server - INFO - Node:39 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:52,804 - client - INFO - Node: 5 - Got Prune
+2018-04-18 19:28:52,805 - main_server - INFO - Node: 0 - Current size: 34
+2018-04-18 19:28:52,806 - main_server - INFO - Node:0 - Child Node: 1 has size 89
+2018-04-18 19:28:52,806 - client - INFO - Node: 5 - Sending cluster message to child id: 11
+2018-04-18 19:28:52,808 - main_server - INFO - Node: 0 - Sending Accept to childId: 1 after checking if all children responded or not
+2018-04-18 19:28:52,807 - client - INFO - Node: 39 - Sending propagate cluster message to child id: 50
+2018-04-18 19:28:52,808 - main_server - INFO - Node 0: - New size: 123
+2018-04-18 19:28:52,808 - client - INFO - Node: 13 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 39
+2018-04-18 19:28:52,809 - main_server - INFO - Node: 0 - All children responded. Sending size to parent
+2018-04-18 19:28:52,810 - main_server - INFO - Node: 35 - Now joining Clusterleader Node: 13
+2018-04-18 19:28:52,811 - main_server - INFO - Node: 35 - current hop count: 3
+2018-04-18 19:28:52,812 - Node - INFO - Node: 0 - Setting myself as clusterhead as no parent found!
+2018-04-18 19:28:52,812 - main_server - INFO - Node: 11 - Now joining Clusterleader Node: 5
+2018-04-18 19:28:52,812 - main_server - INFO - Node: 0 Sending accept to childId: 1
+2018-04-18 19:28:52,813 - client - INFO - Node: 0 - Sending cluster message to child id: 1
+2018-04-18 19:28:52,812 - main_server - INFO - Node: 35 - NO children found!
+2018-04-18 19:28:52,812 - main_server - INFO - Node: 11 - current hop count: 1
+2018-04-18 19:28:52,813 - main_server - INFO - Node: 50 - Now joining Clusterleader Node: 13
+2018-04-18 19:28:52,814 - client - INFO - Node: 1 - Successfully sent the size message of size 89 to parentId: 0
+2018-04-18 19:28:52,814 - client - INFO - Node: 0 - Responded to Size RPC with reply: Accepted
+2018-04-18 19:28:52,815 - client - INFO - Node: 34 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 35
+2018-04-18 19:28:52,815 - client - INFO - Node: 1 - Didn't get Prune 
+2018-04-18 19:28:52,815 - main_server - INFO - Node:11 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:52,816 - main_server - INFO - Node: 50 - current hop count: 2
+2018-04-18 19:28:52,817 - client - INFO - Node: 34 - Sending propagate cluster message to child id: 36
+2018-04-18 19:28:52,817 - main_server - INFO - Node: 1 - Now joining Clusterleader Node: 0
+2018-04-18 19:28:52,819 - client - INFO - Node: 5 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 11
+2018-04-18 19:28:52,818 - main_server - INFO - Node: 50 - NO children found!
+2018-04-18 19:28:52,819 - client - INFO - Node: 11 - Sending propagate cluster message to child id: 12
+2018-04-18 19:28:52,819 - main_server - INFO - Node: 1 - current hop count: 1
+2018-04-18 19:28:52,821 - main_server - INFO - Node:1 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:52,822 - client - INFO - Node: 39 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 50
+2018-04-18 19:28:52,825 - main_server - INFO - Node: 36 - Now joining Clusterleader Node: 13
+2018-04-18 19:28:52,825 - client - INFO - Node: 1 - Sending propagate cluster message to child id: 3
+2018-04-18 19:28:52,826 - main_server - INFO - Node: 36 - current hop count: 3
+2018-04-18 19:28:52,827 - client - INFO - Node: 0 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 1
+2018-04-18 19:28:52,827 - main_server - INFO - Node: 12 - Now joining Clusterleader Node: 5
+2018-04-18 19:28:52,827 - main_server - INFO - Node:36 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:52,827 - main_server - INFO - Node: 12 - current hop count: 2
+2018-04-18 19:28:52,828 - main_server - INFO - Node:12 - Children Found! Starting ClusterheadId Propagation
+2018-04-18 19:28:52,829 - client - INFO - Node: 36 - Sending propagate cluster message to child id: 45
+2018-04-18 19:28:52,830 - client - INFO - Node: 34 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 36
+2018-04-18 19:28:52,830 - Node - INFO - Node: 12 - I don't have any children
+2018-04-18 19:28:52,831 - main_server - INFO - Node: 3 - Now joining Clusterleader Node: 0
+2018-04-18 19:28:52,832 - client - INFO - Node: 11 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 12
+2018-04-18 19:28:52,832 - main_server - INFO - Node: 3 - current hop count: 2
+2018-04-18 19:28:52,833 - main_server - INFO - Node: 3 - NO children found!
+2018-04-18 19:28:52,833 - main_server - INFO - Node: 45 - Now joining Clusterleader Node: 13
+2018-04-18 19:28:52,834 - client - INFO - Node: 1 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 3
+2018-04-18 19:28:52,834 - main_server - INFO - Node: 45 - current hop count: 4
+2018-04-18 19:28:52,834 - main_server - INFO - Node: 45 - NO children found!
+2018-04-18 19:28:52,835 - client - INFO - Node: 36 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 45

@@ -1,0 +1,9 @@
+2018-04-18 18:18:26,937 - __main__ - ERROR - Traceback (most recent call last):
+  File "raspberryPi-startPhase2.py", line 50, in hitGRPC
+    clusterRPC = stub.StartPhase2Clustering(phase1_pb2.StartPhase2ClusteringRequest(startPhase2="Start Phase 2 "))
+  File "/Users/vimanyuaggarwal/anaconda/envs/env-iNet/lib/python2.7/site-packages/grpc/_channel.py", line 492, in __call__
+    return _end_unary_response_blocking(state, call, False, deadline)
+  File "/Users/vimanyuaggarwal/anaconda/envs/env-iNet/lib/python2.7/site-packages/grpc/_channel.py", line 440, in _end_unary_response_blocking
+    raise _Rendezvous(state, None, None, deadline)
+_Rendezvous: <_Rendezvous of RPC that terminated with (StatusCode.UNKNOWN, Exception calling application: <_Rendezvous of RPC that terminated with (StatusCode.UNAVAILABLE, Connect Failed)>)>
+

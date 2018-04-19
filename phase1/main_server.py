@@ -12,7 +12,7 @@ import threading
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 import datetime
 import logging
-import os
+import os, traceback
 import logging.handlers
 
 import pymongo
@@ -219,7 +219,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         logger.info(
             "Node: %s - State variables: bestNodeId: {},bestNodeClusterHeadId:{},current clusterheadId: {},current parent: {}".format(
                 self.node.bestNodeId, self.node.bestNodeClusterHeadId, self.node.clusterheadId, self.node.parentId))
-
+        self.node.sendShiftNodeRequest(self.node.bestNodeClusterHeadId)
         # send interested -1
       logger.info("Node: %s - Sending NOT interested response for senderId: %s" % (self.node.id, request.senderId))
       return phase1_pb2.HelloResponse(interested=-1)
@@ -323,7 +323,8 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         logger.info("Node: %s - Accept Request received from clusterhead: %s " % (self.node.id,request.clusterHeadId))
       # send shift start to the i node if energy matric reduces
       #   if energyvalue < currentValue:
-        if self.node.checkEnergy():
+        if True:
+      #   if self.node.checkEnergy():
           self.node.sendShiftStart()
           return phase1_pb2.AcceptResponse(message= "Starting Shift Start")
         else:
@@ -356,6 +357,17 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       response = "Node: %s - Done with phase2 clustering"%self.node.id
       return phase1_pb2.StartedPhase2ClusteringResponse(startedPhase2ClusteringResponse = response)
 
+  def CheckEnergyDrain(self,request,context):
+      logger.info("Node: %s - Got CheckEnergyDrain Request")
+      if self.node.isClusterhead != 1:
+          logger.info("Node: %s - Not a clusterhead Rejecting request")
+          phase1_pb2.CheckEnergyDrainResponse(checkEnergyDrainResponse=-1)
+      else:
+          drain = self.node.startCheckingEnergyDrain()
+          return phase1_pb2.CheckEnergyDrainResponse(checkEnergyDrainResponse=-1)
+
+
+
 def serve(node):
   logger.info("Node: %s - Creating GRPC Server "%(node.id))
   server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
@@ -375,6 +387,9 @@ def serve(node):
       time.sleep(_ONE_DAY_IN_SECONDS)
   except KeyboardInterrupt:
     server.stop(0)
+  except Exception as e:
+      logger.error("Error occurred in Node {} server".format(node.id))
+      logger.error(traceback.format_exc())
 
 if __name__ == '__main__':
   serve()

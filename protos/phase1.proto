@@ -29,8 +29,16 @@ service MainService {
   rpc Register (Params) returns (RedisResponse) {}
   rpc StartPhase2Clustering(StartPhase2ClusteringRequest) returns (StartedPhase2ClusteringResponse){}
   rpc JoinCluster(JoinClusterRequest) returns (JoinClusterResponse) {}
+  rpc CheckEnergyDrain(CheckEnergyDrainRequest) returns (CheckEnergyDrainResponse){}
 }
 
+message CheckEnergyDrainRequest{
+    string checkEnergyDrainRequest = 1;
+}
+
+message CheckEnergyDrainResponse{
+    int32 checkEnergyDrainResponse = 1;
+}
 message JoinClusterResponse{
     string joinClusterResponse = 1;
 }
