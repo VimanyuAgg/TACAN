@@ -119,10 +119,15 @@ class Node:
 			self.isClusterhead = 1
 			self.clusterheadId = str(self.id)
 			self.state = "free"
-			# try:
-			# 	db.spanningtree.update_one({'_id':ObjectId("")},{'$set':{'isClusterhead':self.isClusterhead,'clusterheadId':self.clusterheadId,'state':self.state}},upsert=False)
-			# except Exception as e:
-			# 	logger.error("Some Error occurred in sendSizeToParent()")
+			try:
+				db.spanningtree.update_one({'nodeId':self.id},{'$set':{'isClusterhead':self.isClusterhead,
+																	   'clusterheadId':self.clusterheadId,
+																	   'parentId':None,
+																	   'size':self.size,
+																	   'hopcount':0,
+																	   'state':self.state}},upsert=False)
+			except Exception as e:
+				logger.error("Some Error occurred in sendSizeToParent()")
 			client.sendCluster(self)
 
 	def propogateClusterheadInfo(self,clusterName,hopCount):
@@ -163,12 +168,12 @@ class Node:
 		self.parentId = bestNodeId
 		self.clusterheadId = bestNodeClusterHeadId
 		self.hopcount = newHopCount
-		# try:
-		# 	db.spanningtree.update_one({'_id': ObjectId("")}, {
-		# 		'$set': {'parentId': self.parentId, 'clusterheadId': self.clusterheadId,
-		# 				 'hopcount': self.hopcount}}, upsert=False)
-		# except Exception as e:
-		# 	logger.error("Some error occurred while updating db in updateInternalVariablesAndSendJoin()")
+		try:
+			db.spanningtree.update_one({'nodeId': self.id}, {
+				'$set': {'parentId': self.parentId, 'clusterheadId': self.clusterheadId,
+						 'hopcount': self.hopcount}}, upsert=False)
+		except Exception as e:
+			logger.error("Some error occurred while updating db in updateInternalVariablesAndSendJoin()")
 		client.joinNewParent(self.id,self.size,raspberryPi_id_list.ID_IP_MAPPING[bestNodeId])
 
 	def propagateNewClusterHeadToChildren(self):
@@ -191,14 +196,11 @@ class Node:
 		self.bestNodeHopCount = self.hopcount
 		logger.info("Node: %s - hopcount before Phase 2 clustering: %s"%(self.id,self.hopcount))
 		# try:
-		# 	db.spanningtree.update_one({"_id":ObjectId("")},{'$set':{'bestNodeHopCount':self.bestNodeHopCount}},upsert=False)
+		# 	db.spanningtree.update_one({"nodeId":self.id},{'$set':{'bestNodeHopCount':self.bestNodeHopCount}},upsert=False)
 		# except Exception as e:
 		# 	logger.error("Some error occurred while updating db in startPhase2Clustering()")
-		# 	logger.error(e)
-		logger.info("Node: %s - Starting phase 2 clustering"%(self.id))
-		# if self.isClusterhead == 1:
-		# 	logger.info("Node: %s is clusterhead. Not taking any action"%(self.id))
-		# 	return
+		# 	logger.error(traceback.format_exc())
+		# logger.info("Node: %s - Starting phase 2 clustering"%(self.id))
 
 		rackIdRow = self.rackLocation.split(",")[0]
 		rackIdCol = self.rackLocation.split(",")[1]

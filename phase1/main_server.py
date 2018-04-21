@@ -96,11 +96,17 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
           ###### Case of Node 0 and Node 1 (12 node cluster)
           try:
               self.node.childListId.remove(request.nodeId)
+              db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'childListId': self.node.childList,
+
+                                                                        }}, upsert=False)
           except Exception as e:
+              logger.error("***")
               logger.error("ERROR OCCURRED WHILE KICKING CHILDREN")
               logger.error("Node id: %s was kicking child %s from childList" % (self.node.id, request.nodeId))
-          logger.info("Node: %s - Removed child %s from childList" % (self.node.id, request.nodeId))
+              logger.error(traceback.format_exc())
+              logger.error("***")
 
+          logger.info("Node: %s - Removed child %s from childList" % (self.node.id, request.nodeId))
           logger.info("Node: %s - Sending Prune after checking if all children responded or not"%(self.node.id))
           if self.node.childRequestCounter == self.node.initialNodeChildLength:
               logger.info("Node: %s - All children responded. Sending size to parent"%(self.node.id))
@@ -112,6 +118,17 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       else:
         logger.info("Node: %s - Sending Accept to childId: %s after checking if all children responded or not"%(self.node.id,request.nodeId))
         self.node.size += childSize
+        try:
+            db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'size': self.node.size,
+
+                                                                           }}, upsert=False)
+        except Exception as e:
+            logger.error("***")
+            logger.error("ERROR OCCURRED WHILE Accepting size Node %s"%(self.node.id))
+            logger.error(e)
+            logger.error(traceback.format_exc())
+            logger.error("***")
+
         logger.info("Node %s: - New size: %s"%(self.node.id,self.node.size))
         self.node.childRequestCounter += 1
         if self.node.childListId != None and self.node.childRequestCounter == self.node.initialNodeChildLength:
@@ -135,6 +152,17 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.state = "active"
       self.node.hopcount= hopCount
       self.node.bestNodeHopCount = hopCount
+      self.node.isClusterhead = 0
+      try:
+          db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'hopcount': self.node.hopcount,
+                                                                    'clusterheadId': self.node.clusterheadId,
+                                                                    'size':self.node.size,
+                                                                    'isClusterhead': self.node.isClusterhead,
+                                                                    'state': self.node.state}}, upsert=False)
+      except Exception as e:
+          logger.error(e)
+          logger.error(traceback.format_exc())
+
       print("Node: %s is now joining Clusterleader Node: %s"%(str(self.node.id),str(clusterName)))
       logger.info("Node: %s - Now joining Clusterleader Node: %s"%(str(self.node.id),str(clusterName)))
       logger.info("Node: %s - current hop count: %s"%(str(self.node.id),self.node.hopcount))
@@ -155,6 +183,13 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.shiftNodeSum = request.sumOfweight
       self.node.shiftNodeCluster = request.clusterHeadId
       #send jam request
+      try:
+          db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'state': self.node.state
+                                                                    }}, upsert=False)
+      except Exception as e:
+          logger.error(e)
+          logger.error("Error occurred in ShiftNodeRequest while submitting data")
+          logger.error(traceback.format_exc())
       logger.info("Node: %s - ClusterheadId sending Jam Signal across its cluster"%(self.node.id))
       self.node.sendJamSignal()
       #send shift_cluster_request to Cj
@@ -173,6 +208,12 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     if (self.node.isClusterhead != 1):
       logger.info("Node: %s - Going to sleep zzzzzzzz"%(self.node.id))
       self.node.state = "sleep"
+      try:
+          db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'state': self.node.state
+                                                                    }}, upsert=False)
+      except Exception as e:
+          logger.error(e)
+          logger.error(traceback.format_exc())
       logger.info("Node: %s - Sending jam to all children" % (self.node.id))
       self.node.propagateJamToChildren(jamId)
       logger.info("Node: %s - Successfully propagated jam to all children" % (self.node.id))
@@ -244,8 +285,15 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         # set state to busy
         self.node.state = "busy"
         #send jam to all nodes in cluster
-        self.node.sendJamSignal()
+        try:
+            db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'state': self.node.state
+                                                                      }}, upsert=False)
+        except Exception as e:
+            logger.error(e)
+            logger.error(traceback.format_exc())
         #accept to Ci
+        self.node.sendJamSignal()
+
         logger.info("Node: %s - Accepting ShiftClusterRequest from clusterheadId: %s regarding node: %s" %(self.node.id, request.senderClusterHeadId, request.senderNodeId))
         self.node.accept(request.senderClusterHeadId)
         return phase1_pb2.ShiftClusterRes(message= "Accepting") 
@@ -257,6 +305,12 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   def WakeUp(self,request,context):
       if (self.node.state == "sleep"):
           self.node.state = "active"
+          try:
+              db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'state': self.node.state,
+                                                                        }}, upsert=False)
+          except Exception as e:
+              logger.error(e)
+              logger.error(traceback.format_exc())
           self.node.propagateWakeUp()
           return phase1_pb2.wakeUpResponse(wokenUp = "wokeup")
       else:
@@ -295,11 +349,27 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
   def UpdateSize(self,request,context):
       self.node.size += request.sizeIncrement
+      try:
+          db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'size': self.node.size
+                                                                    }}, upsert=False)
+      except Exception as e:
+          logger.error(e)
+          logger.error("Error occurred in Node %s"%(self.node.id))
+          logger.error(traceback.format_exc())
+
       self.node.informParentAboutNewSize(request.sizeIncrement)
       return phase1_pb2.UpdateSizeResponse(updateSizeResponse = "updated size")
 
   def UpdateClusterhead(self,request,context):
       self.node.clusterheadId = request.newClusterheadId
+      try:
+          db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'clusterheadId': self.node.clusterheadId
+                                                                    }}, upsert=False)
+      except Exception as e:
+          logger.error(e)
+          logger.error("Error occurred in node: %s"%(self.node.id))
+          logger.error(traceback.format_exc())
+
       self.node.propagateNewClusterHeadToChildren()
       return phase1_pb2.UpdateClusterheadResponse(updateClusterheadResponse = "clusterhead Updated")
 
@@ -309,12 +379,28 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.sendWakeup()
       logger.info("Node: %s - Clusterhead successfully sent wakeup across its cluster" % (self.node.id))
       self.node.state ="free"
+      try:
+          db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'state': self.node.state
+                                                                         }}, upsert=False)
+      except Exception as e:
+          logger.error(e)
+          logger.error(traceback.format_exc())
+          logger.error("Error Occurred in Node: %s"%(self.node.id))
+
       return phase1_pb2.ClusterheadAckSendShift(clusterheadAckSendShift = "ClusterheadId: %s acknowledged shift.."%(self.node.id))
 
   def RemoveChildIdFromParent(self,request,context):
       logger.info("Node: %s - As Parent got RemoveChildIdFromParent rpc from Node: %s" % (self.node.id, request.departingChildId))
       logger.info("Node: {} - As Parent has children BEFORE removal: {}".format(self.node.id,self.node.childListId))
       self.node.childListId.remove(request.departingChildId)
+      try:
+          db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'childListId': self.node.childListId
+                                                                         }}, upsert=False)
+      except Exception as e:
+          logger.error(e)
+          logger.error("Error Occurred in Node: %s"%(self.node.id))
+          logger.error(traceback.format_exc())
+
       logger.info("Node: {} - As Parent has children AFTER removal: {}".format(self.node.id,self.node.childListId))
       return phase1_pb2.RemoveChildIdFromParentResponse(removeChildIdFromParentResponse= "Removed")
 
@@ -331,6 +417,14 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
           self.node.sendWakeup()
           self.node.sendShiftFinished()
           self.node.state ="free"
+          try:
+              db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'state': self.node.state
+                                                                             }}, upsert=False)
+          except Exception as e:
+              logger.error(e)
+              logger.error("Error Occurred in Node: %s"%(self.node.id))
+              logger.error(traceback.format_exc())
+
           return phase1_pb2.AcceptResponse(message= "Starting Shift Finished")
       else:
         return phase1_pb2.AcceptResponse(message= "Not in busy state for now !")
@@ -340,6 +434,14 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     if self.node.state=="busy":
       #send wakeup to all nodes in cluster
       self.node.state="free"
+      try:
+          db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'state': self.node.state
+                                                                         }}, upsert=False)
+      except Exception as e:
+          logger.error(e)
+          logger.error("Error Occurred in Node: %s" % (self.node.id))
+          logger.error(traceback.format_exc())
+
       self.node.sendWakeup()
       return phase1_pb2.RejectResponse(message= "Thanks for Rejecting")
     else:
@@ -349,6 +451,14 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     if self.node.state=="busy":
       self.node.sendWakeup()
       self.node.state ="free"
+      try:
+          db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'state': self.node.state
+                                                                         }}, upsert=False)
+      except Exception as e:
+          logger.error(e)
+          logger.error("Error Occurred in Node: %s" % (self.node.id))
+          logger.error(traceback.format_exc())
+
     return phase1_pb2.ShiftFinishedResponse(message= "Finished")
 
   def StartPhase2Clustering(self,request,context):
