@@ -22,7 +22,8 @@ def draw(list_of_nodes):
   :param list_of_nodes: samples provided above
   :type list_of_nodes: [dict]
   :return: None
+  Visualization/parse_logs/Draw.py
   """
-  # pass
-  raise NotImplementedError()
+  pass
+  # raise NotImplementedError()
   # print list_of_nodes
