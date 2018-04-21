@@ -54,7 +54,8 @@ def spawnNode(id):
 
 if __name__ == '__main__':
 	threadPool= []
-	logger.info("Cleaning DB if it exists")
+	cleanDB()
+	buildDB()
 	for i in range(0,12):
 		thread = Thread(target=spawnNode, args=(str(i),))
 		threadPool.append(thread)
