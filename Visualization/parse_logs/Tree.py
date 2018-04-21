@@ -50,25 +50,42 @@ class Tree(object):
   # end func
 
 
-  def _search_and_prune(self, curr_node, to_prune, parent):
+  def _search_and_prune(self, curr_node, to_prune, parent, new_parent):
     if 'name' in curr_node:
-      if int(curr_node['name'][5:]) == to_prune:
+      curr_node_id = int(curr_node['name'][5:])
+      if curr_node_id == to_prune:
         parent['children'].remove(curr_node)
-        self.data.append(curr_node)
+        if not new_parent:
+          self.data.append(curr_node)
+        else:
+          self.add_node(node=curr_node_id, parent=new_parent)
         return True
 
     for child in curr_node['children']:
-      if self._search_and_prune(curr_node=child, to_prune=to_prune, parent=curr_node):
+      if self._search_and_prune(curr_node=child, to_prune=to_prune,
+                                parent=curr_node, new_parent=new_parent):
         return True
     return False
   # end func
 
 
-  def prune(self, nodeid):
-    nodeid = int(nodeid)
-    node_name = 'Node %d' % nodeid
+  def prune(self, node, new_parent=None):
+    """
+    if new_parent None: remove nodeid from its current parent and
+    make it a separate clusterhead (add to self.data list)
+
+    if new_parent is not None: remove nodeid from its current parent and
+    make append to new_parent
+
+    :param node:
+    :param new_parent: if not None,
+    :return:
+    """
+    node = int(node)
+    node_name = 'Node %d' % node
     for n in self.data:
-      if self._search_and_prune(curr_node=n, to_prune=nodeid, parent=self.data):
+      if self._search_and_prune(curr_node=n, to_prune=node,
+                                parent=self.data, new_parent=new_parent):
         return True
 
     print "node not found"

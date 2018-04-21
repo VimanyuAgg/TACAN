@@ -26,13 +26,16 @@ today_date = str(datetime.datetime.now()).split(" ")[0]
 current_path = os.path.dirname(os.path.realpath(__file__))
 
 
-debug_handler = logging.handlers.RotatingFileHandler(os.path.join(current_path+"/logs/", today_date+'-debug.log'),maxBytes=30000000,backupCount=40)
+debug_handler = logging.handlers.RotatingFileHandler(os.path.join(
+  current_path+"/logs/", today_date+'-debug.log'),maxBytes=30000000,backupCount=40)
 debug_handler.setLevel(logging.DEBUG)
 
-info_handler = logging.handlers.RotatingFileHandler(os.path.join(current_path+"/logs/", today_date+'-info.log'),maxBytes=30000000,backupCount=40)
+info_handler = logging.handlers.RotatingFileHandler(os.path.join(
+  current_path+"/logs/", today_date+'-info.log'),maxBytes=30000000,backupCount=40)
 info_handler.setLevel(logging.INFO)
 
-error_handler = logging.handlers.RotatingFileHandler(os.path.join(current_path+"/logs/", today_date+'-error.log'),maxBytes=300000,backupCount=40)
+error_handler = logging.handlers.RotatingFileHandler(os.path.join(
+  current_path+"/logs/", today_date+'-error.log'),maxBytes=300000,backupCount=40)
 error_handler.setLevel(logging.ERROR)
 
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
