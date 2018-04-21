@@ -119,6 +119,11 @@ class MainServiceStub(object):
         request_serializer=phase1__pb2.JoinClusterRequest.SerializeToString,
         response_deserializer=phase1__pb2.JoinClusterResponse.FromString,
         )
+    self.CheckEnergyDrain = channel.unary_unary(
+        '/phase1.MainService/CheckEnergyDrain',
+        request_serializer=phase1__pb2.CheckEnergyDrainRequest.SerializeToString,
+        response_deserializer=phase1__pb2.CheckEnergyDrainResponse.FromString,
+        )
 
 
 class MainServiceServicer(object):
@@ -272,6 +277,13 @@ class MainServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CheckEnergyDrain(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_MainServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -379,6 +391,11 @@ def add_MainServiceServicer_to_server(servicer, server):
           servicer.JoinCluster,
           request_deserializer=phase1__pb2.JoinClusterRequest.FromString,
           response_serializer=phase1__pb2.JoinClusterResponse.SerializeToString,
+      ),
+      'CheckEnergyDrain': grpc.unary_unary_rpc_method_handler(
+          servicer.CheckEnergyDrain,
+          request_deserializer=phase1__pb2.CheckEnergyDrainRequest.FromString,
+          response_serializer=phase1__pb2.CheckEnergyDrainResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

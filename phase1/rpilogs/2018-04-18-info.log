@@ -1,0 +1,18 @@
+2018-04-18 18:16:23,952 - __main__ - INFO - All ID_IP Mapping are as per below
+2018-04-18 18:16:23,952 - __main__ - INFO - {'11': 'localhost:50061', '10': 'localhost:50060', '13': 'localhost:50063', '12': 'localhost:50062', '15': 'localhost:50065', '14': 'localhost:50064', '17': 'localhost:50067', '16': 'localhost:50066', '19': 'localhost:50069', '18': 'localhost:50068', '1': 'localhost:50051', '0': 'localhost:50050', '3': 'localhost:50053', '2': 'localhost:50052', '5': 'localhost:50055', '4': 'localhost:50054', '7': 'localhost:50057', '6': 'localhost:50056', '9': 'localhost:50059', '20': 'localhost:50070', '8': 'localhost:50058'}
+2018-04-18 18:16:23,952 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 11, at IP: localhost:50061
+2018-04-18 18:16:57,905 - __main__ - INFO - All ID_IP Mapping are as per below
+2018-04-18 18:16:57,905 - __main__ - INFO - {'11': 'localhost:50061', '10': 'localhost:50060', '13': 'localhost:50063', '12': 'localhost:50062', '15': 'localhost:50065', '14': 'localhost:50064', '17': 'localhost:50067', '16': 'localhost:50066', '19': 'localhost:50069', '18': 'localhost:50068', '1': 'localhost:50051', '0': 'localhost:50050', '3': 'localhost:50053', '2': 'localhost:50052', '5': 'localhost:50055', '4': 'localhost:50054', '7': 'localhost:50057', '6': 'localhost:50056', '9': 'localhost:50059', '20': 'localhost:50070', '8': 'localhost:50058'}
+2018-04-18 18:16:57,906 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 11, at IP: localhost:50061
+2018-04-18 18:18:24,923 - __main__ - INFO - All ID_IP Mapping are as per below
+2018-04-18 18:18:24,924 - __main__ - INFO - {'11': 'localhost:50061', '10': 'localhost:50060', '13': 'localhost:50063', '12': 'localhost:50062', '15': 'localhost:50065', '14': 'localhost:50064', '17': 'localhost:50067', '16': 'localhost:50066', '19': 'localhost:50069', '18': 'localhost:50068', '1': 'localhost:50051', '0': 'localhost:50050', '3': 'localhost:50053', '2': 'localhost:50052', '5': 'localhost:50055', '4': 'localhost:50054', '7': 'localhost:50057', '6': 'localhost:50056', '9': 'localhost:50059', '20': 'localhost:50070', '8': 'localhost:50058'}
+2018-04-18 18:18:24,924 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 11, at IP: localhost:50061
+2018-04-18 18:18:26,937 - __main__ - ERROR - Traceback (most recent call last):
+  File "raspberryPi-startPhase2.py", line 50, in hitGRPC
+    clusterRPC = stub.StartPhase2Clustering(phase1_pb2.StartPhase2ClusteringRequest(startPhase2="Start Phase 2 "))
+  File "/Users/vimanyuaggarwal/anaconda/envs/env-iNet/lib/python2.7/site-packages/grpc/_channel.py", line 492, in __call__
+    return _end_unary_response_blocking(state, call, False, deadline)
+  File "/Users/vimanyuaggarwal/anaconda/envs/env-iNet/lib/python2.7/site-packages/grpc/_channel.py", line 440, in _end_unary_response_blocking
+    raise _Rendezvous(state, None, None, deadline)
+_Rendezvous: <_Rendezvous of RPC that terminated with (StatusCode.UNKNOWN, Exception calling application: <_Rendezvous of RPC that terminated with (StatusCode.UNAVAILABLE, Connect Failed)>)>
+
