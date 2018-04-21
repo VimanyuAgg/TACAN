@@ -62,7 +62,7 @@ if __name__ == '__main__':
 
 	for thread in threadPool:
 		thread.start()
-		time.sleep(2)
+		time.sleep(1)
 
 
 

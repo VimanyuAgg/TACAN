@@ -120,12 +120,14 @@ class Node:
 			self.clusterheadId = str(self.id)
 			self.state = "free"
 			try:
+				logger.info("Node: %s - Updating DB with size,hopcount variables"%(self.id))
 				db.spanningtree.update_one({'nodeId':self.id},{'$set':{'isClusterhead':self.isClusterhead,
 																	   'clusterheadId':self.clusterheadId,
 																	   'parentId':None,
 																	   'size':self.size,
 																	   'hopcount':0,
 																	   'state':self.state}},upsert=False)
+				logger.info("Node: %s - Successfully DB with size,hopcount variables")
 			except Exception as e:
 				logger.error("Some Error occurred in sendSizeToParent()")
 			client.sendCluster(self)
