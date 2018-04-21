@@ -87,9 +87,18 @@ def sendSize(node,stub):
 		node.parentId = None
 		#set I am the cluster
 		node.isClusterhead = 1
-
+        
 		node.state = "free"
-		# fix below
+	    try:
+        db.spanningtree.update_one({'nodeId': node.id}, {'$set': {'isClusterhead': node.isClusterhead,
+        															'parentId':None,
+                                                                    'clusterheadId': node.clusterheadId,
+                                                                    'hopcount':0,
+                                                                    'size':node.size,
+                                                                    'state': node.state}}, upsert=False)
+        except Exeception as e:
+        	logger.error("Node: %s - not able to update db"%(node.id))
+        	logger.error(e)
 
 		sendCluster(node)
 	else:

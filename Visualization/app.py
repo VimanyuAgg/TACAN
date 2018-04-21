@@ -11,6 +11,19 @@ def index():
 	obj = json.dumps(tree)
 	return render_template("index.html", data = obj)
 
+@app.route("/view")
+def dashboard():
+	return render_template("dashboard.html")
+
+
+@app.route("/view/2")
+def dashboard2():
+	return render_template("dashboard2.html")
+
+@app.route("/view/3")
+def dashboard3():
+	return render_template("dashboard3.html")
+
 
 if __name__ == "__main__":
 	app.run(debug=True)
