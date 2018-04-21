@@ -50,7 +50,7 @@ class Node:
 		self.id = str(myId)
 		#self.parentId = parentId
 		#self.childListId = childListId
-		my_info = db.spanningtree.find({"nodeId":self.id})
+		my_info = db.spanningtree.find_one({"nodeId":self.id})
 		self.ipAddress= raspberryPi_id_list.ID_IP_MAPPING[myId]
 		self.parentId = my_info['parentId']
 		self.childListId = my_info['childListId']

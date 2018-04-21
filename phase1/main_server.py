@@ -96,7 +96,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
           ###### Case of Node 0 and Node 1 (12 node cluster)
           try:
               self.node.childListId.remove(request.nodeId)
-              db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'childListId': self.node.childList,
+              db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'childListId': self.node.childListId,
 
                                                                         }}, upsert=False)
           except Exception as e:

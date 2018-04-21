@@ -101,7 +101,7 @@ def populateTree():
 					},
 					{	'nodeId':'7',
 						'parentId':'2',
-						'childListId':['6'],
+						'childListId':['8'],
 						'dist':None,
 						'clusterheadId':None,
 						'subtreeList':None,
