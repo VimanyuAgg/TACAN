@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <style type="text/css">
-  
+
+    .fake {
+      display: none;
+    }
+
     .node {
     cursor: pointer;
   }
@@ -76,6 +83,42 @@
 
 <script type="text/javascript">
 
+
+    setInterval(getD, 2000);
+
+    function getD(){
+        $.ajax({
+            type:"GET",
+            url:"/data",
+            contentType:"application/json;charset=UTF-8",
+            success: function(result){
+                    console.log(result);
+                    getData();
+                }
+        });
+    }
+
+
+
+
+function getData(){
+// var x = data;
+// console.log(x);
+
+/*
+var b = document.getElementsByTagName('body')[0];
+b.remove();
+var h = document.getElementsByTagName('html')[0];
+var to_append = '<body><div id="tree-container"></div></body>';
+h.innerHTML = to_append;
+*/
+
+var b = document.getElementById('tree-container');
+b.remove();
+var h = document.getElementsByTagName('body')[0];
+var to_append = '<div id="tree-container"></div>';
+h.innerHTML = to_append;
+
 var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
@@ -84,7 +127,8 @@ var tip = d3.tip()
   })
 
 var noCache = new Date().getTime();
-treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCache, function(error, treeData) {
+// "{{ url_for('static', filename='flare.json')}}"+"?_="+ noCache
+treeJSON = d3.json("{{ url_for('static', filename='myflare.json')}}"+"?_="+ noCache , function(error, treeData) {
   if (error) throw error;
     // Calculate total nodes, max label length
     var totalNodes = 0;
@@ -166,7 +210,9 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
             scaleX = translateCoords.scale[0];
             scaleY = translateCoords.scale[1];
             scale = zoomListener.scale();
-            svgGroup.transition().attr("transform", "translate(" + translateX + "," + translateY + ")scale(" + scale + ")");
+            svgGroup
+            //.transition()
+            .attr("transform", "translate(" + translateX + "," + translateY + ")scale(" + scale + ")");
             d3.select(domNode).select('g.node').attr("transform", "translate(" + translateX + "," + translateY + ")");
             zoomListener.scale(zoomListener.scale());
             zoomListener.translate([translateX, translateY]);
@@ -234,7 +280,7 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
         .attr("height", viewerHeight)
         .attr("class", "overlay")
         .call(zoomListener);
-    
+
     baseSvg.call(tip);
     //baseSvg.rotate(90);
 
@@ -375,6 +421,8 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
         }
         var link = svgGroup.selectAll(".templink").data(data);
 
+
+
         link.enter().append("path")
             .attr("class", "templink")
             .attr("d", d3.svg.diagonal())
@@ -393,8 +441,9 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
         y = -source.x0;
         x = x * scale + viewerWidth / 2;
         y = y * scale + viewerHeight / 2;
-        d3.select('g').transition()
-            .duration(duration)
+        d3.select('g')
+        //.transition()
+        //    .duration(duration)
             .attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
         zoomListener.scale(scale);
         zoomListener.translate([x, y]);
@@ -439,7 +488,7 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
             }
         };
         childCount(0, root);
-        var newHeight = d3.max(levelWidth) * 25; // 25 pixels per line  
+        var newHeight = d3.max(levelWidth) * 25; // 25 pixels per line
         tree = tree.size([newHeight, viewerWidth]);
 
         // Compute the new tree layout.
@@ -460,12 +509,15 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
                 return d.id || (d.id = ++i);
             });
 
-        node.on('mouseover', tip.show).on('mouseout', tip.hide);    
+        node.on('mouseover', tip.show).on('mouseout', tip.hide);
 
         // Enter any new nodes at the parent's previous position.
         var nodeEnter = node.enter().append("g")
             .call(dragListener)
-            .attr("class", "node")
+            //.attr("class", "node")
+            .attr("class", function(d) {
+                return d.fake ? "fake" : "node"
+             })
             .attr("transform", function(d) {
                 return "translate(" + source.y0 + "," + source.x0 + ")";
             })
@@ -478,7 +530,7 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
             .style("fill", function(d) {
                 return d._children ? "red" : "blue";
             });
-          
+
         nodeEnter.append("text")
             .attr("x", function(d) {
                 return d.children || d._children ? -10 : 10;
@@ -527,8 +579,9 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
             });
 
         // Transition nodes to their new position.
-        var nodeUpdate = node.transition()
-            .duration(duration)
+        var nodeUpdate = node
+        //.transition()
+        //    .duration(duration)
             .attr("transform", function(d) {
                 return "translate(" + d.y + "," + d.x + ")";
             });
@@ -539,8 +592,9 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
             .style("fill-opacity", 1);
 
         // Transition exiting nodes to the parent's new position.
-        var nodeExit = node.exit().transition()
-            .duration(duration)
+        var nodeExit = node.exit()
+        //.transition()
+         //   .duration(duration)
             .attr("transform", function(d) {
                 return "translate(" + source.y + "," + source.x + ")";
             })
@@ -560,7 +614,9 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
 
         // Enter any new links at the parent's previous position.
         link.enter().insert("path", "g")
-            .attr("class", "link")
+            .attr("class", function(d) {
+                return d.source.fake ? "fake" : "link";
+             })
             .attr("d", function(d) {
                 var o = {
                     x: source.x0,
@@ -573,13 +629,15 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
             });
 
         // Transition links to their new position.
-        link.transition()
-            .duration(duration)
+        link
+        // .transition()
+        //    .duration(duration)
             .attr("d", diagonal);
 
         // Transition exiting nodes to the parent's new position.
-        link.exit().transition()
-            .duration(duration)
+        link.exit()
+            //.transition()
+            //.duration(duration)
             .attr("d", function(d) {
                 var o = {
                     x: source.x,
@@ -618,7 +676,15 @@ function type(n) {
 }
 
 
-</script><body>
+
+}
+
+
+
+
+
+</script>
+<body onload="getD();">
     <div id="tree-container"></div>
 </body>
 </html>

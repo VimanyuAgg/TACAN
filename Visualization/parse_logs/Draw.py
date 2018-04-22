@@ -1,3 +1,18 @@
+import sys, os
+
+# _app_path = 'Visualization/'
+# from os.path import dirname
+# project_home = dirname(dirname(sys.path[0]))
+# to_append = os.path.join(project_home, _app_path)
+# # print to_append
+# sys.path.insert(0, to_append)
+# print (sys.path)
+# import app
+
+import requests, json
+# from flask import jsonify
+
+
 def draw(list_of_nodes):
   """
   Will be invoked every time there is a change in the topology.
@@ -27,3 +42,6 @@ def draw(list_of_nodes):
   pass
   # raise NotImplementedError()
   # print list_of_nodes
+  # app.updateTree(list_of_nodes)
+  url = 'http://127.0.0.1:5000/update_data'
+  requests.post(url=url, data=json.dumps(list_of_nodes))

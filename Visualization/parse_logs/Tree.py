@@ -1,6 +1,10 @@
 class Tree(object):
   def __init__(self):
-    self.data = []
+    self.data = {
+          'name': 'Node %d' % -1,
+          'children': [],
+          'fake': True
+        }
 
 
   def _search_and_append(self, curr_node, to_append, parent):
@@ -38,12 +42,12 @@ class Tree(object):
         'name': 'Node %d' % node,
         'children': []
       }
-      self.data.append(child)
+      self.data['children'].append(child)
       return True
 
-    for n in self.data:
-      if self._search_and_append(curr_node=n, to_append=node, parent=parent):
-        return True
+    # for n in self.data:
+    if self._search_and_append(curr_node=self.data, to_append=node, parent=parent):
+      return True
 
     print "parent not found"
     return False  # raise Error - parent not found
@@ -56,7 +60,7 @@ class Tree(object):
       if curr_node_id == to_prune:
         parent['children'].remove(curr_node)
         if not new_parent:
-          self.data.append(curr_node)
+          self.data['children'].append(curr_node)
         else:
           self.add_node(node=curr_node_id, parent=new_parent)
         return True
@@ -83,9 +87,9 @@ class Tree(object):
     """
     node = int(node)
     node_name = 'Node %d' % node
-    for n in self.data:
-      if self._search_and_prune(curr_node=n, to_prune=node,
-                                parent=self.data, new_parent=new_parent):
+    # for n in self.data:
+    if self._search_and_prune(curr_node=self.data, to_prune=node,
+                              parent=self.data, new_parent=new_parent):
         return True
 
     print "node not found"
