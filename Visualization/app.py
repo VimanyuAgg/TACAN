@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify, request
-import json
 from threading import Thread
 from time import sleep
 # import pandas as pd
@@ -16,14 +15,6 @@ from parse_logs import parse
 
 app = Flask(__name__)
 
-globalCtr = 65
-
-def createFile(tree):
-	for _ in xrange(200):
-		with open("./static/myflare.json", "w+") as fb:
-			fb.write(json.dumps(tree))
-			sleep(.2)
-	return
 
 @app.route("/")
 def index():
@@ -32,6 +23,7 @@ def index():
 	t.start()
 	sleep(1)
 	return render_template("index.html")
+
 
 @app.route("/view")
 def dashboard():
@@ -42,44 +34,36 @@ def dashboard():
 def dashboard2():
 	return render_template("dashboard2.html")
 
+
 @app.route("/view/3")
 def dashboard3():
 	return render_template("dashboard3.html")
 
-tree = 'foo'
+
+tree = ('{'
+          '"name": "Node -1",'
+          '"children": [],'
+          '"fake": true'
+        '}')
 
 @app.route("/update_data", methods=["POST"])
 def updateTree():
 	global tree
 	content = request.data
-	print ('content', type(content))
-	print content
 	tree = content
-	print "updating"
+	# print ('content', type(content))
+	# print content
+	# print "updating"
 	return 'OK'
+
 
 @app.route("/data")
 def data():
-	global globalCtr
-
-	## getMongoConnection and data as tree
-	print "I am here"
-
-	# tree = {"name": "a_root_node", "children": [{"name": "A", "children": []}, {"name": "C", "children": []}]}
-
+	# print "I am here"
 	with open("./static/myflare.json", "w+") as fb:
 		fb.write(tree)
-
-	globalCtr += 1
-	print globalCtr
-
 	return jsonify({"result":"success"})
-
 
 
 if __name__ == "__main__":
 	app.run(debug=True)
-
-	"""
-	/Users/gurnoorsinghbhatia/Documents/code/cmpe295A/TACAN/Visualization/app.py
-	"""

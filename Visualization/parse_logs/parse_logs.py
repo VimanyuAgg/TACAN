@@ -61,8 +61,10 @@ def parse():
         parent = int(parent)
       node_id = int(node_id)
       tree.add_node(node=node_id, parent=parent)
+
       sleep(_DELAY)
       draw(tree.data)
+
       if _PARSE_LOGS_DEBUG:
         print 'Starting Server'
         print ('node_id', node_id)
