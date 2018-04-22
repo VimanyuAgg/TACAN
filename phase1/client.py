@@ -87,7 +87,7 @@ def sendSize(node,stub):
 	if sizeRPC.message=="Prune":
 		logger.info("Node: %s - Got Prune"%(node.id))
 		# Become a clusterhead and send Cluster RPC to children
-		node.clusterheadId = node.id
+		node.clusterheadId = node.id.encode('utf-8')
 		node.parentId = None
 		#set I am the cluster
 		node.isClusterhead = 1
@@ -250,7 +250,13 @@ def sendWakeUp(ipList,nodeId):
 def sendHello(nodeId,i,neighbourIp,nodeClusterheadId,nodeHopcount,nodeState):
 	channel = grpc.insecure_channel(neighbourIp)
 	stub = phase1_pb2_grpc.MainServiceStub(channel)
-	logger.info("Node: %s - Sending Hello to node: %s"%(nodeId,i))
+	logger.info("Node: {} - sendng hello to IP: {} type: {}".format(nodeId,neighbourIp,type(neighbourIp)))
+	logger.info("Node: {} - Sending Hello to node: {}".format(nodeId,i))
+	logger.info("Node: {} - senderId: {} type: {}".format(nodeId,str(nodeId),type(str(nodeId))))
+	logger.info("Node: {} - hopToSenderClusterhead: {} type: {}".format(nodeId, nodeHopcount,type(nodeHopcount)))
+	logger.info("Node: {} - senderState: {} type: {}".format(nodeId, nodeState,type(nodeState)))
+	logger.info("Node: {} - senderClusterheadId: {} type: {}".format(nodeId, nodeClusterheadId,type(nodeClusterheadId)))
+
 	clusterRPC = stub.Hello(phase1_pb2.SendHello(senderId=str(nodeId),hopToSenderClusterhead=nodeHopcount,\
 												 senderState=nodeState,senderClusterheadId=nodeClusterheadId))
 	logger.info("Node: {} - Got Response: {} after sending Hello to id: {}".format(nodeId,clusterRPC, i))

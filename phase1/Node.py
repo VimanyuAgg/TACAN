@@ -11,6 +11,7 @@ import os, traceback
 import logging.handlers
 import datetime
 import thread
+import Queue
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -67,6 +68,8 @@ class Node:
 		self.bestNodeId = self.id
 		self.bestNodeHopCount = self.hopcount
 		self.bestNodeClusterHeadId = self.clusterheadId
+		self.neighborID = []
+		self.getNeighbors()
 
 
 		self.neighbourHelloArray = set()
@@ -88,7 +91,35 @@ class Node:
 		# thread.start_new_thread(main_server.serve,(self,))
 		main_server.serve(self)
 
+	def getNeighbors(self):
+		rackIdRow = self.rackLocation.split(",")[0]
+		rackIdCol = self.rackLocation.split(",")[1]
 
+		myNeighborsRack = []
+		myNeighborsRack.append("{},{}".format(int(rackIdRow) + 1, rackIdCol))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow) - 1, rackIdCol))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow), int(rackIdCol) + 1))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow), int(rackIdCol) - 1))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow) + 1, int(rackIdCol) + 1))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow) - 1, int(rackIdCol) - 1))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow) + 1, int(rackIdCol) - 1))
+		myNeighborsRack.append("{},{}".format(int(rackIdRow) - 1, int(rackIdCol) + 1))
+		# HARDCODEDNEIGHBOURS_ID  = ['0','1','2','3','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20']
+
+		for rack in myNeighborsRack:
+			try:
+				cursor = db.spanningtree.find_one({"rackLocation": rack})
+				if cursor != None:
+					self.neighborID.append(cursor["nodeId"])
+				else:
+
+					logger.info("Node: {} - No node with rackLocation:{} found!".format(self.id, rack))
+			except Exception as e:
+				logger.error("***")
+				logger.error("Error occurred while finding nodeId with Rack: {}".format(rack))
+				logger.error(traceback.format_exc())
+				logger.error(e)
+				logger.error("***")
 
 	def getChildWeight(self):
 		childWeight = 0
@@ -117,7 +148,7 @@ class Node:
 		else:
 			logger.info("Node: %s - Setting myself as clusterhead as no parent found!"%(self.id))
 			self.isClusterhead = 1
-			self.clusterheadId = str(self.id)
+			self.clusterheadId = self.id.encode("utf-8")
 			self.state = "free"
 			try:
 				logger.info("Node: %s - Updating DB with size,hopcount variables"%(self.id))
@@ -204,27 +235,14 @@ class Node:
 		# 	logger.error(traceback.format_exc())
 		# logger.info("Node: %s - Starting phase 2 clustering"%(self.id))
 
-		rackIdRow = self.rackLocation.split(",")[0]
-		rackIdCol = self.rackLocation.split(",")[1]
 
-		myNeighborsRack = []
-		myNeighborsRack.append("{},{}".format(int(rackIdRow)+1,rackIdCol))
-		myNeighborsRack.append("{},{}".format(int(rackIdRow) - 1, rackIdCol))
-		myNeighborsRack.append("{},{}".format(int(rackIdRow), int(rackIdCol)+1))
-		myNeighborsRack.append("{},{}".format(int(rackIdRow), int(rackIdCol) - 1))
-		myNeighborsRack.append("{},{}".format(int(rackIdRow)+1, int(rackIdCol) + 1))
-		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) - 1))
-		myNeighborsRack.append("{},{}".format(int(rackIdRow)+1, int(rackIdCol) - 1))
-		myNeighborsRack.append("{},{}".format(int(rackIdRow)-1, int(rackIdCol) + 1))
-		HARDCODEDNEIGHBOURS_ID  = ['0','1','2','3','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20']
-		for i in HARDCODEDNEIGHBOURS_ID:
+		for i in self.neighborID:
 			if i== self.id:
 				continue
 			# if i.find("C") != -1:
 			# 	self.neighbourHelloArray.add(i)
 			# 	continue
 			resp = client.sendHello(self.id,i,raspberryPi_id_list.ID_IP_MAPPING[i],self.clusterheadId,self.hopcount,self.state)
-			logger.info("Node :%s got reply %s from Node: %s after sendHello"%(self.id,resp,i,))
 
 
 
@@ -297,39 +315,68 @@ class Node:
 	def checkEnergy(self):
 		initialEnergy = 0
 		finalEnergy = 0
-		shiftNode = db.spanningtree.find_one({})[self.shiftNodeId]
-		shiftNodeInitialHopCount = shiftNode['hopcount']
-		bestNode = db.spanningtree.find_one({})[self.shiftNodeId][shiftNode['bestNodeId']]
-		shiftNodeFinalHopCount = db.spanningtree.find_one({})[bestNode['id']][bestNode['hopcount']] + 1
+		logger.info("Node {} - shiftNodeId: {} type: {}".format(self.id, self.shiftNodeId,type(self.shiftNodeId)))
+		shiftNode = db.spanningtree.find_one({'nodeId':self.shiftNodeId})
+		logger.info("Node: {} - shiftNode hopcount: {} type: {}".format(self.id, shiftNode["hopcount"],type(shiftNode['hopcount'])))
+		logger.info("Node: {} - bestNodeHopCount: {} type: {}".format(self.id, self.bestNodeHopCount,type(self.bestNodeHopCount)))
 
-		shiftNodeCluster = db.spanningtree.find_one({})[self.shiftNodeCluster]
-		childrenList1 = [i for i in self.childListId]
-		childrenList2 = [i for i in shiftNodeCluster['childListId']]
-		for childId in childrenList1:
-			node = db.spanningtree.find_one({})[childId]
-			weight = weightMatrix.matrix[childId][self.shiftNodeId]
+		shiftNodeInitialHopCount = shiftNode['hopcount']
+		shiftNodeFinalHopCount = self.bestNodeHopCount+1
+		ClusterheadToClusterHeadHopCount = 1
+		childrenList1 = Queue.Queue()
+		childrenList2 = Queue.Queue()
+
+		for i in self.childListId:
+			logger.info("Adding Node: {} type:{} to childrenList1".format(i,type(i)))
+			childrenList1.put(i)
+
+		logger.info("Node: {} self.shiftNodeCluster: {} type:{}".format(self.id,self.shiftNodeCluster,type(self.shiftNodeCluster)))
+		shiftNodeCluster = db.spanningtree.find_one({'nodeId':self.shiftNodeCluster})
+
+		for i in shiftNodeCluster['childListId']:
+			logger.info("Adding Node: {} type:{} to childrenList2".format(i, type(i)))
+			childrenList2.put(i)
+
+		while not childrenList1.empty():
+			childId = childrenList1.get()
+			node = db.spanningtree.find_one({'nodeId':childId})
+			weight = weightMatrix.matrix[int(childId)][int(self.shiftNodeId)]
 			hops = node['hopcount']
 			initialEnergy += weight*(hops+shiftNodeInitialHopCount)
-			finalEnergy += weight*(hops+shiftNodeFinalHopCount)
+			finalEnergy += weight*(hops+shiftNodeFinalHopCount+ClusterheadToClusterHeadHopCount)
 			try:
 				for child in node['childListId']:
-					childrenList1.append(child)
-			except KeyError as e:
-				pass
+					logger.info("Adding Node: {} type:{} to childList1".format(child,type(child)))
+					childrenList1.put(child)
+			except Exception as e:
+				logger.error("***Expected Error Ignore ***")
+				logger.error(e)
+				logger.error(traceback.format_exc())
+				logger.error("***Expected Error Ignore ***")
 
-		for childIdOtherCluster in childrenList2:
-			node = db.spanningtree.find_one({})[childIdOtherCluster]
-			weight = weightMatrix.matrix[childIdOtherCluster][self.shiftNodeId]
+
+		logger.info("childList1 empty")
+
+		while not childrenList2.empty():
+			childIdOtherCluster = childrenList2.get()
+			node = db.spanningtree.find_one({'nodeId':childIdOtherCluster})
+			weight = weightMatrix.matrix[int(childIdOtherCluster)][int(self.shiftNodeId)]
 			hops = node['hopcount']
-			initialEnergy += weight * (hops + shiftNodeInitialHopCount)
+			initialEnergy += weight * (hops + shiftNodeInitialHopCount+ClusterheadToClusterHeadHopCount)
 			finalEnergy += weight * (hops + shiftNodeFinalHopCount)
 			try:
 				for child in node['childListId']:
-					childrenList2.append(child)
-			except KeyError as e:
-				pass
+					logger.info("Adding Node: {} type:{} to childList2".format(child, type(child)))
+					childrenList2.put(child)
+			except Exception as e:
+				logger.error("***Expected Error Ignore ***")
+				logger.error(e)
+				logger.error(traceback.format_exc())
+				logger.error("***Expected Error Ignore ***")
 
-		return initialEnergy < finalEnergy
+		logger.info("Node: %s - Initial Energy: %s"%(self.id,initialEnergy))
+		logger.info("Node: %s - Final Energy: %s" % (self.id, finalEnergy))
+		return initialEnergy > finalEnergy
 
 	def startCheckingEnergyDrain(self):
 		childList = [c for c in self.childListId]
