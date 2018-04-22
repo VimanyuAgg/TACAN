@@ -377,7 +377,10 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}", function(err
         // Enter any new nodes at the parent's previous position.
         var nodeEnter = node.enter().append("g")
             .call(dragListener)
-            .attr("class", "node")
+//            .attr("class", "node")
+            .attr("class", function(d) {
+                return d.fake ? "fake" : "node"
+             })
             .attr("transform", function(d) {
                 return "translate(" + source.y0 + "," + source.x0 + ")";
             })
