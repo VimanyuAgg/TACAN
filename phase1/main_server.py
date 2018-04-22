@@ -220,6 +220,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
     return phase1_pb2.JamResponse(jamResponse="jammed")
 
   def Hello(self,request,context):
+    logger.info("Node: {} catering to Hello message with request: {}".format(self.node,request))
     if (self.node.isClusterhead == 1):
       #do nothing
       logger.info("Node: %s - Got hello message from senderId: %s" % (self.node.id,request.senderId))
@@ -243,7 +244,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         self.node.bestNodeClusterHeadId = request.senderClusterheadId
 
 
-        if (len(self.node.neighbourHelloArray) == 8 and self.node.bestNodeId != self.node.id):
+        if (len(self.node.neighbourHelloArray) == len(self.node.neighborID) and self.node.bestNodeId != self.node.id):
             ## May need to add self.bestNodeHopCount in the sendShiftRPC to update self.node.hopcount if request is accepted
             logger.info("Node: %s - Received hello messages from ALL neighbours. Sending shift node request to would be ex-clusterheadId:%s"%(self.node.id,self.node.clusterheadId))
             logger.info("Node: %s - State variables: bestNodeId: {},bestNodeClusterHeadId:{},current clusterheadId: {},current parent: {}".format(self.node.bestNodeId,self.node.bestNodeClusterHeadId, self.node.clusterheadId,self.node.parentId))
@@ -252,7 +253,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         logger.info("Node: %s - Sending interested response for senderId: %s"%(self.node.id,request.senderId))
         return phase1_pb2.HelloResponse(interested=1)
 
-      if (len(self.node.neighbourHelloArray) == 8 and self.node.bestNodeId != self.node.id):
+      if (len(self.node.neighbourHelloArray) == len(self.node.neighborID) and self.node.bestNodeId != self.node.id):
         ## May need to add self.bestNodeHopCount in the sendShiftRPC to update self.node.hopcount if request is accepted
         logger.info(
             "Node: %s - Received hello messages from ALL neighbours. Sending shift node request to would be ex-clusterheadId:%s" % (
@@ -409,8 +410,8 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
         logger.info("Node: %s - Accept Request received from clusterhead: %s " % (self.node.id,request.clusterHeadId))
       # send shift start to the i node if energy matric reduces
       #   if energyvalue < currentValue:
-        if True:
-      #   if self.node.checkEnergy():
+      #   if True:
+        if self.node.checkEnergy():
           self.node.sendShiftStart()
           return phase1_pb2.AcceptResponse(message= "Starting Shift Start")
         else:
