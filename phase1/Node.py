@@ -50,7 +50,7 @@ class Node:
 		self.id = str(myId)
 		#self.parentId = parentId
 		#self.childListId = childListId
-		my_info = SPANNING_INFO[myId]
+		my_info = db.spanningtree.find_one({"nodeId":self.id})
 		self.ipAddress= raspberryPi_id_list.ID_IP_MAPPING[myId]
 		self.parentId = my_info['parentId']
 		self.childListId = my_info['childListId']
@@ -120,12 +120,14 @@ class Node:
 			self.clusterheadId = str(self.id)
 			self.state = "free"
 			try:
+				logger.info("Node: %s - Updating DB with size,hopcount variables"%(self.id))
 				db.spanningtree.update_one({'nodeId':self.id},{'$set':{'isClusterhead':self.isClusterhead,
 																	   'clusterheadId':self.clusterheadId,
 																	   'parentId':None,
 																	   'size':self.size,
 																	   'hopcount':0,
 																	   'state':self.state}},upsert=False)
+				logger.info("Node: %s - Successfully DB with size,hopcount variables")
 			except Exception as e:
 				logger.error("Some Error occurred in sendSizeToParent()")
 			client.sendCluster(self)

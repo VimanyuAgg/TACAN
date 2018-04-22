@@ -11,6 +11,10 @@ import logging
 import os
 import logging.handlers
 import datetime
+from pymongo import MongoClient
+
+con = MongoClient('mongodb://localhost:27017/')
+db = con.spanningtreemap
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -89,16 +93,16 @@ def sendSize(node,stub):
 		node.isClusterhead = 1
         
 		node.state = "free"
-	    try:
-        db.spanningtree.update_one({'nodeId': node.id}, {'$set': {'isClusterhead': node.isClusterhead,
+		try:
+			db.spanningtree.update_one({'nodeId': node.id}, {'$set': {'isClusterhead': node.isClusterhead,
         															'parentId':None,
                                                                     'clusterheadId': node.clusterheadId,
                                                                     'hopcount':0,
                                                                     'size':node.size,
                                                                     'state': node.state}}, upsert=False)
-        except Exeception as e:
-        	logger.error("Node: %s - not able to update db"%(node.id))
-        	logger.error(e)
+		except Exception as e:
+			logger.error("Node: %s - not able to update db"%(node.id))
+			logger.error(e)
 
 		sendCluster(node)
 	else:
