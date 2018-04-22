@@ -41,8 +41,8 @@ logger.addHandler(info_handler)
 logger.addHandler(error_handler)
 logger.addHandler(debug_handler)
 
-@retry
-def hitGRPC(key,value,flag):
+
+def hitGRPC(key,value):
 
     channel = grpc.insecure_channel(value)
     stub = phase1_pb2_grpc.MainServiceStub(channel)
@@ -50,21 +50,17 @@ def hitGRPC(key,value,flag):
     clusterRPC = stub.StartPhase2Clustering(phase1_pb2.StartPhase2ClusteringRequest(startPhase2="Start Phase 2 "))
     logger.info("RaspberryPi got following response after sending Hello to node id: %s" % (key))
     logger.info(clusterRPC)
-    flag = False
-    return flag
 
 def run():
     logger.info("All ID_IP Mapping are as per below")
     logger.info(raspberryPi_id_list.ID_IP_MAPPING)
     counter = False
+
     for key,value in raspberryPi_id_list.ID_IP_MAPPING.iteritems():
-        if not counter:
-            logger.info("RaspberryPi sending StartPhase 2 clustering to %s, at IP: %s"%(key,value))
-            # print("RaspberryPiaspberryPi sending StartPhase 2 clustering to %s, at IP: %s" % (key, value))
-            flag = True
-            flag = hitGRPC(key,value,flag)
-            while not flag:
-                time.sleep(2)
+        logger.info("RaspberryPi sending StartPhase 2 clustering to %s, at IP: %s"%(key,value))
+        # print("RaspberryPiaspberryPi sending StartPhase 2 clustering to %s, at IP: %s" % (key, value))
+        hitGRPC(key,value)
+
 
 
 
