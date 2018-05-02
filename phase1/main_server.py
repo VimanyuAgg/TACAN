@@ -65,7 +65,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
   #     # isClusterhead=False
   #     #default state 
   #     # state="active"
-      print "Node: %s - Inside Mainserver __init__"%(node.id)
+      print("Node: %s - Inside Mainserver __init__"%(node.id))
       logger.info("Node: %s - Inside Mainserver __init__"%(node.id))
       self.node = node
       # print("Node created inside __init__ Mainserver...")
@@ -112,6 +112,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
               logger.info("Node: %s - All children responded. Sending size to parent"%(self.node.id))
               thread1 = threading.Thread(target=self.node.sendSizeToParent,args=())
               thread1.start()
+              # time.sleep(2)
 
           logger.info("Node: %s - Sending Prune to childId: %s"%(self.node.id,request.nodeId))
           return phase1_pb2.AccomodateChild(message="Prune")
@@ -135,7 +136,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
             logger.info("Node: %s - All children responded. Sending size to parent"%(self.node.id))
             thread2 = threading.Thread(target=self.node.sendSizeToParent, args=())
             thread2.start()
-
+            # time.sleep(2)
         logger.info("Node: %s Sending accept to childId: %s" % (self.node.id,request.nodeId))
         return phase1_pb2.AccomodateChild(message="Accepted")
 
@@ -170,6 +171,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
           logger.info("Node:%s - Children Found! Starting ClusterheadId Propagation"%(self.node.id))
           thread3 = threading.Thread(target=self.node.propogateClusterheadInfo,args=(clusterName, hopCount))
           thread3.start()
+          # time.sleep(2)
       else:
           logger.info("Node: %s - NO children found!"%(self.node.id))
       return phase1_pb2.JoinClusterResponse(joinClusterResponse="Joined")
@@ -344,6 +346,14 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
       self.node.informParentAboutNewSize(sizeIncrement)
     elif self.node.isClusterhead and self.node.state == "busy":
       self.node.childListId.append(request.nodeId)
+      try:
+          db.spanningtree.update_one({'nodeId': self.node.id}, {'$set': {'childListId': self.node.childListId
+                                                                    }}, upsert=False)
+      except Exception as e:
+          logger.error(e)
+          logger.error("Error occurred in Node %s"%(self.node.id))
+          logger.error(traceback.format_exc())
+
       sizeIncrement = request.childSize
       self.node.size += request.childSize
     return phase1_pb2.JoinNewParentResponse(joinResponse="welcome my new child")
@@ -464,6 +474,9 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
   def StartPhase2Clustering(self,request,context):
       logger.info("Node: %s - Got StartPhase2Clustering"%(self.node.id))
+      # logger.info("Node: %s - Checking Initial Energy of cluster first"%(self.node.id))
+      # self.node.calculateClusterEnergy()
+      # logger.info("Node: %s - Now initiating phase2"%(self.node.id))
       self.node.startPhase2Clustering()
       response = "Node: %s - Done with phase2 clustering"%self.node.id
       return phase1_pb2.StartedPhase2ClusteringResponse(startedPhase2ClusteringResponse = response)
@@ -481,7 +494,7 @@ class MainServer(phase1_pb2_grpc.MainServiceServicer):
 
 def serve(node):
   logger.info("Node: %s - Creating GRPC Server "%(node.id))
-  server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+  server = grpc.server(futures.ThreadPoolExecutor(max_workers=30))
   try:
     logger.info("Node %s - Created GRPC Server"%(node.id))
     phase1_pb2_grpc.add_MainServiceServicer_to_server(MainServer(node), server)

@@ -14,7 +14,13 @@ import os
 import logging.handlers
 import datetime
 import time
-from retrying import retry
+# from retrying import retry
+from pymongo import MongoClient
+import weightMatrix
+import traceback
+
+con = MongoClient("mongodb://localhost:27017/spanningtreemap")
+db = con.spanningtreemap
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -41,7 +47,6 @@ logger.addHandler(info_handler)
 logger.addHandler(error_handler)
 logger.addHandler(debug_handler)
 
-
 def hitGRPC(key,value):
 
     channel = grpc.insecure_channel(value)
@@ -51,17 +56,63 @@ def hitGRPC(key,value):
     logger.info("RaspberryPi got following response after sending Hello to node id: %s" % (key))
     logger.info(clusterRPC)
 
+def checkPhaseEnergy(key,value,flag):
+    node = db.spanningtree.find_one({'nodeId': key})
+    if node['isClusterhead'] != 1:
+        pass
+    else:
+        try:
+            cur2 = db.spanningtree.find({'clusterheadId': key})
+            energy = 0
+            logger.info("1_cur2:{}".format(cur2))
+            cur = [c for c in cur2]
+            logger.info("2_cur2:{}".format(cur2))
+            allNodes = [n['nodeId'] for n in cur]
+            logger.info("Node: {} All Nodes in this cluster:{}".format(key, allNodes))
+            for document in cur:
+                hops = document['hopcount']
+                thisNodeId = document['nodeId']
+                weight = 0
+                for n in allNodes:
+                    weight += weightMatrix.matrix[int(thisNodeId)][int(n)]
+                logger.info("Node: {} weight of node:{} is {}".format(key, thisNodeId, weight))
+                energy += weight * hops
+                logger.info("Node: {} energy: {}".format(key, energy))
+            if flag == 1:
+                # energy = energy*2
+                db.spanningtree.update_one({'nodeId': key}, {'$set': {'initenergy': energy,
+                                                                  }}, upsert=False)
+            else:
+                # energy = energy * 2
+                db.spanningtree.update_one({'nodeId': key}, {'$set': {'finalenergy': energy,
+                                                                      }}, upsert=False)
+
+        except Exception as e:
+            logger.error("Error in calculateClusterEnergy")
+            logger.error(e)
+            logger.error(traceback.format_exc())
+
+
+
+
 def run():
     logger.info("All ID_IP Mapping are as per below")
     logger.info(raspberryPi_id_list.ID_IP_MAPPING)
     counter = False
 
-    for key,value in raspberryPi_id_list.ID_IP_MAPPING.iteritems():
+    for key,value in raspberryPi_id_list.ID_IP_MAPPING.items():
+        logger.info("RaspberryPi is now checking Initial Energy Values for %s, at IP: %s"%(key,value))
+        checkPhaseEnergy(key,value,1)
+
+    for key,value in raspberryPi_id_list.ID_IP_MAPPING.items():
         logger.info("RaspberryPi sending StartPhase 2 clustering to %s, at IP: %s"%(key,value))
         # print("RaspberryPiaspberryPi sending StartPhase 2 clustering to %s, at IP: %s" % (key, value))
         hitGRPC(key,value)
 
 
+    for key,value in raspberryPi_id_list.ID_IP_MAPPING.items():
+        logger.info("RaspberryPi is now checking Final Energy Values for %s, at IP: %s"%(key,value))
+        checkPhaseEnergy(key,value,2)
 
 
 

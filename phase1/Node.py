@@ -6,12 +6,12 @@ import client
 import pymongo
 from pymongo import MongoClient
 
-import logging
+
 import os, traceback
 import logging.handlers
 import datetime
-import thread
-import Queue
+
+import queue
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -134,7 +134,7 @@ class Node:
 		if (self.childListId== None or len(self.childListId) == 0):
 			logger.info("Node: %s - Calling phaseOneClusterStart with parentId: %s"%(self.id,self.parentId))
 			client.phaseOneClusterStart(self,raspberryPi_id_list.ID_IP_MAPPING[self.parentId])
-			print "Node: %s - Sent size() message to parent: %s" % (self.id, self.parentId)
+			print("Node: %s - Sent size() message to parent: %s" % (self.id, self.parentId))
 			logger.info("Node: %s - Sent size() message to parent: %s" % (self.id, self.parentId))
 		else:
 			logger.info("Node: %s - I am a parent not leaf"%(self.id))
@@ -198,9 +198,9 @@ class Node:
 																											self.clusterheadId,self.hopcount,\
 																											self.bestNodeId,bestNodeClusterHeadId,\
 																											self.bestNodeHopCount))
-		self.parentId = bestNodeId
+		self.parentId = self.bestNodeId
 		self.clusterheadId = bestNodeClusterHeadId
-		self.hopcount = newHopCount
+		self.hopcount = self.bestNodeHopCount
 		try:
 			db.spanningtree.update_one({'nodeId': self.id}, {
 				'$set': {'parentId': self.parentId, 'clusterheadId': self.clusterheadId,
@@ -226,6 +226,7 @@ class Node:
 												   raspberryPi_id_list.ID_IP_MAPPING[newClusterheadId],self.id)
 
 	def startPhase2Clustering(self):
+
 		self.bestNodeHopCount = self.hopcount
 		logger.info("Node: %s - hopcount before Phase 2 clustering: %s"%(self.id,self.hopcount))
 		# try:
@@ -323,8 +324,8 @@ class Node:
 		shiftNodeInitialHopCount = shiftNode['hopcount']
 		shiftNodeFinalHopCount = self.bestNodeHopCount+1
 		ClusterheadToClusterHeadHopCount = 1
-		childrenList1 = Queue.Queue()
-		childrenList2 = Queue.Queue()
+		childrenList1 = queue.Queue()
+		childrenList2 = queue.Queue()
 
 		for i in self.childListId:
 			logger.info("Adding Node: {} type:{} to childrenList1".format(i,type(i)))
@@ -377,6 +378,34 @@ class Node:
 		logger.info("Node: %s - Initial Energy: %s"%(self.id,initialEnergy))
 		logger.info("Node: %s - Final Energy: %s" % (self.id, finalEnergy))
 		return initialEnergy > finalEnergy
+
+	def calculateClusterEnergy(self):
+		if self.isClusterhead != 1:
+			pass
+		else:
+			try:
+				cur2 = db.spanningtree.find({'clusterheadId':self.id})
+				energy = 0
+				logger.info("1_cur2:{}".format(cur2))
+				cur = [c for c in cur2]
+				logger.info("2_cur2:{}".format(cur2))
+				allNodes = [n['nodeId'] for n in cur]
+				logger.info("Node: {} All Nodes in this cluster:{}".format(self.id,allNodes))
+				for document in cur:
+					hops = document['hopcount']
+					thisNodeId = document['nodeId']
+					weight = 0
+					for n in allNodes:
+						weight += weightMatrix.matrix[int(thisNodeId)][int(n)]
+					logger.info("Node: {} weight of node:{} is {}".format(self.id,thisNodeId,weight))
+					energy += weight*hops
+					logger.info("Node: {} energy: {}".format(self.id,energy))
+				db.spanningtree.update_one({'nodeId': self.id}, {'$set': {'initenergy': energy,
+																		  }}, upsert=False)
+			except Exception as e:
+				logger.error("Error in calculateClusterEnergy")
+				logger.error(e)
+				logger.error(traceback.format_exc())
 
 	def startCheckingEnergyDrain(self):
 		childList = [c for c in self.childListId]
