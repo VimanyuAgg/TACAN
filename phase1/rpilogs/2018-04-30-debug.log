@@ -1,0 +1,267 @@
+2018-04-30 21:17:04,778 - __main__ - INFO - All ID_IP Mapping are as per below
+2018-04-30 21:17:04,778 - __main__ - INFO - {'20': 'localhost:50070', '21': 'localhost:50071', '1': 'localhost:50051', '0': 'localhost:50050', '3': 'localhost:50053', '2': 'localhost:50052', '5': 'localhost:50055', '4': 'localhost:50054', '7': 'localhost:50057', '6': 'localhost:50056', '9': 'localhost:50059', '8': 'localhost:50058', '11': 'localhost:50061', '10': 'localhost:50060', '13': 'localhost:50063', '12': 'localhost:50062', '15': 'localhost:50065', '14': 'localhost:50064', '17': 'localhost:50067', '16': 'localhost:50066', '19': 'localhost:50069', '18': 'localhost:50068'}
+2018-04-30 21:17:04,779 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 20, at IP: localhost:50070
+2018-04-30 21:17:04,780 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 21, at IP: localhost:50071
+2018-04-30 21:17:04,780 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 1, at IP: localhost:50051
+2018-04-30 21:17:04,781 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x10bfaf950>
+2018-04-30 21:17:04,781 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x10bfaf950>
+2018-04-30 21:17:04,782 - __main__ - INFO - Node: 1 All Nodes in this cluster:[u'1', u'3', u'5', u'11']
+2018-04-30 21:17:04,782 - __main__ - INFO - Node: 1 weight of node:1 is 10
+2018-04-30 21:17:04,782 - __main__ - INFO - Node: 1 energy: 0
+2018-04-30 21:17:04,782 - __main__ - INFO - Node: 1 weight of node:3 is 15
+2018-04-30 21:17:04,782 - __main__ - INFO - Node: 1 energy: 15
+2018-04-30 21:17:04,782 - __main__ - INFO - Node: 1 weight of node:5 is 11
+2018-04-30 21:17:04,782 - __main__ - INFO - Node: 1 energy: 26
+2018-04-30 21:17:04,782 - __main__ - INFO - Node: 1 weight of node:11 is 6
+2018-04-30 21:17:04,782 - __main__ - INFO - Node: 1 energy: 38
+2018-04-30 21:17:04,783 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 0, at IP: localhost:50050
+2018-04-30 21:17:04,784 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x10bfaf510>
+2018-04-30 21:17:04,784 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x10bfaf510>
+2018-04-30 21:17:04,799 - __main__ - INFO - Node: 0 All Nodes in this cluster:[u'0', u'2', u'4', u'9']
+2018-04-30 21:17:04,799 - __main__ - INFO - Node: 0 weight of node:0 is 8
+2018-04-30 21:17:04,799 - __main__ - INFO - Node: 0 energy: 0
+2018-04-30 21:17:04,800 - __main__ - INFO - Node: 0 weight of node:2 is 5
+2018-04-30 21:17:04,800 - __main__ - INFO - Node: 0 energy: 5
+2018-04-30 21:17:04,800 - __main__ - INFO - Node: 0 weight of node:4 is 14
+2018-04-30 21:17:04,800 - __main__ - INFO - Node: 0 energy: 33
+2018-04-30 21:17:04,800 - __main__ - INFO - Node: 0 weight of node:9 is 7
+2018-04-30 21:17:04,801 - __main__ - INFO - Node: 0 energy: 54
+2018-04-30 21:17:04,802 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 3, at IP: localhost:50053
+2018-04-30 21:17:04,803 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 2, at IP: localhost:50052
+2018-04-30 21:17:04,804 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 5, at IP: localhost:50055
+2018-04-30 21:17:04,804 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 4, at IP: localhost:50054
+2018-04-30 21:17:04,805 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 7, at IP: localhost:50057
+2018-04-30 21:17:04,806 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 6, at IP: localhost:50056
+2018-04-30 21:17:04,807 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x10bfaf950>
+2018-04-30 21:17:04,807 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x10bfaf950>
+2018-04-30 21:17:04,807 - __main__ - INFO - Node: 6 All Nodes in this cluster:[u'6', u'7']
+2018-04-30 21:17:04,808 - __main__ - INFO - Node: 6 weight of node:6 is 6
+2018-04-30 21:17:04,808 - __main__ - INFO - Node: 6 energy: 0
+2018-04-30 21:17:04,808 - __main__ - INFO - Node: 6 weight of node:7 is 1
+2018-04-30 21:17:04,808 - __main__ - INFO - Node: 6 energy: 1
+2018-04-30 21:17:04,809 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 9, at IP: localhost:50059
+2018-04-30 21:17:04,809 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 8, at IP: localhost:50058
+2018-04-30 21:17:04,810 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x10bfaf510>
+2018-04-30 21:17:04,810 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x10bfaf510>
+2018-04-30 21:17:04,811 - __main__ - INFO - Node: 8 All Nodes in this cluster:[u'8', u'10']
+2018-04-30 21:17:04,811 - __main__ - INFO - Node: 8 weight of node:8 is 2
+2018-04-30 21:17:04,811 - __main__ - INFO - Node: 8 energy: 0
+2018-04-30 21:17:04,811 - __main__ - INFO - Node: 8 weight of node:10 is 0
+2018-04-30 21:17:04,811 - __main__ - INFO - Node: 8 energy: 0
+2018-04-30 21:17:04,812 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 11, at IP: localhost:50061
+2018-04-30 21:17:04,812 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 10, at IP: localhost:50060
+2018-04-30 21:17:04,813 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 13, at IP: localhost:50063
+2018-04-30 21:17:04,813 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 12, at IP: localhost:50062
+2018-04-30 21:17:04,814 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 15, at IP: localhost:50065
+2018-04-30 21:17:04,814 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 14, at IP: localhost:50064
+2018-04-30 21:17:04,815 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x10bfaf950>
+2018-04-30 21:17:04,816 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x10bfaf950>
+2018-04-30 21:17:04,816 - __main__ - INFO - Node: 14 All Nodes in this cluster:[u'14', u'15', u'16']
+2018-04-30 21:17:04,816 - __main__ - INFO - Node: 14 weight of node:14 is 2
+2018-04-30 21:17:04,816 - __main__ - INFO - Node: 14 energy: 0
+2018-04-30 21:17:04,816 - __main__ - INFO - Node: 14 weight of node:15 is 2
+2018-04-30 21:17:04,816 - __main__ - INFO - Node: 14 energy: 2
+2018-04-30 21:17:04,816 - __main__ - INFO - Node: 14 weight of node:16 is 2
+2018-04-30 21:17:04,816 - __main__ - INFO - Node: 14 energy: 6
+2018-04-30 21:17:04,817 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 17, at IP: localhost:50067
+2018-04-30 21:17:04,817 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 16, at IP: localhost:50066
+2018-04-30 21:17:04,818 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 19, at IP: localhost:50069
+2018-04-30 21:17:04,818 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 18, at IP: localhost:50068
+2018-04-30 21:17:04,819 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 20, at IP: localhost:50070
+2018-04-30 21:17:04,837 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 20
+2018-04-30 21:17:04,837 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 20 - Done with phase2 clustering"
+
+2018-04-30 21:17:04,838 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 21, at IP: localhost:50071
+2018-04-30 21:17:04,855 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 21
+2018-04-30 21:17:04,855 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 21 - Done with phase2 clustering"
+
+2018-04-30 21:17:04,855 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 1, at IP: localhost:50051
+2018-04-30 22:18:32,457 - __main__ - INFO - All ID_IP Mapping are as per below
+2018-04-30 22:18:32,457 - __main__ - INFO - {'20': 'localhost:50070', '21': 'localhost:50071', '1': 'localhost:50051', '0': 'localhost:50050', '3': 'localhost:50053', '2': 'localhost:50052', '5': 'localhost:50055', '4': 'localhost:50054', '7': 'localhost:50057', '6': 'localhost:50056', '9': 'localhost:50059', '8': 'localhost:50058', '11': 'localhost:50061', '10': 'localhost:50060', '13': 'localhost:50063', '12': 'localhost:50062', '15': 'localhost:50065', '14': 'localhost:50064', '17': 'localhost:50067', '16': 'localhost:50066', '19': 'localhost:50069', '18': 'localhost:50068'}
+2018-04-30 22:18:32,457 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 20, at IP: localhost:50070
+2018-04-30 22:18:32,459 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 21, at IP: localhost:50071
+2018-04-30 22:18:32,459 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 1, at IP: localhost:50051
+2018-04-30 22:18:32,460 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x10aeba490>
+2018-04-30 22:18:32,460 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x10aeba490>
+2018-04-30 22:18:32,460 - __main__ - INFO - Node: 1 All Nodes in this cluster:[u'1', u'3', u'5', u'11']
+2018-04-30 22:18:32,461 - __main__ - INFO - Node: 1 weight of node:1 is 10
+2018-04-30 22:18:32,461 - __main__ - INFO - Node: 1 energy: 0
+2018-04-30 22:18:32,461 - __main__ - INFO - Node: 1 weight of node:3 is 15
+2018-04-30 22:18:32,461 - __main__ - INFO - Node: 1 energy: 15
+2018-04-30 22:18:32,461 - __main__ - INFO - Node: 1 weight of node:5 is 11
+2018-04-30 22:18:32,461 - __main__ - INFO - Node: 1 energy: 26
+2018-04-30 22:18:32,461 - __main__ - INFO - Node: 1 weight of node:11 is 6
+2018-04-30 22:18:32,461 - __main__ - INFO - Node: 1 energy: 38
+2018-04-30 22:18:32,462 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 0, at IP: localhost:50050
+2018-04-30 22:18:32,462 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x10aeba490>
+2018-04-30 22:18:32,463 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x10aeba490>
+2018-04-30 22:18:32,463 - __main__ - INFO - Node: 0 All Nodes in this cluster:[u'0', u'2', u'4', u'9']
+2018-04-30 22:18:32,463 - __main__ - INFO - Node: 0 weight of node:0 is 8
+2018-04-30 22:18:32,463 - __main__ - INFO - Node: 0 energy: 0
+2018-04-30 22:18:32,463 - __main__ - INFO - Node: 0 weight of node:2 is 5
+2018-04-30 22:18:32,463 - __main__ - INFO - Node: 0 energy: 5
+2018-04-30 22:18:32,463 - __main__ - INFO - Node: 0 weight of node:4 is 14
+2018-04-30 22:18:32,463 - __main__ - INFO - Node: 0 energy: 33
+2018-04-30 22:18:32,463 - __main__ - INFO - Node: 0 weight of node:9 is 7
+2018-04-30 22:18:32,464 - __main__ - INFO - Node: 0 energy: 54
+2018-04-30 22:18:32,464 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 3, at IP: localhost:50053
+2018-04-30 22:18:32,465 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 2, at IP: localhost:50052
+2018-04-30 22:18:32,465 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 5, at IP: localhost:50055
+2018-04-30 22:18:32,466 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 4, at IP: localhost:50054
+2018-04-30 22:18:32,466 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 7, at IP: localhost:50057
+2018-04-30 22:18:32,467 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 6, at IP: localhost:50056
+2018-04-30 22:18:32,467 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x10aeba410>
+2018-04-30 22:18:32,468 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x10aeba410>
+2018-04-30 22:18:32,468 - __main__ - INFO - Node: 6 All Nodes in this cluster:[u'6', u'7']
+2018-04-30 22:18:32,468 - __main__ - INFO - Node: 6 weight of node:6 is 6
+2018-04-30 22:18:32,468 - __main__ - INFO - Node: 6 energy: 0
+2018-04-30 22:18:32,468 - __main__ - INFO - Node: 6 weight of node:7 is 1
+2018-04-30 22:18:32,468 - __main__ - INFO - Node: 6 energy: 1
+2018-04-30 22:18:32,469 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 9, at IP: localhost:50059
+2018-04-30 22:18:32,469 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 8, at IP: localhost:50058
+2018-04-30 22:18:32,470 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x10aeba950>
+2018-04-30 22:18:32,470 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x10aeba950>
+2018-04-30 22:18:32,471 - __main__ - INFO - Node: 8 All Nodes in this cluster:[u'8', u'10']
+2018-04-30 22:18:32,471 - __main__ - INFO - Node: 8 weight of node:8 is 2
+2018-04-30 22:18:32,471 - __main__ - INFO - Node: 8 energy: 0
+2018-04-30 22:18:32,471 - __main__ - INFO - Node: 8 weight of node:10 is 0
+2018-04-30 22:18:32,471 - __main__ - INFO - Node: 8 energy: 0
+2018-04-30 22:18:32,472 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 11, at IP: localhost:50061
+2018-04-30 22:18:32,472 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 10, at IP: localhost:50060
+2018-04-30 22:18:32,473 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 13, at IP: localhost:50063
+2018-04-30 22:18:32,473 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 12, at IP: localhost:50062
+2018-04-30 22:18:32,474 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 15, at IP: localhost:50065
+2018-04-30 22:18:32,474 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 14, at IP: localhost:50064
+2018-04-30 22:18:32,475 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x10aeba490>
+2018-04-30 22:18:32,475 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x10aeba490>
+2018-04-30 22:18:32,476 - __main__ - INFO - Node: 14 All Nodes in this cluster:[u'14', u'15', u'16', u'17']
+2018-04-30 22:18:32,476 - __main__ - INFO - Node: 14 weight of node:14 is 2
+2018-04-30 22:18:32,476 - __main__ - INFO - Node: 14 energy: 0
+2018-04-30 22:18:32,476 - __main__ - INFO - Node: 14 weight of node:15 is 2
+2018-04-30 22:18:32,476 - __main__ - INFO - Node: 14 energy: 2
+2018-04-30 22:18:32,476 - __main__ - INFO - Node: 14 weight of node:16 is 2
+2018-04-30 22:18:32,476 - __main__ - INFO - Node: 14 energy: 6
+2018-04-30 22:18:32,476 - __main__ - INFO - Node: 14 weight of node:17 is 3
+2018-04-30 22:18:32,476 - __main__ - INFO - Node: 14 energy: 15
+2018-04-30 22:18:32,477 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 17, at IP: localhost:50067
+2018-04-30 22:18:32,477 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 16, at IP: localhost:50066
+2018-04-30 22:18:32,478 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 19, at IP: localhost:50069
+2018-04-30 22:18:32,479 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 18, at IP: localhost:50068
+2018-04-30 22:18:32,479 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 20, at IP: localhost:50070
+2018-04-30 22:18:32,497 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 20
+2018-04-30 22:18:32,498 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 20 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,498 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 21, at IP: localhost:50071
+2018-04-30 22:18:32,516 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 21
+2018-04-30 22:18:32,516 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 21 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,516 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 1, at IP: localhost:50051
+2018-04-30 22:18:32,537 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 1
+2018-04-30 22:18:32,538 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 1 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,538 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 0, at IP: localhost:50050
+2018-04-30 22:18:32,551 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 0
+2018-04-30 22:18:32,552 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 0 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,552 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 3, at IP: localhost:50053
+2018-04-30 22:18:32,591 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 3
+2018-04-30 22:18:32,592 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 3 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,592 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 2, at IP: localhost:50052
+2018-04-30 22:18:32,615 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 2
+2018-04-30 22:18:32,615 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 2 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,616 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 5, at IP: localhost:50055
+2018-04-30 22:18:32,648 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 5
+2018-04-30 22:18:32,648 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 5 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,649 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 4, at IP: localhost:50054
+2018-04-30 22:18:32,684 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 4
+2018-04-30 22:18:32,685 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 4 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,685 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 7, at IP: localhost:50057
+2018-04-30 22:18:32,706 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 7
+2018-04-30 22:18:32,707 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 7 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,707 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 6, at IP: localhost:50056
+2018-04-30 22:18:32,756 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 6
+2018-04-30 22:18:32,756 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 6 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,756 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 9, at IP: localhost:50059
+2018-04-30 22:18:32,778 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 9
+2018-04-30 22:18:32,778 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 9 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,778 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 8, at IP: localhost:50058
+2018-04-30 22:18:32,810 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 8
+2018-04-30 22:18:32,811 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 8 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,811 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 11, at IP: localhost:50061
+2018-04-30 22:18:32,844 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 11
+2018-04-30 22:18:32,845 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 11 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,845 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 10, at IP: localhost:50060
+2018-04-30 22:18:32,879 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 10
+2018-04-30 22:18:32,879 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 10 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,879 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 13, at IP: localhost:50063
+2018-04-30 22:18:32,900 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 13
+2018-04-30 22:18:32,900 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 13 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,901 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 12, at IP: localhost:50062
+2018-04-30 22:18:32,914 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 12
+2018-04-30 22:18:32,915 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 12 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,915 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 15, at IP: localhost:50065
+2018-04-30 22:18:32,937 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 15
+2018-04-30 22:18:32,937 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 15 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,937 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 14, at IP: localhost:50064
+2018-04-30 22:18:32,959 - __main__ - INFO - RaspberryPi got following response after sending Hello to node id: 14
+2018-04-30 22:18:32,959 - __main__ - INFO - startedPhase2ClusteringResponse: "Node: 14 - Done with phase2 clustering"
+
+2018-04-30 22:18:32,959 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 17, at IP: localhost:50067
+2018-04-30 22:32:34,688 - __main__ - INFO - All ID_IP Mapping are as per below
+2018-04-30 22:32:34,689 - __main__ - INFO - {'11': 'localhost:50061', '4': 'localhost:50054', '3': 'localhost:50053', '7': 'localhost:50057', '10': 'localhost:50060', '2': 'localhost:50052', '5': 'localhost:50055', '9': 'localhost:50059', '1': 'localhost:50051', '6': 'localhost:50056', '8': 'localhost:50058', '0': 'localhost:50050'}
+2018-04-30 22:32:56,046 - __main__ - INFO - All ID_IP Mapping are as per below
+2018-04-30 22:32:56,047 - __main__ - INFO - {'8': 'localhost:50058', '1': 'localhost:50051', '0': 'localhost:50050', '4': 'localhost:50054', '9': 'localhost:50059', '5': 'localhost:50055', '6': 'localhost:50056', '2': 'localhost:50052', '10': 'localhost:50060', '11': 'localhost:50061', '3': 'localhost:50053', '7': 'localhost:50057'}
+2018-04-30 22:32:56,047 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 8, at IP: localhost:50058
+2018-04-30 22:32:56,048 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x1056f9c18>
+2018-04-30 22:32:56,049 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x1056f9c18>
+2018-04-30 22:32:56,049 - __main__ - INFO - Node: 8 All Nodes in this cluster:['10']
+2018-04-30 22:32:56,049 - __main__ - INFO - Node: 8 weight of node:10 is 0
+2018-04-30 22:32:56,049 - __main__ - INFO - Node: 8 energy: 0
+2018-04-30 22:32:56,050 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 1, at IP: localhost:50051
+2018-04-30 22:32:56,051 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x1056f9a58>
+2018-04-30 22:32:56,051 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x1056f9a58>
+2018-04-30 22:32:56,051 - __main__ - INFO - Node: 1 All Nodes in this cluster:['3', '5', '11']
+2018-04-30 22:32:56,052 - __main__ - INFO - Node: 1 weight of node:3 is 9
+2018-04-30 22:32:56,052 - __main__ - INFO - Node: 1 energy: 9
+2018-04-30 22:32:56,052 - __main__ - INFO - Node: 1 weight of node:5 is 3
+2018-04-30 22:32:56,052 - __main__ - INFO - Node: 1 energy: 12
+2018-04-30 22:32:56,052 - __main__ - INFO - Node: 1 weight of node:11 is 3
+2018-04-30 22:32:56,052 - __main__ - INFO - Node: 1 energy: 18
+2018-04-30 22:32:56,053 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 0, at IP: localhost:50050
+2018-04-30 22:32:56,053 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x1056f9dd8>
+2018-04-30 22:32:56,071 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x1056f9dd8>
+2018-04-30 22:32:56,071 - __main__ - INFO - Node: 0 All Nodes in this cluster:['2', '4', '9']
+2018-04-30 22:32:56,071 - __main__ - INFO - Node: 0 weight of node:2 is 2
+2018-04-30 22:32:56,071 - __main__ - INFO - Node: 0 energy: 2
+2018-04-30 22:32:56,072 - __main__ - INFO - Node: 0 weight of node:4 is 10
+2018-04-30 22:32:56,072 - __main__ - INFO - Node: 0 energy: 22
+2018-04-30 22:32:56,072 - __main__ - INFO - Node: 0 weight of node:9 is 2
+2018-04-30 22:32:56,072 - __main__ - INFO - Node: 0 energy: 28
+2018-04-30 22:32:56,073 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 4, at IP: localhost:50054
+2018-04-30 22:32:56,074 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 9, at IP: localhost:50059
+2018-04-30 22:32:56,074 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 5, at IP: localhost:50055
+2018-04-30 22:32:56,075 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 6, at IP: localhost:50056
+2018-04-30 22:32:56,076 - __main__ - INFO - 1_cur2:<pymongo.cursor.Cursor object at 0x1056f9a58>
+2018-04-30 22:32:56,076 - __main__ - INFO - 2_cur2:<pymongo.cursor.Cursor object at 0x1056f9a58>
+2018-04-30 22:32:56,077 - __main__ - INFO - Node: 6 All Nodes in this cluster:['7']
+2018-04-30 22:32:56,077 - __main__ - INFO - Node: 6 weight of node:7 is 0
+2018-04-30 22:32:56,077 - __main__ - INFO - Node: 6 energy: 0
+2018-04-30 22:32:56,078 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 2, at IP: localhost:50052
+2018-04-30 22:32:56,078 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 10, at IP: localhost:50060
+2018-04-30 22:32:56,079 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 11, at IP: localhost:50061
+2018-04-30 22:32:56,080 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 3, at IP: localhost:50053
+2018-04-30 22:32:56,080 - __main__ - INFO - RaspberryPi is now checking Initial Energy Values for 7, at IP: localhost:50057
+2018-04-30 22:32:56,081 - __main__ - INFO - RaspberryPi sending StartPhase 2 clustering to 8, at IP: localhost:50058

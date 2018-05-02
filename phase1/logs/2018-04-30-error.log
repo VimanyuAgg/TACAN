@@ -1,0 +1,33 @@
+2018-04-30 21:15:30,488 - main_server - ERROR - ***
+2018-04-30 21:15:30,488 - main_server - ERROR - ERROR OCCURRED WHILE KICKING CHILDREN
+2018-04-30 21:15:30,488 - main_server - ERROR - Node id: 6 was kicking child 14 from childList
+2018-04-30 21:15:30,488 - main_server - ERROR - Traceback (most recent call last):
+  File "/Users/vimanyuaggarwal/Python Projects/cmpe294A/code/phase1/main_server.py", line 98, in Size
+    self.node.childListId.remove(request.nodeId)
+ValueError: list.remove(x): x not in list
+
+2018-04-30 21:15:30,488 - main_server - ERROR - ***
+2018-04-30 22:16:01,651 - main_server - ERROR - ***
+2018-04-30 22:16:01,651 - main_server - ERROR - ERROR OCCURRED WHILE KICKING CHILDREN
+2018-04-30 22:16:01,651 - main_server - ERROR - Node id: 6 was kicking child 14 from childList
+2018-04-30 22:16:01,652 - main_server - ERROR - Traceback (most recent call last):
+  File "/Users/vimanyuaggarwal/Python Projects/cmpe294A/code/phase1/main_server.py", line 98, in Size
+    self.node.childListId.remove(request.nodeId)
+ValueError: list.remove(x): x not in list
+
+2018-04-30 22:16:01,652 - main_server - ERROR - ***
+2018-04-30 22:18:19,520 - main_server - ERROR - ***
+2018-04-30 22:18:19,520 - main_server - ERROR - ERROR OCCURRED WHILE KICKING CHILDREN
+2018-04-30 22:18:19,520 - main_server - ERROR - Node id: 6 was kicking child 14 from childList
+2018-04-30 22:18:19,521 - main_server - ERROR - Traceback (most recent call last):
+  File "/Users/vimanyuaggarwal/Python Projects/cmpe294A/code/phase1/main_server.py", line 98, in Size
+    self.node.childListId.remove(request.nodeId)
+ValueError: list.remove(x): x not in list
+
+2018-04-30 22:18:19,521 - main_server - ERROR - ***
+2018-04-30 22:18:32,985 - Node - ERROR - Error occurred while finding IP of 
+2018-04-30 22:18:32,985 - Node - ERROR - Traceback (most recent call last):
+  File "/Users/vimanyuaggarwal/Python Projects/cmpe294A/code/phase1/Node.py", line 264, in getIPfromId
+    ip = raspberryPi_id_list.ID_IP_MAPPING[str(Id)]
+KeyError: ''
+
