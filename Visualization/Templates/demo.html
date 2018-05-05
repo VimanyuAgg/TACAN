@@ -757,8 +757,8 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
     }
     // define the baseSvg, attaching a class for styling and the zoomListener
     var baseSvg = d3.select("#tree-container").append("svg")
-        .attr("width", viewerWidth)
-        .attr("height", viewerHeight)
+        .attr("width", 800)
+        .attr("height", 600)
         .attr("class", "overlay")
         .call(zoomListener);
     
@@ -902,8 +902,8 @@ treeJSON = d3.json("{{ url_for('static', filename='flare.json')}}"+"?_="+ noCach
         scale = zoomListener.scale();
         x = -source.y0;
         y = -source.x0;
-        x = x * scale + viewerWidth / 2;
-        y = y * scale + viewerHeight / 2;
+        x = x * scale + 800 / 3;
+        y = y * scale + 600 / 2;
         d3.select('g').transition()
             .duration(duration)
             .attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
@@ -1101,20 +1101,38 @@ function type(n) {
    
 
     </head>
-    <body>
+<body>
         <div class="jumbotron">
  
-    <div id="intro" style="display:none;text-align: center"><h1>Distributed Algo</h1></div>
-        
+    <div id="intro" style="display:none;text-align: center; width: 100%;
+    height: 100%;">
+        <br>
+        <br>
+         <br> <br> <br> <br>
 
-    <center><a name="#tree-container"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></center>
+        <h1>A Distributed Algorithm for Traffic Aware Clustering in Ad Hoc Networks </h1>
+<br> <br> <br><br> <br> <br>
+        <h5>
+            In this project, we are implementing an algorithm proposed by B.S. Tiwana and A.Gupta, which forms a traffic-aware and energy-efficient clustering scheme. It takes into consideration the average traffic pattern between nodes in forming the cluster thereby considering a more realistic measure of routing load on the cluster heads across ad hoc wireless networks.
+        </h5>
+        <br> <br> <br><br> <br> <br>
+
+    <center><a href="#step1"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></center>
     </div>
+        </div>
+   <div id="step1">
+      <center><h1>Lets learn the algorithm with an initial spanning tree </h1>
+       <div id="tree-container"></div>
+        </center>
 
-    <div id="tree-container"></div>    
+   <h5>
+        You can click on any node and see its size. Size is defined as amount of traffic a node can accommodate.
+        </h5>
 
+   </div>
 
+ </div>
     </body>
-
 </html>
 
 
