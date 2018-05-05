@@ -1,0 +1,16 @@
+2018-05-04 16:03:49,841 - Node - ERROR - ***Expected Error Ignore ***
+2018-05-04 16:03:49,841 - Node - ERROR - 'NoneType' object is not iterable
+2018-05-04 16:03:49,841 - Node - ERROR - Traceback (most recent call last):
+  File "/Users/vimanyuaggarwal/Python Projects/cmpe294A/code/phase1/Node.py", line 349, in checkEnergy
+    for child in node['childListId']:
+TypeError: 'NoneType' object is not iterable
+
+2018-05-04 16:03:49,842 - Node - ERROR - ***Expected Error Ignore ***
+2018-05-04 16:03:49,842 - Node - ERROR - ***Expected Error Ignore ***
+2018-05-04 16:03:49,842 - Node - ERROR - 'NoneType' object is not iterable
+2018-05-04 16:03:49,843 - Node - ERROR - Traceback (most recent call last):
+  File "/Users/vimanyuaggarwal/Python Projects/cmpe294A/code/phase1/Node.py", line 369, in checkEnergy
+    for child in node['childListId']:
+TypeError: 'NoneType' object is not iterable
+
+2018-05-04 16:03:49,843 - Node - ERROR - ***Expected Error Ignore ***

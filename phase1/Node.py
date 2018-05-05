@@ -11,7 +11,7 @@ import os, traceback
 import logging.handlers
 import datetime
 
-import queue
+import Queue
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -324,8 +324,8 @@ class Node:
 		shiftNodeInitialHopCount = shiftNode['hopcount']
 		shiftNodeFinalHopCount = self.bestNodeHopCount+1
 		ClusterheadToClusterHeadHopCount = 1
-		childrenList1 = queue.Queue()
-		childrenList2 = queue.Queue()
+		childrenList1 = Queue.Queue()
+		childrenList2 = Queue.Queue()
 
 		for i in self.childListId:
 			logger.info("Adding Node: {} type:{} to childrenList1".format(i,type(i)))
