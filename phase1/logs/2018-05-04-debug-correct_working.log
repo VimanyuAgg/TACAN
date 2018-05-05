@@ -1,0 +1,1430 @@
+2018-05-04 16:03:11,424 - __main__ - INFO - Cleaning DB if it exists
+2018-05-04 16:03:11,424 - __main__ - INFO - Creating New DB
+2018-05-04 16:03:11,426 - Node - INFO - #######################
+2018-05-04 16:03:11,426 - Node - INFO - Node: 0 - Initializing
+2018-05-04 16:03:11,426 - Node - INFO - #######################
+2018-05-04 16:03:11,429 - Node - INFO - Node: 0 - No node with rackLocation:-1,0 found!
+2018-05-04 16:03:11,430 - Node - INFO - Node: 0 - No node with rackLocation:0,-1 found!
+2018-05-04 16:03:11,430 - Node - INFO - Node: 0 - No node with rackLocation:-1,-1 found!
+2018-05-04 16:03:11,431 - Node - INFO - Node: 0 - No node with rackLocation:1,-1 found!
+2018-05-04 16:03:11,431 - Node - INFO - Node: 0 - No node with rackLocation:-1,1 found!
+2018-05-04 16:03:11,432 - Node - INFO - Node: 0 - Calling phaseOneClustering
+2018-05-04 16:03:11,432 - Node - INFO - Node: 0 - Starting Phase One Clustering
+2018-05-04 16:03:11,432 - Node - INFO - Node: 0 - I am a parent not leaf
+2018-05-04 16:03:11,432 - Node - INFO - Node: 0 - Starting Server
+2018-05-04 16:03:11,432 - main_server - INFO - Node: 0 - Creating GRPC Server 
+2018-05-04 16:03:11,441 - main_server - INFO - Node 0 - Created GRPC Server
+2018-05-04 16:03:11,441 - main_server - INFO - Node: 0 - Inside Mainserver __init__
+2018-05-04 16:03:11,446 - main_server - INFO - Node 0 - Starting GRPC Server
+2018-05-04 16:03:11,447 - main_server - INFO - Node: 0 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:12,429 - Node - INFO - #######################
+2018-05-04 16:03:12,429 - Node - INFO - Node: 1 - Initializing
+2018-05-04 16:03:12,429 - Node - INFO - #######################
+2018-05-04 16:03:12,432 - Node - INFO - Node: 1 - No node with rackLocation:-1,1 found!
+2018-05-04 16:03:12,435 - Node - INFO - Node: 1 - No node with rackLocation:-1,0 found!
+2018-05-04 16:03:12,436 - Node - INFO - Node: 1 - No node with rackLocation:-1,2 found!
+2018-05-04 16:03:12,436 - Node - INFO - Node: 1 - Calling phaseOneClustering
+2018-05-04 16:03:12,437 - Node - INFO - Node: 1 - Starting Phase One Clustering
+2018-05-04 16:03:12,437 - Node - INFO - Node: 1 - I am a parent not leaf
+2018-05-04 16:03:12,437 - Node - INFO - Node: 1 - Starting Server
+2018-05-04 16:03:12,437 - main_server - INFO - Node: 1 - Creating GRPC Server 
+2018-05-04 16:03:12,437 - main_server - INFO - Node 1 - Created GRPC Server
+2018-05-04 16:03:12,437 - main_server - INFO - Node: 1 - Inside Mainserver __init__
+2018-05-04 16:03:12,440 - main_server - INFO - Node 1 - Starting GRPC Server
+2018-05-04 16:03:12,441 - main_server - INFO - Node: 1 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:13,433 - Node - INFO - #######################
+2018-05-04 16:03:13,434 - Node - INFO - Node: 2 - Initializing
+2018-05-04 16:03:13,434 - Node - INFO - #######################
+2018-05-04 16:03:13,437 - Node - INFO - Node: 2 - No node with rackLocation:-1,2 found!
+2018-05-04 16:03:13,439 - Node - INFO - Node: 2 - No node with rackLocation:-1,1 found!
+2018-05-04 16:03:13,441 - Node - INFO - Node: 2 - No node with rackLocation:-1,3 found!
+2018-05-04 16:03:13,441 - Node - INFO - Node: 2 - Calling phaseOneClustering
+2018-05-04 16:03:13,441 - Node - INFO - Node: 2 - Starting Phase One Clustering
+2018-05-04 16:03:13,441 - Node - INFO - Node: 2 - I am a parent not leaf
+2018-05-04 16:03:13,441 - Node - INFO - Node: 2 - Starting Server
+2018-05-04 16:03:13,441 - main_server - INFO - Node: 2 - Creating GRPC Server 
+2018-05-04 16:03:13,442 - main_server - INFO - Node 2 - Created GRPC Server
+2018-05-04 16:03:13,442 - main_server - INFO - Node: 2 - Inside Mainserver __init__
+2018-05-04 16:03:13,445 - main_server - INFO - Node 2 - Starting GRPC Server
+2018-05-04 16:03:13,445 - main_server - INFO - Node: 2 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:14,437 - Node - INFO - #######################
+2018-05-04 16:03:14,437 - Node - INFO - Node: 3 - Initializing
+2018-05-04 16:03:14,437 - Node - INFO - #######################
+2018-05-04 16:03:14,441 - Node - INFO - Node: 3 - No node with rackLocation:1,-1 found!
+2018-05-04 16:03:14,443 - Node - INFO - Node: 3 - No node with rackLocation:0,-1 found!
+2018-05-04 16:03:14,443 - Node - INFO - Node: 3 - No node with rackLocation:2,-1 found!
+2018-05-04 16:03:14,444 - Node - INFO - Node: 3 - Calling phaseOneClustering
+2018-05-04 16:03:14,444 - Node - INFO - Node: 3 - Starting Phase One Clustering
+2018-05-04 16:03:14,444 - Node - INFO - Node: 3 - Calling phaseOneClusterStart with parentId: 1
+2018-05-04 16:03:14,449 - client - INFO - Node: 3 - Starting sendSize
+2018-05-04 16:03:14,452 - main_server - INFO - Node: 1 - Current size: 47
+2018-05-04 16:03:14,452 - main_server - INFO - Node:1 - Child Node: 3 has size 42
+2018-05-04 16:03:14,452 - main_server - INFO - Node: 1 - Sending Accept to childId: 3 after checking if all children responded or not
+2018-05-04 16:03:14,454 - main_server - INFO - Node 1: - New size: 89
+2018-05-04 16:03:14,454 - main_server - INFO - Node: 1 Sending accept to childId: 3
+2018-05-04 16:03:14,454 - client - INFO - Node: 3 - Successfully sent the size message of size 42 to parentId: 1
+2018-05-04 16:03:14,454 - client - INFO - Node: 1 - Responded to Size RPC with reply: Accepted
+2018-05-04 16:03:14,455 - client - INFO - Node: 3 - Didn't get Prune 
+2018-05-04 16:03:14,455 - Node - INFO - Node: 3 - Sent size() message to parent: 1
+2018-05-04 16:03:14,455 - Node - INFO - Node: 3 - Starting Server
+2018-05-04 16:03:14,455 - main_server - INFO - Node: 3 - Creating GRPC Server 
+2018-05-04 16:03:14,455 - main_server - INFO - Node 3 - Created GRPC Server
+2018-05-04 16:03:14,455 - main_server - INFO - Node: 3 - Inside Mainserver __init__
+2018-05-04 16:03:14,457 - main_server - INFO - Node 3 - Starting GRPC Server
+2018-05-04 16:03:14,457 - main_server - INFO - Node: 3 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:15,440 - Node - INFO - #######################
+2018-05-04 16:03:15,441 - Node - INFO - Node: 4 - Initializing
+2018-05-04 16:03:15,441 - Node - INFO - #######################
+2018-05-04 16:03:15,447 - Node - INFO - Node: 4 - Calling phaseOneClustering
+2018-05-04 16:03:15,447 - Node - INFO - Node: 4 - Starting Phase One Clustering
+2018-05-04 16:03:15,447 - Node - INFO - Node: 4 - I am a parent not leaf
+2018-05-04 16:03:15,447 - Node - INFO - Node: 4 - Starting Server
+2018-05-04 16:03:15,447 - main_server - INFO - Node: 4 - Creating GRPC Server 
+2018-05-04 16:03:15,448 - main_server - INFO - Node 4 - Created GRPC Server
+2018-05-04 16:03:15,448 - main_server - INFO - Node: 4 - Inside Mainserver __init__
+2018-05-04 16:03:15,451 - main_server - INFO - Node 4 - Starting GRPC Server
+2018-05-04 16:03:15,451 - main_server - INFO - Node: 4 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:16,441 - Node - INFO - #######################
+2018-05-04 16:03:16,442 - Node - INFO - Node: 5 - Initializing
+2018-05-04 16:03:16,442 - Node - INFO - #######################
+2018-05-04 16:03:16,449 - Node - INFO - Node: 5 - Calling phaseOneClustering
+2018-05-04 16:03:16,449 - Node - INFO - Node: 5 - Starting Phase One Clustering
+2018-05-04 16:03:16,449 - Node - INFO - Node: 5 - I am a parent not leaf
+2018-05-04 16:03:16,449 - Node - INFO - Node: 5 - Starting Server
+2018-05-04 16:03:16,449 - main_server - INFO - Node: 5 - Creating GRPC Server 
+2018-05-04 16:03:16,450 - main_server - INFO - Node 5 - Created GRPC Server
+2018-05-04 16:03:16,450 - main_server - INFO - Node: 5 - Inside Mainserver __init__
+2018-05-04 16:03:16,452 - main_server - INFO - Node 5 - Starting GRPC Server
+2018-05-04 16:03:16,453 - main_server - INFO - Node: 5 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:17,442 - Node - INFO - #######################
+2018-05-04 16:03:17,443 - Node - INFO - Node: 6 - Initializing
+2018-05-04 16:03:17,443 - Node - INFO - #######################
+2018-05-04 16:03:17,445 - Node - INFO - Node: 6 - No node with rackLocation:3,1 found!
+2018-05-04 16:03:17,448 - Node - INFO - Node: 6 - No node with rackLocation:3,2 found!
+2018-05-04 16:03:17,449 - Node - INFO - Node: 6 - No node with rackLocation:3,0 found!
+2018-05-04 16:03:17,450 - Node - INFO - Node: 6 - Calling phaseOneClustering
+2018-05-04 16:03:17,450 - Node - INFO - Node: 6 - Starting Phase One Clustering
+2018-05-04 16:03:17,450 - Node - INFO - Node: 6 - I am a parent not leaf
+2018-05-04 16:03:17,450 - Node - INFO - Node: 6 - Starting Server
+2018-05-04 16:03:17,450 - main_server - INFO - Node: 6 - Creating GRPC Server 
+2018-05-04 16:03:17,451 - main_server - INFO - Node 6 - Created GRPC Server
+2018-05-04 16:03:17,451 - main_server - INFO - Node: 6 - Inside Mainserver __init__
+2018-05-04 16:03:17,455 - main_server - INFO - Node 6 - Starting GRPC Server
+2018-05-04 16:03:17,455 - main_server - INFO - Node: 6 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:18,446 - Node - INFO - #######################
+2018-05-04 16:03:18,446 - Node - INFO - Node: 7 - Initializing
+2018-05-04 16:03:18,447 - Node - INFO - #######################
+2018-05-04 16:03:18,449 - Node - INFO - Node: 7 - No node with rackLocation:3,0 found!
+2018-05-04 16:03:18,451 - Node - INFO - Node: 7 - No node with rackLocation:2,-1 found!
+2018-05-04 16:03:18,452 - Node - INFO - Node: 7 - No node with rackLocation:3,1 found!
+2018-05-04 16:03:18,453 - Node - INFO - Node: 7 - No node with rackLocation:1,-1 found!
+2018-05-04 16:03:18,453 - Node - INFO - Node: 7 - No node with rackLocation:3,-1 found!
+2018-05-04 16:03:18,454 - Node - INFO - Node: 7 - Calling phaseOneClustering
+2018-05-04 16:03:18,454 - Node - INFO - Node: 7 - Starting Phase One Clustering
+2018-05-04 16:03:18,455 - Node - INFO - Node: 7 - Calling phaseOneClusterStart with parentId: 6
+2018-05-04 16:03:18,455 - client - INFO - Node: 7 - Starting sendSize
+2018-05-04 16:03:18,458 - main_server - INFO - Node: 6 - Current size: 44
+2018-05-04 16:03:18,458 - main_server - INFO - Node:6 - Child Node: 7 has size 43
+2018-05-04 16:03:18,458 - main_server - INFO - Node: 6 - Sending Accept to childId: 7 after checking if all children responded or not
+2018-05-04 16:03:18,459 - main_server - INFO - Node 6: - New size: 87
+2018-05-04 16:03:18,459 - main_server - INFO - Node: 6 Sending accept to childId: 7
+2018-05-04 16:03:18,460 - client - INFO - Node: 7 - Successfully sent the size message of size 43 to parentId: 6
+2018-05-04 16:03:18,460 - client - INFO - Node: 6 - Responded to Size RPC with reply: Accepted
+2018-05-04 16:03:18,460 - client - INFO - Node: 7 - Didn't get Prune 
+2018-05-04 16:03:18,460 - Node - INFO - Node: 7 - Sent size() message to parent: 6
+2018-05-04 16:03:18,460 - Node - INFO - Node: 7 - Starting Server
+2018-05-04 16:03:18,460 - main_server - INFO - Node: 7 - Creating GRPC Server 
+2018-05-04 16:03:18,461 - main_server - INFO - Node 7 - Created GRPC Server
+2018-05-04 16:03:18,461 - main_server - INFO - Node: 7 - Inside Mainserver __init__
+2018-05-04 16:03:18,463 - main_server - INFO - Node 7 - Starting GRPC Server
+2018-05-04 16:03:18,463 - main_server - INFO - Node: 7 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:19,447 - Node - INFO - #######################
+2018-05-04 16:03:19,447 - Node - INFO - Node: 8 - Initializing
+2018-05-04 16:03:19,447 - Node - INFO - #######################
+2018-05-04 16:03:19,448 - Node - INFO - Node: 8 - No node with rackLocation:3,2 found!
+2018-05-04 16:03:19,451 - Node - INFO - Node: 8 - No node with rackLocation:3,3 found!
+2018-05-04 16:03:19,452 - Node - INFO - Node: 8 - No node with rackLocation:3,1 found!
+2018-05-04 16:03:19,452 - Node - INFO - Node: 8 - Calling phaseOneClustering
+2018-05-04 16:03:19,452 - Node - INFO - Node: 8 - Starting Phase One Clustering
+2018-05-04 16:03:19,453 - Node - INFO - Node: 8 - I am a parent not leaf
+2018-05-04 16:03:19,453 - Node - INFO - Node: 8 - Starting Server
+2018-05-04 16:03:19,453 - main_server - INFO - Node: 8 - Creating GRPC Server 
+2018-05-04 16:03:19,453 - main_server - INFO - Node 8 - Created GRPC Server
+2018-05-04 16:03:19,453 - main_server - INFO - Node: 8 - Inside Mainserver __init__
+2018-05-04 16:03:19,456 - main_server - INFO - Node 8 - Starting GRPC Server
+2018-05-04 16:03:19,456 - main_server - INFO - Node: 8 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:20,449 - Node - INFO - #######################
+2018-05-04 16:03:20,449 - Node - INFO - Node: 9 - Initializing
+2018-05-04 16:03:20,450 - Node - INFO - #######################
+2018-05-04 16:03:20,452 - Node - INFO - Node: 9 - No node with rackLocation:-1,3 found!
+2018-05-04 16:03:20,453 - Node - INFO - Node: 9 - No node with rackLocation:0,4 found!
+2018-05-04 16:03:20,454 - Node - INFO - Node: 9 - No node with rackLocation:1,4 found!
+2018-05-04 16:03:20,455 - Node - INFO - Node: 9 - No node with rackLocation:-1,2 found!
+2018-05-04 16:03:20,456 - Node - INFO - Node: 9 - No node with rackLocation:-1,4 found!
+2018-05-04 16:03:20,457 - Node - INFO - Node: 9 - Calling phaseOneClustering
+2018-05-04 16:03:20,457 - Node - INFO - Node: 9 - Starting Phase One Clustering
+2018-05-04 16:03:20,457 - Node - INFO - Node: 9 - Calling phaseOneClusterStart with parentId: 4
+2018-05-04 16:03:20,457 - client - INFO - Node: 9 - Starting sendSize
+2018-05-04 16:03:20,460 - main_server - INFO - Node: 4 - Current size: 42
+2018-05-04 16:03:20,460 - main_server - INFO - Node:4 - Child Node: 9 has size 27
+2018-05-04 16:03:20,460 - main_server - INFO - Node: 4 - Sending Accept to childId: 9 after checking if all children responded or not
+2018-05-04 16:03:20,461 - main_server - INFO - Node 4: - New size: 69
+2018-05-04 16:03:20,461 - main_server - INFO - Node: 4 - All children responded. Sending size to parent
+2018-05-04 16:03:20,461 - main_server - INFO - Node: 4 Sending accept to childId: 9
+2018-05-04 16:03:20,462 - client - INFO - Node: 4 - Starting sendSize
+2018-05-04 16:03:20,463 - client - INFO - Node: 9 - Successfully sent the size message of size 27 to parentId: 4
+2018-05-04 16:03:20,463 - client - INFO - Node: 4 - Responded to Size RPC with reply: Accepted
+2018-05-04 16:03:20,463 - client - INFO - Node: 9 - Didn't get Prune 
+2018-05-04 16:03:20,463 - Node - INFO - Node: 9 - Sent size() message to parent: 4
+2018-05-04 16:03:20,463 - Node - INFO - Node: 9 - Starting Server
+2018-05-04 16:03:20,464 - main_server - INFO - Node: 9 - Creating GRPC Server 
+2018-05-04 16:03:20,464 - main_server - INFO - Node 9 - Created GRPC Server
+2018-05-04 16:03:20,465 - main_server - INFO - Node: 2 - Current size: 37
+2018-05-04 16:03:20,465 - main_server - INFO - Node: 9 - Inside Mainserver __init__
+2018-05-04 16:03:20,465 - main_server - INFO - Node:2 - Child Node: 4 has size 69
+2018-05-04 16:03:20,466 - main_server - INFO - Node: 2 - Sending Accept to childId: 4 after checking if all children responded or not
+2018-05-04 16:03:20,466 - main_server - INFO - Node 2: - New size: 106
+2018-05-04 16:03:20,466 - main_server - INFO - Node: 2 Sending accept to childId: 4
+2018-05-04 16:03:20,467 - client - INFO - Node: 4 - Successfully sent the size message of size 69 to parentId: 2
+2018-05-04 16:03:20,467 - client - INFO - Node: 2 - Responded to Size RPC with reply: Accepted
+2018-05-04 16:03:20,467 - client - INFO - Node: 4 - Didn't get Prune 
+2018-05-04 16:03:20,468 - main_server - INFO - Node 9 - Starting GRPC Server
+2018-05-04 16:03:20,468 - main_server - INFO - Node: 9 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:21,452 - Node - INFO - #######################
+2018-05-04 16:03:21,452 - Node - INFO - Node: 10 - Initializing
+2018-05-04 16:03:21,452 - Node - INFO - #######################
+2018-05-04 16:03:21,455 - Node - INFO - Node: 10 - No node with rackLocation:1,4 found!
+2018-05-04 16:03:21,456 - Node - INFO - Node: 10 - No node with rackLocation:2,4 found!
+2018-05-04 16:03:21,458 - Node - INFO - Node: 10 - No node with rackLocation:0,4 found!
+2018-05-04 16:03:21,458 - Node - INFO - Node: 10 - Calling phaseOneClustering
+2018-05-04 16:03:21,458 - Node - INFO - Node: 10 - Starting Phase One Clustering
+2018-05-04 16:03:21,458 - Node - INFO - Node: 10 - Calling phaseOneClusterStart with parentId: 8
+2018-05-04 16:03:21,459 - client - INFO - Node: 10 - Starting sendSize
+2018-05-04 16:03:21,461 - main_server - INFO - Node: 8 - Current size: 66
+2018-05-04 16:03:21,461 - main_server - INFO - Node:8 - Child Node: 10 has size 22
+2018-05-04 16:03:21,461 - main_server - INFO - Node: 8 - Sending Accept to childId: 10 after checking if all children responded or not
+2018-05-04 16:03:21,462 - main_server - INFO - Node 8: - New size: 88
+2018-05-04 16:03:21,462 - main_server - INFO - Node: 8 - All children responded. Sending size to parent
+2018-05-04 16:03:21,462 - main_server - INFO - Node: 8 Sending accept to childId: 10
+2018-05-04 16:03:21,463 - client - INFO - Node: 8 - Starting sendSize
+2018-05-04 16:03:21,463 - client - INFO - Node: 10 - Successfully sent the size message of size 22 to parentId: 8
+2018-05-04 16:03:21,464 - client - INFO - Node: 8 - Responded to Size RPC with reply: Accepted
+2018-05-04 16:03:21,464 - client - INFO - Node: 10 - Didn't get Prune 
+2018-05-04 16:03:21,465 - Node - INFO - Node: 10 - Sent size() message to parent: 8
+2018-05-04 16:03:21,465 - Node - INFO - Node: 10 - Starting Server
+2018-05-04 16:03:21,465 - main_server - INFO - Node: 6 - Current size: 87
+2018-05-04 16:03:21,465 - main_server - INFO - Node: 10 - Creating GRPC Server 
+2018-05-04 16:03:21,466 - main_server - INFO - Node:6 - Child Node: 8 has size 88
+2018-05-04 16:03:21,467 - main_server - INFO - Node 10 - Created GRPC Server
+2018-05-04 16:03:21,467 - main_server - INFO - Node: 10 - Inside Mainserver __init__
+2018-05-04 16:03:21,468 - main_server - INFO - Node: 6 - Removed child 8 from childList
+2018-05-04 16:03:21,468 - main_server - INFO - Node: 6 - Sending Prune after checking if all children responded or not
+2018-05-04 16:03:21,468 - main_server - INFO - Node: 6 - All children responded. Sending size to parent
+2018-05-04 16:03:21,468 - main_server - INFO - Node: 6 - Sending Prune to childId: 8
+2018-05-04 16:03:21,469 - client - INFO - Node: 6 - Starting sendSize
+2018-05-04 16:03:21,469 - client - INFO - Node: 8 - Successfully sent the size message of size 88 to parentId: 6
+2018-05-04 16:03:21,470 - client - INFO - Node: 6 - Responded to Size RPC with reply: Prune
+2018-05-04 16:03:21,470 - main_server - INFO - Node 10 - Starting GRPC Server
+2018-05-04 16:03:21,471 - client - INFO - Node: 8 - Got Prune
+2018-05-04 16:03:21,471 - main_server - INFO - Node: 10 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:21,474 - client - INFO - Node: 8 - Sending cluster message to child id: 10
+2018-05-04 16:03:21,473 - main_server - INFO - Node: 2 - Current size: 106
+2018-05-04 16:03:21,475 - main_server - INFO - Node:2 - Child Node: 6 has size 87
+2018-05-04 16:03:21,475 - main_server - INFO - Node: 2 - Removed child 6 from childList
+2018-05-04 16:03:21,476 - main_server - INFO - Node: 2 - Sending Prune after checking if all children responded or not
+2018-05-04 16:03:21,476 - main_server - DEBUG - Node:10 - Server got Cluster message
+2018-05-04 16:03:21,476 - main_server - INFO - Node: 2 - All children responded. Sending size to parent
+2018-05-04 16:03:21,477 - main_server - INFO - Node: 2 - Sending Prune to childId: 6
+2018-05-04 16:03:21,477 - main_server - INFO - Node: 10 - Now joining Clusterleader Node: 8
+2018-05-04 16:03:21,478 - main_server - INFO - Node: 10 - current hop count: 1
+2018-05-04 16:03:21,478 - client - INFO - Node: 2 - Starting sendSize
+2018-05-04 16:03:21,478 - main_server - INFO - Node: 10 - NO children found!
+2018-05-04 16:03:21,479 - client - INFO - Node: 6 - Successfully sent the size message of size 87 to parentId: 2
+2018-05-04 16:03:21,479 - client - INFO - Node: 2 - Responded to Size RPC with reply: Prune
+2018-05-04 16:03:21,480 - client - INFO - Node: 8 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 10
+2018-05-04 16:03:21,481 - main_server - INFO - Node: 0 - Current size: 34
+2018-05-04 16:03:21,481 - client - INFO - Node: 6 - Got Prune
+2018-05-04 16:03:21,481 - main_server - INFO - Node:0 - Child Node: 2 has size 106
+2018-05-04 16:03:21,482 - main_server - INFO - Node: 0 - Sending Accept to childId: 2 after checking if all children responded or not
+2018-05-04 16:03:21,483 - main_server - INFO - Node 0: - New size: 140
+2018-05-04 16:03:21,482 - client - INFO - Node: 6 - Sending cluster message to child id: 7
+2018-05-04 16:03:21,483 - main_server - INFO - Node: 0 Sending accept to childId: 2
+2018-05-04 16:03:21,484 - client - INFO - Node: 2 - Successfully sent the size message of size 106 to parentId: 0
+2018-05-04 16:03:21,484 - client - INFO - Node: 0 - Responded to Size RPC with reply: Accepted
+2018-05-04 16:03:21,484 - client - INFO - Node: 2 - Didn't get Prune 
+2018-05-04 16:03:21,485 - main_server - DEBUG - Node:7 - Server got Cluster message
+2018-05-04 16:03:21,486 - main_server - INFO - Node: 7 - Now joining Clusterleader Node: 6
+2018-05-04 16:03:21,486 - main_server - INFO - Node: 7 - current hop count: 1
+2018-05-04 16:03:21,486 - main_server - INFO - Node: 7 - NO children found!
+2018-05-04 16:03:21,487 - client - INFO - Node: 6 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 7
+2018-05-04 16:03:22,457 - Node - INFO - #######################
+2018-05-04 16:03:22,458 - Node - INFO - Node: 11 - Initializing
+2018-05-04 16:03:22,458 - Node - INFO - #######################
+2018-05-04 16:03:22,460 - Node - INFO - Node: 11 - No node with rackLocation:3,3 found!
+2018-05-04 16:03:22,461 - Node - INFO - Node: 11 - No node with rackLocation:2,4 found!
+2018-05-04 16:03:22,463 - Node - INFO - Node: 11 - No node with rackLocation:3,4 found!
+2018-05-04 16:03:22,464 - Node - INFO - Node: 11 - No node with rackLocation:3,2 found!
+2018-05-04 16:03:22,465 - Node - INFO - Node: 11 - No node with rackLocation:1,4 found!
+2018-05-04 16:03:22,465 - Node - INFO - Node: 11 - Calling phaseOneClustering
+2018-05-04 16:03:22,465 - Node - INFO - Node: 11 - Starting Phase One Clustering
+2018-05-04 16:03:22,465 - Node - INFO - Node: 11 - Calling phaseOneClusterStart with parentId: 5
+2018-05-04 16:03:22,466 - client - INFO - Node: 11 - Starting sendSize
+2018-05-04 16:03:22,468 - main_server - INFO - Node: 5 - Current size: 26
+2018-05-04 16:03:22,469 - main_server - INFO - Node:5 - Child Node: 11 has size 32
+2018-05-04 16:03:22,469 - main_server - INFO - Node: 5 - Sending Accept to childId: 11 after checking if all children responded or not
+2018-05-04 16:03:22,469 - main_server - INFO - Node 5: - New size: 58
+2018-05-04 16:03:22,470 - main_server - INFO - Node: 5 - All children responded. Sending size to parent
+2018-05-04 16:03:22,470 - main_server - INFO - Node: 5 Sending accept to childId: 11
+2018-05-04 16:03:22,471 - client - INFO - Node: 5 - Starting sendSize
+2018-05-04 16:03:22,471 - client - INFO - Node: 11 - Successfully sent the size message of size 32 to parentId: 5
+2018-05-04 16:03:22,472 - client - INFO - Node: 5 - Responded to Size RPC with reply: Accepted
+2018-05-04 16:03:22,472 - client - INFO - Node: 11 - Didn't get Prune 
+2018-05-04 16:03:22,472 - Node - INFO - Node: 11 - Sent size() message to parent: 5
+2018-05-04 16:03:22,472 - Node - INFO - Node: 11 - Starting Server
+2018-05-04 16:03:22,472 - main_server - INFO - Node: 11 - Creating GRPC Server 
+2018-05-04 16:03:22,473 - main_server - INFO - Node 11 - Created GRPC Server
+2018-05-04 16:03:22,473 - main_server - INFO - Node: 11 - Inside Mainserver __init__
+2018-05-04 16:03:22,474 - main_server - INFO - Node: 1 - Current size: 89
+2018-05-04 16:03:22,474 - main_server - INFO - Node:1 - Child Node: 5 has size 58
+2018-05-04 16:03:22,474 - main_server - INFO - Node: 1 - Sending Accept to childId: 5 after checking if all children responded or not
+2018-05-04 16:03:22,475 - main_server - INFO - Node 1: - New size: 147
+2018-05-04 16:03:22,475 - main_server - INFO - Node: 1 - All children responded. Sending size to parent
+2018-05-04 16:03:22,475 - main_server - INFO - Node: 1 Sending accept to childId: 5
+2018-05-04 16:03:22,476 - client - INFO - Node: 1 - Starting sendSize
+2018-05-04 16:03:22,477 - main_server - INFO - Node 11 - Starting GRPC Server
+2018-05-04 16:03:22,477 - client - INFO - Node: 5 - Successfully sent the size message of size 58 to parentId: 1
+2018-05-04 16:03:22,477 - main_server - INFO - Node: 11 - GRPC Server started successfully. Entering forever listening mode...
+
+2018-05-04 16:03:22,477 - client - INFO - Node: 1 - Responded to Size RPC with reply: Accepted
+2018-05-04 16:03:22,478 - client - INFO - Node: 5 - Didn't get Prune 
+2018-05-04 16:03:22,479 - main_server - INFO - Node: 0 - Current size: 140
+2018-05-04 16:03:22,479 - main_server - INFO - Node:0 - Child Node: 1 has size 147
+2018-05-04 16:03:22,480 - main_server - INFO - Node: 0 - Removed child 1 from childList
+2018-05-04 16:03:22,480 - main_server - INFO - Node: 0 - Sending Prune after checking if all children responded or not
+2018-05-04 16:03:22,480 - main_server - INFO - Node: 0 - All children responded. Sending size to parent
+2018-05-04 16:03:22,480 - Node - INFO - Node: 0 - Setting myself as clusterhead as no parent found!
+2018-05-04 16:03:22,480 - main_server - INFO - Node: 0 - Sending Prune to childId: 1
+2018-05-04 16:03:22,480 - Node - INFO - Node: 0 - Updating DB with size,hopcount variables
+2018-05-04 16:03:22,481 - client - INFO - Node: 1 - Successfully sent the size message of size 147 to parentId: 0
+2018-05-04 16:03:22,481 - Node - INFO - Node: %s - Successfully DB with size,hopcount variables
+2018-05-04 16:03:22,482 - client - INFO - Node: 0 - Responded to Size RPC with reply: Prune
+2018-05-04 16:03:22,482 - client - INFO - Node: 0 - Sending cluster message to child id: 2
+2018-05-04 16:03:22,482 - client - INFO - Node: 1 - Got Prune
+2018-05-04 16:03:22,483 - client - INFO - Node: 1 - Sending cluster message to child id: 3
+2018-05-04 16:03:22,485 - main_server - DEBUG - Node:2 - Server got Cluster message
+2018-05-04 16:03:22,486 - main_server - INFO - Node: 2 - Now joining Clusterleader Node: 0
+2018-05-04 16:03:22,486 - main_server - DEBUG - Node:3 - Server got Cluster message
+2018-05-04 16:03:22,486 - main_server - INFO - Node: 2 - current hop count: 1
+2018-05-04 16:03:22,487 - main_server - INFO - Node:2 - Children Found! Starting ClusterheadId Propagation
+2018-05-04 16:03:22,487 - main_server - INFO - Node: 3 - Now joining Clusterleader Node: 1
+2018-05-04 16:03:22,488 - client - INFO - Node: 0 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 2
+2018-05-04 16:03:22,488 - client - INFO - Node: 2 - Sending propagate cluster message to child id: 4
+2018-05-04 16:03:22,488 - main_server - INFO - Node: 3 - current hop count: 1
+2018-05-04 16:03:22,489 - main_server - INFO - Node: 3 - NO children found!
+2018-05-04 16:03:22,489 - client - INFO - Node: 1 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 3
+2018-05-04 16:03:22,490 - client - INFO - Node: 1 - Sending cluster message to child id: 5
+2018-05-04 16:03:22,491 - main_server - DEBUG - Node:4 - Server got Cluster message
+2018-05-04 16:03:22,492 - main_server - INFO - Node: 4 - Now joining Clusterleader Node: 0
+2018-05-04 16:03:22,493 - main_server - DEBUG - Node:5 - Server got Cluster message
+2018-05-04 16:03:22,492 - main_server - INFO - Node: 4 - current hop count: 2
+2018-05-04 16:03:22,493 - main_server - INFO - Node:4 - Children Found! Starting ClusterheadId Propagation
+2018-05-04 16:03:22,493 - main_server - INFO - Node: 5 - Now joining Clusterleader Node: 1
+2018-05-04 16:03:22,506 - main_server - INFO - Node: 5 - current hop count: 1
+2018-05-04 16:03:22,507 - client - INFO - Node: 4 - Sending propagate cluster message to child id: 9
+2018-05-04 16:03:22,508 - main_server - INFO - Node:5 - Children Found! Starting ClusterheadId Propagation
+2018-05-04 16:03:22,509 - client - INFO - Node: 2 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 4
+2018-05-04 16:03:22,511 - client - INFO - Node: 5 - Sending propagate cluster message to child id: 11
+2018-05-04 16:03:22,511 - client - INFO - Node: 1 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 5
+2018-05-04 16:03:22,513 - main_server - DEBUG - Node:9 - Server got Cluster message
+2018-05-04 16:03:22,514 - main_server - INFO - Node: 9 - Now joining Clusterleader Node: 0
+2018-05-04 16:03:22,515 - main_server - DEBUG - Node:11 - Server got Cluster message
+2018-05-04 16:03:22,515 - main_server - INFO - Node: 9 - current hop count: 3
+2018-05-04 16:03:22,515 - main_server - INFO - Node: 9 - NO children found!
+2018-05-04 16:03:22,516 - main_server - INFO - Node: 11 - Now joining Clusterleader Node: 1
+2018-05-04 16:03:22,516 - client - INFO - Node: 4 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 9
+2018-05-04 16:03:22,516 - main_server - INFO - Node: 11 - current hop count: 2
+2018-05-04 16:03:22,517 - main_server - INFO - Node: 11 - NO children found!
+2018-05-04 16:03:22,517 - client - INFO - Node: 5 - Got Response: joinClusterResponse: "Joined"
+ after sending cluster message to child id: 11
+2018-05-04 16:03:49,650 - main_server - INFO - Node: 11 - Got StartPhase2Clustering
+2018-05-04 16:03:49,650 - Node - INFO - Node: 11 - hopcount before Phase 2 clustering: 2
+2018-05-04 16:03:49,650 - client - INFO - Node: 11 - sendng hello to IP: localhost:50060 type: <type 'str'>
+2018-05-04 16:03:49,651 - client - INFO - Node: 11 - Sending Hello to node: 10
+2018-05-04 16:03:49,651 - client - INFO - Node: 11 - senderId: 11 type: <type 'str'>
+2018-05-04 16:03:49,651 - client - INFO - Node: 11 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,651 - client - INFO - Node: 11 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,651 - client - INFO - Node: 11 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,653 - main_server - INFO - Node: <Node.Node instance at 0x1099f1518> catering to Hello message with request: senderId: "11"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,653 - main_server - INFO - Node: 10 - State: active
+2018-05-04 16:03:49,654 - main_server - INFO - Node: 10 - Printing neighbourHelloArray - set([u'11'])
+2018-05-04 16:03:49,654 - main_server - INFO - Node: 10 - hopCount=1 with bestHopCount: 1 and senderId: 11 has hopCount 2
+2018-05-04 16:03:49,654 - main_server - INFO - Node: 10 - Sending NOT interested response for senderId: 11
+2018-05-04 16:03:49,654 - client - INFO - Node: 11 - Got Response: interested: -1
+ after sending Hello to id: 10
+2018-05-04 16:03:49,655 - client - INFO - Node: 11 - sendng hello to IP: localhost:50058 type: <type 'str'>
+2018-05-04 16:03:49,655 - client - INFO - Node: 11 - Sending Hello to node: 8
+2018-05-04 16:03:49,655 - client - INFO - Node: 11 - senderId: 11 type: <type 'str'>
+2018-05-04 16:03:49,655 - client - INFO - Node: 11 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,655 - client - INFO - Node: 11 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,655 - client - INFO - Node: 11 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,657 - main_server - INFO - Node: <Node.Node instance at 0x1099e0bd8> catering to Hello message with request: senderId: "11"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,657 - main_server - INFO - Node: 8 - Got hello message from senderId: 11
+2018-05-04 16:03:49,657 - main_server - INFO - Node: 8 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,658 - client - INFO - Node: 11 - Got Response: interested: -1
+ after sending Hello to id: 8
+2018-05-04 16:03:49,658 - client - INFO - Node: 11 - sendng hello to IP: localhost:50055 type: <type 'str'>
+2018-05-04 16:03:49,659 - client - INFO - Node: 11 - Sending Hello to node: 5
+2018-05-04 16:03:49,659 - client - INFO - Node: 11 - senderId: 11 type: <type 'str'>
+2018-05-04 16:03:49,659 - client - INFO - Node: 11 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,659 - client - INFO - Node: 11 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,659 - client - INFO - Node: 11 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,661 - main_server - INFO - Node: <Node.Node instance at 0x1099d46c8> catering to Hello message with request: senderId: "11"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,661 - main_server - INFO - Node: 5 - State: active
+2018-05-04 16:03:49,661 - main_server - INFO - Node: 5 - Printing neighbourHelloArray - set([u'11'])
+2018-05-04 16:03:49,661 - main_server - INFO - Node: 5 - hopCount=1 with bestHopCount: 1 and senderId: 11 has hopCount 2
+2018-05-04 16:03:49,662 - main_server - INFO - Node: 5 - Sending NOT interested response for senderId: 11
+2018-05-04 16:03:49,662 - client - INFO - Node: 11 - Got Response: interested: -1
+ after sending Hello to id: 5
+2018-05-04 16:03:49,665 - main_server - INFO - Node: 10 - Got StartPhase2Clustering
+2018-05-04 16:03:49,666 - Node - INFO - Node: 10 - hopcount before Phase 2 clustering: 1
+2018-05-04 16:03:49,666 - client - INFO - Node: 10 - sendng hello to IP: localhost:50061 type: <type 'str'>
+2018-05-04 16:03:49,666 - client - INFO - Node: 10 - Sending Hello to node: 11
+2018-05-04 16:03:49,667 - client - INFO - Node: 10 - senderId: 10 type: <type 'str'>
+2018-05-04 16:03:49,667 - client - INFO - Node: 10 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,667 - client - INFO - Node: 10 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,667 - client - INFO - Node: 10 - senderClusterheadId: 8 type: <type 'unicode'>
+2018-05-04 16:03:49,669 - main_server - INFO - Node: <Node.Node instance at 0x10cd207a0> catering to Hello message with request: senderId: "10"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:49,669 - main_server - INFO - Node: 11 - State: active
+2018-05-04 16:03:49,669 - main_server - INFO - Node: 11 - Printing neighbourHelloArray - set([u'10'])
+2018-05-04 16:03:49,669 - main_server - INFO - Node: 11 - hopCount=2 with bestHopCount: 2 and senderId: 10 has hopCount 1
+2018-05-04 16:03:49,669 - main_server - INFO - Node: 11 - Sending NOT interested response for senderId: 10
+2018-05-04 16:03:49,670 - client - INFO - Node: 10 - Got Response: interested: -1
+ after sending Hello to id: 11
+2018-05-04 16:03:49,686 - client - INFO - Node: 10 - sendng hello to IP: localhost:50059 type: <type 'str'>
+2018-05-04 16:03:49,687 - client - INFO - Node: 10 - Sending Hello to node: 9
+2018-05-04 16:03:49,687 - client - INFO - Node: 10 - senderId: 10 type: <type 'str'>
+2018-05-04 16:03:49,687 - client - INFO - Node: 10 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,687 - client - INFO - Node: 10 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,687 - client - INFO - Node: 10 - senderClusterheadId: 8 type: <type 'unicode'>
+2018-05-04 16:03:49,689 - main_server - INFO - Node: <Node.Node instance at 0x1099f1488> catering to Hello message with request: senderId: "10"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:49,689 - main_server - INFO - Node: 9 - State: active
+2018-05-04 16:03:49,690 - main_server - INFO - Node: 9 - Printing neighbourHelloArray - set([u'10'])
+2018-05-04 16:03:49,690 - main_server - INFO - Node: 9 - hopCount=3 with bestHopCount: 3 and senderId: 10 has hopCount 1
+2018-05-04 16:03:49,690 - main_server - INFO - Node: 9 - Updating bestNode as senderId: 10 looks relevant choice as new parent
+2018-05-04 16:03:49,690 - main_server - INFO - Node: 9 - Sending interested response for senderId: 10
+2018-05-04 16:03:49,690 - client - INFO - Node: 10 - Got Response: interested: 1
+ after sending Hello to id: 9
+2018-05-04 16:03:49,691 - client - INFO - Node: 10 - sendng hello to IP: localhost:50055 type: <type 'str'>
+2018-05-04 16:03:49,691 - client - INFO - Node: 10 - Sending Hello to node: 5
+2018-05-04 16:03:49,691 - client - INFO - Node: 10 - senderId: 10 type: <type 'str'>
+2018-05-04 16:03:49,692 - client - INFO - Node: 10 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,692 - client - INFO - Node: 10 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,692 - client - INFO - Node: 10 - senderClusterheadId: 8 type: <type 'unicode'>
+2018-05-04 16:03:49,694 - main_server - INFO - Node: <Node.Node instance at 0x1099d46c8> catering to Hello message with request: senderId: "10"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:49,694 - main_server - INFO - Node: 5 - State: active
+2018-05-04 16:03:49,694 - main_server - INFO - Node: 5 - Printing neighbourHelloArray - set([u'11', u'10'])
+2018-05-04 16:03:49,694 - main_server - INFO - Node: 5 - hopCount=1 with bestHopCount: 1 and senderId: 10 has hopCount 1
+2018-05-04 16:03:49,694 - main_server - INFO - Node: 5 - Sending NOT interested response for senderId: 10
+2018-05-04 16:03:49,695 - client - INFO - Node: 10 - Got Response: interested: -1
+ after sending Hello to id: 5
+2018-05-04 16:03:49,695 - client - INFO - Node: 10 - sendng hello to IP: localhost:50052 type: <type 'str'>
+2018-05-04 16:03:49,696 - client - INFO - Node: 10 - Sending Hello to node: 2
+2018-05-04 16:03:49,696 - client - INFO - Node: 10 - senderId: 10 type: <type 'str'>
+2018-05-04 16:03:49,696 - client - INFO - Node: 10 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,696 - client - INFO - Node: 10 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,696 - client - INFO - Node: 10 - senderClusterheadId: 8 type: <type 'unicode'>
+2018-05-04 16:03:49,698 - main_server - INFO - Node: <Node.Node instance at 0x108392128> catering to Hello message with request: senderId: "10"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:49,698 - main_server - INFO - Node: 2 - State: active
+2018-05-04 16:03:49,698 - main_server - INFO - Node: 2 - Printing neighbourHelloArray - set([u'10'])
+2018-05-04 16:03:49,698 - main_server - INFO - Node: 2 - hopCount=1 with bestHopCount: 1 and senderId: 10 has hopCount 1
+2018-05-04 16:03:49,698 - main_server - INFO - Node: 2 - Sending NOT interested response for senderId: 10
+2018-05-04 16:03:49,699 - client - INFO - Node: 10 - Got Response: interested: -1
+ after sending Hello to id: 2
+2018-05-04 16:03:49,699 - client - INFO - Node: 10 - sendng hello to IP: localhost:50058 type: <type 'str'>
+2018-05-04 16:03:49,700 - client - INFO - Node: 10 - Sending Hello to node: 8
+2018-05-04 16:03:49,700 - client - INFO - Node: 10 - senderId: 10 type: <type 'str'>
+2018-05-04 16:03:49,700 - client - INFO - Node: 10 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,700 - client - INFO - Node: 10 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,700 - client - INFO - Node: 10 - senderClusterheadId: 8 type: <type 'unicode'>
+2018-05-04 16:03:49,702 - main_server - INFO - Node: <Node.Node instance at 0x1099e0bd8> catering to Hello message with request: senderId: "10"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:49,702 - main_server - INFO - Node: 8 - Got hello message from senderId: 10
+2018-05-04 16:03:49,702 - main_server - INFO - Node: 8 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,703 - client - INFO - Node: 10 - Got Response: interested: -1
+ after sending Hello to id: 8
+2018-05-04 16:03:49,705 - main_server - INFO - Node: 1 - Got StartPhase2Clustering
+2018-05-04 16:03:49,706 - Node - INFO - Node: 1 - hopcount before Phase 2 clustering: 0
+2018-05-04 16:03:49,706 - client - INFO - Node: 1 - sendng hello to IP: localhost:50054 type: <type 'str'>
+2018-05-04 16:03:49,706 - client - INFO - Node: 1 - Sending Hello to node: 4
+2018-05-04 16:03:49,706 - client - INFO - Node: 1 - senderId: 1 type: <type 'str'>
+2018-05-04 16:03:49,707 - client - INFO - Node: 1 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,707 - client - INFO - Node: 1 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,707 - client - INFO - Node: 1 - senderClusterheadId: 1 type: <type 'str'>
+2018-05-04 16:03:49,708 - main_server - INFO - Node: <Node.Node instance at 0x1083a4b48> catering to Hello message with request: senderId: "1"
+senderState: "free"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,709 - main_server - INFO - Node: 4 - State: active
+2018-05-04 16:03:49,709 - main_server - INFO - Node: 4 - Printing neighbourHelloArray - set([u'1'])
+2018-05-04 16:03:49,709 - main_server - INFO - Node: 4 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,709 - client - INFO - Node: 1 - Got Response: interested: -1
+ after sending Hello to id: 4
+2018-05-04 16:03:49,710 - client - INFO - Node: 1 - sendng hello to IP: localhost:50052 type: <type 'str'>
+2018-05-04 16:03:49,710 - client - INFO - Node: 1 - Sending Hello to node: 2
+2018-05-04 16:03:49,710 - client - INFO - Node: 1 - senderId: 1 type: <type 'str'>
+2018-05-04 16:03:49,710 - client - INFO - Node: 1 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,710 - client - INFO - Node: 1 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,710 - client - INFO - Node: 1 - senderClusterheadId: 1 type: <type 'str'>
+2018-05-04 16:03:49,712 - main_server - INFO - Node: <Node.Node instance at 0x108392128> catering to Hello message with request: senderId: "1"
+senderState: "free"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,712 - main_server - INFO - Node: 2 - State: active
+2018-05-04 16:03:49,712 - main_server - INFO - Node: 2 - Printing neighbourHelloArray - set([u'1', u'10'])
+2018-05-04 16:03:49,712 - main_server - INFO - Node: 2 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,713 - client - INFO - Node: 1 - Got Response: interested: -1
+ after sending Hello to id: 2
+2018-05-04 16:03:49,713 - client - INFO - Node: 1 - sendng hello to IP: localhost:50050 type: <type 'str'>
+2018-05-04 16:03:49,713 - client - INFO - Node: 1 - Sending Hello to node: 0
+2018-05-04 16:03:49,714 - client - INFO - Node: 1 - senderId: 1 type: <type 'str'>
+2018-05-04 16:03:49,714 - client - INFO - Node: 1 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,714 - client - INFO - Node: 1 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,714 - client - INFO - Node: 1 - senderClusterheadId: 1 type: <type 'str'>
+2018-05-04 16:03:49,716 - main_server - INFO - Node: <Node.Node instance at 0x107f02200> catering to Hello message with request: senderId: "1"
+senderState: "free"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,716 - main_server - INFO - Node: 0 - Got hello message from senderId: 1
+2018-05-04 16:03:49,716 - main_server - INFO - Node: 0 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,717 - client - INFO - Node: 1 - Got Response: interested: -1
+ after sending Hello to id: 0
+2018-05-04 16:03:49,717 - client - INFO - Node: 1 - sendng hello to IP: localhost:50055 type: <type 'str'>
+2018-05-04 16:03:49,717 - client - INFO - Node: 1 - Sending Hello to node: 5
+2018-05-04 16:03:49,717 - client - INFO - Node: 1 - senderId: 1 type: <type 'str'>
+2018-05-04 16:03:49,718 - client - INFO - Node: 1 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,718 - client - INFO - Node: 1 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,718 - client - INFO - Node: 1 - senderClusterheadId: 1 type: <type 'str'>
+2018-05-04 16:03:49,719 - main_server - INFO - Node: <Node.Node instance at 0x1099d46c8> catering to Hello message with request: senderId: "1"
+senderState: "free"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,720 - main_server - INFO - Node: 5 - State: active
+2018-05-04 16:03:49,720 - main_server - INFO - Node: 5 - Printing neighbourHelloArray - set([u'11', u'10', u'1'])
+2018-05-04 16:03:49,720 - main_server - INFO - Node: 5 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,720 - client - INFO - Node: 1 - Got Response: interested: -1
+ after sending Hello to id: 5
+2018-05-04 16:03:49,721 - client - INFO - Node: 1 - sendng hello to IP: localhost:50053 type: <type 'str'>
+2018-05-04 16:03:49,721 - client - INFO - Node: 1 - Sending Hello to node: 3
+2018-05-04 16:03:49,721 - client - INFO - Node: 1 - senderId: 1 type: <type 'str'>
+2018-05-04 16:03:49,721 - client - INFO - Node: 1 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,721 - client - INFO - Node: 1 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,721 - client - INFO - Node: 1 - senderClusterheadId: 1 type: <type 'str'>
+2018-05-04 16:03:49,723 - main_server - INFO - Node: <Node.Node instance at 0x108392bd8> catering to Hello message with request: senderId: "1"
+senderState: "free"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,723 - main_server - INFO - Node: 3 - State: active
+2018-05-04 16:03:49,723 - main_server - INFO - Node: 3 - Printing neighbourHelloArray - set([u'1'])
+2018-05-04 16:03:49,723 - main_server - INFO - Node: 3 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,724 - client - INFO - Node: 1 - Got Response: interested: -1
+ after sending Hello to id: 3
+2018-05-04 16:03:49,726 - main_server - INFO - Node: 0 - Got StartPhase2Clustering
+2018-05-04 16:03:49,727 - Node - INFO - Node: 0 - hopcount before Phase 2 clustering: 0
+2018-05-04 16:03:49,727 - client - INFO - Node: 0 - sendng hello to IP: localhost:50053 type: <type 'str'>
+2018-05-04 16:03:49,727 - client - INFO - Node: 0 - Sending Hello to node: 3
+2018-05-04 16:03:49,727 - client - INFO - Node: 0 - senderId: 0 type: <type 'str'>
+2018-05-04 16:03:49,728 - client - INFO - Node: 0 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,728 - client - INFO - Node: 0 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,728 - client - INFO - Node: 0 - senderClusterheadId: 0 type: <type 'str'>
+2018-05-04 16:03:49,729 - main_server - INFO - Node: <Node.Node instance at 0x108392bd8> catering to Hello message with request: senderId: "0"
+senderState: "free"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,730 - main_server - INFO - Node: 3 - State: active
+2018-05-04 16:03:49,730 - main_server - INFO - Node: 3 - Printing neighbourHelloArray - set([u'1', u'0'])
+2018-05-04 16:03:49,730 - main_server - INFO - Node: 3 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,730 - client - INFO - Node: 0 - Got Response: interested: -1
+ after sending Hello to id: 3
+2018-05-04 16:03:49,731 - client - INFO - Node: 0 - sendng hello to IP: localhost:50051 type: <type 'str'>
+2018-05-04 16:03:49,731 - client - INFO - Node: 0 - Sending Hello to node: 1
+2018-05-04 16:03:49,731 - client - INFO - Node: 0 - senderId: 0 type: <type 'str'>
+2018-05-04 16:03:49,731 - client - INFO - Node: 0 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,731 - client - INFO - Node: 0 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,731 - client - INFO - Node: 0 - senderClusterheadId: 0 type: <type 'str'>
+2018-05-04 16:03:49,733 - main_server - INFO - Node: <Node.Node instance at 0x108383998> catering to Hello message with request: senderId: "0"
+senderState: "free"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,733 - main_server - INFO - Node: 1 - Got hello message from senderId: 0
+2018-05-04 16:03:49,733 - main_server - INFO - Node: 1 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,734 - client - INFO - Node: 0 - Got Response: interested: -1
+ after sending Hello to id: 1
+2018-05-04 16:03:49,734 - client - INFO - Node: 0 - sendng hello to IP: localhost:50054 type: <type 'str'>
+2018-05-04 16:03:49,734 - client - INFO - Node: 0 - Sending Hello to node: 4
+2018-05-04 16:03:49,735 - client - INFO - Node: 0 - senderId: 0 type: <type 'str'>
+2018-05-04 16:03:49,735 - client - INFO - Node: 0 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,735 - client - INFO - Node: 0 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,735 - client - INFO - Node: 0 - senderClusterheadId: 0 type: <type 'str'>
+2018-05-04 16:03:49,737 - main_server - INFO - Node: <Node.Node instance at 0x1083a4b48> catering to Hello message with request: senderId: "0"
+senderState: "free"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,737 - main_server - INFO - Node: 4 - State: active
+2018-05-04 16:03:49,737 - main_server - INFO - Node: 4 - Printing neighbourHelloArray - set([u'1', u'0'])
+2018-05-04 16:03:49,737 - main_server - INFO - Node: 4 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,738 - client - INFO - Node: 0 - Got Response: interested: -1
+ after sending Hello to id: 4
+2018-05-04 16:03:49,741 - main_server - INFO - Node: 3 - Got StartPhase2Clustering
+2018-05-04 16:03:49,741 - Node - INFO - Node: 3 - hopcount before Phase 2 clustering: 1
+2018-05-04 16:03:49,741 - client - INFO - Node: 3 - sendng hello to IP: localhost:50057 type: <type 'str'>
+2018-05-04 16:03:49,742 - client - INFO - Node: 3 - Sending Hello to node: 7
+2018-05-04 16:03:49,742 - client - INFO - Node: 3 - senderId: 3 type: <type 'str'>
+2018-05-04 16:03:49,742 - client - INFO - Node: 3 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,742 - client - INFO - Node: 3 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,742 - client - INFO - Node: 3 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,744 - main_server - INFO - Node: <Node.Node instance at 0x1099e0998> catering to Hello message with request: senderId: "3"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,745 - main_server - INFO - Node: 7 - State: active
+2018-05-04 16:03:49,745 - main_server - INFO - Node: 7 - Printing neighbourHelloArray - set([u'3'])
+2018-05-04 16:03:49,745 - main_server - INFO - Node: 7 - hopCount=1 with bestHopCount: 1 and senderId: 3 has hopCount 1
+2018-05-04 16:03:49,745 - main_server - INFO - Node: 7 - Sending NOT interested response for senderId: 3
+2018-05-04 16:03:49,745 - client - INFO - Node: 3 - Got Response: interested: -1
+ after sending Hello to id: 7
+2018-05-04 16:03:49,746 - client - INFO - Node: 3 - sendng hello to IP: localhost:50050 type: <type 'str'>
+2018-05-04 16:03:49,746 - client - INFO - Node: 3 - Sending Hello to node: 0
+2018-05-04 16:03:49,746 - client - INFO - Node: 3 - senderId: 3 type: <type 'str'>
+2018-05-04 16:03:49,747 - client - INFO - Node: 3 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,747 - client - INFO - Node: 3 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,747 - client - INFO - Node: 3 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,749 - main_server - INFO - Node: <Node.Node instance at 0x107f02200> catering to Hello message with request: senderId: "3"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,749 - main_server - INFO - Node: 0 - Got hello message from senderId: 3
+2018-05-04 16:03:49,749 - main_server - INFO - Node: 0 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,749 - client - INFO - Node: 3 - Got Response: interested: -1
+ after sending Hello to id: 0
+2018-05-04 16:03:49,750 - client - INFO - Node: 3 - sendng hello to IP: localhost:50054 type: <type 'str'>
+2018-05-04 16:03:49,750 - client - INFO - Node: 3 - Sending Hello to node: 4
+2018-05-04 16:03:49,750 - client - INFO - Node: 3 - senderId: 3 type: <type 'str'>
+2018-05-04 16:03:49,750 - client - INFO - Node: 3 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,750 - client - INFO - Node: 3 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,751 - client - INFO - Node: 3 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,753 - main_server - INFO - Node: <Node.Node instance at 0x1083a4b48> catering to Hello message with request: senderId: "3"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,753 - main_server - INFO - Node: 4 - State: active
+2018-05-04 16:03:49,753 - main_server - INFO - Node: 4 - Printing neighbourHelloArray - set([u'1', u'0', u'3'])
+2018-05-04 16:03:49,753 - main_server - INFO - Node: 4 - hopCount=2 with bestHopCount: 2 and senderId: 3 has hopCount 1
+2018-05-04 16:03:49,753 - main_server - INFO - Node: 4 - Sending NOT interested response for senderId: 3
+2018-05-04 16:03:49,754 - client - INFO - Node: 3 - Got Response: interested: -1
+ after sending Hello to id: 4
+2018-05-04 16:03:49,754 - client - INFO - Node: 3 - sendng hello to IP: localhost:50056 type: <type 'str'>
+2018-05-04 16:03:49,755 - client - INFO - Node: 3 - Sending Hello to node: 6
+2018-05-04 16:03:49,755 - client - INFO - Node: 3 - senderId: 3 type: <type 'str'>
+2018-05-04 16:03:49,755 - client - INFO - Node: 3 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,755 - client - INFO - Node: 3 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,755 - client - INFO - Node: 3 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,757 - main_server - INFO - Node: <Node.Node instance at 0x1099d4ef0> catering to Hello message with request: senderId: "3"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,757 - main_server - INFO - Node: 6 - Got hello message from senderId: 3
+2018-05-04 16:03:49,757 - main_server - INFO - Node: 6 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,758 - client - INFO - Node: 3 - Got Response: interested: -1
+ after sending Hello to id: 6
+2018-05-04 16:03:49,758 - client - INFO - Node: 3 - sendng hello to IP: localhost:50051 type: <type 'str'>
+2018-05-04 16:03:49,758 - client - INFO - Node: 3 - Sending Hello to node: 1
+2018-05-04 16:03:49,758 - client - INFO - Node: 3 - senderId: 3 type: <type 'str'>
+2018-05-04 16:03:49,759 - client - INFO - Node: 3 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,759 - client - INFO - Node: 3 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,759 - client - INFO - Node: 3 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,760 - main_server - INFO - Node: <Node.Node instance at 0x108383998> catering to Hello message with request: senderId: "3"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,761 - main_server - INFO - Node: 1 - Got hello message from senderId: 3
+2018-05-04 16:03:49,761 - main_server - INFO - Node: 1 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,761 - client - INFO - Node: 3 - Got Response: interested: -1
+ after sending Hello to id: 1
+2018-05-04 16:03:49,764 - main_server - INFO - Node: 2 - Got StartPhase2Clustering
+2018-05-04 16:03:49,764 - Node - INFO - Node: 2 - hopcount before Phase 2 clustering: 1
+2018-05-04 16:03:49,764 - client - INFO - Node: 2 - sendng hello to IP: localhost:50055 type: <type 'str'>
+2018-05-04 16:03:49,765 - client - INFO - Node: 2 - Sending Hello to node: 5
+2018-05-04 16:03:49,765 - client - INFO - Node: 2 - senderId: 2 type: <type 'str'>
+2018-05-04 16:03:49,765 - client - INFO - Node: 2 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,765 - client - INFO - Node: 2 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,765 - client - INFO - Node: 2 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,767 - main_server - INFO - Node: <Node.Node instance at 0x1099d46c8> catering to Hello message with request: senderId: "2"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,767 - main_server - INFO - Node: 5 - State: active
+2018-05-04 16:03:49,767 - main_server - INFO - Node: 5 - Printing neighbourHelloArray - set([u'11', u'10', u'2', u'1'])
+2018-05-04 16:03:49,767 - main_server - INFO - Node: 5 - hopCount=1 with bestHopCount: 1 and senderId: 2 has hopCount 1
+2018-05-04 16:03:49,767 - main_server - INFO - Node: 5 - Sending NOT interested response for senderId: 2
+2018-05-04 16:03:49,767 - client - INFO - Node: 2 - Got Response: interested: -1
+ after sending Hello to id: 5
+2018-05-04 16:03:49,768 - client - INFO - Node: 2 - sendng hello to IP: localhost:50059 type: <type 'str'>
+2018-05-04 16:03:49,768 - client - INFO - Node: 2 - Sending Hello to node: 9
+2018-05-04 16:03:49,768 - client - INFO - Node: 2 - senderId: 2 type: <type 'str'>
+2018-05-04 16:03:49,768 - client - INFO - Node: 2 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,769 - client - INFO - Node: 2 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,769 - client - INFO - Node: 2 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,770 - main_server - INFO - Node: <Node.Node instance at 0x1099f1488> catering to Hello message with request: senderId: "2"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,770 - main_server - INFO - Node: 9 - State: active
+2018-05-04 16:03:49,770 - main_server - INFO - Node: 9 - Printing neighbourHelloArray - set([u'10', u'2'])
+2018-05-04 16:03:49,771 - main_server - INFO - Node: 9 - hopCount=3 with bestHopCount: 2 and senderId: 2 has hopCount 1
+2018-05-04 16:03:49,771 - main_server - INFO - Node: 9 - Sending NOT interested response for senderId: 2
+2018-05-04 16:03:49,771 - client - INFO - Node: 2 - Got Response: interested: -1
+ after sending Hello to id: 9
+2018-05-04 16:03:49,772 - client - INFO - Node: 2 - sendng hello to IP: localhost:50051 type: <type 'str'>
+2018-05-04 16:03:49,772 - client - INFO - Node: 2 - Sending Hello to node: 1
+2018-05-04 16:03:49,772 - client - INFO - Node: 2 - senderId: 2 type: <type 'str'>
+2018-05-04 16:03:49,772 - client - INFO - Node: 2 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,772 - client - INFO - Node: 2 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,772 - client - INFO - Node: 2 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,774 - main_server - INFO - Node: <Node.Node instance at 0x108383998> catering to Hello message with request: senderId: "2"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,774 - main_server - INFO - Node: 1 - Got hello message from senderId: 2
+2018-05-04 16:03:49,774 - main_server - INFO - Node: 1 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,775 - client - INFO - Node: 2 - Got Response: interested: -1
+ after sending Hello to id: 1
+2018-05-04 16:03:49,775 - client - INFO - Node: 2 - sendng hello to IP: localhost:50060 type: <type 'str'>
+2018-05-04 16:03:49,775 - client - INFO - Node: 2 - Sending Hello to node: 10
+2018-05-04 16:03:49,776 - client - INFO - Node: 2 - senderId: 2 type: <type 'str'>
+2018-05-04 16:03:49,776 - client - INFO - Node: 2 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,776 - client - INFO - Node: 2 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,776 - client - INFO - Node: 2 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,778 - main_server - INFO - Node: <Node.Node instance at 0x1099f1518> catering to Hello message with request: senderId: "2"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,778 - main_server - INFO - Node: 10 - State: active
+2018-05-04 16:03:49,778 - main_server - INFO - Node: 10 - Printing neighbourHelloArray - set([u'11', u'2'])
+2018-05-04 16:03:49,778 - main_server - INFO - Node: 10 - hopCount=1 with bestHopCount: 1 and senderId: 2 has hopCount 1
+2018-05-04 16:03:49,778 - main_server - INFO - Node: 10 - Sending NOT interested response for senderId: 2
+2018-05-04 16:03:49,779 - client - INFO - Node: 2 - Got Response: interested: -1
+ after sending Hello to id: 10
+2018-05-04 16:03:49,779 - client - INFO - Node: 2 - sendng hello to IP: localhost:50054 type: <type 'str'>
+2018-05-04 16:03:49,779 - client - INFO - Node: 2 - Sending Hello to node: 4
+2018-05-04 16:03:49,779 - client - INFO - Node: 2 - senderId: 2 type: <type 'str'>
+2018-05-04 16:03:49,779 - client - INFO - Node: 2 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,780 - client - INFO - Node: 2 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,780 - client - INFO - Node: 2 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,781 - main_server - INFO - Node: <Node.Node instance at 0x1083a4b48> catering to Hello message with request: senderId: "2"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,781 - main_server - INFO - Node: 4 - State: active
+2018-05-04 16:03:49,782 - main_server - INFO - Node: 4 - Printing neighbourHelloArray - set([u'1', u'0', u'3', u'2'])
+2018-05-04 16:03:49,782 - main_server - INFO - Node: 4 - hopCount=2 with bestHopCount: 2 and senderId: 2 has hopCount 1
+2018-05-04 16:03:49,782 - main_server - INFO - Node: 4 - Sending NOT interested response for senderId: 2
+2018-05-04 16:03:49,782 - client - INFO - Node: 2 - Got Response: interested: -1
+ after sending Hello to id: 4
+2018-05-04 16:03:49,785 - main_server - INFO - Node: 5 - Got StartPhase2Clustering
+2018-05-04 16:03:49,785 - Node - INFO - Node: 5 - hopcount before Phase 2 clustering: 1
+2018-05-04 16:03:49,786 - client - INFO - Node: 5 - sendng hello to IP: localhost:50058 type: <type 'str'>
+2018-05-04 16:03:49,786 - client - INFO - Node: 5 - Sending Hello to node: 8
+2018-05-04 16:03:49,786 - client - INFO - Node: 5 - senderId: 5 type: <type 'str'>
+2018-05-04 16:03:49,786 - client - INFO - Node: 5 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,786 - client - INFO - Node: 5 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,786 - client - INFO - Node: 5 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,788 - main_server - INFO - Node: <Node.Node instance at 0x1099e0bd8> catering to Hello message with request: senderId: "5"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,788 - main_server - INFO - Node: 8 - Got hello message from senderId: 5
+2018-05-04 16:03:49,789 - main_server - INFO - Node: 8 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,789 - client - INFO - Node: 5 - Got Response: interested: -1
+ after sending Hello to id: 8
+2018-05-04 16:03:49,789 - client - INFO - Node: 5 - sendng hello to IP: localhost:50052 type: <type 'str'>
+2018-05-04 16:03:49,790 - client - INFO - Node: 5 - Sending Hello to node: 2
+2018-05-04 16:03:49,790 - client - INFO - Node: 5 - senderId: 5 type: <type 'str'>
+2018-05-04 16:03:49,790 - client - INFO - Node: 5 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,790 - client - INFO - Node: 5 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,790 - client - INFO - Node: 5 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,792 - main_server - INFO - Node: <Node.Node instance at 0x108392128> catering to Hello message with request: senderId: "5"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,792 - main_server - INFO - Node: 2 - State: active
+2018-05-04 16:03:49,792 - main_server - INFO - Node: 2 - Printing neighbourHelloArray - set([u'1', u'10', u'5'])
+2018-05-04 16:03:49,792 - main_server - INFO - Node: 2 - hopCount=1 with bestHopCount: 1 and senderId: 5 has hopCount 1
+2018-05-04 16:03:49,792 - main_server - INFO - Node: 2 - Sending NOT interested response for senderId: 5
+2018-05-04 16:03:49,793 - client - INFO - Node: 5 - Got Response: interested: -1
+ after sending Hello to id: 2
+2018-05-04 16:03:49,793 - client - INFO - Node: 5 - sendng hello to IP: localhost:50060 type: <type 'str'>
+2018-05-04 16:03:49,793 - client - INFO - Node: 5 - Sending Hello to node: 10
+2018-05-04 16:03:49,794 - client - INFO - Node: 5 - senderId: 5 type: <type 'str'>
+2018-05-04 16:03:49,794 - client - INFO - Node: 5 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,794 - client - INFO - Node: 5 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,794 - client - INFO - Node: 5 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,795 - main_server - INFO - Node: <Node.Node instance at 0x1099f1518> catering to Hello message with request: senderId: "5"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,796 - main_server - INFO - Node: 10 - State: active
+2018-05-04 16:03:49,796 - main_server - INFO - Node: 10 - Printing neighbourHelloArray - set([u'11', u'2', u'5'])
+2018-05-04 16:03:49,796 - main_server - INFO - Node: 10 - hopCount=1 with bestHopCount: 1 and senderId: 5 has hopCount 1
+2018-05-04 16:03:49,796 - main_server - INFO - Node: 10 - Sending NOT interested response for senderId: 5
+2018-05-04 16:03:49,796 - client - INFO - Node: 5 - Got Response: interested: -1
+ after sending Hello to id: 10
+2018-05-04 16:03:49,797 - client - INFO - Node: 5 - sendng hello to IP: localhost:50054 type: <type 'str'>
+2018-05-04 16:03:49,797 - client - INFO - Node: 5 - Sending Hello to node: 4
+2018-05-04 16:03:49,797 - client - INFO - Node: 5 - senderId: 5 type: <type 'str'>
+2018-05-04 16:03:49,797 - client - INFO - Node: 5 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,797 - client - INFO - Node: 5 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,798 - client - INFO - Node: 5 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,799 - main_server - INFO - Node: <Node.Node instance at 0x1083a4b48> catering to Hello message with request: senderId: "5"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,799 - main_server - INFO - Node: 4 - State: active
+2018-05-04 16:03:49,799 - main_server - INFO - Node: 4 - Printing neighbourHelloArray - set([u'1', u'0', u'3', u'2', u'5'])
+2018-05-04 16:03:49,800 - main_server - INFO - Node: 4 - hopCount=2 with bestHopCount: 2 and senderId: 5 has hopCount 1
+2018-05-04 16:03:49,800 - main_server - INFO - Node: 4 - Sending NOT interested response for senderId: 5
+2018-05-04 16:03:49,800 - client - INFO - Node: 5 - Got Response: interested: -1
+ after sending Hello to id: 4
+2018-05-04 16:03:49,801 - client - INFO - Node: 5 - sendng hello to IP: localhost:50061 type: <type 'str'>
+2018-05-04 16:03:49,801 - client - INFO - Node: 5 - Sending Hello to node: 11
+2018-05-04 16:03:49,801 - client - INFO - Node: 5 - senderId: 5 type: <type 'str'>
+2018-05-04 16:03:49,801 - client - INFO - Node: 5 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,801 - client - INFO - Node: 5 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,801 - client - INFO - Node: 5 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,803 - main_server - INFO - Node: <Node.Node instance at 0x10cd207a0> catering to Hello message with request: senderId: "5"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,803 - main_server - INFO - Node: 11 - State: active
+2018-05-04 16:03:49,803 - main_server - INFO - Node: 11 - Printing neighbourHelloArray - set([u'10', u'5'])
+2018-05-04 16:03:49,803 - main_server - INFO - Node: 11 - hopCount=2 with bestHopCount: 2 and senderId: 5 has hopCount 1
+2018-05-04 16:03:49,803 - main_server - INFO - Node: 11 - Sending NOT interested response for senderId: 5
+2018-05-04 16:03:49,804 - client - INFO - Node: 5 - Got Response: interested: -1
+ after sending Hello to id: 11
+2018-05-04 16:03:49,804 - client - INFO - Node: 5 - sendng hello to IP: localhost:50051 type: <type 'str'>
+2018-05-04 16:03:49,805 - client - INFO - Node: 5 - Sending Hello to node: 1
+2018-05-04 16:03:49,805 - client - INFO - Node: 5 - senderId: 5 type: <type 'str'>
+2018-05-04 16:03:49,805 - client - INFO - Node: 5 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,805 - client - INFO - Node: 5 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,805 - client - INFO - Node: 5 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,807 - main_server - INFO - Node: <Node.Node instance at 0x108383998> catering to Hello message with request: senderId: "5"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,807 - main_server - INFO - Node: 1 - Got hello message from senderId: 5
+2018-05-04 16:03:49,807 - main_server - INFO - Node: 1 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,807 - client - INFO - Node: 5 - Got Response: interested: -1
+ after sending Hello to id: 1
+2018-05-04 16:03:49,808 - client - INFO - Node: 5 - sendng hello to IP: localhost:50056 type: <type 'str'>
+2018-05-04 16:03:49,808 - client - INFO - Node: 5 - Sending Hello to node: 6
+2018-05-04 16:03:49,808 - client - INFO - Node: 5 - senderId: 5 type: <type 'str'>
+2018-05-04 16:03:49,808 - client - INFO - Node: 5 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,809 - client - INFO - Node: 5 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,809 - client - INFO - Node: 5 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,810 - main_server - INFO - Node: <Node.Node instance at 0x1099d4ef0> catering to Hello message with request: senderId: "5"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,810 - main_server - INFO - Node: 6 - Got hello message from senderId: 5
+2018-05-04 16:03:49,811 - main_server - INFO - Node: 6 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,811 - client - INFO - Node: 5 - Got Response: interested: -1
+ after sending Hello to id: 6
+2018-05-04 16:03:49,811 - client - INFO - Node: 5 - sendng hello to IP: localhost:50059 type: <type 'str'>
+2018-05-04 16:03:49,812 - client - INFO - Node: 5 - Sending Hello to node: 9
+2018-05-04 16:03:49,812 - client - INFO - Node: 5 - senderId: 5 type: <type 'str'>
+2018-05-04 16:03:49,812 - client - INFO - Node: 5 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,812 - client - INFO - Node: 5 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,812 - client - INFO - Node: 5 - senderClusterheadId: 1 type: <type 'unicode'>
+2018-05-04 16:03:49,814 - main_server - INFO - Node: <Node.Node instance at 0x1099f1488> catering to Hello message with request: senderId: "5"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "1"
+
+2018-05-04 16:03:49,814 - main_server - INFO - Node: 9 - State: active
+2018-05-04 16:03:49,814 - main_server - INFO - Node: 9 - Printing neighbourHelloArray - set([u'10', u'2', u'5'])
+2018-05-04 16:03:49,814 - main_server - INFO - Node: 9 - hopCount=3 with bestHopCount: 2 and senderId: 5 has hopCount 1
+2018-05-04 16:03:49,814 - main_server - INFO - Node: 9 - Received hello messages from ALL neighbours. Sending shift node request to would be ex-clusterheadId:0
+2018-05-04 16:03:49,814 - main_server - INFO - Node: %s - State variables: bestNodeId: 10,bestNodeClusterHeadId:8,current clusterheadId: 0,current parent: 4
+2018-05-04 16:03:49,817 - main_server - INFO - Node: 0 - Clusterhead got ShiftNodeRequest from node id: 9
+2018-05-04 16:03:49,817 - main_server - INFO - Node: 0 - ClusterheadId sending Jam Signal across its cluster
+2018-05-04 16:03:49,818 - Node - INFO - Node: 0 - ChildIpList is ['localhost:50052']
+2018-05-04 16:03:49,818 - client - INFO - Node: 0 - Sending jam to childIp: localhost:50052
+2018-05-04 16:03:49,820 - main_server - INFO - Node: 2 - Received Jam signal from clusterheadId: 0
+2018-05-04 16:03:49,820 - main_server - INFO - Node: 2 - Going to sleep zzzzzzzz
+2018-05-04 16:03:49,821 - main_server - INFO - Node: 2 - Sending jam to all children
+2018-05-04 16:03:49,821 - Node - INFO - Node: 2 - Adding childIps for propagating jam signal
+2018-05-04 16:03:49,821 - Node - INFO - ['localhost:50054']
+2018-05-04 16:03:49,823 - main_server - INFO - Node: 4 - Received Jam signal from clusterheadId: 0
+2018-05-04 16:03:49,823 - main_server - INFO - Node: 4 - Going to sleep zzzzzzzz
+2018-05-04 16:03:49,824 - main_server - INFO - Node: 4 - Sending jam to all children
+2018-05-04 16:03:49,824 - Node - INFO - Node: 4 - Adding childIps for propagating jam signal
+2018-05-04 16:03:49,824 - Node - INFO - ['localhost:50059']
+2018-05-04 16:03:49,826 - main_server - INFO - Node: 9 - Received Jam signal from clusterheadId: 0
+2018-05-04 16:03:49,826 - main_server - INFO - Node: 9 - Going to sleep zzzzzzzz
+2018-05-04 16:03:49,827 - main_server - INFO - Node: 9 - Sending jam to all children
+2018-05-04 16:03:49,827 - Node - INFO - Node: 9 - Adding childIps for propagating jam signal
+2018-05-04 16:03:49,827 - Node - INFO - Node: 9 - Leaf node. NOT propagating Jam signal anymore
+2018-05-04 16:03:49,827 - main_server - INFO - Node: 9 - Successfully propagated jam to all children
+2018-05-04 16:03:49,828 - client - INFO - Node: 4 - Got Response: jamResponse: "jammed"
+ after sending JAM to child ip: localhost:50059
+2018-05-04 16:03:49,828 - main_server - INFO - Node: 4 - Successfully propagated jam to all children
+2018-05-04 16:03:49,828 - client - INFO - Node: 2 - Got Response: jamResponse: "jammed"
+ after sending JAM to child ip: localhost:50054
+2018-05-04 16:03:49,828 - main_server - INFO - Node: 2 - Successfully propagated jam to all children
+2018-05-04 16:03:49,829 - client - INFO - Node: 0 - Clusterhead got response jamResponse: "jammed"
+ after sending jam to child ip: localhost:50052
+2018-05-04 16:03:49,829 - main_server - INFO - Node: 0 - ClusterheadId successfully sent Jam Signal across its cluster
+2018-05-04 16:03:49,829 - main_server - INFO - Node: 0 - ClusterheadId now sending sendShiftClusterRequest
+2018-05-04 16:03:49,829 - Node - INFO - Node: 0 - Clusterhead sending ShiftClusterRequest to clusterheadId: 8
+2018-05-04 16:03:49,829 - client - INFO - Node: 0 - Clusterhead sending ShiftClusterRequest to ClusterheadIp: localhost:50058
+2018-05-04 16:03:49,832 - Node - INFO - Node: 8 - ChildIpList is ['localhost:50060']
+2018-05-04 16:03:49,832 - client - INFO - Node: 8 - Sending jam to childIp: localhost:50060
+2018-05-04 16:03:49,834 - main_server - INFO - Node: 10 - Received Jam signal from clusterheadId: 8
+2018-05-04 16:03:49,834 - main_server - INFO - Node: 10 - Going to sleep zzzzzzzz
+2018-05-04 16:03:49,835 - main_server - INFO - Node: 10 - Sending jam to all children
+2018-05-04 16:03:49,835 - Node - INFO - Node: 10 - Adding childIps for propagating jam signal
+2018-05-04 16:03:49,835 - Node - INFO - Node: 10 - Leaf node. NOT propagating Jam signal anymore
+2018-05-04 16:03:49,835 - main_server - INFO - Node: 10 - Successfully propagated jam to all children
+2018-05-04 16:03:49,835 - client - INFO - Node: 8 - Clusterhead got response jamResponse: "jammed"
+ after sending jam to child ip: localhost:50060
+2018-05-04 16:03:49,836 - main_server - INFO - Node: 8 - Accepting ShiftClusterRequest from clusterheadId: 0 regarding node: 9
+2018-05-04 16:03:49,836 - client - INFO - Node:8  - Sending shift Accept to Node ip: localhost:50050
+2018-05-04 16:03:49,838 - main_server - INFO - Node: 0 - Accept Request received from clusterhead: 8 
+2018-05-04 16:03:49,838 - Node - INFO - Node 0 - shiftNodeId: 9 type: <type 'unicode'>
+2018-05-04 16:03:49,839 - Node - INFO - Node: 0 - shiftNode hopcount: 3 type: <type 'int'>
+2018-05-04 16:03:49,839 - Node - INFO - Node: 0 - bestNodeHopCount: 0 type: <type 'int'>
+2018-05-04 16:03:49,839 - Node - INFO - Adding Node: 2 type:<type 'unicode'> to childrenList1
+2018-05-04 16:03:49,839 - Node - INFO - Node: 0 self.shiftNodeCluster: 8 type:<type 'unicode'>
+2018-05-04 16:03:49,839 - Node - INFO - Adding Node: 10 type:<type 'unicode'> to childrenList2
+2018-05-04 16:03:49,840 - Node - INFO - Adding Node: 4 type:<type 'unicode'> to childList1
+2018-05-04 16:03:49,840 - Node - INFO - Adding Node: 9 type:<type 'unicode'> to childList1
+2018-05-04 16:03:49,841 - Node - ERROR - ***Expected Error Ignore ***
+2018-05-04 16:03:49,841 - Node - ERROR - 'NoneType' object is not iterable
+2018-05-04 16:03:49,841 - Node - ERROR - Traceback (most recent call last):
+  File "/Users/vimanyuaggarwal/Python Projects/cmpe294A/code/phase1/Node.py", line 349, in checkEnergy
+    for child in node['childListId']:
+TypeError: 'NoneType' object is not iterable
+
+2018-05-04 16:03:49,842 - Node - ERROR - ***Expected Error Ignore ***
+2018-05-04 16:03:49,842 - Node - INFO - childList1 empty
+2018-05-04 16:03:49,842 - Node - ERROR - ***Expected Error Ignore ***
+2018-05-04 16:03:49,842 - Node - ERROR - 'NoneType' object is not iterable
+2018-05-04 16:03:49,843 - Node - ERROR - Traceback (most recent call last):
+  File "/Users/vimanyuaggarwal/Python Projects/cmpe294A/code/phase1/Node.py", line 369, in checkEnergy
+    for child in node['childListId']:
+TypeError: 'NoneType' object is not iterable
+
+2018-05-04 16:03:49,843 - Node - ERROR - ***Expected Error Ignore ***
+2018-05-04 16:03:49,843 - Node - INFO - Node: 0 - Initial Energy: 23
+2018-05-04 16:03:49,843 - Node - INFO - Node: 0 - Final Energy: 16
+2018-05-04 16:03:49,848 - main_server - INFO - Node: 4 - As Parent got RemoveChildIdFromParent rpc from Node: 9
+2018-05-04 16:03:49,848 - main_server - INFO - Node: 4 - As Parent has children BEFORE removal: [u'9']
+2018-05-04 16:03:49,848 - main_server - INFO - Node: 4 - As Parent has children AFTER removal: []
+2018-05-04 16:03:49,849 - client - INFO - Node: 9 - Got Response: removeChildIdFromParentResponse: "Removed"
+ after sending removeChildIdFromParent to (old) parent ip: localhost:50054
+2018-05-04 16:03:49,858 - client - INFO - Node: 2 - Got Response: updateSizeResponse: "updated size"
+ after sending updateSize request to existing parent ip: localhost:50050
+2018-05-04 16:03:49,859 - client - INFO - Node: 4 - Got Response: updateSizeResponse: "updated size"
+ after sending updateSize request to existing parent ip: localhost:50052
+2018-05-04 16:03:49,859 - client - INFO - Node: 9 - Got Response: updateSizeResponse: "updated size"
+ after sending updateSize request to existing parent ip: localhost:50054
+2018-05-04 16:03:49,860 - Node - INFO - Node: 9 - Updating parent,clusterhead and hopcount from 4,0,3, to 10,8,2
+2018-05-04 16:03:49,865 - client - INFO - Node: 10 - Got Response: updateSizeResponse: "updated size"
+ after sending updateSize request to existing parent ip: localhost:50058
+2018-05-04 16:03:49,865 - client - INFO - Node: 9 - Got Response: joinResponse: "welcome my new child"
+ after sending join request to new parent ip: localhost:50060
+2018-05-04 16:03:49,867 - main_server - INFO - Node: 0 - Clusterhead got SendShiftComplete rpc with message:Departed
+2018-05-04 16:03:49,867 - main_server - INFO - Node: 0 - Clusterhead sending wakeup across its cluster
+2018-05-04 16:03:49,868 - client - INFO - Node: 0 - Sending wakeup to child ip: localhost:50052
+2018-05-04 16:03:49,870 - Node - INFO - Node: 2 - Propagating wakeup to children.
+2018-05-04 16:03:49,873 - Node - INFO - Node: 4 - No children found! Stopping wakeup propagation.
+2018-05-04 16:03:49,874 - client - INFO - Node: 2 - Got Response: wokenUp: "wokeup"
+ after sending wake to child ip: localhost:50054
+2018-05-04 16:03:49,874 - client - INFO - Node: 0 - Got Response: wokenUp: "wokeup"
+ after sending wakeup to child ip: localhost:50052
+2018-05-04 16:03:49,874 - main_server - INFO - Node: 0 - Clusterhead successfully sent wakeup across its cluster
+2018-05-04 16:03:49,875 - client - INFO - Node: 9 - Got Response: clusterheadAckSendShift: "ClusterheadId: 0 acknowledged shift.."
+ after sending shiftComplete to old clusterhead ip: localhost:50050
+2018-05-04 16:03:49,877 - main_server - INFO - Node: 8 - Clusterhead got SendShiftComplete rpc with message:Added
+2018-05-04 16:03:49,877 - main_server - INFO - Node: 8 - Clusterhead sending wakeup across its cluster
+2018-05-04 16:03:49,878 - client - INFO - Node: 8 - Sending wakeup to child ip: localhost:50060
+2018-05-04 16:03:49,880 - Node - INFO - Node: 10 - Propagating wakeup to children.
+2018-05-04 16:03:49,882 - Node - INFO - Node: 9 - No children found! Stopping wakeup propagation.
+2018-05-04 16:03:49,883 - client - INFO - Node: 10 - Got Response: wokenUp: "wokeup"
+ after sending wake to child ip: localhost:50059
+2018-05-04 16:03:49,883 - client - INFO - Node: 8 - Got Response: wokenUp: "wokeup"
+ after sending wakeup to child ip: localhost:50060
+2018-05-04 16:03:49,883 - main_server - INFO - Node: 8 - Clusterhead successfully sent wakeup across its cluster
+2018-05-04 16:03:49,884 - client - INFO - Node: 9 - Got Response: clusterheadAckSendShift: "ClusterheadId: 8 acknowledged shift.."
+ after sending shiftComplete to new clusterhead ip: localhost:50058
+2018-05-04 16:03:49,885 - client - INFO - Node: 0 - Got Response: shiftStartResponse: "byebye"
+ after sending shift start to Node id: 9
+2018-05-04 16:03:49,885 - client - INFO - Node: 8 - Got Response: message: "Starting Shift Start"
+ after sending shift Accept to Node ip: localhost:50050
+2018-05-04 16:03:49,898 - client - INFO - Node: 0 - Got Response: message: "Accepting"
+ after sending shift cluster request to Node ip: localhost:50058
+2018-05-04 16:03:49,899 - client - INFO - Node: 9 - Sent sendShiftNodeRequest about C:8 to clusterhead:localhost:50050
+2018-05-04 16:03:49,899 - main_server - INFO - Node: 9 - Sending NOT interested response for senderId: 5
+2018-05-04 16:03:49,900 - client - INFO - Node: 5 - Got Response: interested: -1
+ after sending Hello to id: 9
+2018-05-04 16:03:49,904 - main_server - INFO - Node: 4 - Got StartPhase2Clustering
+2018-05-04 16:03:49,904 - Node - INFO - Node: 4 - hopcount before Phase 2 clustering: 2
+2018-05-04 16:03:49,905 - client - INFO - Node: 4 - sendng hello to IP: localhost:50056 type: <type 'str'>
+2018-05-04 16:03:49,905 - client - INFO - Node: 4 - Sending Hello to node: 6
+2018-05-04 16:03:49,905 - client - INFO - Node: 4 - senderId: 4 type: <type 'str'>
+2018-05-04 16:03:49,906 - client - INFO - Node: 4 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,906 - client - INFO - Node: 4 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,906 - client - INFO - Node: 4 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,908 - main_server - INFO - Node: <Node.Node instance at 0x1099d4ef0> catering to Hello message with request: senderId: "4"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,908 - main_server - INFO - Node: 6 - Got hello message from senderId: 4
+2018-05-04 16:03:49,908 - main_server - INFO - Node: 6 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,909 - client - INFO - Node: 4 - Got Response: interested: -1
+ after sending Hello to id: 6
+2018-05-04 16:03:49,909 - client - INFO - Node: 4 - sendng hello to IP: localhost:50051 type: <type 'str'>
+2018-05-04 16:03:49,910 - client - INFO - Node: 4 - Sending Hello to node: 1
+2018-05-04 16:03:49,910 - client - INFO - Node: 4 - senderId: 4 type: <type 'str'>
+2018-05-04 16:03:49,910 - client - INFO - Node: 4 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,910 - client - INFO - Node: 4 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,910 - client - INFO - Node: 4 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,912 - main_server - INFO - Node: <Node.Node instance at 0x108383998> catering to Hello message with request: senderId: "4"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,913 - main_server - INFO - Node: 1 - Got hello message from senderId: 4
+2018-05-04 16:03:49,913 - main_server - INFO - Node: 1 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,913 - client - INFO - Node: 4 - Got Response: interested: -1
+ after sending Hello to id: 1
+2018-05-04 16:03:49,914 - client - INFO - Node: 4 - sendng hello to IP: localhost:50055 type: <type 'str'>
+2018-05-04 16:03:49,914 - client - INFO - Node: 4 - Sending Hello to node: 5
+2018-05-04 16:03:49,914 - client - INFO - Node: 4 - senderId: 4 type: <type 'str'>
+2018-05-04 16:03:49,914 - client - INFO - Node: 4 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,914 - client - INFO - Node: 4 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,914 - client - INFO - Node: 4 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,916 - main_server - INFO - Node: <Node.Node instance at 0x1099d46c8> catering to Hello message with request: senderId: "4"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,916 - main_server - INFO - Node: 5 - State: active
+2018-05-04 16:03:49,916 - main_server - INFO - Node: 5 - Printing neighbourHelloArray - set([u'11', u'10', u'2', u'1', u'4'])
+2018-05-04 16:03:49,917 - main_server - INFO - Node: 5 - hopCount=1 with bestHopCount: 1 and senderId: 4 has hopCount 2
+2018-05-04 16:03:49,917 - main_server - INFO - Node: 5 - Sending NOT interested response for senderId: 4
+2018-05-04 16:03:49,917 - client - INFO - Node: 4 - Got Response: interested: -1
+ after sending Hello to id: 5
+2018-05-04 16:03:49,918 - client - INFO - Node: 4 - sendng hello to IP: localhost:50053 type: <type 'str'>
+2018-05-04 16:03:49,918 - client - INFO - Node: 4 - Sending Hello to node: 3
+2018-05-04 16:03:49,918 - client - INFO - Node: 4 - senderId: 4 type: <type 'str'>
+2018-05-04 16:03:49,918 - client - INFO - Node: 4 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,918 - client - INFO - Node: 4 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,918 - client - INFO - Node: 4 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,920 - main_server - INFO - Node: <Node.Node instance at 0x108392bd8> catering to Hello message with request: senderId: "4"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,920 - main_server - INFO - Node: 3 - State: active
+2018-05-04 16:03:49,921 - main_server - INFO - Node: 3 - Printing neighbourHelloArray - set([u'1', u'0', u'4'])
+2018-05-04 16:03:49,921 - main_server - INFO - Node: 3 - hopCount=1 with bestHopCount: 1 and senderId: 4 has hopCount 2
+2018-05-04 16:03:49,921 - main_server - INFO - Node: 3 - Sending NOT interested response for senderId: 4
+2018-05-04 16:03:49,921 - client - INFO - Node: 4 - Got Response: interested: -1
+ after sending Hello to id: 3
+2018-05-04 16:03:49,922 - client - INFO - Node: 4 - sendng hello to IP: localhost:50058 type: <type 'str'>
+2018-05-04 16:03:49,922 - client - INFO - Node: 4 - Sending Hello to node: 8
+2018-05-04 16:03:49,922 - client - INFO - Node: 4 - senderId: 4 type: <type 'str'>
+2018-05-04 16:03:49,922 - client - INFO - Node: 4 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,922 - client - INFO - Node: 4 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,922 - client - INFO - Node: 4 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,924 - main_server - INFO - Node: <Node.Node instance at 0x1099e0bd8> catering to Hello message with request: senderId: "4"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,924 - main_server - INFO - Node: 8 - Got hello message from senderId: 4
+2018-05-04 16:03:49,924 - main_server - INFO - Node: 8 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,925 - client - INFO - Node: 4 - Got Response: interested: -1
+ after sending Hello to id: 8
+2018-05-04 16:03:49,925 - client - INFO - Node: 4 - sendng hello to IP: localhost:50050 type: <type 'str'>
+2018-05-04 16:03:49,925 - client - INFO - Node: 4 - Sending Hello to node: 0
+2018-05-04 16:03:49,926 - client - INFO - Node: 4 - senderId: 4 type: <type 'str'>
+2018-05-04 16:03:49,926 - client - INFO - Node: 4 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,926 - client - INFO - Node: 4 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,926 - client - INFO - Node: 4 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,927 - main_server - INFO - Node: <Node.Node instance at 0x107f02200> catering to Hello message with request: senderId: "4"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,928 - main_server - INFO - Node: 0 - Got hello message from senderId: 4
+2018-05-04 16:03:49,928 - main_server - INFO - Node: 0 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,928 - client - INFO - Node: 4 - Got Response: interested: -1
+ after sending Hello to id: 0
+2018-05-04 16:03:49,929 - client - INFO - Node: 4 - sendng hello to IP: localhost:50057 type: <type 'str'>
+2018-05-04 16:03:49,929 - client - INFO - Node: 4 - Sending Hello to node: 7
+2018-05-04 16:03:49,929 - client - INFO - Node: 4 - senderId: 4 type: <type 'str'>
+2018-05-04 16:03:49,929 - client - INFO - Node: 4 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,929 - client - INFO - Node: 4 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,929 - client - INFO - Node: 4 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,931 - main_server - INFO - Node: <Node.Node instance at 0x1099e0998> catering to Hello message with request: senderId: "4"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,931 - main_server - INFO - Node: 7 - State: active
+2018-05-04 16:03:49,931 - main_server - INFO - Node: 7 - Printing neighbourHelloArray - set([u'3', u'4'])
+2018-05-04 16:03:49,931 - main_server - INFO - Node: 7 - hopCount=1 with bestHopCount: 1 and senderId: 4 has hopCount 2
+2018-05-04 16:03:49,932 - main_server - INFO - Node: 7 - Sending NOT interested response for senderId: 4
+2018-05-04 16:03:49,932 - client - INFO - Node: 4 - Got Response: interested: -1
+ after sending Hello to id: 7
+2018-05-04 16:03:49,933 - client - INFO - Node: 4 - sendng hello to IP: localhost:50052 type: <type 'str'>
+2018-05-04 16:03:49,933 - client - INFO - Node: 4 - Sending Hello to node: 2
+2018-05-04 16:03:49,933 - client - INFO - Node: 4 - senderId: 4 type: <type 'str'>
+2018-05-04 16:03:49,934 - client - INFO - Node: 4 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,934 - client - INFO - Node: 4 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,934 - client - INFO - Node: 4 - senderClusterheadId: 0 type: <type 'unicode'>
+2018-05-04 16:03:49,936 - main_server - INFO - Node: <Node.Node instance at 0x108392128> catering to Hello message with request: senderId: "4"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "0"
+
+2018-05-04 16:03:49,936 - main_server - INFO - Node: 2 - State: active
+2018-05-04 16:03:49,936 - main_server - INFO - Node: 2 - Printing neighbourHelloArray - set([u'1', u'10', u'5', u'4'])
+2018-05-04 16:03:49,936 - main_server - INFO - Node: 2 - hopCount=1 with bestHopCount: 1 and senderId: 4 has hopCount 2
+2018-05-04 16:03:49,936 - main_server - INFO - Node: 2 - Sending NOT interested response for senderId: 4
+2018-05-04 16:03:49,937 - client - INFO - Node: 4 - Got Response: interested: -1
+ after sending Hello to id: 2
+2018-05-04 16:03:49,940 - main_server - INFO - Node: 7 - Got StartPhase2Clustering
+2018-05-04 16:03:49,940 - Node - INFO - Node: 7 - hopcount before Phase 2 clustering: 1
+2018-05-04 16:03:49,940 - client - INFO - Node: 7 - sendng hello to IP: localhost:50053 type: <type 'str'>
+2018-05-04 16:03:49,941 - client - INFO - Node: 7 - Sending Hello to node: 3
+2018-05-04 16:03:49,941 - client - INFO - Node: 7 - senderId: 7 type: <type 'str'>
+2018-05-04 16:03:49,941 - client - INFO - Node: 7 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,941 - client - INFO - Node: 7 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,941 - client - INFO - Node: 7 - senderClusterheadId: 6 type: <type 'unicode'>
+2018-05-04 16:03:49,943 - main_server - INFO - Node: <Node.Node instance at 0x108392bd8> catering to Hello message with request: senderId: "7"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "6"
+
+2018-05-04 16:03:49,943 - main_server - INFO - Node: 3 - State: active
+2018-05-04 16:03:49,943 - main_server - INFO - Node: 3 - Printing neighbourHelloArray - set([u'1', u'0', u'4', u'7'])
+2018-05-04 16:03:49,943 - main_server - INFO - Node: 3 - hopCount=1 with bestHopCount: 1 and senderId: 7 has hopCount 1
+2018-05-04 16:03:49,943 - main_server - INFO - Node: 3 - Sending NOT interested response for senderId: 7
+2018-05-04 16:03:49,944 - client - INFO - Node: 7 - Got Response: interested: -1
+ after sending Hello to id: 3
+2018-05-04 16:03:49,944 - client - INFO - Node: 7 - sendng hello to IP: localhost:50056 type: <type 'str'>
+2018-05-04 16:03:49,945 - client - INFO - Node: 7 - Sending Hello to node: 6
+2018-05-04 16:03:49,945 - client - INFO - Node: 7 - senderId: 7 type: <type 'str'>
+2018-05-04 16:03:49,945 - client - INFO - Node: 7 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,945 - client - INFO - Node: 7 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,945 - client - INFO - Node: 7 - senderClusterheadId: 6 type: <type 'unicode'>
+2018-05-04 16:03:49,947 - main_server - INFO - Node: <Node.Node instance at 0x1099d4ef0> catering to Hello message with request: senderId: "7"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "6"
+
+2018-05-04 16:03:49,947 - main_server - INFO - Node: 6 - Got hello message from senderId: 7
+2018-05-04 16:03:49,947 - main_server - INFO - Node: 6 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,947 - client - INFO - Node: 7 - Got Response: interested: -1
+ after sending Hello to id: 6
+2018-05-04 16:03:49,948 - client - INFO - Node: 7 - sendng hello to IP: localhost:50054 type: <type 'str'>
+2018-05-04 16:03:49,948 - client - INFO - Node: 7 - Sending Hello to node: 4
+2018-05-04 16:03:49,948 - client - INFO - Node: 7 - senderId: 7 type: <type 'str'>
+2018-05-04 16:03:49,949 - client - INFO - Node: 7 - hopToSenderClusterhead: 1 type: <type 'int'>
+2018-05-04 16:03:49,949 - client - INFO - Node: 7 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,949 - client - INFO - Node: 7 - senderClusterheadId: 6 type: <type 'unicode'>
+2018-05-04 16:03:49,950 - main_server - INFO - Node: <Node.Node instance at 0x1083a4b48> catering to Hello message with request: senderId: "7"
+hopToSenderClusterhead: 1
+senderState: "active"
+senderClusterheadId: "6"
+
+2018-05-04 16:03:49,950 - main_server - INFO - Node: 4 - State: active
+2018-05-04 16:03:49,951 - main_server - INFO - Node: 4 - Printing neighbourHelloArray - set([u'1', u'0', u'3', u'2', u'5', u'7'])
+2018-05-04 16:03:49,951 - main_server - INFO - Node: 4 - hopCount=2 with bestHopCount: 2 and senderId: 7 has hopCount 1
+2018-05-04 16:03:49,951 - main_server - INFO - Node: 4 - Sending NOT interested response for senderId: 7
+2018-05-04 16:03:49,951 - client - INFO - Node: 7 - Got Response: interested: -1
+ after sending Hello to id: 4
+2018-05-04 16:03:49,954 - main_server - INFO - Node: 6 - Got StartPhase2Clustering
+2018-05-04 16:03:49,954 - Node - INFO - Node: 6 - hopcount before Phase 2 clustering: 0
+2018-05-04 16:03:49,955 - client - INFO - Node: 6 - sendng hello to IP: localhost:50054 type: <type 'str'>
+2018-05-04 16:03:49,955 - client - INFO - Node: 6 - Sending Hello to node: 4
+2018-05-04 16:03:49,955 - client - INFO - Node: 6 - senderId: 6 type: <type 'str'>
+2018-05-04 16:03:49,955 - client - INFO - Node: 6 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,955 - client - INFO - Node: 6 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,955 - client - INFO - Node: 6 - senderClusterheadId: 6 type: <type 'str'>
+2018-05-04 16:03:49,957 - main_server - INFO - Node: <Node.Node instance at 0x1083a4b48> catering to Hello message with request: senderId: "6"
+senderState: "free"
+senderClusterheadId: "6"
+
+2018-05-04 16:03:49,957 - main_server - INFO - Node: 4 - State: active
+2018-05-04 16:03:49,957 - main_server - INFO - Node: 4 - Printing neighbourHelloArray - set([u'1', u'0', u'3', u'2', u'5', u'7', u'6'])
+2018-05-04 16:03:49,958 - main_server - INFO - Node: 4 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,958 - client - INFO - Node: 6 - Got Response: interested: -1
+ after sending Hello to id: 4
+2018-05-04 16:03:49,958 - client - INFO - Node: 6 - sendng hello to IP: localhost:50058 type: <type 'str'>
+2018-05-04 16:03:49,959 - client - INFO - Node: 6 - Sending Hello to node: 8
+2018-05-04 16:03:49,959 - client - INFO - Node: 6 - senderId: 6 type: <type 'str'>
+2018-05-04 16:03:49,959 - client - INFO - Node: 6 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,959 - client - INFO - Node: 6 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,959 - client - INFO - Node: 6 - senderClusterheadId: 6 type: <type 'str'>
+2018-05-04 16:03:49,961 - main_server - INFO - Node: <Node.Node instance at 0x1099e0bd8> catering to Hello message with request: senderId: "6"
+senderState: "free"
+senderClusterheadId: "6"
+
+2018-05-04 16:03:49,961 - main_server - INFO - Node: 8 - Got hello message from senderId: 6
+2018-05-04 16:03:49,961 - main_server - INFO - Node: 8 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:49,962 - client - INFO - Node: 6 - Got Response: interested: -1
+ after sending Hello to id: 8
+2018-05-04 16:03:49,962 - client - INFO - Node: 6 - sendng hello to IP: localhost:50057 type: <type 'str'>
+2018-05-04 16:03:49,962 - client - INFO - Node: 6 - Sending Hello to node: 7
+2018-05-04 16:03:49,963 - client - INFO - Node: 6 - senderId: 6 type: <type 'str'>
+2018-05-04 16:03:49,963 - client - INFO - Node: 6 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,963 - client - INFO - Node: 6 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,963 - client - INFO - Node: 6 - senderClusterheadId: 6 type: <type 'str'>
+2018-05-04 16:03:49,965 - main_server - INFO - Node: <Node.Node instance at 0x1099e0998> catering to Hello message with request: senderId: "6"
+senderState: "free"
+senderClusterheadId: "6"
+
+2018-05-04 16:03:49,965 - main_server - INFO - Node: 7 - State: active
+2018-05-04 16:03:49,965 - main_server - INFO - Node: 7 - Printing neighbourHelloArray - set([u'3', u'4', u'6'])
+2018-05-04 16:03:49,965 - main_server - INFO - Node: 7 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,965 - client - INFO - Node: 6 - Got Response: interested: -1
+ after sending Hello to id: 7
+2018-05-04 16:03:49,966 - client - INFO - Node: 6 - sendng hello to IP: localhost:50053 type: <type 'str'>
+2018-05-04 16:03:49,966 - client - INFO - Node: 6 - Sending Hello to node: 3
+2018-05-04 16:03:49,966 - client - INFO - Node: 6 - senderId: 6 type: <type 'str'>
+2018-05-04 16:03:49,966 - client - INFO - Node: 6 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,966 - client - INFO - Node: 6 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,967 - client - INFO - Node: 6 - senderClusterheadId: 6 type: <type 'str'>
+2018-05-04 16:03:49,968 - main_server - INFO - Node: <Node.Node instance at 0x108392bd8> catering to Hello message with request: senderId: "6"
+senderState: "free"
+senderClusterheadId: "6"
+
+2018-05-04 16:03:49,968 - main_server - INFO - Node: 3 - State: active
+2018-05-04 16:03:49,969 - main_server - INFO - Node: 3 - Printing neighbourHelloArray - set([u'1', u'0', u'4', u'7', u'6'])
+2018-05-04 16:03:49,969 - main_server - INFO - Node: 3 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,969 - client - INFO - Node: 6 - Got Response: interested: -1
+ after sending Hello to id: 3
+2018-05-04 16:03:49,970 - client - INFO - Node: 6 - sendng hello to IP: localhost:50055 type: <type 'str'>
+2018-05-04 16:03:49,970 - client - INFO - Node: 6 - Sending Hello to node: 5
+2018-05-04 16:03:49,970 - client - INFO - Node: 6 - senderId: 6 type: <type 'str'>
+2018-05-04 16:03:49,970 - client - INFO - Node: 6 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,970 - client - INFO - Node: 6 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,970 - client - INFO - Node: 6 - senderClusterheadId: 6 type: <type 'str'>
+2018-05-04 16:03:49,972 - main_server - INFO - Node: <Node.Node instance at 0x1099d46c8> catering to Hello message with request: senderId: "6"
+senderState: "free"
+senderClusterheadId: "6"
+
+2018-05-04 16:03:49,972 - main_server - INFO - Node: 5 - State: active
+2018-05-04 16:03:49,972 - main_server - INFO - Node: 5 - Printing neighbourHelloArray - set([u'11', u'10', u'1', u'2', u'4', u'6'])
+2018-05-04 16:03:49,973 - main_server - INFO - Node: 5 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,973 - client - INFO - Node: 6 - Got Response: interested: -1
+ after sending Hello to id: 5
+2018-05-04 16:03:49,976 - main_server - INFO - Node: 9 - Got StartPhase2Clustering
+2018-05-04 16:03:49,976 - Node - INFO - Node: 9 - hopcount before Phase 2 clustering: 2
+2018-05-04 16:03:49,976 - client - INFO - Node: 9 - sendng hello to IP: localhost:50060 type: <type 'str'>
+2018-05-04 16:03:49,977 - client - INFO - Node: 9 - Sending Hello to node: 10
+2018-05-04 16:03:49,977 - client - INFO - Node: 9 - senderId: 9 type: <type 'str'>
+2018-05-04 16:03:49,977 - client - INFO - Node: 9 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,977 - client - INFO - Node: 9 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,977 - client - INFO - Node: 9 - senderClusterheadId: 8 type: <type 'unicode'>
+2018-05-04 16:03:49,979 - main_server - INFO - Node: <Node.Node instance at 0x1099f1518> catering to Hello message with request: senderId: "9"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:49,979 - main_server - INFO - Node: 10 - State: active
+2018-05-04 16:03:49,979 - main_server - INFO - Node: 10 - Printing neighbourHelloArray - set([u'11', u'9', u'2', u'5'])
+2018-05-04 16:03:49,979 - main_server - INFO - Node: 10 - hopCount=1 with bestHopCount: 1 and senderId: 9 has hopCount 2
+2018-05-04 16:03:49,980 - main_server - INFO - Node: 10 - Sending NOT interested response for senderId: 9
+2018-05-04 16:03:49,980 - client - INFO - Node: 9 - Got Response: interested: -1
+ after sending Hello to id: 10
+2018-05-04 16:03:49,980 - client - INFO - Node: 9 - sendng hello to IP: localhost:50052 type: <type 'str'>
+2018-05-04 16:03:49,981 - client - INFO - Node: 9 - Sending Hello to node: 2
+2018-05-04 16:03:49,981 - client - INFO - Node: 9 - senderId: 9 type: <type 'str'>
+2018-05-04 16:03:49,981 - client - INFO - Node: 9 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,981 - client - INFO - Node: 9 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,981 - client - INFO - Node: 9 - senderClusterheadId: 8 type: <type 'unicode'>
+2018-05-04 16:03:49,983 - main_server - INFO - Node: <Node.Node instance at 0x108392128> catering to Hello message with request: senderId: "9"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:49,983 - main_server - INFO - Node: 2 - State: active
+2018-05-04 16:03:49,983 - main_server - INFO - Node: 2 - Printing neighbourHelloArray - set([u'1', u'10', u'9', u'5', u'4'])
+2018-05-04 16:03:49,983 - main_server - INFO - Node: 2 - hopCount=1 with bestHopCount: 1 and senderId: 9 has hopCount 2
+2018-05-04 16:03:49,984 - main_server - INFO - Node: 2 - Sending NOT interested response for senderId: 9
+2018-05-04 16:03:49,984 - client - INFO - Node: 9 - Got Response: interested: -1
+ after sending Hello to id: 2
+2018-05-04 16:03:49,984 - client - INFO - Node: 9 - sendng hello to IP: localhost:50055 type: <type 'str'>
+2018-05-04 16:03:49,985 - client - INFO - Node: 9 - Sending Hello to node: 5
+2018-05-04 16:03:49,985 - client - INFO - Node: 9 - senderId: 9 type: <type 'str'>
+2018-05-04 16:03:49,985 - client - INFO - Node: 9 - hopToSenderClusterhead: 2 type: <type 'int'>
+2018-05-04 16:03:49,985 - client - INFO - Node: 9 - senderState: active type: <type 'str'>
+2018-05-04 16:03:49,985 - client - INFO - Node: 9 - senderClusterheadId: 8 type: <type 'unicode'>
+2018-05-04 16:03:49,987 - main_server - INFO - Node: <Node.Node instance at 0x1099d46c8> catering to Hello message with request: senderId: "9"
+hopToSenderClusterhead: 2
+senderState: "active"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:49,988 - main_server - INFO - Node: 5 - State: active
+2018-05-04 16:03:49,988 - main_server - INFO - Node: 5 - Printing neighbourHelloArray - set([u'11', u'10', u'1', u'2', u'4', u'6', u'9'])
+2018-05-04 16:03:49,988 - main_server - INFO - Node: 5 - hopCount=1 with bestHopCount: 1 and senderId: 9 has hopCount 2
+2018-05-04 16:03:49,988 - main_server - INFO - Node: 5 - Sending NOT interested response for senderId: 9
+2018-05-04 16:03:49,989 - client - INFO - Node: 9 - Got Response: interested: -1
+ after sending Hello to id: 5
+2018-05-04 16:03:49,991 - main_server - INFO - Node: 8 - Got StartPhase2Clustering
+2018-05-04 16:03:49,991 - Node - INFO - Node: 8 - hopcount before Phase 2 clustering: 0
+2018-05-04 16:03:49,992 - client - INFO - Node: 8 - sendng hello to IP: localhost:50055 type: <type 'str'>
+2018-05-04 16:03:49,992 - client - INFO - Node: 8 - Sending Hello to node: 5
+2018-05-04 16:03:49,993 - client - INFO - Node: 8 - senderId: 8 type: <type 'str'>
+2018-05-04 16:03:49,993 - client - INFO - Node: 8 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,993 - client - INFO - Node: 8 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,993 - client - INFO - Node: 8 - senderClusterheadId: 8 type: <type 'str'>
+2018-05-04 16:03:49,995 - main_server - INFO - Node: <Node.Node instance at 0x1099d46c8> catering to Hello message with request: senderId: "8"
+senderState: "free"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:49,995 - main_server - INFO - Node: 5 - State: active
+2018-05-04 16:03:49,995 - main_server - INFO - Node: 5 - Printing neighbourHelloArray - set([u'11', u'10', u'1', u'2', u'4', u'6', u'9', u'8'])
+2018-05-04 16:03:49,995 - main_server - INFO - Node: 5 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,995 - client - INFO - Node: 8 - Got Response: interested: -1
+ after sending Hello to id: 5
+2018-05-04 16:03:49,996 - client - INFO - Node: 8 - sendng hello to IP: localhost:50061 type: <type 'str'>
+2018-05-04 16:03:49,996 - client - INFO - Node: 8 - Sending Hello to node: 11
+2018-05-04 16:03:49,996 - client - INFO - Node: 8 - senderId: 8 type: <type 'str'>
+2018-05-04 16:03:49,997 - client - INFO - Node: 8 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:49,997 - client - INFO - Node: 8 - senderState: free type: <type 'str'>
+2018-05-04 16:03:49,997 - client - INFO - Node: 8 - senderClusterheadId: 8 type: <type 'str'>
+2018-05-04 16:03:49,998 - main_server - INFO - Node: <Node.Node instance at 0x10cd207a0> catering to Hello message with request: senderId: "8"
+senderState: "free"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:49,999 - main_server - INFO - Node: 11 - State: active
+2018-05-04 16:03:49,999 - main_server - INFO - Node: 11 - Printing neighbourHelloArray - set([u'10', u'5', u'8'])
+2018-05-04 16:03:49,999 - main_server - INFO - Node: 11 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:49,999 - client - INFO - Node: 8 - Got Response: interested: -1
+ after sending Hello to id: 11
+2018-05-04 16:03:50,000 - client - INFO - Node: 8 - sendng hello to IP: localhost:50056 type: <type 'str'>
+2018-05-04 16:03:50,000 - client - INFO - Node: 8 - Sending Hello to node: 6
+2018-05-04 16:03:50,000 - client - INFO - Node: 8 - senderId: 8 type: <type 'str'>
+2018-05-04 16:03:50,000 - client - INFO - Node: 8 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:50,001 - client - INFO - Node: 8 - senderState: free type: <type 'str'>
+2018-05-04 16:03:50,001 - client - INFO - Node: 8 - senderClusterheadId: 8 type: <type 'str'>
+2018-05-04 16:03:50,002 - main_server - INFO - Node: <Node.Node instance at 0x1099d4ef0> catering to Hello message with request: senderId: "8"
+senderState: "free"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:50,002 - main_server - INFO - Node: 6 - Got hello message from senderId: 8
+2018-05-04 16:03:50,003 - main_server - INFO - Node: 6 - I am clusterhead. Sending Not interested
+2018-05-04 16:03:50,003 - client - INFO - Node: 8 - Got Response: interested: -1
+ after sending Hello to id: 6
+2018-05-04 16:03:50,004 - client - INFO - Node: 8 - sendng hello to IP: localhost:50054 type: <type 'str'>
+2018-05-04 16:03:50,004 - client - INFO - Node: 8 - Sending Hello to node: 4
+2018-05-04 16:03:50,004 - client - INFO - Node: 8 - senderId: 8 type: <type 'str'>
+2018-05-04 16:03:50,004 - client - INFO - Node: 8 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:50,004 - client - INFO - Node: 8 - senderState: free type: <type 'str'>
+2018-05-04 16:03:50,004 - client - INFO - Node: 8 - senderClusterheadId: 8 type: <type 'str'>
+2018-05-04 16:03:50,006 - main_server - INFO - Node: <Node.Node instance at 0x1083a4b48> catering to Hello message with request: senderId: "8"
+senderState: "free"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:50,006 - main_server - INFO - Node: 4 - State: active
+2018-05-04 16:03:50,006 - main_server - INFO - Node: 4 - Printing neighbourHelloArray - set([u'1', u'0', u'3', u'2', u'5', u'7', u'6', u'8'])
+2018-05-04 16:03:50,006 - main_server - INFO - Node: 4 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:50,007 - client - INFO - Node: 8 - Got Response: interested: -1
+ after sending Hello to id: 4
+2018-05-04 16:03:50,007 - client - INFO - Node: 8 - sendng hello to IP: localhost:50060 type: <type 'str'>
+2018-05-04 16:03:50,008 - client - INFO - Node: 8 - Sending Hello to node: 10
+2018-05-04 16:03:50,008 - client - INFO - Node: 8 - senderId: 8 type: <type 'str'>
+2018-05-04 16:03:50,008 - client - INFO - Node: 8 - hopToSenderClusterhead: 0 type: <type 'int'>
+2018-05-04 16:03:50,008 - client - INFO - Node: 8 - senderState: free type: <type 'str'>
+2018-05-04 16:03:50,008 - client - INFO - Node: 8 - senderClusterheadId: 8 type: <type 'str'>
+2018-05-04 16:03:50,010 - main_server - INFO - Node: <Node.Node instance at 0x1099f1518> catering to Hello message with request: senderId: "8"
+senderState: "free"
+senderClusterheadId: "8"
+
+2018-05-04 16:03:50,010 - main_server - INFO - Node: 10 - State: active
+2018-05-04 16:03:50,010 - main_server - INFO - Node: 10 - Printing neighbourHelloArray - set([u'11', u'9', u'2', u'5', u'8'])
+2018-05-04 16:03:50,010 - main_server - INFO - Node: 10 - Got hello from Clusterhead. Adding it to neighbourArray. Returning -1
+2018-05-04 16:03:50,011 - client - INFO - Node: 8 - Got Response: interested: -1
+ after sending Hello to id: 10
