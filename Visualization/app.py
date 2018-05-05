@@ -39,6 +39,11 @@ def dashboard2():
 def dashboard3():
 	return render_template("dashboard3.html")
 
+@app.route("/view/4")
+def demo():
+	return render_template("demo.html")
+
+
 
 tree = ('{'
           '"name": "Node -1",'
