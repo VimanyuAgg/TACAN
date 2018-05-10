@@ -13,9 +13,6 @@ In this project, we are implementing an algorithm proposed by [2], which forms a
 
 [2] B. S. Tiwana and A. Gupta, “A distributed algorithm for traffic aware clustering in ad hoc networks.” in Services Computing Conference, 2009. APSCC 2009. IEEE Asia-Pacific (pp. 75-80). IEEE. doi: 10.1109/APSCC.2009.5394138
 
-### Deployment Diagram:
-
-![Alt text](https://github.com/VimanyuAgg/TACAN/blob/master/Deployment%20Diagram.png "Deployment Diagram")
 
 ### UML Sequence Diagram: Phase 1 Clustering:
 
