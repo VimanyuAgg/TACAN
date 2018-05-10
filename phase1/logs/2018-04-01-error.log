@@ -1,6 +1,0 @@
-2018-04-01 17:23:14,270 - main_server - ERROR - start_new_thread expected at least 2 arguments, got 1
-2018-04-01 17:23:18,651 - main_server - ERROR - start_new_thread expected at least 2 arguments, got 1
-2018-04-01 17:23:22,448 - main_server - ERROR - start_new_thread expected at least 2 arguments, got 1
-2018-04-01 17:24:47,121 - main_server - ERROR - start_new_thread expected at least 2 arguments, got 1
-2018-04-01 17:24:49,105 - main_server - ERROR - start_new_thread expected at least 2 arguments, got 1
-2018-04-01 17:24:51,956 - main_server - ERROR - first arg must be callable

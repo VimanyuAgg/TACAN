@@ -1,4 +1,0 @@
-2018-04-07 17:06:47,600 - main_server - ERROR - list.remove(x): x not in list
-2018-04-07 17:24:13,827 - main_server - ERROR - not all arguments converted during string formatting
-2018-04-07 17:28:04,599 - main_server - ERROR - ERROR OCCURRED WHILE KICKING CHILDREN
-2018-04-07 17:28:04,600 - main_server - ERROR - Node id: 2 was kicking child 7 from childList
